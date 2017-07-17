@@ -1,7 +1,7 @@
 # BuildingCenter
 It is a ios app.
 
-##Dependency
+## Dependency
 
-##Usage
+## Usage
 `open BuildingCenter.xcworkspace`
