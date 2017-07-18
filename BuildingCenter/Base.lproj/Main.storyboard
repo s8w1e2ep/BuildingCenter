@@ -153,25 +153,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMS-cr-p5O">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="展館起源" id="AuN-59-uJH">
-                                        <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="qK5-dF-19q"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-NB-UfG">
-                                <rect key="frame" x="29" y="72" width="316" height="404"/>
+                                <rect key="frame" x="29" y="72" width="301" height="404"/>
                                 <string key="text">內政部建築研究所長期推動“智慧建築”，期盼透過健吾與資通訊科技技術的整合，以達成人性化空間、提升生活環境品質之目的．\n\n為了讓國人了解與輕鬆體驗智慧化生活，建研所於民國97年創建“LIVING 3.0 至慧化居住空間展示中心”，作為國內智慧建築教育訓練基地，推廣智慧建築概念、提供功能體驗，進而開創國內資通訊科技產業異業結合的新契機．\n\n本展示中心以“人性關懷、創新科技、前瞻生活、環保節能、智慧永續”為主題，整合了多元的智慧化科技、創新的資通訊主動感知及控制技術，並應用情境與示範系統的建置，提供國人體驗智慧化居住及辦公空間與多種情境模式，及創照前瞻優質的生活環境與品質之願景．</string>
                                 <color key="textColor" red="0.33373651649746194" green="0.33373651649746194" blue="0.33373651649746194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVX-Mc-u9i">
-                                <rect key="frame" x="106" y="562" width="162" height="48"/>
+                                <rect key="frame" x="106" y="562" width="147" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="8Bj-Nr-EgI"/>
+                                    <constraint firstAttribute="height" constant="48" id="ezC-on-Fd4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="下一頁" backgroundImage="btn_retake_normal"/>
@@ -182,16 +174,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RMS-cr-p5O" firstAttribute="leading" secondItem="q0X-ZJ-K0L" secondAttribute="leading" id="4gy-gy-wUR"/>
-                            <constraint firstItem="zVX-Mc-u9i" firstAttribute="top" secondItem="0WS-NB-UfG" secondAttribute="bottom" constant="86" id="Bew-S1-A7n"/>
-                            <constraint firstAttribute="trailing" secondItem="RMS-cr-p5O" secondAttribute="trailing" id="Jll-5c-Qah"/>
-                            <constraint firstItem="RMS-cr-p5O" firstAttribute="bottom" secondItem="HLp-3H-sDu" secondAttribute="bottom" id="M0e-CB-kZa"/>
-                            <constraint firstItem="BbD-66-tGS" firstAttribute="top" secondItem="zVX-Mc-u9i" secondAttribute="bottom" constant="57" id="ZAB-Ew-sGz"/>
-                            <constraint firstItem="RMS-cr-p5O" firstAttribute="centerX" secondItem="0WS-NB-UfG" secondAttribute="centerX" id="hoc-ig-g4H"/>
-                            <constraint firstItem="zVX-Mc-u9i" firstAttribute="leading" secondItem="q0X-ZJ-K0L" secondAttribute="leadingMargin" constant="90" id="mXt-5Y-SeY"/>
-                            <constraint firstItem="0WS-NB-UfG" firstAttribute="centerX" secondItem="zVX-Mc-u9i" secondAttribute="centerX" id="p8k-UD-4ui"/>
-                            <constraint firstItem="0WS-NB-UfG" firstAttribute="top" secondItem="HLp-3H-sDu" secondAttribute="bottom" constant="8" symbolic="YES" id="rmt-Ph-zwI"/>
-                            <constraint firstItem="0WS-NB-UfG" firstAttribute="leading" secondItem="q0X-ZJ-K0L" secondAttribute="leadingMargin" constant="13" id="vmn-J2-oj6"/>
+                            <constraint firstItem="0WS-NB-UfG" firstAttribute="top" secondItem="HLp-3H-sDu" secondAttribute="bottom" constant="8" symbolic="YES" id="B2L-oq-6Xh"/>
+                            <constraint firstItem="zVX-Mc-u9i" firstAttribute="top" secondItem="0WS-NB-UfG" secondAttribute="bottom" constant="86" id="OU1-Bg-nx3"/>
+                            <constraint firstItem="BbD-66-tGS" firstAttribute="top" secondItem="zVX-Mc-u9i" secondAttribute="bottom" constant="57" id="Z0e-B7-urr"/>
+                            <constraint firstItem="0WS-NB-UfG" firstAttribute="centerX" secondItem="zVX-Mc-u9i" secondAttribute="centerX" id="gVi-qJ-tBq"/>
+                            <constraint firstItem="0WS-NB-UfG" firstAttribute="leading" secondItem="q0X-ZJ-K0L" secondAttribute="leadingMargin" constant="13" id="tra-FP-YFC"/>
+                            <constraint firstItem="zVX-Mc-u9i" firstAttribute="leading" secondItem="q0X-ZJ-K0L" secondAttribute="leadingMargin" constant="90" id="xYY-WP-FoO"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -211,23 +199,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9su-BR-7Pe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="導覽簡介" id="gfw-YF-61J">
-                                        <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="UgG-kV-loF"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2nr-XZ-nKQ">
-                                <rect key="frame" x="29" y="72" width="316" height="404"/>
+                                <rect key="frame" x="29" y="72" width="301" height="404"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.33300891518592834" green="0.33328679203987122" blue="0.33305191993713379" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJE-3V-7Q6">
-                                <rect key="frame" x="106" y="563" width="162" height="48"/>
+                                <rect key="frame" x="106" y="563" width="147" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="YdT-Vw-wWU"/>
                                 </constraints>
@@ -243,13 +223,9 @@
                             <constraint firstItem="2nr-XZ-nKQ" firstAttribute="top" secondItem="vL3-Ii-FmR" secondAttribute="bottom" constant="8" symbolic="YES" id="1X0-W0-WoR"/>
                             <constraint firstItem="SJE-3V-7Q6" firstAttribute="top" secondItem="2nr-XZ-nKQ" secondAttribute="bottom" constant="87" id="2xO-di-YQl"/>
                             <constraint firstItem="2nr-XZ-nKQ" firstAttribute="leading" secondItem="Cwk-pG-hPn" secondAttribute="leadingMargin" constant="13" id="5lg-fK-M7F"/>
-                            <constraint firstItem="9su-BR-7Pe" firstAttribute="leading" secondItem="Cwk-pG-hPn" secondAttribute="leading" id="AGC-CR-dat"/>
-                            <constraint firstAttribute="trailing" secondItem="9su-BR-7Pe" secondAttribute="trailing" id="FXI-1S-YuF"/>
                             <constraint firstItem="2nr-XZ-nKQ" firstAttribute="centerX" secondItem="SJE-3V-7Q6" secondAttribute="centerX" id="S6m-wZ-kHs"/>
-                            <constraint firstItem="9su-BR-7Pe" firstAttribute="bottom" secondItem="vL3-Ii-FmR" secondAttribute="bottom" id="UfI-5m-zSC"/>
                             <constraint firstItem="4HR-tO-rNU" firstAttribute="top" secondItem="SJE-3V-7Q6" secondAttribute="bottom" constant="56" id="aPg-pS-OLR"/>
                             <constraint firstItem="SJE-3V-7Q6" firstAttribute="leading" secondItem="Cwk-pG-hPn" secondAttribute="leadingMargin" constant="90" id="i8P-LY-Qkz"/>
-                            <constraint firstItem="9su-BR-7Pe" firstAttribute="centerX" secondItem="2nr-XZ-nKQ" secondAttribute="centerX" id="s5X-M7-5lS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -269,23 +245,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lg3-zH-kgA">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="自動導覽規定" id="CEd-ZU-a8y">
-                                        <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="fZO-im-fBt"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0hs-dn-fon">
-                                <rect key="frame" x="29" y="72" width="316" height="404"/>
+                                <rect key="frame" x="29" y="72" width="301" height="404"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.35819172859191895" green="0.35848766565322876" blue="0.35823759436607361" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncU-TU-ZCE">
-                                <rect key="frame" x="106" y="566" width="162" height="48"/>
+                                <rect key="frame" x="106" y="566" width="147" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="rZK-OQ-hCq"/>
                                 </constraints>
@@ -301,12 +269,8 @@
                             <constraint firstItem="Vqi-VD-H2L" firstAttribute="top" secondItem="ncU-TU-ZCE" secondAttribute="bottom" constant="53" id="9LJ-g7-IAC"/>
                             <constraint firstItem="0hs-dn-fon" firstAttribute="centerX" secondItem="ncU-TU-ZCE" secondAttribute="centerX" id="CgX-CT-OIP"/>
                             <constraint firstItem="0hs-dn-fon" firstAttribute="leading" secondItem="Xwd-en-XGc" secondAttribute="leadingMargin" constant="13" id="FP9-xk-yAP"/>
-                            <constraint firstItem="lg3-zH-kgA" firstAttribute="bottom" secondItem="uZK-tc-5Ka" secondAttribute="bottom" id="Nu5-qd-n9S"/>
                             <constraint firstItem="0hs-dn-fon" firstAttribute="top" secondItem="uZK-tc-5Ka" secondAttribute="bottom" constant="8" symbolic="YES" id="TT5-cN-EcW"/>
                             <constraint firstItem="ncU-TU-ZCE" firstAttribute="top" secondItem="0hs-dn-fon" secondAttribute="bottom" constant="90" id="YQ0-yq-K28"/>
-                            <constraint firstAttribute="trailing" secondItem="lg3-zH-kgA" secondAttribute="trailing" id="dyJ-sd-jGC"/>
-                            <constraint firstItem="lg3-zH-kgA" firstAttribute="centerX" secondItem="0hs-dn-fon" secondAttribute="centerX" id="gah-J2-nB0"/>
-                            <constraint firstItem="lg3-zH-kgA" firstAttribute="leading" secondItem="Xwd-en-XGc" secondAttribute="leading" id="gzh-c6-Fqp"/>
                             <constraint firstItem="ncU-TU-ZCE" firstAttribute="leading" secondItem="Xwd-en-XGc" secondAttribute="leadingMargin" constant="90" id="wRB-fS-Veh"/>
                         </constraints>
                     </view>
@@ -342,6 +306,9 @@
                                 <state key="normal" title="確定" backgroundImage="btn_nextstep_normal_1">
                                     <color key="titleColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="DkL-DR-66f" kind="show" id="rdK-LH-SmE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33231648535254316" green="0.33560674758375642" blue="0.33560674758375642" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -363,14 +330,207 @@
             </objects>
             <point key="canvasLocation" x="4232.8000000000002" y="107.49625187406298"/>
         </scene>
+        <!--問卷-->
+        <scene sceneID="08j-qg-yc4">
+            <objects>
+                <viewController title="問卷" id="DkL-DR-66f" customClass="QuestionViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZDu-4H-dSN"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZMX-sn-UIs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XTx-lK-HhF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbY-jt-jcG">
+                                <rect key="frame" x="44" y="499" width="286" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="確定">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OOD-15-SJn" kind="show" id="LFi-DM-FJD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Qg-Lg-WeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4868" y="110"/>
+        </scene>
+        <!--1F住宅空間展示中心-->
+        <scene sceneID="X9D-gk-Zgn">
+            <objects>
+                <viewController title="1F住宅空間展示中心" id="OOD-15-SJn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NzA-Jo-Df6"/>
+                        <viewControllerLayoutGuide type="bottom" id="JoY-nr-R3O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="65j-pS-wUO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7cs-Qs-6BV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="518"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fU-7O-IWX">
+                                <rect key="frame" x="284" y="72" width="82" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon_questionnaire"/>
+                                <connections>
+                                    <segue destination="2CP-yP-3YF" kind="show" id="aqI-k7-Egr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28P-Qq-ywe">
+                                <rect key="frame" x="8" y="72" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon_info"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_bottomnavibg" translatesAutoresizingMaskIntoConstraints="NO" id="Qrw-Q5-v1r">
+                                <rect key="frame" x="0.0" y="590" width="375" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwu-rd-352">
+                                <rect key="frame" x="157" y="610" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="btn_main_map_active"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-Ir-eW0">
+                                <rect key="frame" x="89" y="610" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="文青日誌" image="btn_main_diary_normal"/>
+                                <connections>
+                                    <segue destination="cC2-Vq-QEH" kind="show" id="acQ-jv-fRS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTq-Ls-kgp">
+                                <rect key="frame" x="225" y="610" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="語音導覽" image="btn_main_sound_normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_area_bg_notice" translatesAutoresizingMaskIntoConstraints="NO" id="lpt-ps-AmQ">
+                                <rect key="frame" x="23" y="480" width="328" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOA-GB-9e1">
+                                <rect key="frame" x="206" y="500" width="70" height="7"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="進入導覽">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Spq-Sh-c9A" kind="show" id="oc6-vv-BXa"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_enter" translatesAutoresizingMaskIntoConstraints="NO" id="GiW-9q-ZIk">
+                                <rect key="frame" x="270" y="481" width="48" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1n-B2-tIE">
+                                <rect key="frame" x="284" y="610" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="字型縮放" image="btn_main_font_disabled">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBQ-Oq-TkD">
+                                <rect key="frame" x="23" y="610" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="廠商資訊" image="btn_main_info_disabled"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yUw-3M-CzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5647.1999999999998" y="108.39580209895054"/>
+        </scene>
+        <!--意見回饋-->
+        <scene sceneID="mTI-gk-p8h">
+            <objects>
+                <viewController title="意見回饋" id="2CP-yP-3YF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NDp-Oy-aWX"/>
+                        <viewControllerLayoutGuide type="bottom" id="T4N-wv-FWM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VSh-q4-WDw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3N-cg-v8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6457" y="-801"/>
+        </scene>
+        <!--文青日誌-->
+        <scene sceneID="UGn-9T-LRS">
+            <objects>
+                <viewController title="文青日誌" id="cC2-Vq-QEH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="45F-xN-Cbj"/>
+                        <viewControllerLayoutGuide type="bottom" id="aTq-86-ZGN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0mi-Mh-uUB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwM-gn-dwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6457" y="999"/>
+        </scene>
+        <!--區域介紹-->
+        <scene sceneID="hX2-PZ-MmM">
+            <objects>
+                <viewController title="區域介紹" id="Spq-Sh-c9A" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Af-vT-VxW"/>
+                        <viewControllerLayoutGuide type="bottom" id="jes-aS-N4p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Msy-JF-iPy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iN2-sg-2CB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6458" y="107"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="btn_main_diary_normal" width="72" height="57"/>
+        <image name="btn_main_font_disabled" width="72" height="57"/>
+        <image name="btn_main_info_disabled" width="72" height="57"/>
+        <image name="btn_main_map_active" width="56" height="56"/>
+        <image name="btn_main_sound_normal" width="72" height="57"/>
         <image name="btn_nextstep_normal_1" width="147" height="41"/>
         <image name="btn_retake_normal" width="147" height="41"/>
         <image name="home_btn_chinese" width="295" height="50"/>
         <image name="home_btn_english" width="295" height="50"/>
-        <image name="ic_arrowback" width="24" height="24"/>
+        <image name="ic_enter" width="24" height="24"/>
+        <image name="icon_info" width="28" height="28"/>
+        <image name="icon_questionnaire" width="28" height="28"/>
         <image name="living_logo" width="221" height="107"/>
+<<<<<<< HEAD
+=======
+        <image name="main_bottomnavibg" width="380" height="90"/>
+        <image name="map_area_bg_notice" width="328" height="64"/>
+        <image name="tour_select_robot" width="360" height="510"/>
+>>>>>>> 95b5bd30dccf3153b108070beb1cb5f6673c4f54
     </resources>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
