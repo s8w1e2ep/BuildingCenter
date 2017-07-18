@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4914869C7FEEB3FBF83F3E39 /* Pods_BuildingCenterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BC750BE44098288C7937F8 /* Pods_BuildingCenterTests.framework */; };
+		5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F58DFC31F1E560C004159D3 /* SelectGuiderViewController.swift */; };
 		5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */; };
 		5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */; };
 		5FE971421F1C9F0A005EDE58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE971401F1C9F0A005EDE58 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		13617F0FAF90C9CB493A56D2 /* Pods_BuildingCenterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildingCenterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		230B9AA56509C017F855A511 /* Pods-BuildingCenterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenterUITests/Pods-BuildingCenterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		43BC750BE44098288C7937F8 /* Pods_BuildingCenterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildingCenterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F58DFC31F1E560C004159D3 /* SelectGuiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGuiderViewController.swift; sourceTree = "<group>"; };
 		5FE971391F1C9F0A005EDE58 /* BuildingCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				5FE9716C1F1CB4F5005EDE58 /* AboutOneViewController.swift */,
 				5FE9716E1F1CB56B005EDE58 /* AboutTwoViewController.swift */,
 				5FE971701F1CB5A6005EDE58 /* AboutThreeViewController.swift */,
+				5F58DFC31F1E560C004159D3 /* SelectGuiderViewController.swift */,
 			);
 			path = BuildingCenter;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */,
 				5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
+				5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
