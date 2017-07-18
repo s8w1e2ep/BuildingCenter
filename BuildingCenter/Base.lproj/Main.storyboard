@@ -260,7 +260,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="OK" backgroundImage="btn_retake_normal"/>
                                 <connections>
-                                    <segue destination="r4z-TA-DhU" kind="show" id="Uel-7m-Ajm"/>
+                                    <segue destination="fJq-8a-4Qm" kind="show" id="C10-xe-GQy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -279,49 +279,56 @@
             </objects>
             <point key="canvasLocation" x="3354" y="109"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="f9R-fY-7VV">
+        <!--選擇導覽員-->
+        <scene sceneID="ZNO-az-yOn">
             <objects>
-                <viewController id="r4z-TA-DhU" sceneMemberID="viewController">
+                <viewController title="選擇導覽員" id="fJq-8a-4Qm" customClass="SelectGuiderViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WCx-JH-zZ2"/>
-                        <viewControllerLayoutGuide type="bottom" id="aoj-75-8Vc"/>
+                        <viewControllerLayoutGuide type="top" id="JoX-yC-bTD"/>
+                        <viewControllerLayoutGuide type="bottom" id="e2V-Rg-Nyh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lvt-3H-hUn">
+                    <view key="view" contentMode="scaleToFill" id="lkF-oz-5DN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALM-0F-efg">
-                                <rect key="frame" x="121" y="560" width="133" height="38"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88B-9G-8dK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="463"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fJq-8a-4Qm" id="53o-CM-HwA"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVn-O9-JzK">
+                                <rect key="frame" x="107" y="563" width="161" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="1fa-7Z-AJo"/>
-                                    <constraint firstAttribute="width" constant="133" id="cMR-zd-z4l"/>
+                                    <constraint firstAttribute="height" constant="43" id="frk-44-aZS"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="確定" backgroundImage="btn_nextstep_normal_1">
-                                    <color key="titleColor" red="0.99963909387588501" green="1" blue="0.99975615739822388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="DkL-DR-66f" kind="show" id="rdK-LH-SmE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tour_select_robot" translatesAutoresizingMaskIntoConstraints="NO" id="ayM-JJ-WZf">
-                                <rect key="frame" x="67" y="192" width="240" height="313"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.32622144670050757" green="0.32622144670050757" blue="0.32622144670050757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.33231648535254316" green="0.33560674758375642" blue="0.33560674758375642" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ALM-0F-efg" firstAttribute="top" secondItem="ayM-JJ-WZf" secondAttribute="bottom" constant="55" id="N22-JF-mC8"/>
-                            <constraint firstItem="ayM-JJ-WZf" firstAttribute="centerX" secondItem="lvt-3H-hUn" secondAttribute="centerX" id="frF-Vy-3TQ"/>
-                            <constraint firstItem="aoj-75-8Vc" firstAttribute="top" secondItem="ALM-0F-efg" secondAttribute="bottom" constant="69" id="hAh-Iy-jHz"/>
-                            <constraint firstItem="ayM-JJ-WZf" firstAttribute="leading" secondItem="lvt-3H-hUn" secondAttribute="leadingMargin" constant="51" id="kXZ-Wx-RH8"/>
-                            <constraint firstItem="ayM-JJ-WZf" firstAttribute="centerX" secondItem="ALM-0F-efg" secondAttribute="centerX" id="kvo-nj-vt6"/>
-                            <constraint firstItem="ayM-JJ-WZf" firstAttribute="top" secondItem="WCx-JH-zZ2" secondAttribute="bottom" constant="128" id="lwu-7l-hfM"/>
+                            <constraint firstItem="e2V-Rg-Nyh" firstAttribute="top" secondItem="EVn-O9-JzK" secondAttribute="bottom" constant="61" id="4H3-WJ-s5j"/>
+                            <constraint firstItem="88B-9G-8dK" firstAttribute="centerX" secondItem="EVn-O9-JzK" secondAttribute="centerX" id="DkE-fX-2Nr"/>
+                            <constraint firstItem="88B-9G-8dK" firstAttribute="leading" secondItem="lkF-oz-5DN" secondAttribute="leading" id="He7-zG-169"/>
+                            <constraint firstItem="88B-9G-8dK" firstAttribute="top" secondItem="JoX-yC-bTD" secondAttribute="bottom" id="ely-Lk-d1i"/>
+                            <constraint firstAttribute="trailing" secondItem="88B-9G-8dK" secondAttribute="trailing" id="hg0-Oj-pn2"/>
+                            <constraint firstItem="EVn-O9-JzK" firstAttribute="leading" secondItem="lkF-oz-5DN" secondAttribute="leadingMargin" constant="91" id="qgg-gR-Jeg"/>
+                            <constraint firstItem="EVn-O9-JzK" firstAttribute="top" secondItem="88B-9G-8dK" secondAttribute="bottom" constant="36" id="uRW-vE-01Z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollImg" destination="88B-9G-8dK" id="j7I-0P-4gr"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bb-uY-Xbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iw7-hA-5r8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4084" y="108"/>
+            <point key="canvasLocation" x="4232.8000000000002" y="107.49625187406298"/>
         </scene>
         <!--問卷-->
         <scene sceneID="08j-qg-yc4">
@@ -669,10 +676,13 @@
         <image name="icon_info" width="28" height="28"/>
         <image name="icon_questionnaire" width="28" height="28"/>
         <image name="living_logo" width="221" height="107"/>
+
         <image name="logo" width="90" height="100"/>
+
         <image name="main_bottomnavibg" width="380" height="90"/>
         <image name="map_area_bg_notice" width="328" height="64"/>
         <image name="tour_select_robot" width="360" height="510"/>
+
     </resources>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

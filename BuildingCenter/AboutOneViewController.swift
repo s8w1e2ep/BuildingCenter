@@ -10,6 +10,8 @@ import UIKit
 
 class AboutOneViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
