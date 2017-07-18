@@ -1,19 +1,19 @@
 //
-//  HipsterViewController.swift
+//  LandscapeViewController.swift
 //  BuildingCenter
 //
-//  Created by 李佳穎 on 18/07/2017.
+//  Created by 李佳穎 on 19/07/2017.
 //  Copyright © 2017 uscc. All rights reserved.
 //
 
+
 import UIKit
 
-class HipsterViewController: UIViewController {
+class LandscapeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
