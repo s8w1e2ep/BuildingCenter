@@ -14,21 +14,20 @@ class BeginViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "home_background.png")
-        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
+        //let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        //backgroundImage.image = UIImage(named: "home_background.png")
+        //backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        //self.view.insertSubview(backgroundImage, at: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
+        //self.navigationController?.isNavigationBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

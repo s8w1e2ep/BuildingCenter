@@ -10,23 +10,14 @@ import UIKit
 
 class AboutOneViewController: UIViewController {
 
-    
+    @IBOutlet weak var navbar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // set view background image
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "about_background.png")
-        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
+        
         // set navigation bar background image
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navigationController?.navigationBar.setBackgroundImage(navBackgroundImage, for: .default)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
+        self.navbar.setBackgroundImage(navBackgroundImage, for: .default)
     }
     
     override func didReceiveMemoryWarning() {

@@ -1,0 +1,111 @@
+
+/* Class = "UITextView"; text = "內政部建築研究所長期推動“智慧建築”，期盼透過健吾與資通訊科技技術的整合，以達成人性化空間、提升生活環境品質之目的．\\n\\n為了讓國人了解與輕鬆體驗智慧化生活，建研所於民國97年創建“LIVING 3.0 至慧化居住空間展示中心”，作為國內智慧建築教育訓練基地，推廣智慧建築概念、提供功能體驗，進而開創國內資通訊科技產業異業結合的新契機．\\n\\n本展示中心以“人性關懷、創新科技、前瞻生活、環保節能、智慧永續”為主題，整合了多元的智慧化科技、創新的資通訊主動感知及控制技術，並應用情境與示範系統的建置，提供國人體驗智慧化居住及辦公空間與多種情境模式，及創照前瞻優質的生活環境與品質之願景．"; ObjectID = "0WS-NB-UfG"; */
+"0WS-NB-UfG.text" = "內政部建築研究所長期推動“智慧建築”，期盼透過健吾與資通訊科技技術的整合，以達成人性化空間、提升生活環境品質之目的．\\n\\n為了讓國人了解與輕鬆體驗智慧化生活，建研所於民國97年創建“LIVING 3.0 至慧化居住空間展示中心”，作為國內智慧建築教育訓練基地，推廣智慧建築概念、提供功能體驗，進而開創國內資通訊科技產業異業結合的新契機．\\n\\n本展示中心以“人性關懷、創新科技、前瞻生活、環保節能、智慧永續”為主題，整合了多元的智慧化科技、創新的資通訊主動感知及控制技術，並應用情境與示範系統的建置，提供國人體驗智慧化居住及辦公空間與多種情境模式，及創照前瞻優質的生活環境與品質之願景．";
+
+/* Class = "UIViewController"; title = "意見回饋"; ObjectID = "2CP-yP-3YF"; */
+"2CP-yP-3YF.title" = "意見回饋";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "2nr-XZ-nKQ"; */
+"2nr-XZ-nKQ.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UINavigationItem"; title = "展館起源"; ObjectID = "51P-Ej-VYK"; */
+"51P-Ej-VYK.title" = "展館起源";
+
+/* Class = "UIViewController"; title = "展館起源"; ObjectID = "6Ca-X1-FUf"; */
+"6Ca-X1-FUf.title" = "展館起源";
+
+/* Class = "UIViewController"; title = "導覽簡介"; ObjectID = "6EC-71-KF1"; */
+"6EC-71-KF1.title" = "導覽簡介";
+
+/* Class = "UIButton"; normalTitle = "進入導覽"; ObjectID = "6wa-QE-9q0"; */
+"6wa-QE-9q0.normalTitle" = "進入導覽";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "AXK-1B-LOW"; */
+"AXK-1B-LOW.normalTitle" = "下一頁";
+
+/* Class = "UIButton"; normalTitle = "文青日誌"; ObjectID = "BC4-Ir-eW0"; */
+"BC4-Ir-eW0.normalTitle" = "文青日誌";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "Bxw-pf-tO1"; */
+"Bxw-pf-tO1.normalTitle" = "下一頁";
+
+/* Class = "UINavigationItem"; title = "導覽簡介"; ObjectID = "Col-9b-tam"; */
+"Col-9b-tam.title" = "導覽簡介";
+
+/* Class = "UIViewController"; title = "問卷"; ObjectID = "DkL-DR-66f"; */
+"DkL-DR-66f.title" = "問卷";
+
+/* Class = "UIViewController"; title = "自動導覽規定"; ObjectID = "Drj-IC-pZK"; */
+"Drj-IC-pZK.title" = "自動導覽規定";
+
+/* Class = "UIViewController"; title = "模式景觀"; ObjectID = "H93-C3-x5J"; */
+"H93-C3-x5J.title" = "模式景觀";
+
+/* Class = "UIButton"; normalTitle = "確定"; ObjectID = "Ham-TR-jEj"; */
+"Ham-TR-jEj.normalTitle" = "確定";
+
+/* Class = "UIViewController"; title = "下載頁面"; ObjectID = "JsX-64-wi9"; */
+"JsX-64-wi9.title" = "下載頁面";
+
+/* Class = "UIViewController"; title = "模式介紹"; ObjectID = "KPE-ag-WVY"; */
+"KPE-ag-WVY.title" = "模式介紹";
+
+/* Class = "UIViewController"; title = "1F住宅空間展示中心"; ObjectID = "OOD-15-SJn"; */
+"OOD-15-SJn.title" = "1F住宅空間展示中心";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "SJE-3V-7Q6"; */
+"SJE-3V-7Q6.normalTitle" = "下一頁";
+
+/* Class = "UIViewController"; title = "區域介紹"; ObjectID = "Spq-Sh-c9A"; */
+"Spq-Sh-c9A.title" = "區域介紹";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "Y6C-9m-3Ry"; */
+"Y6C-9m-3Ry.normalTitle" = "下一頁";
+
+/* Class = "UIViewController"; title = "文青日誌"; ObjectID = "cC2-Vq-QEH"; */
+"cC2-Vq-QEH.title" = "文青日誌";
+
+/* Class = "UIButton"; normalTitle = "確定"; ObjectID = "dbY-jt-jcG"; */
+"dbY-jt-jcG.normalTitle" = "確定";
+
+/* Class = "UIButton"; normalTitle = "字型縮放"; ObjectID = "e1n-B2-tIE"; */
+"e1n-B2-tIE.normalTitle" = "字型縮放";
+
+/* Class = "UINavigationItem"; title = "自動導覽規定"; ObjectID = "eZu-XP-m8X"; */
+"eZu-XP-m8X.title" = "自動導覽規定";
+
+/* Class = "UINavigationItem"; title = "請選擇導覽人員"; ObjectID = "ffd-lb-GdH"; */
+"ffd-lb-GdH.title" = "請選擇導覽人員";
+
+/* Class = "UIViewController"; title = "模式內容"; ObjectID = "iYc-1s-yfQ"; */
+"iYc-1s-yfQ.title" = "模式內容";
+
+/* Class = "UILabel"; text = "讀取中 ...請稍候"; ObjectID = "iuL-Ks-pG0"; */
+"iuL-Ks-pG0.text" = "讀取中 ...請稍候";
+
+/* Class = "UIButton"; normalTitle = "廠商資訊"; ObjectID = "jBQ-Oq-TkD"; */
+"jBQ-Oq-TkD.normalTitle" = "廠商資訊";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "lUt-wb-lvw"; */
+"lUt-wb-lvw.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIViewController"; title = "請選擇導覽人員"; ObjectID = "nvl-hP-JkO"; */
+"nvl-hP-JkO.title" = "請選擇導覽人員";
+
+/* Class = "UIViewController"; title = "模式選擇"; ObjectID = "of8-G8-XJ5"; */
+"of8-G8-XJ5.title" = "模式選擇";
+
+/* Class = "UIViewController"; title = "開頭頁面"; ObjectID = "vLW-h4-bF9"; */
+"vLW-h4-bF9.title" = "開頭頁面";
+
+/* Class = "UILabel"; text = "歡迎使用Living 3.0 自動導覽系統"; ObjectID = "ybP-2f-QpR"; */
+"ybP-2f-QpR.text" = "歡迎使用Living 3.0 自動導覽系統";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "zSB-T9-MUY"; */
+"zSB-T9-MUY.normalTitle" = "OK";
+
+/* Class = "UIButton"; normalTitle = "語音導覽"; ObjectID = "zTq-Ls-kgp"; */
+"zTq-Ls-kgp.normalTitle" = "語音導覽";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "zVX-Mc-u9i"; */
+"zVX-Mc-u9i.normalTitle" = "下一頁";

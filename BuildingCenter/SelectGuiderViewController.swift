@@ -10,8 +10,10 @@ import UIKit
 
 class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var navbar: UINavigationBar!
     
     @IBOutlet weak var scrollImg: UIScrollView!
+    
     var page: UIPageControl! = nil
     var timer: Timer! = nil
     let imgList = [
@@ -24,18 +26,16 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        UINavigationBar.appearance().barTintColor = UIColor(red: 85, green: 86, blue: 86, alpha: 1)
+        scrollImg.contentSize = CGSize(width: self.view.frame.size.width * 2.35, height: self.view.frame.size.height * 0.6)
+        scrollImg.contentOffset = CGPoint(x: self.view.frame.size.width * 0.65, y: 0)
+        // scrollImg.contentInset = UIEdgeInsetsMake(0.0, 0.0, 80.0, 0.0)
         
-        //let src = UIScrollView(frame: CGRect(x: 0, y: 10, width: self.view.frame.size.width, height: self.view.frame.size.height * 0.6))
-        //scrollImg = src
-        //scrollImg.delegate = self
-        scrollImg.contentSize = CGSize(width: self.view.frame.size.width * 3, height: 300)
-        //self.view.addSubview(scrollImg)
+        let xList = [(self.view.frame.size.width * 0.1), (self.view.frame.size.width * 0.8), (self.view.frame.size.width * 1.5)]
         
         for index in 1...3 {
             let image = UIImage(named: imgList[index - 1])
-            let x = CGFloat(index - 1) * self.view.frame.size.width
-            let imageView = UIImageView(frame: CGRect(x: x + self.view.frame.size.width * 0.1, y: 0, width: self.view.frame.size.width * 0.8, height: self.view.frame.size.height * 0.6))
+            //let x = CGFloat(index - 1) * self.view.frame.size.width
+            let imageView = UIImageView(frame: CGRect(x: xList[index - 1], y: 0, width: self.view.frame.size.width * 0.7, height: self.view.frame.size.height * 0.6))
             imageView.image = image
             scrollImg.addSubview(imageView)
         }
@@ -43,6 +43,12 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         //src.showsVerticalScrollIndicator = false
         //src.isPagingEnabled = true
         //src.bounces = false
+        let navBackgroundImage:UIImage! = UIImage(named: "tour_select_background.png")
+        self.navbar.setBackgroundImage(navBackgroundImage, for: .default)
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
     }
 
