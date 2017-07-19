@@ -490,6 +490,18 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_camera" translatesAutoresizingMaskIntoConstraints="NO" id="lUQ-Wz-m4V">
+                                <rect key="frame" x="92" y="379" width="79" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_library" translatesAutoresizingMaskIntoConstraints="NO" id="GN1-yI-hfa">
+                                <rect key="frame" x="205" y="379" width="79" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title_chinese" translatesAutoresizingMaskIntoConstraints="NO" id="Vaj-UC-wkK">
+                                <rect key="frame" x="129" y="216" width="117" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -663,6 +675,8 @@
     </scenes>
     <resources>
         <image name="bg_diaryhome" width="360" height="640"/>
+        <image name="btn_camera" width="90" height="90"/>
+        <image name="btn_library" width="90" height="90"/>
         <image name="btn_main_diary_normal" width="72" height="57"/>
         <image name="btn_main_font_disabled" width="72" height="57"/>
         <image name="btn_main_info_disabled" width="72" height="57"/>
@@ -676,13 +690,10 @@
         <image name="icon_info" width="28" height="28"/>
         <image name="icon_questionnaire" width="28" height="28"/>
         <image name="living_logo" width="221" height="107"/>
-
         <image name="logo" width="90" height="100"/>
-
         <image name="main_bottomnavibg" width="380" height="90"/>
         <image name="map_area_bg_notice" width="328" height="64"/>
-        <image name="tour_select_robot" width="360" height="510"/>
-
+        <image name="title_chinese" width="118" height="132"/>
     </resources>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
