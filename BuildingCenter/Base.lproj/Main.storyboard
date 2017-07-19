@@ -478,7 +478,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OOD-15-SJn" kind="show" id="LFi-DM-FJD"/>
+                                    <segue destination="dER-xw-gJN" kind="show" id="K56-dp-lde"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -506,43 +506,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_bottomnavibg" translatesAutoresizingMaskIntoConstraints="NO" id="Qrw-Q5-v1r">
-                                <rect key="frame" x="0.0" y="590" width="375" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwu-rd-352">
-                                <rect key="frame" x="157" y="610" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="btn_main_map_active"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BC4-Ir-eW0">
-                                <rect key="frame" x="89" y="610" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="文青日誌" image="btn_main_diary_normal"/>
-                                <connections>
-                                    <segue destination="cC2-Vq-QEH" kind="show" id="acQ-jv-fRS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBQ-Oq-TkD">
-                                <rect key="frame" x="23" y="610" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="廠商資訊" image="btn_main_info_disabled"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTq-Ls-kgp">
-                                <rect key="frame" x="225" y="610" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="語音導覽" image="btn_main_sound_normal">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1n-B2-tIE">
-                                <rect key="frame" x="284" y="610" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="字型縮放" image="btn_main_font_disabled">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_area_bg_notice" translatesAutoresizingMaskIntoConstraints="NO" id="Dqg-sF-Dbh">
                                 <rect key="frame" x="23" y="484" width="328" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -587,14 +550,56 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="btn_main_map_active" id="rHZ-48-Dih"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="navbar" destination="UTv-ih-5Bw" id="4Y4-Ux-ted"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUw-3M-CzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5647.1999999999998" y="108.39580209895054"/>
+            <point key="canvasLocation" x="6761" y="109"/>
+        </scene>
+        <!--廠商資訊-->
+        <scene sceneID="FxE-yk-oXr">
+            <objects>
+                <viewController id="AZ1-Bn-mkZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uTu-Rm-ulO"/>
+                        <viewControllerLayoutGuide type="bottom" id="sUN-ah-JhJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9a7-GA-19x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="廠商資訊" image="btn_main_info_disabled" id="fRd-ex-NGw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pu2-Dz-PrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3466" y="1294"/>
+        </scene>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="9dl-wd-2FO">
+            <objects>
+                <tabBarController id="dER-xw-gJN" customClass="MainTabBarViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="6nr-no-IKf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="AZ1-Bn-mkZ" kind="relationship" relationship="viewControllers" id="gnu-as-3WV"/>
+                        <segue destination="cC2-Vq-QEH" kind="relationship" relationship="viewControllers" id="4BZ-ni-Fk1"/>
+                        <segue destination="OOD-15-SJn" kind="relationship" relationship="viewControllers" id="x2e-sk-76X"/>
+                        <segue destination="fmQ-fo-m8I" kind="relationship" relationship="viewControllers" id="DmM-md-2uh"/>
+                        <segue destination="cVk-OD-VkT" kind="relationship" relationship="viewControllers" id="WFh-Pv-DyG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLE-Qp-POi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5726" y="107"/>
         </scene>
         <!--Map Instruction View Controller-->
         <scene sceneID="3tO-Dm-Pdc">
@@ -668,7 +673,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="osZ-3O-K2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="F49-9I-nMS"/>
             </objects>
-            <point key="canvasLocation" x="5647.1999999999998" y="-801.0494752623689"/>
+            <point key="canvasLocation" x="6761" y="-800"/>
         </scene>
         <!--意見回饋-->
         <scene sceneID="mTI-gk-p8h">
@@ -686,7 +691,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3N-cg-v8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6457" y="-801"/>
+            <point key="canvasLocation" x="7570" y="-800"/>
         </scene>
         <!--文青日誌-->
         <scene sceneID="UGn-9T-LRS">
@@ -719,10 +724,52 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="文青日誌" image="btn_main_diary_normal" id="FIR-af-UPf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwM-gn-dwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7396" y="998.95052473763121"/>
+            <point key="canvasLocation" x="5726" y="1293"/>
+        </scene>
+        <!--語音導覽-->
+        <scene sceneID="lOh-zS-Dcx">
+            <objects>
+                <viewController id="fmQ-fo-m8I" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JkK-gQ-0dV"/>
+                        <viewControllerLayoutGuide type="bottom" id="dlc-me-vv4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GWE-8g-hck">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="語音導覽" image="btn_main_sound_normal" id="egq-qg-A5E"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHS-fC-cle" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7014" y="1292"/>
+        </scene>
+        <!--字型縮放-->
+        <scene sceneID="fiO-rm-4C6">
+            <objects>
+                <viewController id="cVk-OD-VkT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PQ2-w9-dSc"/>
+                        <viewControllerLayoutGuide type="bottom" id="vim-Az-rXC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ndZ-YG-6Je">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="字型縮放" image="btn_main_font_disabled" id="zen-v3-RYL"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gFL-mV-PPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8433" y="1292"/>
         </scene>
         <!--區域介紹-->
         <scene sceneID="hX2-PZ-MmM">
@@ -752,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iN2-sg-2CB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6456.8000000000002" y="106.59670164917542"/>
+            <point key="canvasLocation" x="7570" y="107"/>
         </scene>
         <!--模式選擇-->
         <scene sceneID="Jm5-rh-bep">
@@ -806,7 +853,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTR-dK-n87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7288.8000000000002" y="106.59670164917542"/>
+            <point key="canvasLocation" x="8402" y="107"/>
         </scene>
         <!--模式介紹-->
         <scene sceneID="KoJ-Q8-1Bb">
@@ -836,7 +883,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQC-oL-04Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8084" y="107"/>
+            <point key="canvasLocation" x="9198" y="107"/>
         </scene>
         <!--模式景觀-->
         <scene sceneID="UYl-s6-CHa">
@@ -866,7 +913,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfM-cT-DO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8865" y="107"/>
+            <point key="canvasLocation" x="9978" y="107"/>
         </scene>
         <!--模式內容-->
         <scene sceneID="paV-6A-GQh">
@@ -884,7 +931,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTe-yd-MHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9736.7999999999993" y="106.59670164917542"/>
+            <point key="canvasLocation" x="10850" y="107"/>
         </scene>
     </scenes>
     <resources>
@@ -909,7 +956,6 @@
         <image name="icon_questionnaire" width="28" height="28"/>
         <image name="living_logo" width="221" height="107"/>
         <image name="logo" width="90" height="100"/>
-        <image name="main_bottomnavibg" width="380" height="90"/>
         <image name="map_area_bg_notice" width="328" height="64"/>
         <image name="title_chinese" width="118" height="132"/>
         <image name="tour_select_background" width="360" height="640"/>
@@ -917,8 +963,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="K2q-qL-Eos"/>
         <segue reference="PEi-6S-ahg"/>
-        <segue reference="aeQ-B4-xB1"/>
         <segue reference="sJc-Hv-Xjb"/>
+        <segue reference="aeQ-B4-xB1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

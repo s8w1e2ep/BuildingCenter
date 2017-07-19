@@ -28,6 +28,7 @@
 		762D8D4F1F1E7558004295A9 /* ModeIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D4E1F1E7558004295A9 /* ModeIntroViewController.swift */; };
 		762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D501F1E755F004295A9 /* ModeContentViewController.swift */; };
 		762D8D531F1E7565004295A9 /* ModeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D521F1E7565004295A9 /* ModeSelectViewController.swift */; };
+		7658B9C61F1FDB1400A2C647 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7658B9C51F1FDB1400A2C647 /* TabBarViewController.swift */; };
 		76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */; };
 		933E3CE478B22CB16A6A1A3E /* Pods_BuildingCenterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13617F0FAF90C9CB493A56D2 /* Pods_BuildingCenterUITests.framework */; };
 		EBDCDB62C04C9755E5E4DA09 /* Pods_BuildingCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */; };
@@ -83,6 +84,7 @@
 		762D8D4E1F1E7558004295A9 /* ModeIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeIntroViewController.swift; sourceTree = "<group>"; };
 		762D8D501F1E755F004295A9 /* ModeContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentViewController.swift; sourceTree = "<group>"; };
 		762D8D521F1E7565004295A9 /* ModeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeSelectViewController.swift; sourceTree = "<group>"; };
+		7658B9C51F1FDB1400A2C647 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInstructionViewController.swift; sourceTree = "<group>"; };
 		D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenter/Pods-BuildingCenter.release.xcconfig"; sourceTree = "<group>"; };
 		F39B9B310BEF420CF9DB6750 /* Pods-BuildingCenterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenterUITests/Pods-BuildingCenterUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		5FE9713B1F1C9F0A005EDE58 /* BuildingCenter */ = {
 			isa = PBXGroup;
 			children = (
+				7658B9C41F1FDAF200A2C647 /* TabBar */,
 				762D8D491F1E7534004295A9 /* Question */,
 				762D8D441F1E7508004295A9 /* Map */,
 				762D8D431F1E74FB004295A9 /* Hipster */,
@@ -237,6 +240,14 @@
 				762D8D4A1F1E7541004295A9 /* QuestionViewController.swift */,
 			);
 			name = Question;
+			sourceTree = "<group>";
+		};
+		7658B9C41F1FDAF200A2C647 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				7658B9C51F1FDB1400A2C647 /* TabBarViewController.swift */,
+			);
+			name = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,6 +543,7 @@
 				762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */,
 				5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */,
 				5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */,
+				7658B9C61F1FDB1400A2C647 /* TabBarViewController.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
 				762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */,
 				5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */,
