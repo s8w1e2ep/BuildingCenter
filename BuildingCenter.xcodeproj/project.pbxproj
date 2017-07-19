@@ -28,6 +28,7 @@
 		762D8D4F1F1E7558004295A9 /* ModeIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D4E1F1E7558004295A9 /* ModeIntroViewController.swift */; };
 		762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D501F1E755F004295A9 /* ModeContentViewController.swift */; };
 		762D8D531F1E7565004295A9 /* ModeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D521F1E7565004295A9 /* ModeSelectViewController.swift */; };
+		76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */; };
 		933E3CE478B22CB16A6A1A3E /* Pods_BuildingCenterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13617F0FAF90C9CB493A56D2 /* Pods_BuildingCenterUITests.framework */; };
 		EBDCDB62C04C9755E5E4DA09 /* Pods_BuildingCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		762D8D4E1F1E7558004295A9 /* ModeIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeIntroViewController.swift; sourceTree = "<group>"; };
 		762D8D501F1E755F004295A9 /* ModeContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentViewController.swift; sourceTree = "<group>"; };
 		762D8D521F1E7565004295A9 /* ModeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeSelectViewController.swift; sourceTree = "<group>"; };
+		76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInstructionViewController.swift; sourceTree = "<group>"; };
 		D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenter/Pods-BuildingCenter.release.xcconfig"; sourceTree = "<group>"; };
 		F39B9B310BEF420CF9DB6750 /* Pods-BuildingCenterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenterUITests/Pods-BuildingCenterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB54794DF16F31D3F1D950B7 /* Pods-BuildingCenterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenterTests/Pods-BuildingCenterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				762D8D471F1E752E004295A9 /* MapViewController.swift */,
+				76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
 				762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */,
 				5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */,
+				76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */,
 				762D8D4D1F1E7553004295A9 /* LandscapeViewController.swift in Sources */,
 				762D8D4F1F1E7558004295A9 /* ModeIntroViewController.swift in Sources */,
 				762D8D4B1F1E7541004295A9 /* QuestionViewController.swift in Sources */,
