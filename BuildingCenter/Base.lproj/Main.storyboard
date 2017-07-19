@@ -391,6 +391,9 @@
                                 <rect key="frame" x="8" y="72" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icon_info"/>
+                                <connections>
+                                    <segue destination="Nce-8U-8ZZ" kind="presentation" id="fdi-Se-C6c"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_bottomnavibg" translatesAutoresizingMaskIntoConstraints="NO" id="Qrw-Q5-v1r">
                                 <rect key="frame" x="0.0" y="590" width="375" height="77"/>
@@ -455,6 +458,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUw-3M-CzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5647.1999999999998" y="108.39580209895054"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3tO-Dm-Pdc">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Nce-8U-8ZZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h0E-xI-aOI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q0h-EG-nAf"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="A1w-eX-qo0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_mapguide" translatesAutoresizingMaskIntoConstraints="NO" id="xth-Ub-ore">
+                                <rect key="frame" x="16" y="122" width="343" height="346"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQh-oZ-lnU">
+                                <rect key="frame" x="69" y="476" width="236" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="返回" backgroundImage="btn_bluesquare_normal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OOD-15-SJn" kind="show" id="VNg-RL-hbR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.40362799657534248" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="osZ-3O-K2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5647.1999999999998" y="-801.0494752623689"/>
         </scene>
         <!--意見回饋-->
         <scene sceneID="mTI-gk-p8h">
@@ -675,6 +712,8 @@
     </scenes>
     <resources>
         <image name="bg_diaryhome" width="360" height="640"/>
+        <image name="bg_mapguide" width="329" height="353"/>
+        <image name="btn_bluesquare_normal" width="280" height="40"/>
         <image name="btn_camera" width="90" height="90"/>
         <image name="btn_library" width="90" height="90"/>
         <image name="btn_main_diary_normal" width="72" height="57"/>
@@ -695,5 +734,8 @@
         <image name="map_area_bg_notice" width="328" height="64"/>
         <image name="title_chinese" width="118" height="132"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VNg-RL-hbR"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
