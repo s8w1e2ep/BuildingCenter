@@ -538,7 +538,7 @@
                                         <barButtonItem key="rightBarButtonItem" image="icon_questionnaire" id="RYU-Ar-9En">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="2CP-yP-3YF" kind="show" id="Kpk-Ph-LBp"/>
+                                                <segue destination="2CP-yP-3YF" kind="presentation" id="XT1-1i-pIC"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -675,20 +675,94 @@
         <!--意見回饋-->
         <scene sceneID="mTI-gk-p8h">
             <objects>
-                <viewController title="意見回饋" modalTransitionStyle="crossDissolve" id="2CP-yP-3YF" sceneMemberID="viewController">
+                <viewController title="意見回饋" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="2CP-yP-3YF" customClass="FeedbackHintViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NDp-Oy-aWX"/>
                         <viewControllerLayoutGuide type="bottom" id="T4N-wv-FWM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VSh-q4-WDw">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="VSh-q4-WDw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D9Z-Qa-hr5">
+                                <rect key="frame" x="16" y="129" width="343" height="450"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="feedback_popup_bg" translatesAutoresizingMaskIntoConstraints="NO" id="h4W-WT-ggq">
+                                        <rect key="frame" x="0.0" y="29" width="343" height="361"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yQ-Iv-WV3">
+                                        <rect key="frame" x="21" y="325" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="我要給意見" backgroundImage="btn_bluesquare_normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="8eF-Rh-JK0" kind="show" id="e3Z-MT-7Ey"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oz-x7-g1X">
+                                        <rect key="frame" x="21" y="377" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="不用，我要繼續導覽" backgroundImage="btn_graysquare_normal">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="問卷填寫" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yO5-vf-08U">
+                                        <rect key="frame" x="97" y="8" width="148" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="願意提供給我們寶貴的意見嗎？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5K-Ot-Oj2">
+                                        <rect key="frame" x="10" y="237" width="322" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="恭喜完成１樓導覽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYb-2N-l1p">
+                                        <rect key="frame" x="53" y="206" width="237" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.6990047089041096" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancel" destination="1Oz-x7-g1X" id="tzO-eD-qql"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3N-cg-v8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7568.8000000000002" y="-800.14992503748135"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oGL-5w-QXn">
+            <objects>
+                <viewController id="8eF-Rh-JK0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dD0-xx-jrt"/>
+                        <viewControllerLayoutGuide type="bottom" id="k7j-dx-tmh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VdL-x7-FB5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N3N-cg-v8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tr1-9V-0oX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7570" y="-800"/>
+            <point key="canvasLocation" x="8401" y="-800"/>
         </scene>
         <!--文青日誌-->
         <scene sceneID="UGn-9T-LRS">
@@ -935,7 +1009,9 @@
         <image name="about_background" width="180" height="320"/>
         <image name="bg_diaryhome" width="360" height="640"/>
         <image name="bg_mapguide" width="329" height="353"/>
+        <image name="btn_bluesquare_normal" width="280" height="40"/>
         <image name="btn_camera" width="90" height="90"/>
+        <image name="btn_graysquare_normal" width="280" height="40"/>
         <image name="btn_library" width="90" height="90"/>
         <image name="btn_main_diary_normal" width="72" height="57"/>
         <image name="btn_main_font_disabled" width="72" height="57"/>
@@ -944,6 +1020,7 @@
         <image name="btn_main_sound_normal" width="72" height="57"/>
         <image name="btn_nextstep_normal_1" width="147" height="41"/>
         <image name="btn_retake_normal" width="147" height="41"/>
+        <image name="feedback_popup_bg" width="328" height="346"/>
         <image name="home_background" width="360" height="640"/>
         <image name="home_btn_chinese" width="295" height="50"/>
         <image name="home_btn_english" width="295" height="50"/>
