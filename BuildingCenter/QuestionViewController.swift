@@ -10,31 +10,30 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
+    @IBOutlet var surveyPop: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = true
-    }
+
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
         
-        let interAlert = UIAlertController(title: "問卷", message: "貴賓您好，感謝您撥冗參觀展示中心，為使本中心未來設備系統開發與服務品質的提升，請您利用簡短時間填寫本表，您所提供的資料受個資法保護，僅供問卷統、計整體分析使用，感謝您的協助。", preferredStyle: .alert)
+        self.view.addSubview(surveyPop)
+        surveyPop.center = self.view.center
         
-        let enterButm = UIAlertAction(title: "確認", style: .default)
         
-        let skipButm = UIAlertAction(title: "略過", style: .cancel)
         
-        interAlert.addAction(enterButm)
-        interAlert.addAction(skipButm)
+            }
+    
+    @IBAction func dismissSurvey(_ sender: Any) {
         
-        self.present(interAlert, animated: true, completion: nil)
+        surveyPop.removeFromSuperview()
         
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
