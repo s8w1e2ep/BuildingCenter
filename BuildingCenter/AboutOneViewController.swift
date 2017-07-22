@@ -17,7 +17,9 @@ class AboutOneViewController: UIViewController {
         
         // set navigation bar background image
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navbar.setBackgroundImage(navBackgroundImage, for: .default)
+        self.navbar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        
+
     }
     
     override func didReceiveMemoryWarning() {
