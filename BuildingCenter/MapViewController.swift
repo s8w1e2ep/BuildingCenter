@@ -10,17 +10,15 @@ import UIKit
 
 class MapViewController: UIViewController {
     
-    @IBOutlet weak var navbar: UINavigationBar!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let navBackgroundImage:UIImage! = UIImage(named: "tour_select_background.png")
-        self.navbar.setBackgroundImage(navBackgroundImage, for: .default)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = true
+        //self.navigationController?.isNavigationBarHidden = false
     }
     
     override func didReceiveMemoryWarning() {
