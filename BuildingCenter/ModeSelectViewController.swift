@@ -10,9 +10,12 @@ import UIKit
 
 class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var navBar: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,11 +37,11 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             let cell =
                 collectionView.dequeueReusableCell(
                     withReuseIdentifier: "ModeCell", for: indexPath as IndexPath)
-            
+
             // 設置 cell 內容 (即自定義元件裡 增加的圖片與文字元件)
             /*cell.imageView.image =
-                UIImage(named: "logo.png")
-            */
+                UIImage(named: "a1m4_bg.png")
+             */
             return cell
     }
 }
