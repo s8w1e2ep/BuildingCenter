@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         // set status bar
         //UIApplication.shared.statusBarStyle = .lightContent
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        UINavigationBar.appearance().setBackgroundImage(navBackgroundImage, for: .default)
+        //let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        //UINavigationBar.appearance().setBackgroundImage(navBackgroundImage, for: .default)
         
         return true
     }
