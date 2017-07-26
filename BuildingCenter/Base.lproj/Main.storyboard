@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Zq-nZ-ruT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Zq-nZ-ruT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -801,7 +801,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lr-Wx-HuL">
-                                <rect key="frame" x="0.0" y="81" width="375" height="537"/>
+                                <rect key="frame" x="0.0" y="81" width="375" height="586"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="a1m4e1@1x" translatesAutoresizingMaskIntoConstraints="NO" id="Hky-NB-ZZU">
                                         <rect key="frame" x="16" y="8" width="343" height="221"/>
@@ -1184,7 +1184,7 @@
         <!--文青日誌-->
         <scene sceneID="UGn-9T-LRS">
             <objects>
-                <viewController title="文青日誌" modalTransitionStyle="crossDissolve" id="cC2-Vq-QEH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HipsterViewController" title="文青日誌" modalTransitionStyle="crossDissolve" id="cC2-Vq-QEH" customClass="HipsterViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="45F-xN-Cbj"/>
                         <viewControllerLayoutGuide type="bottom" id="aTq-86-ZGN"/>
@@ -1193,31 +1193,121 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_diaryhome" translatesAutoresizingMaskIntoConstraints="NO" id="sTR-Ch-TZg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_diaryhome" translatesAutoresizingMaskIntoConstraints="NO" id="sTR-Ch-TZg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T3K-lE-wYp">
+                                <rect key="frame" x="96" y="375" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="C6G-sF-dkq"/>
+                                    <constraint firstAttribute="height" constant="80" id="Z8x-fm-EK0"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btn_camera">
+                                    <attributedString key="attributedTitle">
+                                        <fragment>
+                                            <string key="content">
+
+相機</string>
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name=".PingFangTC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="onCameraBtnAction:" destination="cC2-Vq-QEH" eventType="touchUpInside" id="eGB-MM-WRX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hVo-E2-EAb">
+                                <rect key="frame" x="204" y="375" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="AFV-EG-0iT"/>
+                                    <constraint firstAttribute="height" constant="80" id="nVC-lP-dRt"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btn_library">
+                                    <attributedString key="attributedTitle">
+                                        <fragment>
+                                            <string key="content">
+
+相簿</string>
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name=".PingFangTC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="onPhotoBtnAction:" destination="cC2-Vq-QEH" eventType="touchUpInside" id="vbY-Dp-NcV"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_chinese" translatesAutoresizingMaskIntoConstraints="NO" id="Vaj-UC-wkK">
+                                <rect key="frame" x="128" y="259" width="118" height="84"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gN-ah-KYB">
+                                <rect key="frame" x="67" y="72" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_camera" translatesAutoresizingMaskIntoConstraints="NO" id="lUQ-Wz-m4V">
-                                <rect key="frame" x="92" y="379" width="79" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_library" translatesAutoresizingMaskIntoConstraints="NO" id="GN1-yI-hfa">
-                                <rect key="frame" x="205" y="379" width="79" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title_chinese" translatesAutoresizingMaskIntoConstraints="NO" id="Vaj-UC-wkK">
-                                <rect key="frame" x="129" y="216" width="117" height="128"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vaj-UC-wkK" firstAttribute="leading" secondItem="0mi-Mh-uUB" secondAttribute="leadingMargin" constant="112" id="1f7-26-idl"/>
+                            <constraint firstItem="hVo-E2-EAb" firstAttribute="leading" secondItem="Vaj-UC-wkK" secondAttribute="trailing" constant="-42" id="2qY-jj-XP3"/>
+                            <constraint firstItem="aTq-86-ZGN" firstAttribute="top" secondItem="T3K-lE-wYp" secondAttribute="bottom" constant="163" id="3Z9-4G-60q"/>
+                            <constraint firstItem="aTq-86-ZGN" firstAttribute="top" secondItem="sTR-Ch-TZg" secondAttribute="bottom" id="9oV-W3-oVf"/>
+                            <constraint firstItem="Vaj-UC-wkK" firstAttribute="leading" secondItem="T3K-lE-wYp" secondAttribute="trailing" constant="-48" id="IsU-1h-Rup"/>
+                            <constraint firstItem="hVo-E2-EAb" firstAttribute="top" secondItem="Vaj-UC-wkK" secondAttribute="bottom" constant="32" id="JTH-dg-x4I"/>
+                            <constraint firstItem="aTq-86-ZGN" firstAttribute="top" secondItem="hVo-E2-EAb" secondAttribute="bottom" constant="163" id="NdY-8s-HNj"/>
+                            <constraint firstItem="T3K-lE-wYp" firstAttribute="top" secondItem="Vaj-UC-wkK" secondAttribute="bottom" constant="32" id="bla-OE-0CQ"/>
+                            <constraint firstItem="sTR-Ch-TZg" firstAttribute="top" secondItem="45F-xN-Cbj" secondAttribute="bottom" constant="-64" id="dBH-YZ-qJE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vaj-UC-wkK" secondAttribute="trailing" constant="113" id="dgK-ZV-cxt"/>
+                            <constraint firstItem="hVo-E2-EAb" firstAttribute="leading" secondItem="T3K-lE-wYp" secondAttribute="trailing" constant="28" id="lKD-tl-dA2"/>
+                            <constraint firstItem="Vaj-UC-wkK" firstAttribute="top" secondItem="45F-xN-Cbj" secondAttribute="bottom" constant="195" id="qDj-bI-Mj4"/>
+                            <constraint firstItem="sTR-Ch-TZg" firstAttribute="centerX" secondItem="Vaj-UC-wkK" secondAttribute="centerX" id="uKW-Iq-Zvr"/>
+                            <constraint firstItem="sTR-Ch-TZg" firstAttribute="width" secondItem="0mi-Mh-uUB" secondAttribute="width" id="uPy-o9-G0O"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="文青日誌" image="btn_main_diary_normal" id="FIR-af-UPf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="8gN-ah-KYB" id="4Vv-jv-Wm3"/>
+                        <segue destination="E87-QH-G13" kind="show" identifier="hipsterToSelect" id="N5K-ss-aih"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwM-gn-dwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5725.6000000000004" y="1292.2038980509747"/>
+        </scene>
+        <!--選擇版型-->
+        <scene sceneID="g7N-u1-BW1">
+            <objects>
+                <viewController restorationIdentifier="SelectViewController" title="選擇版型" modalTransitionStyle="crossDissolve" id="E87-QH-G13" customClass="SelectViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tyH-fn-Rfv"/>
+                        <viewControllerLayoutGuide type="bottom" id="q4v-O3-l2F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QGj-J6-D5V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNV-Bj-kWu">
+                                <rect key="frame" x="97" y="66" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="文青日誌" image="btn_main_diary_normal" id="FIR-af-UPf"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="imY-xB-UC7"/>
+                    <connections>
+                        <outlet property="imageView" destination="bNV-Bj-kWu" id="9ny-tw-s1z"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kwM-gn-dwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVa-lY-XX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5725.6000000000004" y="1292.2038980509747"/>
+            <point key="canvasLocation" x="5726" y="2069"/>
         </scene>
         <!--語音導覽-->
         <scene sceneID="lOh-zS-Dcx">
@@ -1753,15 +1843,15 @@
         <image name="tour_select_robot" width="360" height="510"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sJc-Hv-Xjb"/>
+        <segue reference="eXD-Nb-Zd3"/>
+        <segue reference="K2q-qL-Eos"/>
+        <segue reference="PEi-6S-ahg"/>
+        <segue reference="Wbj-Ey-n4y"/>
+        <segue reference="bla-I6-8OC"/>
+        <segue reference="xD5-Ta-ZVs"/>
         <segue reference="aeQ-B4-xB1"/>
-        <segue reference="vks-3T-y3p"/>
         <segue reference="nHE-lf-kd6"/>
         <segue reference="M8W-pj-mpA"/>
-        <segue reference="RyS-bW-Awt"/>
-        <segue reference="E7W-rC-fk8"/>
-        <segue reference="AGb-Zk-fs5"/>
-        <segue reference="K2q-qL-Eos"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

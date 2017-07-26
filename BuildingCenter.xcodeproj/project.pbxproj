@@ -20,8 +20,9 @@
 		5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9716C1F1CB4F5005EDE58 /* AboutOneViewController.swift */; };
 		5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9716E1F1CB56B005EDE58 /* AboutTwoViewController.swift */; };
 		5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE971701F1CB5A6005EDE58 /* AboutThreeViewController.swift */; };
+		70C57B661F27E76B00F83F77 /* HipsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C57B651F27E76B00F83F77 /* HipsterViewController.swift */; };
+		70C57B681F27F00500F83F77 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C57B671F27F00500F83F77 /* SelectViewController.swift */; };
 		762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D411F1E74EF004295A9 /* AreaViewController.swift */; };
-		762D8D461F1E7524004295A9 /* HipsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D451F1E7524004295A9 /* HipsterViewController.swift */; };
 		762D8D481F1E752E004295A9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D471F1E752E004295A9 /* MapViewController.swift */; };
 		762D8D4B1F1E7541004295A9 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D4A1F1E7541004295A9 /* QuestionViewController.swift */; };
 		762D8D4D1F1E7553004295A9 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D4C1F1E7553004295A9 /* LandscapeViewController.swift */; };
@@ -80,8 +81,9 @@
 		5FE9716E1F1CB56B005EDE58 /* AboutTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTwoViewController.swift; sourceTree = "<group>"; };
 		5FE971701F1CB5A6005EDE58 /* AboutThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutThreeViewController.swift; sourceTree = "<group>"; };
 		6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildingCenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70C57B651F27E76B00F83F77 /* HipsterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipsterViewController.swift; sourceTree = "<group>"; };
+		70C57B671F27F00500F83F77 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		762D8D411F1E74EF004295A9 /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
-		762D8D451F1E7524004295A9 /* HipsterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipsterViewController.swift; sourceTree = "<group>"; };
 		762D8D471F1E752E004295A9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		762D8D4A1F1E7541004295A9 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		762D8D4C1F1E7553004295A9 /* LandscapeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
@@ -229,7 +231,8 @@
 		762D8D431F1E74FB004295A9 /* Hipster */ = {
 			isa = PBXGroup;
 			children = (
-				762D8D451F1E7524004295A9 /* HipsterViewController.swift */,
+				70C57B651F27E76B00F83F77 /* HipsterViewController.swift */,
+				70C57B671F27F00500F83F77 /* SelectViewController.swift */,
 			);
 			name = Hipster;
 			sourceTree = "<group>";
@@ -339,7 +342,7 @@
 				TargetAttributes = {
 					5FE971381F1C9F09005EDE58 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4Y3WSK9PWL;
+						DevelopmentTeam = 2HZL76C8HX;
 						ProvisioningStyle = Automatic;
 					};
 					5FE9714C1F1C9F0A005EDE58 = {
@@ -550,13 +553,14 @@
 				5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */,
 				5FE9716B1F1CA3D2005EDE58 /* BeginViewController.swift in Sources */,
 				762D8D531F1E7565004295A9 /* ModeSelectViewController.swift in Sources */,
-				762D8D461F1E7524004295A9 /* HipsterViewController.swift in Sources */,
 				762D8D481F1E752E004295A9 /* MapViewController.swift in Sources */,
 				5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */,
 				762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */,
 				5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */,
 				76EB971E1F27A88700DAEB03 /* FirmInfoViewController.swift in Sources */,
+				70C57B661F27E76B00F83F77 /* HipsterViewController.swift in Sources */,
 				769FF6A81F20ECEE00153C87 /* FeedbackHintViewController.swift in Sources */,
+				70C57B681F27F00500F83F77 /* SelectViewController.swift in Sources */,
 				5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */,
 				7658B9C61F1FDB1400A2C647 /* TabBarViewController.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
@@ -721,7 +725,6 @@
 			baseConfigurationReference = 0BBB8D9874B006F616E35409 /* Pods-BuildingCenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4Y3WSK9PWL;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -737,8 +740,7 @@
 			baseConfigurationReference = D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4Y3WSK9PWL;
+				DEVELOPMENT_TEAM = 2HZL76C8HX;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = went.BuildingCenter;
