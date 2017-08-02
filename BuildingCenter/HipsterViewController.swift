@@ -10,8 +10,6 @@ import UIKit
 
 class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var imageView: UIImageView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,7 +35,7 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
             // 開啟相機
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
                 picker.sourceType = UIImagePickerControllerSourceType.camera
-                picker.allowsEditing = true // 可對照片作編輯
+                picker.allowsEditing = false // 可對照片作編輯
                 picker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
                 self.present(picker, animated: true, completion: nil)
             } else {
@@ -47,7 +45,7 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
             // 開啟相簿
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
                 picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-                picker.allowsEditing = true // 可對照片作編輯
+                picker.allowsEditing = false // 可對照片作編輯
                 picker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
                 self.present(picker, animated: true, completion: nil)
             }
@@ -71,9 +69,7 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
     ///   - info: info
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil) // 關掉
-        
-        self.performSegue(withIdentifier: "mainToBegin", sender: info[UIImagePickerControllerOriginalImage] as? UIImage);
-        //self.imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage // 從Dictionary取出原始圖檔
+        self.performSegue(withIdentifier: "hipsterToSelect", sender: info[UIImagePickerControllerOriginalImage] as? UIImage); // 從Dictionary取出原始圖檔傳入下一頁
     }
     
     // 圖片picker控制器任務結束回呼
@@ -82,7 +78,7 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tag = sender as! UIImage
+        let tag = sender as? UIImage
         let controller = segue.destination as! SelectViewController
         controller.image = tag
     }
