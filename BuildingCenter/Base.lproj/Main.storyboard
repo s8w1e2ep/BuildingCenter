@@ -184,7 +184,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-NB-UfG">
                                 <rect key="frame" x="28.5" y="80" width="318.5" height="400"/>
-                                <mutableString key="text">內政部建築研究所長期推動“智慧建築”，期盼透過建築與資通訊科技技術的整合，以達成人性化空間、提升生活環境品質之目的。為了讓國人了解與輕鬆體驗智慧化生活，建研所於民國97年創建“LIVING 3.0 至慧化居住空間展示中心”，作為國內智慧建築教育訓練基地，推廣智慧建築概念、提供功能體驗，進而開創國內資通訊科技產業異業結合的新契機。本展示中心以“人性關懷、創新科技、前瞻生活、環保節能、智慧永續”為主題，整合了多元的智慧化科技、創新的資通訊主動感知及控制技術，並應用情境與示範系統的建置，提供國人體驗智慧化居住及辦公空間與多種情境模式，及創照前瞻優質的生活環境與品質之願景。</mutableString>
+                                <string key="text">內政部建築研究所長期推動“智慧建築”，期盼透過建築與資通訊科技技術的整合，以達成人性化空間、提升生活環境品質之目的。為了讓國人了解與輕鬆體驗智慧化生活，建研所於民國97年創建“LIVING 3.0 至慧化居住空間展示中心”，作為國內智慧建築教育訓練基地，推廣智慧建築概念、提供功能體驗，進而開創國內資通訊科技產業異業結合的新契機。本展示中心以“人性關懷、創新科技、前瞻生活、環保節能、智慧永續”為主題，整合了多元的智慧化科技、創新的資通訊主動感知及控制技術，並應用情境與示範系統的建置，提供國人體驗智慧化居住及辦公空間與多種情境模式，及創照前瞻優質的生活環境與品質之願景。</string>
                                 <color key="textColor" red="0.33373651649746194" green="0.33373651649746194" blue="0.33373651649746194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -765,16 +765,17 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="584"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="zd3-um-S35" kind="embed" id="yKV-Af-bbx"/>
+                                    <segue destination="zd3-um-S35" kind="embed" identifier="ContainerViewSegue" id="yKV-Af-bbx"/>
                                 </connections>
                             </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_bottomnavibg" translatesAutoresizingMaskIntoConstraints="NO" id="Yoc-7c-vt5">
-                                <rect key="frame" x="0.0" y="589" width="375" height="78"/>
+                                <rect key="frame" x="-16" y="589" width="407" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn8-Gl-GmA">
                                 <rect key="frame" x="13" y="612" width="70" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="廠商資訊" backgroundImage="btn_main_info_normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -796,10 +797,14 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <state key="selected" title="MAP" backgroundImage="btn_main_map_active"/>
+                                <connections>
+                                    <action selector="onMapClick:" destination="ulF-dK-yeo" eventType="touchUpInside" id="d1B-HO-5Vh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le0-AW-Lik">
                                 <rect key="frame" x="85" y="612" width="70" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="文青日誌" backgroundImage="btn_main_diary_normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -810,12 +815,13 @@
                                     <color key="titleColor" red="0.39705728222919179" green="0.66914182635059238" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cC2-Vq-QEH" kind="show" id="FDa-Wh-cqD"/>
+                                    <action selector="onHipsterClick:" destination="ulF-dK-yeo" eventType="touchUpInside" id="iY7-ka-ykb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soE-Ez-1uH">
                                 <rect key="frame" x="229" y="612" width="70" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="語音導覽" backgroundImage="btn_main_sound_normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -829,6 +835,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxY-1C-8w9">
                                 <rect key="frame" x="301" y="612" width="70" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="字型縮放" backgroundImage="btn_main_font_normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -842,6 +849,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="hipsterButton" destination="le0-AW-Lik" id="UA3-rG-Q7T"/>
+                        <outlet property="infoButton" destination="cn8-Gl-GmA" id="1ej-as-9vK"/>
+                        <outlet property="mainContainerView" destination="ej1-W2-Ku3" id="tla-XI-er5"/>
+                        <outlet property="mapButton" destination="Oq2-KB-H8j" id="esY-nI-bqY"/>
+                        <outlet property="speechButton" destination="soE-Ez-1uH" id="rtT-iC-wS7"/>
+                        <outlet property="textButton" destination="YxY-1C-8w9" id="TUr-M8-su6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2U-ac-gvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -850,7 +865,7 @@
         <!--1F住宅空間展示中心-->
         <scene sceneID="ICZ-5a-8oR">
             <objects>
-                <viewController title="1F住宅空間展示中心" id="w5y-cL-xo6" customClass="MapViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" title="1F住宅空間展示中心" id="w5y-cL-xo6" customClass="MapViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qfO-At-gFC"/>
                         <viewControllerLayoutGuide type="bottom" id="wfc-xH-YNc"/>
@@ -1011,51 +1026,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pu2-Dz-PrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3464.8000000000002" y="1293.1034482758621"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="T7t-M4-5hE">
-            <objects>
-                <tableViewController id="59J-8C-fnh" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RTz-58-vnZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zAI-d1-ymp">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zAI-d1-ymp" id="ZP8-R1-QaB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="59J-8C-fnh" id="0rK-q4-zRZ"/>
-                            <outlet property="delegate" destination="59J-8C-fnh" id="gRV-dn-UaT"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="sIu-NE-DTX"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oXh-6a-eTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2722" y="2132"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="aG4-VN-KGS">
-            <objects>
-                <navigationController id="Z1l-78-em7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vri-O6-a7d">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="59J-8C-fnh" kind="relationship" relationship="rootViewController" id="1W3-g3-poD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uWm-Zl-Ngs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1769" y="2132"/>
         </scene>
         <!--Map Instruction View Controller-->
         <scene sceneID="3tO-Dm-Pdc">
@@ -1701,7 +1671,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dYg-Tz-DSI">
             <objects>
-                <navigationController navigationBarHidden="YES" id="zd3-um-S35" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Map" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="zd3-um-S35" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J86-1T-m9t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -2022,10 +1992,9 @@
         <image name="icon_info" width="28" height="28"/>
         <image name="icon_questionnaire" width="28" height="28"/>
         <image name="living_logo" width="221" height="107"/>
-
-        <image name="main_bottomnavibg" width="380" height="90"/>
         <image name="logo" width="90" height="100"/>
         <image name="logo_grey" width="90" height="100"/>
+        <image name="main_bottomnavibg" width="380" height="90"/>
         <image name="map_area_bg_notice" width="328" height="64"/>
         <image name="survey_bg_dialog" width="360" height="418"/>
         <image name="title_chinese" width="118" height="132"/>
@@ -2033,11 +2002,6 @@
         <image name="tour_select_robot" width="360" height="510"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AGb-Zk-fs5"/>
-        <segue reference="vks-3T-y3p"/>
-        <segue reference="Wbj-Ey-n4y"/>
-        <segue reference="8oK-2f-Vff"/>
-        <segue reference="m2E-gg-Lno"/>
         <segue reference="eXD-Nb-Zd3"/>
         <segue reference="K2q-qL-Eos"/>
         <segue reference="PEi-6S-ahg"/>

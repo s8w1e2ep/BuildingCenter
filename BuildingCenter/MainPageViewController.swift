@@ -10,10 +10,26 @@ import UIKit
 
 class MainPageViewController: UIViewController {
 
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var hipsterButton: UIButton!
+    @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var speechButton: UIButton!
+    @IBOutlet weak var textButton: UIButton!
+    
+    @IBOutlet weak var mainContainerView: UIView!
+    var mapNavigationController: UINavigationController!
+    var hipsterViewController: HipsterViewController!
+
+    var selectedViewController: UIViewController!
+    var selectedButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        hipsterViewController = (self.storyboard?.instantiateViewController(withIdentifier: "HipsterViewController"))! as! HipsterViewController
+        
+        selectedViewController = mapNavigationController
+        selectedButton = mapButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +38,14 @@ class MainPageViewController: UIViewController {
     }
     
 
+    @IBAction func onMapClick(_ sender: UIButton) {
+        changeTab(to: mapButton)
+        changePage(to: mapNavigationController)
+    }
+    @IBAction func onHipsterClick(_ sender: UIButton) {
+        changeTab(to: hipsterButton)
+        changePage(to: hipsterViewController)
+    }
     /*
     // MARK: - Navigation
 
@@ -31,5 +55,32 @@ class MainPageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ContainerViewSegue" {
+            mapNavigationController = segue.destination as! UINavigationController
+        }
+    }
+    
+    func changePage(to newViewController: UIViewController) {
+        // Remove previous viewController
+        selectedViewController.willMove(toParentViewController: nil)
+        selectedViewController.view.removeFromSuperview()
+        selectedViewController.removeFromParentViewController()
+        
+        // Add new viewController
+        addChildViewController(newViewController)
+        self.mainContainerView.addSubview(newViewController.view)
+        newViewController.view.frame = mainContainerView.bounds
+        newViewController.didMove(toParentViewController: self)
+        
+        self.selectedViewController = newViewController
+    }
+    func changeTab(to newButton: UIButton){
+        selectedButton.isSelected = false
+        
+        newButton.isSelected = true
+        
+        self.selectedButton = newButton
 
+    }
 }
