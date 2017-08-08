@@ -1,26 +1,35 @@
 //
-//  AboutThreeViewController.swift
+//  LaunchViewController.swift
 //  BuildingCenter
 //
-//  Created by uscc on 2017/7/17.
+//  Created by uscc on 2017/8/4.
 //  Copyright © 2017年 uscc. All rights reserved.
 //
 
 import UIKit
 
-class AboutThreeViewController: UIViewController {
-
-    @IBOutlet weak var navbar: UINavigationBar!
+class LaunchViewController: UIViewController {
     
+    @IBOutlet weak var logo: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // set navigation bar background image
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navbar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
-        //content.contentOffset = CGPoint.zero
+        // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // fade in animation
+        UIView.animate(withDuration: 3.0, animations: {
+            self.logo.alpha = 1.0
+        }, completion: {
+            (finish1: Bool) in
+            self.performSegue(withIdentifier: "launchToDownload", sender: nil)
+        })
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

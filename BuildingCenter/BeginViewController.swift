@@ -14,10 +14,6 @@ class BeginViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        //backgroundImage.image = UIImage(named: "home_background.png")
-        //backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-        //self.view.insertSubview(backgroundImage, at: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
