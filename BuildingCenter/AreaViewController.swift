@@ -10,6 +10,10 @@ import UIKit
 
 class AreaViewController: UIViewController {
     
+    @IBOutlet var textView: UITextView!
+    let notificationEnterText = Notification.Name("enterTextNoti")
+    let notificationExitText = Notification.Name("exitTextNoti")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -17,7 +21,13 @@ class AreaViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
+        NotificationCenter.default.post(name: notificationEnterText, object: nil, userInfo: ["TTS":textView.text])
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        //self.navigationController?.isNavigationBarHidden = true
+        NotificationCenter.default.post(name: notificationExitText, object: nil, userInfo: ["TTS":textView.text])
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

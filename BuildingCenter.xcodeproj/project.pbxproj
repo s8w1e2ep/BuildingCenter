@@ -351,7 +351,7 @@
 				TargetAttributes = {
 					5FE971381F1C9F09005EDE58 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4Y3WSK9PWL;
+						DevelopmentTeam = P7Y2HNH4ZD;
 						ProvisioningStyle = Automatic;
 					};
 					5FE9714C1F1C9F0A005EDE58 = {
@@ -737,10 +737,10 @@
 			baseConfigurationReference = 0BBB8D9874B006F616E35409 /* Pods-BuildingCenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4Y3WSK9PWL;
+				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wenJ6.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wenJ0.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -755,7 +755,7 @@
 				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jiaying.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wenJ0.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

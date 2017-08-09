@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MainPageViewController: UIViewController {
 
@@ -23,6 +24,11 @@ class MainPageViewController: UIViewController {
     var selectedViewController: UIViewController!
     var selectedButton: UIButton!
     
+    var TTS: String!
+    
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,6 +36,23 @@ class MainPageViewController: UIViewController {
         
         selectedViewController = mapNavigationController
         selectedButton = mapButton
+        
+        let notificationEnterText = Notification.Name("enterTextNoti")
+        NotificationCenter.default.addObserver(self, selector: #selector(enterTextNoti(noti:)), name: notificationEnterText, object: nil)
+        let notificationExitText = Notification.Name("exitTextNoti")
+        NotificationCenter.default.addObserver(self, selector: #selector(exitTextNoti(noti:)), name: notificationExitText, object: nil)
+        
+        do{
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            do{
+                try AVAudioSession.sharedInstance().setActive(true)
+            }catch{
+            }
+        }catch{
+        }
+        //slider.maximumValue = 40
+        //slider.minimumValue = 15
+        //slider.value = Float((text.font?.pointSize)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +68,23 @@ class MainPageViewController: UIViewController {
     @IBAction func onHipsterClick(_ sender: UIButton) {
         changeTab(to: hipsterButton)
         changePage(to: hipsterViewController)
+    }
+    @IBAction func onSpeechClick(_ sender: UIButton) {
+        changeTab(to: speechButton)
+        
+        myUtterance = AVSpeechUtterance(string: TTS)
+        myUtterance.rate = 0.4
+        myUtterance.pitchMultiplier = 1.2
+        myUtterance.postUtteranceDelay = 0.1
+        myUtterance.volume = 1
+        myUtterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
+        
+        synth.speak(myUtterance)
+        
+        
+    }
+    @IBAction func onTextClick(_ sender: UIButton) {
+        changeTab(to: textButton)
     }
     /*
     // MARK: - Navigation
@@ -83,4 +123,20 @@ class MainPageViewController: UIViewController {
         self.selectedButton = newButton
 
     }
+    
+    func enterTextNoti(noti:Notification) {
+        TTS = noti.userInfo!["TTS"] as! String
+        speechButton.isEnabled = true
+        textButton.isEnabled = true
+        
+    }
+    func exitTextNoti(noti:Notification) {
+        speechButton.isEnabled = false
+        textButton.isEnabled = false
+        synth.stopSpeaking(at: AVSpeechBoundary.immediate)
+        
+        changeTab(to: mapButton)
+        
+    }
+
 }

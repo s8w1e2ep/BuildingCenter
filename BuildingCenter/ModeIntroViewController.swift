@@ -11,7 +11,12 @@ import UIKit
 
 class ModeIntroViewController: UIViewController {
     
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var navBar: UINavigationBar!
+    let notificationEnterText = Notification.Name("enterTextNoti")
+    let notificationExitText = Notification.Name("exitTextNoti")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,8 +26,11 @@ class ModeIntroViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
+        NotificationCenter.default.post(name: notificationEnterText, object: nil, userInfo: ["TTS":textView.text])
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: notificationExitText, object: nil, userInfo: ["TTS":textView.text])
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
