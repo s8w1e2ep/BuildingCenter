@@ -10,17 +10,8 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    @IBOutlet weak var navbar: UINavigationBar!
+    @IBOutlet var navbar: UINavigationBar!
     @IBOutlet var surveyPop: UIView!
-    
-    @IBOutlet weak var indexText: UILabel!
-    @IBOutlet weak var questiontitle: UILabel!
-    @IBOutlet weak var buttomalert: UILabel!
-    
-    @IBOutlet weak var question2view: UIView!
-    
-    
-    var indexofquestion: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +21,11 @@ class QuestionViewController: UIViewController {
         
     }
     
-
-
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
         
         self.view.addSubview(surveyPop)
         surveyPop.center = self.view.center
-        
-        
         
             }
     
@@ -47,10 +34,7 @@ class QuestionViewController: UIViewController {
         surveyPop.removeFromSuperview()
         
     }
-    @IBAction func showquestion2(_ sender: Any) {
-        
-        //let bottomConstrain:NSLayoutConstraint = NSLayoutConstraint(item: question2view, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: bottomLayoutGuide, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
-        //self.view.addConstraint(bottomConstrain)
+    /*@IBAction func showquestion2(_ sender: Any) {
         
         var initalConstraint = [NSLayoutConstraint]()
         
@@ -74,7 +58,8 @@ class QuestionViewController: UIViewController {
         self.view.addSubview(buttomalert)
         
         
-    }
+    }*/
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
