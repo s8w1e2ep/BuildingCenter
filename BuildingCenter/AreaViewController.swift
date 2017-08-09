@@ -14,9 +14,13 @@ class AreaViewController: UIViewController {
     let notificationEnterText = Notification.Name("enterTextNoti")
     let notificationExitText = Notification.Name("exitTextNoti")
     
+    let notificationSliderChanged = Notification.Name("sliderChangedNoti")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(sliderChangedNoti(noti:)), name: notificationSliderChanged, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,5 +38,8 @@ class AreaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func sliderChangedNoti(noti:Notification) {
+        let sliderValue = noti.userInfo!["sliderValue"] as! Float
+        textView.font = textView.font?.withSize(CGFloat(sliderValue))
+    }
 }

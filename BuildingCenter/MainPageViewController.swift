@@ -17,6 +17,8 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var speechButton: UIButton!
     @IBOutlet weak var textButton: UIButton!
     
+    @IBOutlet weak var slider: UISlider!
+    
     @IBOutlet weak var mainContainerView: UIView!
     var mapNavigationController: UINavigationController!
     var hipsterViewController: HipsterViewController!
@@ -24,24 +26,34 @@ class MainPageViewController: UIViewController {
     var selectedViewController: UIViewController!
     var selectedButton: UIButton!
     
+    // TTS
     var TTS: String!
     
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
+    
+    // Notification
+    let notificationEnterText = Notification.Name("enterTextNoti")
+    let notificationExitText = Notification.Name("exitTextNoti")
+    
+    let notificationSliderChanged = Notification.Name("sliderChangedNoti")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         hipsterViewController = (self.storyboard?.instantiateViewController(withIdentifier: "HipsterViewController"))! as! HipsterViewController
         
+        // Set init button and viewController
         selectedViewController = mapNavigationController
         selectedButton = mapButton
         
-        let notificationEnterText = Notification.Name("enterTextNoti")
+        // Notification setting
+        
         NotificationCenter.default.addObserver(self, selector: #selector(enterTextNoti(noti:)), name: notificationEnterText, object: nil)
-        let notificationExitText = Notification.Name("exitTextNoti")
+        
         NotificationCenter.default.addObserver(self, selector: #selector(exitTextNoti(noti:)), name: notificationExitText, object: nil)
         
+        // Some TTS setting
         do{
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             do{
@@ -85,6 +97,7 @@ class MainPageViewController: UIViewController {
     }
     @IBAction func onTextClick(_ sender: UIButton) {
         changeTab(to: textButton)
+        slider.isHidden = false
     }
     /*
     // MARK: - Navigation
@@ -134,9 +147,13 @@ class MainPageViewController: UIViewController {
         speechButton.isEnabled = false
         textButton.isEnabled = false
         synth.stopSpeaking(at: AVSpeechBoundary.immediate)
-        
+        slider.isHidden = true
         changeTab(to: mapButton)
         
+    }
+    @IBAction func sliderChange(_ sender: UISlider) {
+        print(slider.value)
+        NotificationCenter.default.post(name: notificationSliderChanged, object: nil, userInfo: ["sliderValue":slider.value])
     }
 
 }

@@ -16,12 +16,17 @@ class ModeIntroViewController: UIViewController {
     let notificationEnterText = Notification.Name("enterTextNoti")
     let notificationExitText = Notification.Name("exitTextNoti")
     
+    let notificationSliderChanged = Notification.Name("sliderChangedNoti")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NotificationCenter.default.addObserver(self, selector: #selector(sliderChangedNoti(noti:)), name: notificationSliderChanged, object: nil)
+        
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,5 +41,8 @@ class ModeIntroViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func sliderChangedNoti(noti:Notification) {
+        let sliderValue = noti.userInfo!["sliderValue"] as! Float
+        textView.font = textView.font?.withSize(CGFloat(sliderValue))
+    }
 }
