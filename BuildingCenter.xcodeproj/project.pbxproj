@@ -37,6 +37,15 @@
 		76EB971C1F2799E000DAEB03 /* map.svg in Resources */ = {isa = PBXBuildFile; fileRef = 76EB971B1F2799E000DAEB03 /* map.svg */; };
 		76EB971E1F27A88700DAEB03 /* FirmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */; };
 		933E3CE478B22CB16A6A1A3E /* Pods_BuildingCenterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13617F0FAF90C9CB493A56D2 /* Pods_BuildingCenterUITests.framework */; };
+		A22657941F43CC2900668EDF /* Q4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657931F43CC2900668EDF /* Q4ViewController.swift */; };
+		A226579A1F43CCCB00668EDF /* Q5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657991F43CCCB00668EDF /* Q5ViewController.swift */; };
+		A226579C1F43CCD500668EDF /* Q6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226579B1F43CCD500668EDF /* Q6ViewController.swift */; };
+		A226579F1F43CCF500668EDF /* Q7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226579E1F43CCF500668EDF /* Q7ViewController.swift */; };
+		A22657A11F43CD0000668EDF /* Q8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657A01F43CD0000668EDF /* Q8ViewController.swift */; };
+		A22657A31F43CD0D00668EDF /* Q9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657A21F43CD0D00668EDF /* Q9ViewController.swift */; };
+		A22657A51F43CD1D00668EDF /* Q10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657A41F43CD1D00668EDF /* Q10ViewController.swift */; };
+		A22657A71F43CD2900668EDF /* Q11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657A61F43CD2900668EDF /* Q11ViewController.swift */; };
+		A22657A91F43CD3300668EDF /* Q12ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657A81F43CD3300668EDF /* Q12ViewController.swift */; };
 		A23875281F3AC8CF00D9FB90 /* Q2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23875271F3AC8CF00D9FB90 /* Q2ViewController.swift */; };
 		A238752A1F3AC9F400D9FB90 /* Q3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23875291F3AC9F400D9FB90 /* Q3ViewController.swift */; };
 		EBDCDB62C04C9755E5E4DA09 /* Pods_BuildingCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */; };
@@ -100,6 +109,15 @@
 		76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 		76EB971B1F2799E000DAEB03 /* map.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.svg; sourceTree = "<group>"; };
 		76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmInfoViewController.swift; sourceTree = "<group>"; };
+		A22657931F43CC2900668EDF /* Q4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q4ViewController.swift; sourceTree = "<group>"; };
+		A22657991F43CCCB00668EDF /* Q5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q5ViewController.swift; sourceTree = "<group>"; };
+		A226579B1F43CCD500668EDF /* Q6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q6ViewController.swift; sourceTree = "<group>"; };
+		A226579E1F43CCF500668EDF /* Q7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q7ViewController.swift; sourceTree = "<group>"; };
+		A22657A01F43CD0000668EDF /* Q8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q8ViewController.swift; sourceTree = "<group>"; };
+		A22657A21F43CD0D00668EDF /* Q9ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q9ViewController.swift; sourceTree = "<group>"; };
+		A22657A41F43CD1D00668EDF /* Q10ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q10ViewController.swift; sourceTree = "<group>"; };
+		A22657A61F43CD2900668EDF /* Q11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q11ViewController.swift; sourceTree = "<group>"; };
+		A22657A81F43CD3300668EDF /* Q12ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q12ViewController.swift; sourceTree = "<group>"; };
 		A23875271F3AC8CF00D9FB90 /* Q2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q2ViewController.swift; sourceTree = "<group>"; };
 		A23875291F3AC9F400D9FB90 /* Q3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q3ViewController.swift; sourceTree = "<group>"; };
 		D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenter/Pods-BuildingCenter.release.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +280,15 @@
 				762D8D4A1F1E7541004295A9 /* QuestionViewController.swift */,
 				A23875271F3AC8CF00D9FB90 /* Q2ViewController.swift */,
 				A23875291F3AC9F400D9FB90 /* Q3ViewController.swift */,
+				A22657931F43CC2900668EDF /* Q4ViewController.swift */,
+				A22657991F43CCCB00668EDF /* Q5ViewController.swift */,
+				A226579B1F43CCD500668EDF /* Q6ViewController.swift */,
+				A226579E1F43CCF500668EDF /* Q7ViewController.swift */,
+				A22657A01F43CD0000668EDF /* Q8ViewController.swift */,
+				A22657A21F43CD0D00668EDF /* Q9ViewController.swift */,
+				A22657A41F43CD1D00668EDF /* Q10ViewController.swift */,
+				A22657A61F43CD2900668EDF /* Q11ViewController.swift */,
+				A22657A81F43CD3300668EDF /* Q12ViewController.swift */,
 			);
 			name = Question;
 			sourceTree = "<group>";
@@ -559,9 +586,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A226579A1F43CCCB00668EDF /* Q5ViewController.swift in Sources */,
 				5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */,
 				7658BA8B1F39B94000C1552B /* MainPageViewController.swift in Sources */,
 				A23875281F3AC8CF00D9FB90 /* Q2ViewController.swift in Sources */,
+				A22657A71F43CD2900668EDF /* Q11ViewController.swift in Sources */,
 				5FE9716B1F1CA3D2005EDE58 /* BeginViewController.swift in Sources */,
 				762D8D531F1E7565004295A9 /* ModeSelectViewController.swift in Sources */,
 				762D8D481F1E752E004295A9 /* MapViewController.swift in Sources */,
@@ -570,9 +599,14 @@
 				5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */,
 				76EB971E1F27A88700DAEB03 /* FirmInfoViewController.swift in Sources */,
 				70C57B661F27E76B00F83F77 /* HipsterViewController.swift in Sources */,
+				A22657A91F43CD3300668EDF /* Q12ViewController.swift in Sources */,
 				769FF6A81F20ECEE00153C87 /* FeedbackHintViewController.swift in Sources */,
 				70C57B681F27F00500F83F77 /* SelectViewController.swift in Sources */,
+				A22657A51F43CD1D00668EDF /* Q10ViewController.swift in Sources */,
 				5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */,
+				A22657A11F43CD0000668EDF /* Q8ViewController.swift in Sources */,
+				A226579C1F43CCD500668EDF /* Q6ViewController.swift in Sources */,
+				A226579F1F43CCF500668EDF /* Q7ViewController.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
 				762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */,
 				5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */,
@@ -581,7 +615,9 @@
 				762D8D4D1F1E7553004295A9 /* LandscapeViewController.swift in Sources */,
 				762D8D4F1F1E7558004295A9 /* ModeIntroViewController.swift in Sources */,
 				76EB971A1F27871500DAEB03 /* MapNavigationViewController.swift in Sources */,
+				A22657A31F43CD0D00668EDF /* Q9ViewController.swift in Sources */,
 				762D8D4B1F1E7541004295A9 /* QuestionViewController.swift in Sources */,
+				A22657941F43CC2900668EDF /* Q4ViewController.swift in Sources */,
 				A238752A1F3AC9F400D9FB90 /* Q3ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
