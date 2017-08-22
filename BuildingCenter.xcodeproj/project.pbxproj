@@ -46,6 +46,8 @@
 		A22657A51F43CD1D00668EDF /* Q10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657A41F43CD1D00668EDF /* Q10ViewController.swift */; };
 		A22657A71F43CD2900668EDF /* Q11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657A61F43CD2900668EDF /* Q11ViewController.swift */; };
 		A22657A91F43CD3300668EDF /* Q12ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657A81F43CD3300668EDF /* Q12ViewController.swift */; };
+		A22C411D1F4AB1C200BCB043 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C411C1F4AB1C200BCB043 /* QuestionnaireViewController.swift */; };
+		A22C411F1F4AB6FA00BCB043 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C411E1F4AB6FA00BCB043 /* RadioButton.swift */; };
 		A23875281F3AC8CF00D9FB90 /* Q2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23875271F3AC8CF00D9FB90 /* Q2ViewController.swift */; };
 		A238752A1F3AC9F400D9FB90 /* Q3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23875291F3AC9F400D9FB90 /* Q3ViewController.swift */; };
 		EBDCDB62C04C9755E5E4DA09 /* Pods_BuildingCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */; };
@@ -118,6 +120,8 @@
 		A22657A41F43CD1D00668EDF /* Q10ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q10ViewController.swift; sourceTree = "<group>"; };
 		A22657A61F43CD2900668EDF /* Q11ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q11ViewController.swift; sourceTree = "<group>"; };
 		A22657A81F43CD3300668EDF /* Q12ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q12ViewController.swift; sourceTree = "<group>"; };
+		A22C411C1F4AB1C200BCB043 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		A22C411E1F4AB6FA00BCB043 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		A23875271F3AC8CF00D9FB90 /* Q2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q2ViewController.swift; sourceTree = "<group>"; };
 		A23875291F3AC9F400D9FB90 /* Q3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q3ViewController.swift; sourceTree = "<group>"; };
 		D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenter/Pods-BuildingCenter.release.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +293,8 @@
 				A22657A41F43CD1D00668EDF /* Q10ViewController.swift */,
 				A22657A61F43CD2900668EDF /* Q11ViewController.swift */,
 				A22657A81F43CD3300668EDF /* Q12ViewController.swift */,
+				A22C411C1F4AB1C200BCB043 /* QuestionnaireViewController.swift */,
+				A22C411E1F4AB6FA00BCB043 /* RadioButton.swift */,
 			);
 			name = Question;
 			sourceTree = "<group>";
@@ -590,6 +596,7 @@
 				5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */,
 				7658BA8B1F39B94000C1552B /* MainPageViewController.swift in Sources */,
 				A23875281F3AC8CF00D9FB90 /* Q2ViewController.swift in Sources */,
+				A22C411D1F4AB1C200BCB043 /* QuestionnaireViewController.swift in Sources */,
 				A22657A71F43CD2900668EDF /* Q11ViewController.swift in Sources */,
 				5FE9716B1F1CA3D2005EDE58 /* BeginViewController.swift in Sources */,
 				762D8D531F1E7565004295A9 /* ModeSelectViewController.swift in Sources */,
@@ -607,6 +614,7 @@
 				A22657A11F43CD0000668EDF /* Q8ViewController.swift in Sources */,
 				A226579C1F43CCD500668EDF /* Q6ViewController.swift in Sources */,
 				A226579F1F43CCF500668EDF /* Q7ViewController.swift in Sources */,
+				A22C411F1F4AB6FA00BCB043 /* RadioButton.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
 				762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */,
 				5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */,
