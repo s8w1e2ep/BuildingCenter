@@ -56,7 +56,7 @@
 		A23FCA211F4ECE9400A91294 /* jquery-1.11.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A23FCA1C1F4ECE9400A91294 /* jquery-1.11.3.min.js */; };
 		A23FCA221F4ECE9400A91294 /* Map_1F.svg in Resources */ = {isa = PBXBuildFile; fileRef = A23FCA1D1F4ECE9400A91294 /* Map_1F.svg */; };
 		A23FCA231F4ECE9400A91294 /* Map_2F.svg in Resources */ = {isa = PBXBuildFile; fileRef = A23FCA1E1F4ECE9400A91294 /* Map_2F.svg */; };
-		EBDCDB62C04C9755E5E4DA09 /* Pods_BuildingCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */; };
+		EBDCDB62C04C9755E5E4DA09 /* Pods_BuildingCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -805,10 +805,11 @@
 			baseConfigurationReference = 0BBB8D9874B006F616E35409 /* Pods-BuildingCenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wenJ0.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wen456.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -820,10 +821,11 @@
 			baseConfigurationReference = D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wenJ0.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wen456.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
