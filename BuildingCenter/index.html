@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <!--<meta name="viewport" content="height=1000px, initial-scale=1.0">-->
+    <script type="text/javascript" src="jQuery-1.11.3.min.js" charset="UTF-8"></script>
+    <script>
+
+        var isAndroid = false;
+		var currentRegion = "";
+        var nextRegion = "";
+        var oldPath = "";
+        var nextPath = "";
+        var screenX = 0;
+        var screenY = 0;
+
+		
+        $(function() {
+        });
+    
+        function checkOK(){
+            if(document.readyState === "complete"){
+                test("abc");
+                window.location = "set://test";
+            }else{
+                test("abc");
+                window.location = "set://wait";
+            }
+
+        }
+        function setBG(url) {
+            //alert("inside setBG function");
+			$("body").css('background-image',url);
+		}
+
+		function setSVGLoad(svg, region, next, oP,nP) {
+            //alert("inside setSVG function");
+            $("body").load(svg, function() {
+				onRegionChanged(region,next,oP,nP);
+                setTestClick();
+                window.location="set://focus";
+			});
+		}
+    
+    
+        function setTestClick()     //for demo  ma:blue mn:yellow  mv:gray
+        {
+            $( "#ma1" ).bind( "click", function() {
+              window.location="ma://1";
+            });
+            $( "#ma2" ).bind( "click", function() {
+              window.location="ma://2";
+            });
+            $( "#ma3" ).bind( "click", function() {
+              window.location="ma://3";
+            });
+            $( "#ma4" ).bind( "click", function() {
+              window.location="ma://4";
+            });
+            $( "#ma5" ).bind( "click", function() {
+              window.location="ma://5";
+            });
+            $( "#ma6" ).bind( "click", function() {
+              window.location="ma://6";
+            });
+            $( "#ma7" ).bind( "click", function() {
+              window.location="ma://7";
+            });
+            $( "#ma8" ).bind( "click", function() {
+              window.location="ma://8";
+            });
+            $( "#ma9" ).bind( "click", function() {
+              window.location="ma://9";
+            });
+            $( "#ma10" ).bind( "click", function() {
+              window.location="ma://10";
+            });
+            $( "#ma11" ).bind( "click", function() {
+              window.location="ma://11";
+            });
+            $( "#ma12" ).bind( "click", function() {
+              window.location="ma://12";
+            });
+            $( "#ma13" ).bind( "click", function() {
+              window.location="ma://13";
+            });
+            $( "#ma14" ).bind( "click", function() {
+              window.location="ma://14";
+            });
+            $( "#ma15" ).bind( "click", function() {
+              window.location="ma://15";
+            });
+            $( "#ma16" ).bind( "click", function() {
+              window.location="ma://16";
+            });
+            $( "#ma17" ).bind( "click", function() {
+              window.location="ma://17";
+            });
+            $( "#ma18" ).bind( "click", function() {
+              window.location="ma://18";
+            });
+            $( "#ma19" ).bind( "click", function() {
+              window.location="ma://19";
+            });
+            $( "#mn1" ).bind( "click", function() {
+              window.location="mn://1";
+            });
+            $( "#mn2" ).bind( "click", function() {
+              window.location="mn://2";
+            });
+            $( "#mn3" ).bind( "click", function() {
+              window.location="mn://3";
+            });
+            $( "#mn4" ).bind( "click", function() {
+              window.location="mn://4";
+            });
+            $( "#mn5" ).bind( "click", function() {
+              window.location="mn://5";
+            });
+            $( "#mn6" ).bind( "click", function() {
+              window.location="mn://6";
+            });
+            $( "#mn7" ).bind( "click", function() {
+              window.location="mn://7";
+            });
+            $( "#mn8" ).bind( "click", function() {
+              window.location="mn://8";
+            });
+            $( "#mn9" ).bind( "click", function() {
+              window.location="mn://9";
+            });
+            $( "#mn10" ).bind( "click", function() {
+              window.location="mn://10";
+            });
+            $( "#mn11" ).bind( "click", function() {
+              window.location="mn://11";
+            });
+            $( "#mn12" ).bind( "click", function() {
+              window.location="mn://12";
+            });
+            $( "#mn13" ).bind( "click", function() {
+              window.location="mn://13";
+            });
+            $( "#mn14" ).bind( "click", function() {
+              window.location="mn://14";
+            });
+            $( "#mn15" ).bind( "click", function() {
+              window.location="mn://15";
+            });
+            $( "#mn16" ).bind( "click", function() {
+              window.location="mn://16";
+            });
+            $( "#mn17" ).bind( "click", function() {
+              window.location="mn://17";
+            });
+            $( "#mn18" ).bind( "click", function() {
+              window.location="mn://18";
+            });
+            $( "#mn19" ).bind( "click", function() {
+              window.location="mn://19";
+            });
+            $( "#mv1" ).bind( "click", function() {
+              window.location="mv://1";
+            });
+            $( "#mv2" ).bind( "click", function() {
+              window.location="mv://2";
+            });
+            $( "#mv3" ).bind( "click", function() {
+              window.location="mv://3";
+            });
+            $( "#mv4" ).bind( "click", function() {
+              window.location="mv://4";
+            });
+            $( "#mv5" ).bind( "click", function() {
+              window.location="mv://5";
+            });
+            $( "#mv6" ).bind( "click", function() {
+              window.location="mv://6";
+            });
+            $( "#mv7" ).bind( "click", function() {
+              window.location="mv://7";
+            });
+            $( "#mv8" ).bind( "click", function() {
+              window.location="mv://8";
+            });
+            $( "#mv9" ).bind( "click", function() {
+              window.location="mv://9";
+            });
+            $( "#mv10" ).bind( "click", function() {
+              window.location="mv://10";
+            });
+            $( "#mv11" ).bind( "click", function() {
+              window.location="mv://11";
+            });
+            $( "#mv12" ).bind( "click", function() {
+              window.location="mv://12";
+            });
+            $( "#mv13" ).bind( "click", function() {
+              window.location="mv://13";
+            });
+            $( "#mv14" ).bind( "click", function() {
+              window.location="mv://14";
+            });
+            $( "#mv15" ).bind( "click", function() {
+              window.location="mv://15";
+            });
+            $( "#mv16" ).bind( "click", function() {
+              window.location="mv://16";
+            });
+            $( "#mv17" ).bind( "click", function() {
+              window.location="mv://17";
+            });
+            $( "#mv18" ).bind( "click", function() {
+              window.location="mv://18";
+            });
+            $( "#mv19" ).bind( "click", function() {
+              window.location="mv://19";
+            });
+            $( "#1f_2f" ).bind( "click", function() {
+              window.location="set://1f_2f";
+            });
+            $( "#2f_1f" ).bind( "click", function() {
+              window.location="set://2f_1f";
+            });
+            $( "#2f_1f_elevator" ).bind( "click", function() {
+              window.location="set://2f_1f";
+            });
+    }
+    
+        function setScreenFocus(region,width,height,zoomLevel)
+        {
+           if(region != '0'){
+               var shiftL = $("#ma" + region).offset().left-100;
+               var shiftT = $("#ma" + region).offset().top-100;
+               $("html,body").animate({scrollTop:shiftT},{duration:100,queue:false});
+               $("html,body").animate({scrollLeft:shiftL},{duration:100,queue:false});
+           }else{
+               $("html,body").animate({scrollTop:$("#mn1").offset().left-100},{duration:100,queue:false});
+               $("html,body").animate({scrollLeft:$("#mn1").offset().left-100},{duration:100,queue:false});
+           }
+        }
+    
+		function loadSVGLater()
+		{
+			//setTimeout('Android.onDocumentLoadDone()', 100);
+		}
+    
+
+
+		function hideCurrentRegion() {
+			// show blue pin on the label
+			$("#mv" + currentRegion).css("display", "inline");
+			// hide orange pin on label
+			$("#ma" + currentRegion).css("display", "none");
+
+			// hide region block on the map
+			$("#r" + currentRegion).css("display", "none");
+			$("#r" + currentRegion).attr("class", "");
+			// hide region pin on the map
+			$("#tag" + currentRegion).css("display", "none");
+			$("#tag" + currentRegion).attr("class", "");
+
+			//hide path
+			$("#"+oldPath).css("display", "none");
+		}
+
+		function showNewRegion() {
+			// hide blue pin on label
+			$("#mn" + currentRegion).css("display", "none");
+			// show orange pin on label
+			$("#ma" + currentRegion).css("display", "inline");
+
+			// show orange region
+			$("#r" + currentRegion).css("display", "inline").attr("class", "fadeinAndBlinkClass");
+			$("#tag" + currentRegion).css("display", "inline").attr("class", "fadeinClass");
+
+			//show path
+			$("#"+nextPath).css("display", "inline");
+		}
+
+		function onRegionChanged(region,next,oP,nP) {
+
+			if (region > 0) {
+			    oldPath = oP;
+			    nextPath = nP;
+				var regionStr = region + ""
+				if (currentRegion != "") {
+					hideCurrentRegion();
+                }
+				nextRegion = next;
+				// update current region
+				currentRegion = regionStr;
+				showNewRegion();
+			}
+			$("#mn" + next).css("display", "inline");
+            window.location="set://focus";
+		}
+
+
+        function test(argu1,argu2){
+            alert(argu1);
+            alert(argu2);
+            
+            setBG(argu1);
+            setSVGLoad(argu2,0,1,'','');
+        }
+    
+    </script>
+
+</head>
+
+<body style="margin:0; padding:0;">
+</body>
+</html>

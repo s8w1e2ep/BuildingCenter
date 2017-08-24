@@ -7,31 +7,29 @@
 //
 
 import UIKit
-
-class MapViewController: UIViewController {
+import JavaScriptCore
+class MapViewController: UIViewController, UIWebViewDelegate {
     
 
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var SVGView: UIWebView!
+    var jsContext: JSContext!
+    var nowRegion: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVGView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         // set navigation bar background image
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
         
+        
         do {
-            guard let filePath = Bundle.main.path(forResource: "map", ofType: "svg")
-                else {
-                    print ("File reading error")
-                    return
-            }
-            let contents =  try String(contentsOfFile: filePath, encoding: .utf8)
-            let baseUrl = URL(fileURLWithPath: filePath)
-            SVGView.loadHTMLString(contents as String, baseURL: baseUrl)
-            //web1.scalesPageToFit = YES;
-            //let testJSFunction = web1.stringByEvaluatingJavaScript(from: "jstest()");
-            //let loadJavascript = "setSVGLoad('" + SVGMap + "','-1','1','','' )"
+            let indexPath = Bundle.main.path(forResource: "index", ofType: "html")!
+            let contents = try String(contentsOfFile: indexPath, encoding: .utf8)
+            let indexURL = URL(fileURLWithPath: indexPath)
+            SVGView.loadHTMLString(contents as String, baseURL: indexURL)
+            
             
             
         }
@@ -45,15 +43,73 @@ class MapViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        let contentSize:CGSize = SVGView.scrollView.contentSize
-        let viewSize:CGSize = self.view.bounds.size
-        let rw = viewSize.width / contentSize.width
-        SVGView.scrollView.minimumZoomScale = rw
-        SVGView.scrollView.maximumZoomScale = rw
-        SVGView.scrollView.zoomScale = rw
+    func webViewDidFinishLoad(_ webView: UIWebView){
+        //check view have load finish jsContext will be set
+        jsContext = self.SVGView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext
+        setSVGBG(BGName: "bg")
+        setSVGMap(SVGName: "Map_1F")
+        nowRegion = 0
+        
+        //        web1.scrollView.minimumZoomScale = 1.0
+        //        web1.scrollView.maximumZoomScale = 5.0
+        //        web1.scrollView.zoomScale = 3.0
     }
+    
+    func setSVGBG(BGName: String){
+        let BGPath = Bundle.main.path(forResource: "" + BGName, ofType: "jpg")
+        jsContext.objectForKeyedSubscript("setBG")!.call(withArguments: ["url(" + BGPath! + ")"])
+    }
+    
+    func setSVGMap(SVGName: String){
+        let SVGPath = Bundle.main.path(forResource: "" + SVGName, ofType: "svg")
+        if(nowRegion == 11){
+            jsContext.objectForKeyedSubscript("setSVGLoad")!.call(withArguments: ["" + SVGPath!,11,12,"",""])
+        }else{
+            jsContext.objectForKeyedSubscript("setSVGLoad")!.call(withArguments: ["" + SVGPath!,0,1,"",""])
+        }
+    }
+    
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if request.url!.absoluteString.hasPrefix("app://"){
+            let request = request.url?.absoluteString as! String
+            let argu = request.components(separatedBy: "://")
+            let argu2 = argu[1].components(separatedBy: "?")
+            let width = SVGView.frame.width
+            let height = SVGView.frame.height
+            
+            switch argu2[0]{
+            case "ma":
+                break
+            case "mn":
+                nowRegion += 1
+                if(nowRegion==11){
+                    SVGView.stringByEvaluatingJavaScript(from: "onRegionChanged(\(nowRegion),'\(nowRegion+1)','p\(nowRegion-1)-\(nowRegion)','p\(nowRegion)-2f')")
+                }else{
+                    SVGView.stringByEvaluatingJavaScript(from: "onRegionChanged(\(nowRegion),\(nowRegion+1),'p\(nowRegion-1)-\(nowRegion)','p\(nowRegion)-\(nowRegion+1)')")
+                }
+                //set bar changed
+                break
+            case "mv":
+                //set bar changed
+                break
+            case "set":
+                if (argu2[1] == "focus"){
+                    SVGView.stringByEvaluatingJavaScript(from: "setScreenFocus(\(nowRegion),2,2,1)")
+                }else if(argu2[1] == "1f_2f"){
+                    nowRegion = 11
+                    setSVGMap(SVGName: "Map_2F")
+                }else if(argu2[1] == "2f_1f"){
+                    nowRegion = 0
+                    setSVGMap(SVGName: "Map_1F")
+                }
+                break
+            default:
+                break
+            }
+        }
+        return true
+        
+    }
+
 
 }
