@@ -37,6 +37,11 @@
 		76EB971C1F2799E000DAEB03 /* map.svg in Resources */ = {isa = PBXBuildFile; fileRef = 76EB971B1F2799E000DAEB03 /* map.svg */; };
 		76EB971E1F27A88700DAEB03 /* FirmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */; };
 		933E3CE478B22CB16A6A1A3E /* Pods_BuildingCenterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13617F0FAF90C9CB493A56D2 /* Pods_BuildingCenterUITests.framework */; };
+		A20453DE1F50FF0200162025 /* Qn4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20453DD1F50FF0200162025 /* Qn4ViewController.swift */; };
+		A20453E01F50FF1100162025 /* Qn5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20453DF1F50FF1100162025 /* Qn5ViewController.swift */; };
+		A20453E21F50FF1B00162025 /* Qn6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20453E11F50FF1B00162025 /* Qn6ViewController.swift */; };
+		A20453E41F50FF2800162025 /* Qn7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20453E31F50FF2800162025 /* Qn7ViewController.swift */; };
+		A20453E61F50FF3400162025 /* Qn8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20453E51F50FF3400162025 /* Qn8ViewController.swift */; };
 		A22657941F43CC2900668EDF /* Q4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657931F43CC2900668EDF /* Q4ViewController.swift */; };
 		A226579A1F43CCCB00668EDF /* Q5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22657991F43CCCB00668EDF /* Q5ViewController.swift */; };
 		A226579C1F43CCD500668EDF /* Q6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A226579B1F43CCD500668EDF /* Q6ViewController.swift */; };
@@ -56,6 +61,10 @@
 		A23FCA211F4ECE9400A91294 /* jquery-1.11.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = A23FCA1C1F4ECE9400A91294 /* jquery-1.11.3.min.js */; };
 		A23FCA221F4ECE9400A91294 /* Map_1F.svg in Resources */ = {isa = PBXBuildFile; fileRef = A23FCA1D1F4ECE9400A91294 /* Map_1F.svg */; };
 		A23FCA231F4ECE9400A91294 /* Map_2F.svg in Resources */ = {isa = PBXBuildFile; fileRef = A23FCA1E1F4ECE9400A91294 /* Map_2F.svg */; };
+		A23FCA271F4EF82700A91294 /* ZHDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23FCA261F4EF82700A91294 /* ZHDropDownMenu.swift */; };
+		A23FCA291F4F052A00A91294 /* default_down.png in Resources */ = {isa = PBXBuildFile; fileRef = A23FCA281F4F052A00A91294 /* default_down.png */; };
+		A23FCA2B1F4F115300A91294 /* Qn2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23FCA2A1F4F115300A91294 /* Qn2ViewController.swift */; };
+		A23FCA2D1F4F116600A91294 /* Qn3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23FCA2C1F4F116600A91294 /* Qn3ViewController.swift */; };
 		EBDCDB62C04C9755E5E4DA09 /* Pods_BuildingCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +126,11 @@
 		76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 		76EB971B1F2799E000DAEB03 /* map.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.svg; sourceTree = "<group>"; };
 		76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmInfoViewController.swift; sourceTree = "<group>"; };
+		A20453DD1F50FF0200162025 /* Qn4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn4ViewController.swift; sourceTree = "<group>"; };
+		A20453DF1F50FF1100162025 /* Qn5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn5ViewController.swift; sourceTree = "<group>"; };
+		A20453E11F50FF1B00162025 /* Qn6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn6ViewController.swift; sourceTree = "<group>"; };
+		A20453E31F50FF2800162025 /* Qn7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn7ViewController.swift; sourceTree = "<group>"; };
+		A20453E51F50FF3400162025 /* Qn8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn8ViewController.swift; sourceTree = "<group>"; };
 		A22657931F43CC2900668EDF /* Q4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q4ViewController.swift; sourceTree = "<group>"; };
 		A22657991F43CCCB00668EDF /* Q5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q5ViewController.swift; sourceTree = "<group>"; };
 		A226579B1F43CCD500668EDF /* Q6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q6ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +150,10 @@
 		A23FCA1C1F4ECE9400A91294 /* jquery-1.11.3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.11.3.min.js"; sourceTree = "<group>"; };
 		A23FCA1D1F4ECE9400A91294 /* Map_1F.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Map_1F.svg; sourceTree = "<group>"; };
 		A23FCA1E1F4ECE9400A91294 /* Map_2F.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Map_2F.svg; sourceTree = "<group>"; };
+		A23FCA261F4EF82700A91294 /* ZHDropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHDropDownMenu.swift; sourceTree = "<group>"; };
+		A23FCA281F4F052A00A91294 /* default_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_down.png; sourceTree = "<group>"; };
+		A23FCA2A1F4F115300A91294 /* Qn2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn2ViewController.swift; sourceTree = "<group>"; };
+		A23FCA2C1F4F116600A91294 /* Qn3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn3ViewController.swift; sourceTree = "<group>"; };
 		D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenter/Pods-BuildingCenter.release.xcconfig"; sourceTree = "<group>"; };
 		F39B9B310BEF420CF9DB6750 /* Pods-BuildingCenterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenterUITests/Pods-BuildingCenterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB54794DF16F31D3F1D950B7 /* Pods-BuildingCenterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenterTests/Pods-BuildingCenterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -299,6 +317,9 @@
 		762D8D491F1E7534004295A9 /* Question */ = {
 			isa = PBXGroup;
 			children = (
+				A23FCA281F4F052A00A91294 /* default_down.png */,
+				A23FCA261F4EF82700A91294 /* ZHDropDownMenu.swift */,
+				A22C411E1F4AB6FA00BCB043 /* RadioButton.swift */,
 				762D8D4A1F1E7541004295A9 /* QuestionViewController.swift */,
 				A23875271F3AC8CF00D9FB90 /* Q2ViewController.swift */,
 				A23875291F3AC9F400D9FB90 /* Q3ViewController.swift */,
@@ -312,7 +333,13 @@
 				A22657A61F43CD2900668EDF /* Q11ViewController.swift */,
 				A22657A81F43CD3300668EDF /* Q12ViewController.swift */,
 				A22C411C1F4AB1C200BCB043 /* QuestionnaireViewController.swift */,
-				A22C411E1F4AB6FA00BCB043 /* RadioButton.swift */,
+				A23FCA2A1F4F115300A91294 /* Qn2ViewController.swift */,
+				A23FCA2C1F4F116600A91294 /* Qn3ViewController.swift */,
+				A20453DD1F50FF0200162025 /* Qn4ViewController.swift */,
+				A20453DF1F50FF1100162025 /* Qn5ViewController.swift */,
+				A20453E11F50FF1B00162025 /* Qn6ViewController.swift */,
+				A20453E31F50FF2800162025 /* Qn7ViewController.swift */,
+				A20453E51F50FF3400162025 /* Qn8ViewController.swift */,
 			);
 			name = Question;
 			sourceTree = "<group>";
@@ -402,7 +429,7 @@
 				TargetAttributes = {
 					5FE971381F1C9F09005EDE58 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = P7Y2HNH4ZD;
+						DevelopmentTeam = 4Y3WSK9PWL;
 						ProvisioningStyle = Automatic;
 					};
 					5FE9714C1F1C9F0A005EDE58 = {
@@ -447,6 +474,7 @@
 				A23FCA211F4ECE9400A91294 /* jquery-1.11.3.min.js in Resources */,
 				A23FCA201F4ECE9400A91294 /* index.html in Resources */,
 				A23FCA221F4ECE9400A91294 /* Map_1F.svg in Resources */,
+				A23FCA291F4F052A00A91294 /* default_down.png in Resources */,
 				A23FCA191F4ECE7900A91294 /* bg.jpg in Resources */,
 				5FE971471F1C9F0A005EDE58 /* LaunchScreen.storyboard in Resources */,
 				A23FCA1F1F4ECE9400A91294 /* index.css in Resources */,
@@ -623,12 +651,16 @@
 				A22C411D1F4AB1C200BCB043 /* QuestionnaireViewController.swift in Sources */,
 				A22657A71F43CD2900668EDF /* Q11ViewController.swift in Sources */,
 				5FE9716B1F1CA3D2005EDE58 /* BeginViewController.swift in Sources */,
+				A23FCA2D1F4F116600A91294 /* Qn3ViewController.swift in Sources */,
 				762D8D531F1E7565004295A9 /* ModeSelectViewController.swift in Sources */,
 				762D8D481F1E752E004295A9 /* MapViewController.swift in Sources */,
 				5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */,
 				762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */,
 				5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */,
+				A20453E01F50FF1100162025 /* Qn5ViewController.swift in Sources */,
 				76EB971E1F27A88700DAEB03 /* FirmInfoViewController.swift in Sources */,
+				A20453E41F50FF2800162025 /* Qn7ViewController.swift in Sources */,
+				A20453E21F50FF1B00162025 /* Qn6ViewController.swift in Sources */,
 				70C57B661F27E76B00F83F77 /* HipsterViewController.swift in Sources */,
 				A22657A91F43CD3300668EDF /* Q12ViewController.swift in Sources */,
 				769FF6A81F20ECEE00153C87 /* FeedbackHintViewController.swift in Sources */,
@@ -637,12 +669,16 @@
 				5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */,
 				A22657A11F43CD0000668EDF /* Q8ViewController.swift in Sources */,
 				A226579C1F43CCD500668EDF /* Q6ViewController.swift in Sources */,
+				A20453DE1F50FF0200162025 /* Qn4ViewController.swift in Sources */,
+				A23FCA2B1F4F115300A91294 /* Qn2ViewController.swift in Sources */,
 				A226579F1F43CCF500668EDF /* Q7ViewController.swift in Sources */,
 				A22C411F1F4AB6FA00BCB043 /* RadioButton.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
 				762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */,
 				5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */,
 				5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */,
+				A20453E61F50FF3400162025 /* Qn8ViewController.swift in Sources */,
+				A23FCA271F4EF82700A91294 /* ZHDropDownMenu.swift in Sources */,
 				76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */,
 				762D8D4D1F1E7553004295A9 /* LandscapeViewController.swift in Sources */,
 				762D8D4F1F1E7558004295A9 /* ModeIntroViewController.swift in Sources */,
@@ -805,10 +841,10 @@
 			baseConfigurationReference = 0BBB8D9874B006F616E35409 /* Pods-BuildingCenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
+				DEVELOPMENT_TEAM = 4Y3WSK9PWL;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wenJ0.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wenJ1.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -820,10 +856,10 @@
 			baseConfigurationReference = D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
+				DEVELOPMENT_TEAM = 4Y3WSK9PWL;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wenJ0.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wenJ1.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
