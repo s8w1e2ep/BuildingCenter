@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="index.css" type="text/css" />
     <!--<meta name="viewport" content="height=1000px, initial-scale=1.0">-->
-    <script type="text/javascript" src="jQuery-1.11.3.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="jquery-1.11.3.min.js" charset="UTF-8"></script>
     <script>
 
         var isAndroid = false;
@@ -18,225 +18,223 @@
         $(function() {
         });
     
-        function checkOK(){
-            if(document.readyState === "complete"){
-                test("abc");
-                window.location = "set://test";
-            }else{
-                test("abc");
-                window.location = "set://wait";
-            }
 
-        }
         function setBG(url) {
-            //alert("inside setBG function");
-			$("body").css('background-image',url);
+            $("body").css('background-image',url);
 		}
 
 		function setSVGLoad(svg, region, next, oP,nP) {
-            //alert("inside setSVG function");
             $("body").load(svg, function() {
 				onRegionChanged(region,next,oP,nP);
                 setTestClick();
-                window.location="set://focus";
-			});
+            });
 		}
     
     
         function setTestClick()     //for demo  ma:blue mn:yellow  mv:gray
         {
             $( "#ma1" ).bind( "click", function() {
-              window.location="ma://1";
+              window.location="app://ma?1";
             });
             $( "#ma2" ).bind( "click", function() {
-              window.location="ma://2";
+              window.location="app://ma?2";
             });
             $( "#ma3" ).bind( "click", function() {
-              window.location="ma://3";
+              window.location="app://ma?3";
             });
             $( "#ma4" ).bind( "click", function() {
-              window.location="ma://4";
+              window.location="app://ma?4";
             });
             $( "#ma5" ).bind( "click", function() {
-              window.location="ma://5";
+              window.location="app://ma?5";
             });
             $( "#ma6" ).bind( "click", function() {
-              window.location="ma://6";
+              window.location="app://ma?6";
             });
             $( "#ma7" ).bind( "click", function() {
-              window.location="ma://7";
+              window.location="app://ma?7";
             });
             $( "#ma8" ).bind( "click", function() {
-              window.location="ma://8";
+              window.location="app://ma?8";
             });
             $( "#ma9" ).bind( "click", function() {
-              window.location="ma://9";
+              window.location="app://ma?9";
             });
             $( "#ma10" ).bind( "click", function() {
-              window.location="ma://10";
+              window.location="app://ma?10";
             });
             $( "#ma11" ).bind( "click", function() {
-              window.location="ma://11";
+              window.location="app://ma?11";
             });
             $( "#ma12" ).bind( "click", function() {
-              window.location="ma://12";
+              window.location="app://ma?12";
             });
             $( "#ma13" ).bind( "click", function() {
-              window.location="ma://13";
+              window.location="app://ma?13";
             });
             $( "#ma14" ).bind( "click", function() {
-              window.location="ma://14";
+              window.location="app://ma?14";
             });
             $( "#ma15" ).bind( "click", function() {
-              window.location="ma://15";
+              window.location="app://ma?15";
             });
             $( "#ma16" ).bind( "click", function() {
-              window.location="ma://16";
+              window.location="app://ma?16";
             });
             $( "#ma17" ).bind( "click", function() {
-              window.location="ma://17";
+              window.location="app://ma?17";
             });
             $( "#ma18" ).bind( "click", function() {
-              window.location="ma://18";
+              window.location="app://ma?18";
             });
             $( "#ma19" ).bind( "click", function() {
-              window.location="ma://19";
+              window.location="app://ma?19";
             });
             $( "#mn1" ).bind( "click", function() {
-              window.location="mn://1";
+              window.location="app://mn?1";
             });
             $( "#mn2" ).bind( "click", function() {
-              window.location="mn://2";
+              window.location="app://mn?2";
             });
             $( "#mn3" ).bind( "click", function() {
-              window.location="mn://3";
+              window.location="app://mn?3";
             });
             $( "#mn4" ).bind( "click", function() {
-              window.location="mn://4";
+              window.location="app://mn?4";
             });
             $( "#mn5" ).bind( "click", function() {
-              window.location="mn://5";
+              window.location="app://mn?5";
             });
             $( "#mn6" ).bind( "click", function() {
-              window.location="mn://6";
+              window.location="app://mn?6";
             });
             $( "#mn7" ).bind( "click", function() {
-              window.location="mn://7";
+              window.location="app://mn?7";
             });
             $( "#mn8" ).bind( "click", function() {
-              window.location="mn://8";
+              window.location="app://mn?8";
             });
             $( "#mn9" ).bind( "click", function() {
-              window.location="mn://9";
+              window.location="app://mn?9";
             });
             $( "#mn10" ).bind( "click", function() {
-              window.location="mn://10";
+              window.location="app://mn?10";
             });
             $( "#mn11" ).bind( "click", function() {
-              window.location="mn://11";
+              window.location="app://mn?11";
             });
             $( "#mn12" ).bind( "click", function() {
-              window.location="mn://12";
+              window.location="app://mn?12";
             });
             $( "#mn13" ).bind( "click", function() {
-              window.location="mn://13";
+              window.location="app://mn?13";
             });
             $( "#mn14" ).bind( "click", function() {
-              window.location="mn://14";
+              window.location="app://mn?14";
             });
             $( "#mn15" ).bind( "click", function() {
-              window.location="mn://15";
+              window.location="app://mn?15";
             });
             $( "#mn16" ).bind( "click", function() {
-              window.location="mn://16";
+              window.location="app://mn?16";
             });
             $( "#mn17" ).bind( "click", function() {
-              window.location="mn://17";
+              window.location="app://mn?17";
             });
             $( "#mn18" ).bind( "click", function() {
-              window.location="mn://18";
+              window.location="app://mn?18";
             });
             $( "#mn19" ).bind( "click", function() {
-              window.location="mn://19";
+              window.location="app://mn?19";
             });
             $( "#mv1" ).bind( "click", function() {
-              window.location="mv://1";
+              window.location="app://mv?1";
             });
             $( "#mv2" ).bind( "click", function() {
-              window.location="mv://2";
+              window.location="app://mv?2";
             });
             $( "#mv3" ).bind( "click", function() {
-              window.location="mv://3";
+              window.location="app://mv?3";
             });
             $( "#mv4" ).bind( "click", function() {
-              window.location="mv://4";
+              window.location="app://mv?4";
             });
             $( "#mv5" ).bind( "click", function() {
-              window.location="mv://5";
+              window.location="app://mv?5";
             });
             $( "#mv6" ).bind( "click", function() {
-              window.location="mv://6";
+              window.location="app://mv?6";
             });
             $( "#mv7" ).bind( "click", function() {
-              window.location="mv://7";
+              window.location="app://mv?7";
             });
             $( "#mv8" ).bind( "click", function() {
-              window.location="mv://8";
+              window.location="app://mv?8";
             });
             $( "#mv9" ).bind( "click", function() {
-              window.location="mv://9";
+              window.location="app://mv?9";
             });
             $( "#mv10" ).bind( "click", function() {
-              window.location="mv://10";
+              window.location="app://mv?10";
             });
             $( "#mv11" ).bind( "click", function() {
-              window.location="mv://11";
+              window.location="app://mv?11";
             });
             $( "#mv12" ).bind( "click", function() {
-              window.location="mv://12";
+              window.location="app://mv?12";
             });
             $( "#mv13" ).bind( "click", function() {
-              window.location="mv://13";
+              window.location="app://mv?13";
             });
             $( "#mv14" ).bind( "click", function() {
-              window.location="mv://14";
+              window.location="app://mv?14";
             });
             $( "#mv15" ).bind( "click", function() {
-              window.location="mv://15";
+              window.location="app://mv?15";
             });
             $( "#mv16" ).bind( "click", function() {
-              window.location="mv://16";
+              window.location="app://mv?16";
             });
             $( "#mv17" ).bind( "click", function() {
-              window.location="mv://17";
+              window.location="app://mv?17";
             });
             $( "#mv18" ).bind( "click", function() {
-              window.location="mv://18";
+              window.location="app://mv?18";
             });
             $( "#mv19" ).bind( "click", function() {
-              window.location="mv://19";
+              window.location="app://mv?19";
             });
             $( "#1f_2f" ).bind( "click", function() {
-              window.location="set://1f_2f";
+              window.location="app://set?1f_2f";
             });
             $( "#2f_1f" ).bind( "click", function() {
-              window.location="set://2f_1f";
+              window.location="app://set?2f_1f";
             });
             $( "#2f_1f_elevator" ).bind( "click", function() {
-              window.location="set://2f_1f";
+              window.location="app://set?2f_1f";
             });
     }
     
         function setScreenFocus(region,width,height,zoomLevel)
         {
-           if(region != '0'){
-               var shiftL = $("#ma" + region).offset().left-100;
-               var shiftT = $("#ma" + region).offset().top-100;
-               $("html,body").animate({scrollTop:shiftT},{duration:100,queue:false});
-               $("html,body").animate({scrollLeft:shiftL},{duration:100,queue:false});
+
+           if(region == 0){
+               var shiftTop = $("#mn1"+region).offset().top - 50;
+               var shiftLeft = $("#mn1").offset().left - 110;
+               $("html,body").animate({scrollTop:shiftTop},{duration:40, queue:false});
+               //	$("html,body").animate({scrollLeft:shiftLeft},{duration:40});
+           }else if(region > 11){
+               var shiftLeft = $("#ma"+region).offset().left - 110;
+               $("html,body").animate({scrollLeft:shiftLeft},{duration:40, queue:false});
            }else{
-               $("html,body").animate({scrollTop:$("#mn1").offset().left-100},{duration:100,queue:false});
-               $("html,body").animate({scrollLeft:$("#mn1").offset().left-100},{duration:100,queue:false});
+               var shiftTop = $("#ma"+region).offset().top - 110;
+               var shiftLeft = $("#ma"+region).offset().left - 110;
+               
+               //setTimeout((function(){
+                //           $("html,body").animate({scrollLeft:shiftLeft,scrollTop:shiftTop},{duration:400, queue:false})
+                //           }),400);
+               //$("html,body").animate({scrollTop:shiftTop},{duration:40})
+               $("html,body").animate({scrollLeft:shiftLeft},{duration:40});
            }
         }
     
@@ -293,17 +291,9 @@
 				showNewRegion();
 			}
 			$("#mn" + next).css("display", "inline");
-            window.location="set://focus";
+            window.location="app://set?focus";
 		}
 
-
-        function test(argu1,argu2){
-            alert(argu1);
-            alert(argu2);
-            
-            setBG(argu1);
-            setSVGLoad(argu2,0,1,'','');
-        }
     
     </script>
 
