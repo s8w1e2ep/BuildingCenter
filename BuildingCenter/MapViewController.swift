@@ -42,7 +42,19 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         //self.navigationController?.isNavigationBarHidden = false
         
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        let isMapLaunchBefore = defaults.bool(forKey: "isMapLaunchBefore")
+        
+        if (!isMapLaunchBefore) {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "InfoHint"){
+                //show(vc, sender: self)
+                present(vc, animated: true)
+                
+            }
+            defaults.set(true, forKey: "isMapLaunchBefore")
+        }
+    }
     func webViewDidFinishLoad(_ webView: UIWebView){
         //check view have load finish jsContext will be set
         jsContext = self.SVGView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext

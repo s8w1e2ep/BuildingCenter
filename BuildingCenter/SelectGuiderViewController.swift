@@ -53,6 +53,18 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         self.view.addGestureRecognizer(swipeRight)
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        let isGuiderLaunchBefore = defaults.bool(forKey: "isGuiderLaunchBefore")
+        
+        if (!isGuiderLaunchBefore) {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "GuiderHint"){
+                //show(vc, sender: self)
+                present(vc, animated: true)
+            }
+            defaults.set(true, forKey: "isGuiderLaunchBefore")
+        }
+    }
 
     // gesture event function
     func swipe(recognizer:UISwipeGestureRecognizer) {

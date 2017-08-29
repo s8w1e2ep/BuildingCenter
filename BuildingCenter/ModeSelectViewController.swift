@@ -21,6 +21,19 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = false
     }
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        let isModeLaunchBefore = defaults.bool(forKey: "isModeLaunchBefore")
+        
+        if (!isModeLaunchBefore) {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "ModeHint"){
+                //show(vc, sender: self)
+                present(vc, animated: true)
+                
+            }
+            defaults.set(true, forKey: "isModeLaunchBefore")
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -30,6 +30,19 @@ class ModeContentViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
     }
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        let isModeContentLaunchBefore = defaults.bool(forKey: "isModeContentLaunchBefore")
+        
+        if (!isModeContentLaunchBefore) {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "ModeContentHint"){
+                //show(vc, sender: self)
+                present(vc, animated: true)
+                
+            }
+            defaults.set(true, forKey: "isModeContentLaunchBefore")
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -31,6 +31,11 @@
 		762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D501F1E755F004295A9 /* ModeContentViewController.swift */; };
 		762D8D531F1E7565004295A9 /* ModeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D521F1E7565004295A9 /* ModeSelectViewController.swift */; };
 		7658BA8B1F39B94000C1552B /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7658BA8A1F39B94000C1552B /* MainPageViewController.swift */; };
+		76705BAE1F555F0E00047414 /* GuiderHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BAD1F555F0E00047414 /* GuiderHintViewController.swift */; };
+		76705BB01F55643A00047414 /* ModeHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BAF1F55643A00047414 /* ModeHintViewController.swift */; };
+		76705BB21F556DF000047414 /* ModeContentHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BB11F556DF000047414 /* ModeContentHintViewController.swift */; };
+		76705BB41F5585A000047414 /* InfoHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BB31F5585A000047414 /* InfoHintViewController.swift */; };
+		76705BB61F5585BC00047414 /* QuestionHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BB51F5585BC00047414 /* QuestionHintViewController.swift */; };
 		769FF6A81F20ECEE00153C87 /* FeedbackHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */; };
 		76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */; };
 		76EB971A1F27871500DAEB03 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */; };
@@ -121,6 +126,11 @@
 		762D8D501F1E755F004295A9 /* ModeContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentViewController.swift; sourceTree = "<group>"; };
 		762D8D521F1E7565004295A9 /* ModeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeSelectViewController.swift; sourceTree = "<group>"; };
 		7658BA8A1F39B94000C1552B /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		76705BAD1F555F0E00047414 /* GuiderHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiderHintViewController.swift; sourceTree = "<group>"; };
+		76705BAF1F55643A00047414 /* ModeHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeHintViewController.swift; sourceTree = "<group>"; };
+		76705BB11F556DF000047414 /* ModeContentHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentHintViewController.swift; sourceTree = "<group>"; };
+		76705BB31F5585A000047414 /* InfoHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHintViewController.swift; sourceTree = "<group>"; };
+		76705BB51F5585BC00047414 /* QuestionHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionHintViewController.swift; sourceTree = "<group>"; };
 		769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackHintViewController.swift; sourceTree = "<group>"; };
 		76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInstructionViewController.swift; sourceTree = "<group>"; };
 		76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +245,7 @@
 		5FE9713B1F1C9F0A005EDE58 /* BuildingCenter */ = {
 			isa = PBXGroup;
 			children = (
+				76705BAC1F555ECB00047414 /* UsefulHint */,
 				7658BA891F39B8C800C1552B /* MainPage */,
 				762D8D491F1E7534004295A9 /* Question */,
 				762D8D441F1E7508004295A9 /* Map */,
@@ -352,6 +363,18 @@
 			name = MainPage;
 			sourceTree = "<group>";
 		};
+		76705BAC1F555ECB00047414 /* UsefulHint */ = {
+			isa = PBXGroup;
+			children = (
+				76705BAD1F555F0E00047414 /* GuiderHintViewController.swift */,
+				76705BAF1F55643A00047414 /* ModeHintViewController.swift */,
+				76705BB11F556DF000047414 /* ModeContentHintViewController.swift */,
+				76705BB31F5585A000047414 /* InfoHintViewController.swift */,
+				76705BB51F5585BC00047414 /* QuestionHintViewController.swift */,
+			);
+			name = UsefulHint;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,7 +452,7 @@
 				TargetAttributes = {
 					5FE971381F1C9F09005EDE58 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4Y3WSK9PWL;
+						DevelopmentTeam = P7Y2HNH4ZD;
 						ProvisioningStyle = Automatic;
 					};
 					5FE9714C1F1C9F0A005EDE58 = {
@@ -654,7 +677,9 @@
 				A23FCA2D1F4F116600A91294 /* Qn3ViewController.swift in Sources */,
 				762D8D531F1E7565004295A9 /* ModeSelectViewController.swift in Sources */,
 				762D8D481F1E752E004295A9 /* MapViewController.swift in Sources */,
+				76705BB61F5585BC00047414 /* QuestionHintViewController.swift in Sources */,
 				5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */,
+				76705BAE1F555F0E00047414 /* GuiderHintViewController.swift in Sources */,
 				762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */,
 				5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */,
 				A20453E01F50FF1100162025 /* Qn5ViewController.swift in Sources */,
@@ -675,8 +700,10 @@
 				A22C411F1F4AB6FA00BCB043 /* RadioButton.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
 				762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */,
+				76705BB41F5585A000047414 /* InfoHintViewController.swift in Sources */,
 				5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */,
 				5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */,
+				76705BB21F556DF000047414 /* ModeContentHintViewController.swift in Sources */,
 				A20453E61F50FF3400162025 /* Qn8ViewController.swift in Sources */,
 				A23FCA271F4EF82700A91294 /* ZHDropDownMenu.swift in Sources */,
 				76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */,
@@ -686,6 +713,7 @@
 				A22657A31F43CD0D00668EDF /* Q9ViewController.swift in Sources */,
 				762D8D4B1F1E7541004295A9 /* QuestionViewController.swift in Sources */,
 				A22657941F43CC2900668EDF /* Q4ViewController.swift in Sources */,
+				76705BB01F55643A00047414 /* ModeHintViewController.swift in Sources */,
 				A238752A1F3AC9F400D9FB90 /* Q3ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -841,10 +869,10 @@
 			baseConfigurationReference = 0BBB8D9874B006F616E35409 /* Pods-BuildingCenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4Y3WSK9PWL;
+				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wenJ1.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wenJ2.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -856,10 +884,10 @@
 			baseConfigurationReference = D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4Y3WSK9PWL;
+				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wenJ1.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wenJ2.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
