@@ -1,34 +1,27 @@
 //
-//  AboutThreeViewController.swift
+//  Qn2ViewController.swift
 //  BuildingCenter
 //
-//  Created by uscc on 2017/7/17.
+//  Created by wen on 2017/8/24.
 //  Copyright © 2017年 uscc. All rights reserved.
 //
 
 import UIKit
 
-class AboutThreeViewController: UIViewController {
+class Qn2ViewController: UIViewController {
 
-    @IBOutlet weak var navbar: UINavigationBar!
-    
+    @IBOutlet var navbar: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // set navigation bar background image
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navbar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
-        //content.contentOffset = CGPoint.zero
+        navbar.barTintColor = UIColor.white
+        // Do any additional setup after loading the view.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func goBack(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
-    }
 
     /*
     // MARK: - Navigation
