@@ -10,6 +10,8 @@
 		4914869C7FEEB3FBF83F3E39 /* Pods_BuildingCenterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BC750BE44098288C7937F8 /* Pods_BuildingCenterTests.framework */; };
 		5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F58DFC31F1E560C004159D3 /* SelectGuiderViewController.swift */; };
 		5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F700B321F349B7E00D8C138 /* LaunchViewController.swift */; };
+		5F8C48581F4DB6C0006E7BEB /* Databasehelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48571F4DB6C0006E7BEB /* Databasehelper.swift */; };
+		5F8C485A1F544E9E006E7BEB /* ZoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48591F544E9E006E7BEB /* ZoneItem.swift */; };
 		5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */; };
 		5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */; };
 		5FE971421F1C9F0A005EDE58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE971401F1C9F0A005EDE58 /* Main.storyboard */; };
@@ -78,6 +80,8 @@
 		43BC750BE44098288C7937F8 /* Pods_BuildingCenterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildingCenterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F58DFC31F1E560C004159D3 /* SelectGuiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGuiderViewController.swift; sourceTree = "<group>"; };
 		5F700B321F349B7E00D8C138 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		5F8C48571F4DB6C0006E7BEB /* Databasehelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Databasehelper.swift; sourceTree = "<group>"; };
+		5F8C48591F544E9E006E7BEB /* ZoneItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneItem.swift; sourceTree = "<group>"; };
 		5FE971391F1C9F0A005EDE58 /* BuildingCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5F8C48561F4DB67A006E7BEB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C48571F4DB6C0006E7BEB /* Databasehelper.swift */,
+				5F8C48591F544E9E006E7BEB /* ZoneItem.swift */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		5FE971301F1C9F09005EDE58 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +218,7 @@
 		5FE9713B1F1C9F0A005EDE58 /* BuildingCenter */ = {
 			isa = PBXGroup;
 			children = (
+				5F8C48561F4DB67A006E7BEB /* Database */,
 				7658BA891F39B8C800C1552B /* MainPage */,
 				762D8D491F1E7534004295A9 /* Question */,
 				762D8D441F1E7508004295A9 /* Map */,
@@ -614,8 +628,10 @@
 				A22657A11F43CD0000668EDF /* Q8ViewController.swift in Sources */,
 				A226579C1F43CCD500668EDF /* Q6ViewController.swift in Sources */,
 				A226579F1F43CCF500668EDF /* Q7ViewController.swift in Sources */,
+				5F8C485A1F544E9E006E7BEB /* ZoneItem.swift in Sources */,
 				A22C411F1F4AB6FA00BCB043 /* RadioButton.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
+				5F8C48581F4DB6C0006E7BEB /* Databasehelper.swift in Sources */,
 				762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */,
 				5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */,
 				5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */,

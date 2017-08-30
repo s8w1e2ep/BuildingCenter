@@ -7,11 +7,27 @@
 //
 
 import UIKit
+import Foundation
+import SQLite
 
 class ViewController: UIViewController {
-
+    var databasehelper: Databasehelper!
+    //var database: Database!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        databasehelper = Databasehelper()
+        databasehelper.deletezonetable()
+        databasehelper.createzoneTable()
+        let zones = databasehelper.queryzoneTable();
+        //print(zones)
+        for i in zones{
+            print(((i as! ZoneItem).name)as! String)
+        }
+        //print((zones[0] as! ZoneItem).name)
+        //let stringUrl = "http://192.168.65.28/interface/survey.php?survey={\"gender\":\"1\",\"age\":\"3\"}"
+        //databasehelper.surveyupload(stringUrl: stringUrl)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -25,7 +41,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+        
 
 }
 
