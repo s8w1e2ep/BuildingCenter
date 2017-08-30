@@ -50,6 +50,9 @@ class ModeContentViewController: UIViewController {
     }
     
     
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
 
     @IBOutlet var swipeLeft: UISwipeGestureRecognizer!
     @IBOutlet var swipeRight: UISwipeGestureRecognizer!

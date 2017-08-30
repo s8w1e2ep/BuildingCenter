@@ -40,6 +40,9 @@ class ModeIntroViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
     
     func sliderChangedNoti(noti:Notification) {
         let sliderValue = noti.userInfo!["sliderValue"] as! Float

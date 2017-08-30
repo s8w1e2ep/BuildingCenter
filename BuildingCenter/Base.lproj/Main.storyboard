@@ -202,7 +202,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="58B-jS-feq">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="vLW-h4-bF9" kind="show" id="8oK-2f-Vff"/>
+                                                <action selector="goBack:" destination="6Ca-X1-FUf" id="Zdk-G2-sfM"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -282,7 +282,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="wNA-72-d93">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="6Ca-X1-FUf" kind="show" id="Wbj-Ey-n4y"/>
+                                                <action selector="goBack:" destination="6EC-71-KF1" id="Wxf-VN-97a"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -355,7 +355,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="FgK-0N-Bno">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="6EC-71-KF1" kind="show" id="PEi-6S-ahg"/>
+                                                <action selector="goBack:" destination="Drj-IC-pZK" id="Sn5-rE-Zdt"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -440,7 +440,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="Qhw-ga-KY9">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="Drj-IC-pZK" kind="show" id="K2q-qL-Eos"/>
+                                                <action selector="goBack:" destination="nvl-hP-JkO" id="8ZW-Fa-HJD"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -718,7 +718,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="pc5-gc-64g">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="nvl-hP-JkO" kind="show" animates="NO" id="34l-6F-Q5F"/>
+                                                <action selector="goBack:" destination="DkL-DR-66f" id="Jl9-p4-o1T"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1865,7 +1865,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jes-aS-N4p"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Msy-JF-iPy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="584"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="black_overlay_80" translatesAutoresizingMaskIntoConstraints="NO" id="7gl-3f-JJ7">
@@ -2053,7 +2053,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="inG-sM-1vM">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="Spq-Sh-c9A" kind="show" id="E7W-rC-fk8"/>
+                                                <action selector="goBack:" destination="of8-G8-XJ5" id="NOh-wf-mP7"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -2169,7 +2169,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="jin-Ks-XVO">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="of8-G8-XJ5" kind="show" id="RyS-bW-Awt"/>
+                                                <action selector="goBack:" destination="KPE-ag-WVY" id="Mt4-vT-i5G"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -2250,7 +2250,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="KGa-29-Mhc">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="KPE-ag-WVY" kind="show" id="M8W-pj-mpA"/>
+                                                <action selector="goBack:" destination="H93-C3-x5J" id="gBh-07-7ll"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -2289,7 +2289,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="E4F-a8-CT6">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="H93-C3-x5J" kind="show" id="nHE-lf-kd6"/>
+                                                <action selector="goBack:" destination="iYc-1s-yfQ" id="Ae0-c5-4xD"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -8536,35 +8536,27 @@
         <image name="tour_select_robot" width="360" height="510"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bla-I6-8OC"/>
-        <segue reference="xBu-Mf-hHd"/>
+        <segue reference="Nrf-a5-KTc"/>
+        <segue reference="7U1-zQ-2hl"/>
+        <segue reference="uiM-cm-Acy"/>
+        <segue reference="5Wt-bj-VDn"/>
+        <segue reference="oUD-T1-Pz4"/>
+        <segue reference="xVQ-cz-OqY"/>
+        <segue reference="Du8-cX-hbz"/>
+        <segue reference="sJc-Hv-Xjb"/>
+        <segue reference="cuf-LF-EVd"/>
+        <segue reference="wbW-br-e8O"/>
         <segue reference="e3Z-MT-7Ey"/>
         <segue reference="7rd-gw-zaa"/>
-        <segue reference="WRL-pY-vdJ"/>
         <segue reference="x3U-uM-aAC"/>
         <segue reference="JuA-UC-s9u"/>
         <segue reference="YqI-FA-v20"/>
+        <segue reference="WRL-pY-vdJ"/>
         <segue reference="3MP-9b-T0j"/>
         <segue reference="jni-QM-2Jw"/>
-        <segue reference="RyS-bW-Awt"/>
-        <segue reference="Qyr-Ly-RpY"/>
-        <segue reference="nHE-lf-kd6"/>
-        <segue reference="uiM-cm-Acy"/>
-        <segue reference="7U1-zQ-2hl"/>
-        <segue reference="Nrf-a5-KTc"/>
-        <segue reference="5Wt-bj-VDn"/>
-        <segue reference="oUD-T1-Pz4"/>
-        <segue reference="eXD-Nb-Zd3"/>
-        <segue reference="K2q-qL-Eos"/>
-        <segue reference="PEi-6S-ahg"/>
-        <segue reference="Wbj-Ey-n4y"/>
-        <segue reference="8oK-2f-Vff"/>
-        <segue reference="Du8-cX-hbz"/>
-        <segue reference="cuf-LF-EVd"/>
         <segue reference="aG0-Nu-Nj0"/>
         <segue reference="p5a-T4-JX4"/>
         <segue reference="2AN-pq-RSe"/>
-        <segue reference="Txw-SD-yYS"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

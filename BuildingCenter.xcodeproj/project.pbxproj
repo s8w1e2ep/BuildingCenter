@@ -245,6 +245,9 @@
 		5FE9713B1F1C9F0A005EDE58 /* BuildingCenter */ = {
 			isa = PBXGroup;
 			children = (
+				767B6E5C1F5670CC00894B66 /* Localized */,
+				767B6E5B1F56701900894B66 /* CustomizedObject */,
+				767B6E5A1F566DE800894B66 /* Beginning */,
 				76705BAC1F555ECB00047414 /* UsefulHint */,
 				7658BA891F39B8C800C1552B /* MainPage */,
 				762D8D491F1E7534004295A9 /* Question */,
@@ -257,11 +260,6 @@
 				5FE971431F1C9F0A005EDE58 /* Assets.xcassets */,
 				5FE971451F1C9F0A005EDE58 /* LaunchScreen.storyboard */,
 				5FE971481F1C9F0A005EDE58 /* Info.plist */,
-				5FE9716A1F1CA3D2005EDE58 /* BeginViewController.swift */,
-				5FE9716C1F1CB4F5005EDE58 /* AboutOneViewController.swift */,
-				5FE9716E1F1CB56B005EDE58 /* AboutTwoViewController.swift */,
-				5FE971701F1CB5A6005EDE58 /* AboutThreeViewController.swift */,
-				5F58DFC31F1E560C004159D3 /* SelectGuiderViewController.swift */,
 				5F700B321F349B7E00D8C138 /* LaunchViewController.swift */,
 			);
 			path = BuildingCenter;
@@ -373,6 +371,32 @@
 				76705BB51F5585BC00047414 /* QuestionHintViewController.swift */,
 			);
 			name = UsefulHint;
+			sourceTree = "<group>";
+		};
+		767B6E5A1F566DE800894B66 /* Beginning */ = {
+			isa = PBXGroup;
+			children = (
+				5FE9716A1F1CA3D2005EDE58 /* BeginViewController.swift */,
+				5FE9716C1F1CB4F5005EDE58 /* AboutOneViewController.swift */,
+				5FE9716E1F1CB56B005EDE58 /* AboutTwoViewController.swift */,
+				5FE971701F1CB5A6005EDE58 /* AboutThreeViewController.swift */,
+				5F58DFC31F1E560C004159D3 /* SelectGuiderViewController.swift */,
+			);
+			name = Beginning;
+			sourceTree = "<group>";
+		};
+		767B6E5B1F56701900894B66 /* CustomizedObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CustomizedObject;
+			sourceTree = "<group>";
+		};
+		767B6E5C1F5670CC00894B66 /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Localized;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

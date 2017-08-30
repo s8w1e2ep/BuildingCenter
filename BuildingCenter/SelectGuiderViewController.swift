@@ -82,6 +82,9 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation
