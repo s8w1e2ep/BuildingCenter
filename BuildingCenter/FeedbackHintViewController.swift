@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedbackHintViewController: UIViewController {
+class FeedbackHintViewController: UIViewController{
     
     
     @IBOutlet weak var cancel: UIButton!
@@ -28,6 +28,6 @@ class FeedbackHintViewController: UIViewController {
     }
     
     func dismissViewController() {
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "unwindToMainMenu", sender: self)
     }
 }

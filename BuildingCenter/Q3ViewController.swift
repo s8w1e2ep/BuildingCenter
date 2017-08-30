@@ -25,7 +25,25 @@ class Q3ViewController: UIViewController {
     }
     
 
-    /*
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false);
+    }
+
+    @IBAction func clk1(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q3toQ4", sender: self);
+    }
+    @IBAction func clk2(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q3toQ4", sender: self);
+    }
+    @IBAction func clk3(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q3toQ4", sender: self);
+    }
+    @IBAction func clk4(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q3toQ4", sender: self);
+    }
+
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -33,6 +51,6 @@ class Q3ViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

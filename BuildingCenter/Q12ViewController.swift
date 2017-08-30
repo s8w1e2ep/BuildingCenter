@@ -24,6 +24,16 @@ class Q12ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false);
+    }
+    @IBAction func clkFinish(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q12finish", sender: self);
+    }
+    @IBAction func clkPass(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q12finish", sender: self);
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -21,6 +21,16 @@ class QuestionnaireViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+
+    @IBAction func nextQ(_ sender: Any) {
+        self.performSegue(withIdentifier: "Qn1toQn2", sender: self);
+    }
     
 
     /*

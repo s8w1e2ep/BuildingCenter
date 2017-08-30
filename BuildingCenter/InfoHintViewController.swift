@@ -23,9 +23,7 @@ class InfoHintViewController: UIViewController {
         
     }
 
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
-        
-    }
+
     @IBAction func onClick(_ sender: UIButton) {
         self.myView.isHidden = true
     }

@@ -55,6 +55,9 @@ class MapViewController: UIViewController, UIWebViewDelegate {
             defaults.set(true, forKey: "isMapLaunchBefore")
         }
     }
+    @IBAction func goQuestionnaire(_ sender: Any) {
+        self.performSegue(withIdentifier: "mainToQuestionnaire", sender: self);
+    }
     func webViewDidFinishLoad(_ webView: UIWebView){
         //check view have load finish jsContext will be set
         jsContext = self.SVGView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext

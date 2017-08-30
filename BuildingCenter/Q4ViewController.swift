@@ -24,6 +24,49 @@ class Q4ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false);
+    }
+    
+    @IBAction func clk1(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk2(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk3(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk4(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk5(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk6(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk7(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk8(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk9(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk10(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk11(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    @IBAction func clk12(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q4toQ5", sender: self);
+    }
+    
+    
+    
 
     /*
     // MARK: - Navigation

@@ -420,7 +420,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tour_select_background" translatesAutoresizingMaskIntoConstraints="NO" id="JGQ-p4-q8p">
-                                <rect key="frame" x="-0.5" y="65" width="375" height="667"/>
+                                <rect key="frame" x="-1" y="65" width="376" height="667"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="GX2-l8-ZoH">
@@ -562,7 +562,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="BuI-sN-fr7">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="DkL-DR-66f" kind="show" animates="NO" id="Fll-kZ-KmD"/>
+                                                <action selector="goBack:" destination="foP-Lu-t8M" id="0mp-Yt-dcy"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -586,7 +586,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yZH-tZ-CoA" kind="show" animates="NO" id="kSg-rP-LUz"/>
+                                    <action selector="clk_1:" destination="foP-Lu-t8M" eventType="touchUpInside" id="bn8-5H-zt4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7D-ke-oxo">
@@ -595,7 +595,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yZH-tZ-CoA" kind="show" animates="NO" id="nXS-lX-Xk3"/>
+                                    <action selector="clk_3:" destination="foP-Lu-t8M" eventType="touchUpInside" id="mm3-VB-hKW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYR-73-2tw">
@@ -604,7 +604,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yZH-tZ-CoA" kind="show" animates="NO" id="izN-A1-cGU"/>
+                                    <action selector="clk_5:" destination="foP-Lu-t8M" eventType="touchUpInside" id="7gD-Li-eyo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa7-0V-9Vc">
@@ -613,7 +613,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yZH-tZ-CoA" kind="show" animates="NO" id="Qp7-qZ-wRG"/>
+                                    <action selector="clk_7:" destination="foP-Lu-t8M" eventType="touchUpInside" id="35I-2e-3Wa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og1-pa-Swq">
@@ -622,7 +622,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yZH-tZ-CoA" kind="show" animates="NO" id="wbW-br-e8O"/>
+                                    <action selector="clk_2:" destination="foP-Lu-t8M" eventType="touchUpInside" id="cfE-aI-3g6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvM-ew-ro5">
@@ -631,7 +631,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yZH-tZ-CoA" kind="show" animates="NO" id="c5L-PC-xAK"/>
+                                    <action selector="clk_4:" destination="foP-Lu-t8M" eventType="touchUpInside" id="TZ3-mJ-7cZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOw-fK-YG5">
@@ -640,7 +640,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yZH-tZ-CoA" kind="show" animates="NO" id="iwj-UJ-mXU"/>
+                                    <action selector="clk_6:" destination="foP-Lu-t8M" eventType="touchUpInside" id="d1U-Vy-lBX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5B-RB-v5F">
@@ -690,6 +690,7 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="ohW-U8-zDQ" id="Tx2-US-Ves"/>
+                        <segue destination="yZH-tZ-CoA" kind="show" identifier="Q2toQ3" animates="NO" id="Dow-lI-3U0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwa-P6-rOs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -742,7 +743,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="foP-Lu-t8M" kind="show" animates="NO" id="ONG-yA-QsD"/>
+                                    <action selector="clkGirl:" destination="DkL-DR-66f" eventType="touchUpInside" id="LsD-5u-05u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ef-Dr-nML">
@@ -751,7 +752,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="foP-Lu-t8M" kind="show" animates="NO" id="cuf-LF-EVd"/>
+                                    <action selector="clkBoy:" destination="DkL-DR-66f" eventType="touchUpInside" id="y9H-sQ-KlG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lp-23-AGe">
@@ -785,6 +786,7 @@
                     <connections>
                         <outlet property="navbar" destination="VVu-WD-eAF" id="nxb-Gw-04w"/>
                         <outlet property="surveyPop" destination="Bym-gh-MW5" id="pjj-no-ecl"/>
+                        <segue destination="foP-Lu-t8M" kind="show" identifier="Q1toQ2" animates="NO" id="J7V-P6-j0l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Qg-Lg-WeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -814,7 +816,7 @@
                             <rect key="frame" x="71" y="282" width="219" height="40"/>
                             <state key="normal" title="略過" backgroundImage="btn_graysquare_normal"/>
                             <connections>
-                                <segue destination="ulF-dK-yeo" kind="show" id="xVQ-cz-OqY"/>
+                                <segue destination="ulF-dK-yeo" kind="show" id="51g-2q-v7G"/>
                             </connections>
                         </button>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="貴賓您好，感謝您撥冗參觀展示中心，為使本中心未來設備系統開發與服務品質的提升，請您利用簡短時間填寫本表，您所提供的資料受個資法保護，僅供問卷統、計整體分析使用，感謝您的協助。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQV-bN-Odn">
@@ -1055,7 +1057,8 @@
                                         <barButtonItem key="rightBarButtonItem" image="icon_questionnaire" id="8AV-sg-g4K">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="2CP-yP-3YF" kind="presentation" id="bQP-RW-AXV"/>
+                                                <action selector="goQuestionnaire:" destination="w5y-cL-xo6" id="qAD-vR-QdB"/>
+                                                <segue destination="2CP-yP-3YF" kind="presentation" id="osR-2K-3Z8"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1105,7 +1108,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onClick:" destination="Osp-ds-ro0" eventType="touchUpInside" id="km2-YU-5jb"/>
-                                    <segue destination="8xF-89-dTJ" kind="show" identifier="segue_info_to_question" id="VsK-ET-xa6"/>
+                                    <segue destination="CX6-X9-KCi" kind="unwind" unwindAction="unwindToMainMenu:" id="bf5-2R-mNG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1115,6 +1118,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiH-Rk-6f3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CX6-X9-KCi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="8309.6000000000004" y="955.77211394302856"/>
         </scene>
@@ -1149,7 +1153,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onClick:" destination="8xF-89-dTJ" eventType="touchUpInside" id="tAJ-m6-SEy"/>
-                                    <segue destination="5O7-sd-IUM" kind="unwind" unwindAction="unwindFor:" id="rP5-Jl-mWz"/>
+                                    <segue destination="5O7-sd-IUM" kind="unwind" unwindAction="unwindToMainMenu:" id="ktw-94-plc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1369,7 +1373,7 @@
                         <viewControllerLayoutGuide type="top" id="NDp-Oy-aWX"/>
                         <viewControllerLayoutGuide type="bottom" id="T4N-wv-FWM"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="VSh-q4-WDw">
+                    <view key="view" contentMode="scaleToFill" id="VSh-q4-WDw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1389,7 +1393,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="8eF-Rh-JK0" kind="show" id="e3Z-MT-7Ey"/>
+                                            <segue destination="8eF-Rh-JK0" kind="show" id="n7B-Xa-AxJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oz-x7-g1X">
@@ -1452,7 +1456,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.6990047089041096" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.69900470889999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="D9Z-Qa-hr5" firstAttribute="leading" secondItem="VSh-q4-WDw" secondAttribute="leadingMargin" id="QA9-AP-eeq"/>
                             <constraint firstItem="D9Z-Qa-hr5" firstAttribute="trailing" secondItem="VSh-q4-WDw" secondAttribute="trailingMargin" id="cP7-ko-jtz"/>
@@ -1462,9 +1466,11 @@
                     </view>
                     <connections>
                         <outlet property="cancel" destination="1Oz-x7-g1X" id="tzO-eD-qql"/>
+                        <segue destination="S9K-b3-vn1" kind="unwind" identifier="unwindToMainMenu" unwindAction="unwindToMainMenu:" id="bpm-Ag-t5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3N-cg-v8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="S9K-b3-vn1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="9241" y="-802"/>
         </scene>
@@ -1492,13 +1498,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="0e4-qD-04d">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="xBu-Mf-hHd"/>
+                                                <action selector="goBack:" destination="8eF-Rh-JK0" id="Wyu-AJ-KK6"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="ic_close" id="kvE-l7-zfR">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="Afr-Lo-UVC"/>
+                                                <segue destination="WfI-4s-X59" kind="unwind" unwindAction="unwindToMainMenu:" id="SrY-6h-6np"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1512,7 +1518,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="下一題" backgroundImage="header_blank"/>
                                 <connections>
-                                    <segue destination="CJ6-YA-4Gq" kind="show" animates="NO" id="7rd-gw-zaa"/>
+                                    <action selector="nextQ:" destination="8eF-Rh-JK0" eventType="touchUpInside" id="mkZ-Fa-hoS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您對智慧化科技產品的態度傾向" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reU-5n-LFZ">
@@ -1726,11 +1732,14 @@
                             <constraint firstItem="zsG-dz-8Rh" firstAttribute="leading" secondItem="VdL-x7-FB5" secondAttribute="leadingMargin" id="qec-30-fEz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hur-Fv-LfJ"/>
                     <connections>
                         <outlet property="navbar" destination="1bS-D9-jpP" id="SKV-dD-r87"/>
+                        <segue destination="CJ6-YA-4Gq" kind="show" identifier="Qn1toQn2" animates="NO" id="4vy-Um-nbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tr1-9V-0oX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WfI-4s-X59" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="10072.799999999999" y="-802.848575712144"/>
         </scene>
@@ -1865,7 +1874,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jes-aS-N4p"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Msy-JF-iPy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="584"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="black_overlay_80" translatesAutoresizingMaskIntoConstraints="NO" id="7gl-3f-JJ7">
@@ -1928,7 +1937,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HFm-Ng-CHA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Aos-Uj-dPj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="584"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="214-Zm-Qw6">
@@ -2126,7 +2135,7 @@
                         <viewControllerLayoutGuide type="bottom" id="opB-Gc-Wom"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fwi-4X-hCd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="584"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="black_overlay_80" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-dv-YPs">
@@ -2213,7 +2222,7 @@
                         <viewControllerLayoutGuide type="bottom" id="98A-Vp-P93"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4d4-G0-sNa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="584"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="a1m4_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Mvm-34-IGF">
@@ -2276,11 +2285,11 @@
                         <viewControllerLayoutGuide type="bottom" id="hB7-Od-DPE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cyZ-pX-HMR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="584"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vo4-eG-R5i">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="8" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -2296,13 +2305,13 @@
                                 </items>
                             </navigationBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHZ-W6-wMf">
-                                <rect key="frame" x="0.0" y="116" width="375" height="487"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="375"/>
                                 <connections>
                                     <segue destination="aCT-66-CX5" kind="embed" id="ZCO-Al-bG0"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P5n-y7-cyb">
-                                <rect key="frame" x="0.0" y="72" width="375" height="29"/>
+                                <rect key="frame" x="0.0" y="52" width="375" height="29"/>
                                 <segments>
                                     <segment title="設備１"/>
                                     <segment title="設備２"/>
@@ -2312,7 +2321,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abw-4H-QMk">
-                                <rect key="frame" x="0.0" y="116" width="375" height="487"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="375"/>
                                 <connections>
                                     <segue destination="LCC-6r-sd4" kind="embed" id="YzQ-pL-lc9"/>
                                 </connections>
@@ -2391,7 +2400,7 @@
                         <viewControllerLayoutGuide type="bottom" id="18A-QX-lJI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xDo-sb-eZS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="植生牆可視環境特質與需求，選植適合的植種，且因桶植式架體的構造特性，所以大小面積的植栽都能選用。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Yvo-5h-Gxk">
@@ -2478,11 +2487,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ahP-hq-M1y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eeV-4b-MQf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhR-gr-gv0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PHOTP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeC-hs-jCn">
@@ -2544,7 +2553,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="XD4-gq-Cns">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="foP-Lu-t8M" kind="show" animates="NO" id="wOa-AC-qyF"/>
+                                                <action selector="goBack:" destination="yZH-tZ-CoA" id="pQO-0p-t3e"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -2568,8 +2577,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="J8B-z2-BG1"/>
-                                    <segue destination="hYa-eQ-HyH" kind="show" animates="NO" id="zJ0-Ys-eP2"/>
+                                    <action selector="clk1:" destination="yZH-tZ-CoA" eventType="touchUpInside" id="shf-ae-g33"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOc-hj-LUJ">
@@ -2578,8 +2586,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Aio-nB-bu1"/>
-                                    <segue destination="hYa-eQ-HyH" kind="show" animates="NO" id="1QA-Kp-JMx"/>
+                                    <action selector="clk2:" destination="yZH-tZ-CoA" eventType="touchUpInside" id="H2u-VQ-qIQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2u-Fh-1FO">
@@ -2588,8 +2595,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="c2z-Hb-yhc"/>
-                                    <segue destination="hYa-eQ-HyH" kind="show" animates="NO" id="TxZ-LV-OXg"/>
+                                    <action selector="clk3:" destination="yZH-tZ-CoA" eventType="touchUpInside" id="q17-GQ-6Hf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvx-fK-hXQ">
@@ -2598,8 +2604,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="CCR-9p-X6O"/>
-                                    <segue destination="hYa-eQ-HyH" kind="show" animates="NO" id="IAQ-3w-4tt"/>
+                                    <action selector="clk4:" destination="yZH-tZ-CoA" eventType="touchUpInside" id="dVJ-Dc-oOF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sg-bQ-eyP">
@@ -2639,6 +2644,7 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="WsF-uY-Dmg" id="OBw-uc-T7J"/>
+                        <segue destination="hYa-eQ-HyH" kind="show" identifier="Q3toQ4" animates="NO" id="Z98-Ea-Juh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6HD-wo-1QX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2666,8 +2672,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Wax-eG-i9f"/>
-                                    <segue destination="uHO-lc-A1W" kind="show" animates="NO" id="ZhR-WK-X8x"/>
+                                    <action selector="clk1:" destination="vRf-wU-bFR" eventType="touchUpInside" id="nhE-Ue-Ges"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbO-8B-MZG">
@@ -2676,8 +2681,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Io8-Wh-ssm"/>
-                                    <segue destination="uHO-lc-A1W" kind="show" animates="NO" id="5ML-fn-pRV"/>
+                                    <action selector="clk2:" destination="vRf-wU-bFR" eventType="touchUpInside" id="Sfy-RZ-lZH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7g-Ev-QmR">
@@ -2686,8 +2690,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="qLH-Le-ZWz"/>
-                                    <segue destination="uHO-lc-A1W" kind="show" animates="NO" id="bE3-ei-RXG"/>
+                                    <action selector="clk3:" destination="vRf-wU-bFR" eventType="touchUpInside" id="gx1-lx-Blu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLP-Zb-m3S">
@@ -2696,8 +2699,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="0Lw-oy-dyp"/>
-                                    <segue destination="uHO-lc-A1W" kind="show" animates="NO" id="e0h-U5-CTb"/>
+                                    <action selector="clk4:" destination="vRf-wU-bFR" eventType="touchUpInside" id="ruR-BB-WWQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5y-3x-NKA">
@@ -2706,8 +2708,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="HNG-42-kP7"/>
-                                    <segue destination="uHO-lc-A1W" kind="show" animates="NO" id="p5a-T4-JX4"/>
+                                    <action selector="clk5:" destination="vRf-wU-bFR" eventType="touchUpInside" id="xh8-ah-KS5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="47" text="曾從事之行業工作與智慧化產品開發有相關之經歷" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pr-Op-TMg">
@@ -2716,19 +2717,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpK-4I-gvt">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="問卷" id="XzO-kC-qWg">
-                                        <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="EKl-8l-d1X">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <segue destination="hYa-eQ-HyH" kind="show" animates="NO" id="2AN-pq-RSe"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5/12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaB-Zv-BYZ" userLabel="5/12">
                                 <rect key="frame" x="171" y="90" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2747,10 +2735,23 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="clk6:" destination="vRf-wU-bFR" eventType="touchUpInside" id="daK-xY-Dwh"/>
                                     <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Zf7-5Q-5tY"/>
-                                    <segue destination="uHO-lc-A1W" kind="show" animates="NO" id="5VP-da-4M5"/>
                                 </connections>
                             </button>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpK-4I-gvt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="問卷" id="XzO-kC-qWg">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="EKl-8l-d1X">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="goBack:" destination="vRf-wU-bFR" id="ak2-pj-7D8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2790,11 +2791,12 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="hpK-4I-gvt" id="apx-he-Oxg"/>
+                        <segue destination="uHO-lc-A1W" kind="show" identifier="Q5toQ6" animates="NO" id="WA3-9E-bZd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGH-7j-nWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5788" y="-1328.1859070464768"/>
+            <point key="canvasLocation" x="5788" y="-1400"/>
         </scene>
         <!--Q7-->
         <scene sceneID="c0l-DC-DgN">
@@ -2818,13 +2820,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="Eqk-KP-4ue">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="uHO-lc-A1W" kind="show" animates="NO" id="Vdv-i3-jAP"/>
+                                                <action selector="goBack:" destination="t5j-Kj-Dst" id="GA7-jp-7NV"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="略過" id="fWd-Np-9fo">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="RCo-Lk-J2k" kind="show" animates="NO" id="CdE-nr-5uD"/>
+                                                <action selector="clkPass:" destination="t5j-Kj-Dst" id="JCW-Ub-ZSe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -2848,8 +2850,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Uhp-a8-P1n"/>
-                                    <segue destination="RCo-Lk-J2k" kind="show" animates="NO" id="Bey-qe-3sf"/>
+                                    <action selector="clk1:" destination="t5j-Kj-Dst" eventType="touchUpInside" id="bhR-ce-MHK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICt-IM-Yyo">
@@ -2858,8 +2859,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="ck3-sk-Vpd"/>
-                                    <segue destination="RCo-Lk-J2k" kind="show" animates="NO" id="TxN-O2-hEX"/>
+                                    <action selector="clk2:" destination="t5j-Kj-Dst" eventType="touchUpInside" id="Yze-7H-M4k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-Xk-X5C">
@@ -2868,8 +2868,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="yPO-m0-qWt"/>
-                                    <segue destination="RCo-Lk-J2k" kind="show" animates="NO" id="9KC-Mx-BsB"/>
+                                    <action selector="clk3:" destination="t5j-Kj-Dst" eventType="touchUpInside" id="1up-dt-5FM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vl-Df-che">
@@ -2878,8 +2877,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Oic-Yk-vTR"/>
-                                    <segue destination="RCo-Lk-J2k" kind="show" animates="NO" id="N1v-Rz-VEx"/>
+                                    <action selector="clk4:" destination="t5j-Kj-Dst" eventType="touchUpInside" id="AgP-Pj-Wrs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSR-jh-B28">
@@ -2888,8 +2886,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="VH5-Nb-cru"/>
-                                    <segue destination="RCo-Lk-J2k" kind="show" animates="NO" id="osc-vl-1tg"/>
+                                    <action selector="clk5:" destination="t5j-Kj-Dst" eventType="touchUpInside" id="p2u-A5-SU4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WI-w1-Qb4">
@@ -2898,8 +2895,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="4D6-uA-r9z"/>
-                                    <segue destination="RCo-Lk-J2k" kind="show" animates="NO" id="pbh-Gu-XCx"/>
+                                    <action selector="clk6:" destination="t5j-Kj-Dst" eventType="touchUpInside" id="pNw-wr-8jW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiZ-hk-9k9">
@@ -2945,11 +2941,12 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="wxp-z5-0FO" id="u73-vV-knu"/>
+                        <segue destination="RCo-Lk-J2k" kind="show" identifier="Q7toQ8" animates="NO" id="9Qd-56-jk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoD-Q9-wzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5788" y="-2005"/>
+            <point key="canvasLocation" x="5788" y="-2148"/>
         </scene>
         <!--Q8-->
         <scene sceneID="nLH-aO-sRI">
@@ -2973,13 +2970,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="8xx-qe-PX2">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="t5j-Kj-Dst" kind="show" animates="NO" id="jni-QM-2Jw"/>
+                                                <action selector="goBack:" destination="RCo-Lk-J2k" id="TZo-Hx-ZBu"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="略過" id="S5u-K1-D8P">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ihL-J4-iKS" kind="show" animates="NO" id="YKr-P4-f2v"/>
+                                                <action selector="clkPass:" destination="RCo-Lk-J2k" id="203-6f-jQh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -3003,8 +3000,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="yPL-Wz-2yN"/>
-                                    <segue destination="ihL-J4-iKS" kind="show" animates="NO" id="sKC-WD-9ms"/>
+                                    <action selector="clk1:" destination="RCo-Lk-J2k" eventType="touchUpInside" id="FVR-8R-php"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-hr-rVp">
@@ -3013,8 +3009,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Bxb-vj-kAT"/>
-                                    <segue destination="ihL-J4-iKS" kind="show" animates="NO" id="cYM-jG-pc4"/>
+                                    <action selector="clk2:" destination="RCo-Lk-J2k" eventType="touchUpInside" id="IPt-bd-Pti"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTj-eh-RJG">
@@ -3023,8 +3018,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="QTj-zv-hP6"/>
-                                    <segue destination="ihL-J4-iKS" kind="show" animates="NO" id="7v0-gv-1bD"/>
+                                    <action selector="clk3:" destination="RCo-Lk-J2k" eventType="touchUpInside" id="HoG-tX-eed"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqU-G0-AY7">
@@ -3033,8 +3027,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Yxn-h9-7ni"/>
-                                    <segue destination="ihL-J4-iKS" kind="show" animates="NO" id="xpR-he-0aR"/>
+                                    <action selector="clk4:" destination="RCo-Lk-J2k" eventType="touchUpInside" id="Ogu-7Y-IbU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Td-CO-8rK">
@@ -3043,8 +3036,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="CKx-8F-8tw"/>
-                                    <segue destination="ihL-J4-iKS" kind="show" animates="NO" id="wHG-om-mkr"/>
+                                    <action selector="clk5:" destination="RCo-Lk-J2k" eventType="touchUpInside" id="dFZ-YZ-WfE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PR-Hp-hHg">
@@ -3087,11 +3079,12 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="QuZ-0m-iuZ" id="Z6Y-Yo-l3Y"/>
+                        <segue destination="ihL-J4-iKS" kind="show" identifier="Q8toQ9" animates="NO" id="rpU-1Y-oCD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ktE-Js-CL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5044" y="-2669"/>
+            <point key="canvasLocation" x="5044" y="-2894"/>
         </scene>
         <!--Q9-->
         <scene sceneID="fnM-hP-rEx">
@@ -3115,13 +3108,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="LAb-3d-Ge9">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="RCo-Lk-J2k" kind="show" animates="NO" id="3MP-9b-T0j"/>
+                                                <action selector="goBack:" destination="ihL-J4-iKS" id="GIg-jL-F4a"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="略過" id="Xgi-sN-hi1">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="inI-2t-m3S" kind="show" animates="NO" id="xq1-du-bEH"/>
+                                                <action selector="clkPass:" destination="ihL-J4-iKS" id="HdM-IV-yDo"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -3145,8 +3138,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="O6e-NJ-DFr"/>
-                                    <segue destination="inI-2t-m3S" kind="show" animates="NO" id="f9x-P9-bbA"/>
+                                    <action selector="clk1:" destination="ihL-J4-iKS" eventType="touchUpInside" id="hVS-Vx-F5B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yt4-Te-aw8">
@@ -3155,8 +3147,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="PAt-EP-SHl"/>
-                                    <segue destination="inI-2t-m3S" kind="show" animates="NO" id="1NL-ah-K2E"/>
+                                    <action selector="clk2:" destination="ihL-J4-iKS" eventType="touchUpInside" id="tPh-K5-sXY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV3-QX-Rkj">
@@ -3165,8 +3156,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Snc-zm-uHP"/>
-                                    <segue destination="inI-2t-m3S" kind="show" animates="NO" id="ZRQ-v8-R38"/>
+                                    <action selector="clk3:" destination="ihL-J4-iKS" eventType="touchUpInside" id="WWu-ZF-iNi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny1-gD-wGI">
@@ -3175,8 +3165,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="0mk-4Q-8Zz"/>
-                                    <segue destination="inI-2t-m3S" kind="show" animates="NO" id="byY-4c-4AT"/>
+                                    <action selector="clk4:" destination="ihL-J4-iKS" eventType="touchUpInside" id="Mv2-c6-qeQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVE-9U-AjW">
@@ -3185,8 +3174,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="ScV-tN-FMd"/>
-                                    <segue destination="inI-2t-m3S" kind="show" animates="NO" id="Re9-rc-Cn1"/>
+                                    <action selector="clk5:" destination="ihL-J4-iKS" eventType="touchUpInside" id="qDF-Be-OHZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAa-oO-a05">
@@ -3195,8 +3183,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="Kcl-XQ-b7l"/>
-                                    <segue destination="inI-2t-m3S" kind="show" animates="NO" id="Rv2-FW-Azl"/>
+                                    <action selector="clk6:" destination="ihL-J4-iKS" eventType="touchUpInside" id="Nrt-0m-7o3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkL-4m-cY8">
@@ -3242,11 +3229,12 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="by5-0P-cfD" id="8zT-u7-bVO"/>
+                        <segue destination="inI-2t-m3S" kind="show" identifier="Q9toQ10" animates="NO" id="Mhq-Uh-Nct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUX-kY-vnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5759" y="-2669"/>
+            <point key="canvasLocation" x="5788" y="-2895"/>
         </scene>
         <!--Q10-->
         <scene sceneID="myl-65-mNl">
@@ -3270,13 +3258,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="WKG-qi-AOz">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ihL-J4-iKS" kind="show" animates="NO" id="WRL-pY-vdJ"/>
+                                                <action selector="goBack:" destination="inI-2t-m3S" id="jdW-hy-n9v"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="略過" id="meD-C7-yP9">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="zNT-5w-3AO" kind="show" animates="NO" id="mY1-c6-8Hb"/>
+                                                <action selector="clkPass:" destination="inI-2t-m3S" id="sBo-6j-2AA"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -3300,8 +3288,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="XPs-ui-wDj"/>
-                                    <segue destination="zNT-5w-3AO" kind="show" animates="NO" id="Ggi-0e-PGh"/>
+                                    <action selector="clk1:" destination="inI-2t-m3S" eventType="touchUpInside" id="tvD-Gc-ayC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLL-dT-Hyb">
@@ -3310,8 +3297,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="j7R-Hq-Xbr"/>
-                                    <segue destination="zNT-5w-3AO" kind="show" animates="NO" id="uT7-2e-aQl"/>
+                                    <action selector="clk2:" destination="inI-2t-m3S" eventType="touchUpInside" id="Lig-n6-JNF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ta-Nz-AeG">
@@ -3320,8 +3306,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="y1z-U8-Mjd"/>
-                                    <segue destination="zNT-5w-3AO" kind="show" animates="NO" id="Yfp-WC-L3t"/>
+                                    <action selector="clk1:" destination="inI-2t-m3S" eventType="touchUpInside" id="H2y-nn-0ja"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rz8-i7-HvX">
@@ -3358,11 +3343,12 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="X8r-T1-OXY" id="XVh-fc-TQK"/>
+                        <segue destination="zNT-5w-3AO" kind="show" identifier="Q10toQ11" animates="NO" id="dnt-Lj-4Ln"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYm-7y-kB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5044" y="-3338"/>
+            <point key="canvasLocation" x="5044" y="-3640"/>
         </scene>
         <!--Q11-->
         <scene sceneID="FPR-x7-4K9">
@@ -3385,8 +3371,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="OGN-Ya-EAc"/>
-                                    <segue destination="CgT-dp-Lpp" kind="show" animates="NO" id="9tq-6B-6La"/>
+                                    <action selector="clk1:" destination="zNT-5w-3AO" eventType="touchUpInside" id="HP0-EK-fzt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S85-nG-cwZ">
@@ -3395,8 +3380,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="cf8-eC-5Eu"/>
-                                    <segue destination="CgT-dp-Lpp" kind="show" animates="NO" id="NL0-w4-XgO"/>
+                                    <action selector="clk2:" destination="zNT-5w-3AO" eventType="touchUpInside" id="FTw-eL-CK3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ox-Mf-Rga">
@@ -3405,8 +3389,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="FK1-oO-dSa"/>
-                                    <segue destination="CgT-dp-Lpp" kind="show" animates="NO" id="Tug-qO-R4E"/>
+                                    <action selector="clk3:" destination="zNT-5w-3AO" eventType="touchUpInside" id="q9X-ag-Xjf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYa-tc-z2X">
@@ -3415,8 +3398,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="ilY-n6-jyc"/>
-                                    <segue destination="CgT-dp-Lpp" kind="show" animates="NO" id="tRe-kE-h4d"/>
+                                    <action selector="clk4:" destination="zNT-5w-3AO" eventType="touchUpInside" id="aAi-sF-2v0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8u-uD-dmH">
@@ -3425,8 +3407,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="vrA-7v-O4x"/>
-                                    <segue destination="CgT-dp-Lpp" kind="show" animates="NO" id="chg-xM-RNb"/>
+                                    <action selector="clk5:" destination="zNT-5w-3AO" eventType="touchUpInside" id="mQT-jU-hqk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiB-N2-yZy">
@@ -3435,8 +3416,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="ygH-HX-RTL"/>
-                                    <segue destination="CgT-dp-Lpp" kind="show" animates="NO" id="YqI-FA-v20"/>
+                                    <action selector="clk6:" destination="zNT-5w-3AO" eventType="touchUpInside" id="pFA-no-Ceb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="50" text="您是由何種管道得知本展示中心導覽服務" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpr-BD-6l9">
@@ -3452,13 +3432,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="F9h-Gw-Okr">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="inI-2t-m3S" kind="show" animates="NO" id="x3U-uM-aAC"/>
+                                                <action selector="goBack:" destination="zNT-5w-3AO" id="Doy-WH-c1e"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="略過" id="JDC-3W-A5q">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="CgT-dp-Lpp" kind="show" animates="NO" id="byC-D5-DVE"/>
+                                                <action selector="clkPass:" destination="zNT-5w-3AO" id="eGg-lU-4jV"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -3513,11 +3493,12 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="wVX-FD-aM0" id="rp0-5U-cQa"/>
+                        <segue destination="CgT-dp-Lpp" kind="show" identifier="Q11toQ12" animates="NO" id="g5A-7X-ert"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTg-XV-IU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5758" y="-3339"/>
+            <point key="canvasLocation" x="5788" y="-3641"/>
         </scene>
         <!--Q12-->
         <scene sceneID="Jny-bU-84H">
@@ -3540,8 +3521,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="0n6-nN-qv9"/>
-                                    <segue destination="ulF-dK-yeo" kind="show" id="aOJ-CE-kt9"/>
+                                    <action selector="clkFinish:" destination="CgT-dp-Lpp" eventType="touchUpInside" id="Bxy-MX-HjI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIn-aH-9QB">
@@ -3550,8 +3530,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showquestion2:" destination="DkL-DR-66f" eventType="touchUpInside" id="4mk-hb-36G"/>
-                                    <segue destination="ulF-dK-yeo" kind="show" id="XGW-lE-9Pf"/>
+                                    <action selector="clkPass:" destination="CgT-dp-Lpp" eventType="touchUpInside" id="Dxk-ZH-Dhk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入您的資料" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLd-ai-zQB">
@@ -3567,7 +3546,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="xPB-ih-9yH">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="zNT-5w-3AO" kind="show" animates="NO" id="JuA-UC-s9u"/>
+                                                <action selector="goBack:" destination="CgT-dp-Lpp" id="zN1-wb-BQ8"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -3628,11 +3607,12 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="6PO-ZN-sww" id="g9A-fF-doE"/>
+                        <segue destination="ulF-dK-yeo" kind="show" identifier="Q12finish" animates="NO" id="Cnl-Gv-YWL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMU-di-2DV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5044" y="-4032"/>
+            <point key="canvasLocation" x="6721" y="-3641"/>
         </scene>
         <!--Q4-->
         <scene sceneID="VzG-IL-e5p">
@@ -3656,7 +3636,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="26I-ox-4Vl">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="yZH-tZ-CoA" kind="show" animates="NO" id="Txw-SD-yYS"/>
+                                                <action selector="goBack:" destination="hYa-eQ-HyH" id="BIG-co-QWg"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -3680,7 +3660,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="ixu-24-koR"/>
+                                    <action selector="clk1:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="Chz-4u-Ksg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQz-Ep-agW">
@@ -3689,7 +3669,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="OvV-Nq-brZ"/>
+                                    <action selector="clk3:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="fCy-Qw-zej"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWH-dx-SYK">
@@ -3698,7 +3678,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="cep-mw-ujS"/>
+                                    <action selector="clk5:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="TUW-CQ-30Y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbC-G1-0lR">
@@ -3707,7 +3687,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="wST-T0-KYS"/>
+                                    <action selector="clk7:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="tf8-cJ-ntZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXh-f5-Ghz">
@@ -3716,7 +3696,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="klw-uq-yjv"/>
+                                    <action selector="clk9:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="eqO-Rl-bVf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJk-fg-rPO">
@@ -3725,7 +3705,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="bpu-8Z-Ay2"/>
+                                    <action selector="clk11:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="YIw-ko-EDc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBf-2i-Iwg">
@@ -3734,7 +3714,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="ibw-cQ-G3g"/>
+                                    <action selector="clk2:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="rbN-es-IkR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYh-eU-m97">
@@ -3743,7 +3723,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="fEF-BY-VB6"/>
+                                    <action selector="clk4:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="Lh4-Ib-bPL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBi-zs-4Jr">
@@ -3752,7 +3732,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="9Db-ca-xhw"/>
+                                    <action selector="clk6:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="j7A-y8-0gr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUB-JR-pZE">
@@ -3761,7 +3741,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="Pi1-Xp-Hua"/>
+                                    <action selector="clk8:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="YQh-zC-1Lu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7b-ht-Lau">
@@ -3770,7 +3750,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="yyr-xs-PXn"/>
+                                    <action selector="clk10:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="9eo-Qf-Oay"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hu-39-o8h">
@@ -3779,7 +3759,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="rUq-Gz-vh7"/>
+                                    <action selector="clk12:" destination="hYa-eQ-HyH" eventType="touchUpInside" id="rKO-i8-itM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUd-u0-rs5">
@@ -3844,11 +3824,12 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="xzh-NX-Gmp" id="KOn-gR-m5I"/>
+                        <segue destination="vRf-wU-bFR" kind="show" identifier="Q4toQ5" animates="NO" id="q9q-ak-i12"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4O-Yg-JBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5044" y="-1328"/>
+            <point key="canvasLocation" x="5044" y="-1399"/>
         </scene>
         <!--Q6-->
         <scene sceneID="LzK-oO-RML">
@@ -3872,13 +3853,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="CFE-aq-KdM">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="vRf-wU-bFR" kind="show" animates="NO" id="aG0-Nu-Nj0"/>
+                                                <action selector="goBack:" destination="uHO-lc-A1W" id="paT-iX-nFk"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="略過" id="aqY-PU-qZu">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="t5j-Kj-Dst" kind="show" animates="NO" id="swO-lU-I3f"/>
+                                                <action selector="clkPass:" destination="uHO-lc-A1W" id="rMA-rl-NNR"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -3902,7 +3883,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t5j-Kj-Dst" kind="show" animates="NO" id="9Sd-fy-VRR"/>
+                                    <action selector="clk1:" destination="uHO-lc-A1W" eventType="touchUpInside" id="IIf-Hm-Zgo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghz-yP-cZY">
@@ -3911,7 +3892,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t5j-Kj-Dst" kind="show" animates="NO" id="XY5-6I-Mm6"/>
+                                    <action selector="clk3:" destination="uHO-lc-A1W" eventType="touchUpInside" id="9On-w9-5tU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGC-6D-AAJ">
@@ -3920,7 +3901,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t5j-Kj-Dst" kind="show" animates="NO" id="ffk-7S-uUO"/>
+                                    <action selector="clk5:" destination="uHO-lc-A1W" eventType="touchUpInside" id="1Vm-5h-Mds"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-sx-4X7">
@@ -3929,7 +3910,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t5j-Kj-Dst" kind="show" animates="NO" id="Kfz-jy-7RN"/>
+                                    <action selector="clk7:" destination="uHO-lc-A1W" eventType="touchUpInside" id="kHp-MG-Mgb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vta-73-2iJ">
@@ -3938,7 +3919,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t5j-Kj-Dst" kind="show" animates="NO" id="EA7-6Y-4e6"/>
+                                    <action selector="clk2:" destination="uHO-lc-A1W" eventType="touchUpInside" id="5QZ-In-qcT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryo-bR-CXA">
@@ -3947,7 +3928,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t5j-Kj-Dst" kind="show" animates="NO" id="L2d-CF-zm9"/>
+                                    <action selector="clk4:" destination="uHO-lc-A1W" eventType="touchUpInside" id="Xa4-39-wy9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZn-ds-u42">
@@ -3956,7 +3937,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="t5j-Kj-Dst" kind="show" animates="NO" id="o4a-yE-RGw"/>
+                                    <action selector="clk6:" destination="uHO-lc-A1W" eventType="touchUpInside" id="ct0-Je-Tov"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K2-3n-D8p">
@@ -4006,11 +3987,12 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="a63-pG-1GK" id="G38-U1-DqS"/>
+                        <segue destination="t5j-Kj-Dst" kind="show" identifier="Q6toQ7" animates="NO" id="ODs-Aq-Pos"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZF-hh-GgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5044" y="-2006"/>
+            <point key="canvasLocation" x="5044" y="-2147"/>
         </scene>
         <!--意見表q2-->
         <scene sceneID="Nu5-E6-fxP">
@@ -4036,13 +4018,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="7K6-1o-tPn">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="8eF-Rh-JK0" kind="show" animates="NO" id="3i9-Lh-xqA"/>
+                                                <action selector="goBack:" destination="CJ6-YA-4Gq" id="6Dn-s7-lCC"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="ic_close" id="KqO-Gu-ZKO">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="k8n-jv-6C3"/>
+                                                <segue destination="juL-Xt-nAi" kind="unwind" unwindAction="unwindToMainMenu:" id="Og3-aC-Sa0"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -4056,7 +4038,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="下一題" backgroundImage="header_blank"/>
                                 <connections>
-                                    <segue destination="0XT-N4-EjK" kind="show" animates="NO" id="vbQ-Vs-Blb"/>
+                                    <action selector="nextQ:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="off-Xr-qdw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您對智慧化科技產品購買與使用傾向，其重要程度看法如何？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXk-uR-aiy">
@@ -5667,9 +5649,11 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="TuW-wT-2TH" id="Si9-qa-n2o"/>
+                        <segue destination="0XT-N4-EjK" kind="show" identifier="Qn2toQn3" animates="NO" id="m6R-eG-476"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9H-iE-8Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="juL-Xt-nAi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="10768.799999999999" y="-803.74812593703155"/>
         </scene>
@@ -5697,13 +5681,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="JVD-Pt-cvz">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="CJ6-YA-4Gq" kind="show" animates="NO" id="tTZ-ST-FNH"/>
+                                                <action selector="goBack:" destination="0XT-N4-EjK" id="ofy-KP-uia"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="ic_close" id="tbN-wj-D5L">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="Z2q-4K-deD"/>
+                                                <segue destination="DsE-rq-7Nx" kind="unwind" unwindAction="unwindToMainMenu:" id="s0k-GR-MQ7"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -5717,7 +5701,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="下一題" backgroundImage="header_blank"/>
                                 <connections>
-                                    <segue destination="Dof-ym-5fi" kind="show" animates="NO" id="vhV-QP-BOo"/>
+                                    <action selector="nextQ:" destination="0XT-N4-EjK" eventType="touchUpInside" id="iFS-9g-q07"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="依您目前生活條件或機能需求狀況，針對展示中心系統及設備中您最想購買的前兩項產品為哪些？其原因為何？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQr-se-ttX">
@@ -7274,9 +7258,11 @@
                         <outlet property="menu4" destination="jW3-Va-sMO" id="Syi-ZJ-aYb"/>
                         <outlet property="menu5" destination="Yf2-oo-nKD" id="7jL-dU-hCM"/>
                         <outlet property="navbar" destination="lIo-sy-DWi" id="AWW-Hc-zgT"/>
+                        <segue destination="Dof-ym-5fi" kind="show" identifier="Qn3toQn4" animates="NO" id="AF6-GK-WGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ln-By-PMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DsE-rq-7Nx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="11512.799999999999" y="-804.64767616191909"/>
         </scene>
@@ -7313,13 +7299,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="PSV-QK-p5d">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="0XT-N4-EjK" kind="show" animates="NO" id="oUD-T1-Pz4"/>
+                                                <action selector="goBack:" destination="Dof-ym-5fi" id="J8L-Et-nuz"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="ic_close" id="Qxo-WL-MYs">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="gp9-X7-pxf"/>
+                                                <segue destination="qXl-aI-rar" kind="unwind" unwindAction="unwindToMainMenu:" id="3Q6-zM-L6i"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -7333,7 +7319,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="下一題" backgroundImage="header_blank"/>
                                 <connections>
-                                    <segue destination="233-DG-1FX" kind="show" animates="NO" id="ZQ6-by-QlT"/>
+                                    <action selector="nextQ:" destination="Dof-ym-5fi" eventType="touchUpInside" id="JJL-mq-2S3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您是否需要這些系統或設備廠商提供您產品相關資訊？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKj-q2-wWy">
@@ -7505,9 +7491,11 @@
                         <outlet property="menu2" destination="T3M-xL-jaN" id="T3u-RG-89p"/>
                         <outlet property="menu3" destination="Dhx-Fk-yyD" id="vR9-ye-VnZ"/>
                         <outlet property="navbar" destination="WxD-t6-IeD" id="Flx-HH-XEM"/>
+                        <segue destination="233-DG-1FX" kind="show" identifier="Qn4toQn5" animates="NO" id="E0o-rx-4BR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5E-hO-438" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qXl-aI-rar" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="12248.799999999999" y="-803.74812593703155"/>
         </scene>
@@ -7535,13 +7523,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="Lij-Eo-TgP">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="Dof-ym-5fi" kind="show" animates="NO" id="5Wt-bj-VDn"/>
+                                                <action selector="goBack:" destination="233-DG-1FX" id="KIy-IE-9tb"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="ic_close" id="CWk-kQ-tCC">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="l4b-20-QX2"/>
+                                                <segue destination="1lO-DL-UHO" kind="unwind" unwindAction="unwindToMainMenu:" id="Nze-M9-X2W"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -7555,7 +7543,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="下一題" backgroundImage="header_blank"/>
                                 <connections>
-                                    <segue destination="qgd-GU-8NR" kind="show" animates="NO" id="7U1-zQ-2hl"/>
+                                    <action selector="nextQ:" destination="233-DG-1FX" eventType="touchUpInside" id="W2g-rl-kcz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZK-d1-SKe">
@@ -7769,9 +7757,11 @@
                         <outlet property="menu4" destination="qM6-NC-TU1" id="lyQ-u9-xeD"/>
                         <outlet property="menu5" destination="umZ-9z-xJ7" id="11a-fY-gnF"/>
                         <outlet property="navbar" destination="EXz-Tq-pcQ" id="UQv-gV-MRp"/>
+                        <segue destination="qgd-GU-8NR" kind="show" identifier="Qn5toQn6" animates="NO" id="aph-ml-Ihn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4q-t7-8Td" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1lO-DL-UHO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="10073" y="-1553"/>
         </scene>
@@ -7799,13 +7789,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="BnI-ir-dUL">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="233-DG-1FX" kind="show" animates="NO" id="Nrf-a5-KTc"/>
+                                                <action selector="goBack:" destination="qgd-GU-8NR" id="EZq-jl-KV9"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="ic_close" id="vSh-VD-IVL">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="jlC-qJ-qjk"/>
+                                                <segue destination="DGn-MG-EMq" kind="unwind" unwindAction="unwindToMainMenu:" id="MAJ-nD-vwr"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -7819,7 +7809,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="下一題" backgroundImage="header_blank"/>
                                 <connections>
-                                    <segue destination="xiv-xy-U5o" kind="show" animates="NO" id="uiM-cm-Acy"/>
+                                    <action selector="nextQ:" destination="qgd-GU-8NR" eventType="touchUpInside" id="MnV-V5-fGg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knb-kD-19n">
@@ -8033,9 +8023,11 @@
                         <outlet property="menu4" destination="PMx-lc-mBt" id="rHo-5d-ssB"/>
                         <outlet property="menu5" destination="ETy-YR-7wj" id="EuR-1j-TTY"/>
                         <outlet property="navbar" destination="s2e-uv-SBy" id="czk-fe-cax"/>
+                        <segue destination="xiv-xy-U5o" kind="show" identifier="Qn6toQn7" animates="NO" id="Obl-Zs-hMi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Auz-Mo-xF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DGn-MG-EMq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="10769" y="-1553"/>
         </scene>
@@ -8063,13 +8055,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="jmV-92-Lpj">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="qgd-GU-8NR" kind="show" animates="NO" id="5tQ-Hm-mO7"/>
+                                                <action selector="goBack:" destination="xiv-xy-U5o" id="yOX-Je-5h3"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="ic_close" id="JlP-Jp-Mas">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="8Au-DO-fiD"/>
+                                                <segue destination="6YD-Gr-dJv" kind="unwind" unwindAction="unwindToMainMenu:" id="4VV-Ez-mhl"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -8083,7 +8075,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="下一題" backgroundImage="header_blank"/>
                                 <connections>
-                                    <segue destination="sZI-L4-7be" kind="show" animates="NO" id="jXz-2w-ur2"/>
+                                    <action selector="nextQ:" destination="xiv-xy-U5o" eventType="touchUpInside" id="RT3-wt-ugC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjc-Bn-1RY">
@@ -8199,9 +8191,11 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="LUE-e2-BpV" id="x9d-s9-2W9"/>
+                        <segue destination="sZI-L4-7be" kind="show" identifier="Qn7toQn8" animates="NO" action="showDetailViewController:sender:" id="TxE-FH-nhK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lw8-UJ-csa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6YD-Gr-dJv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="11513" y="-1553"/>
         </scene>
@@ -8229,13 +8223,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_arrowback" id="aN3-xg-JN3">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="xiv-xy-U5o" kind="show" animates="NO" id="8dP-4g-47e"/>
+                                                <action selector="goBack:" destination="sZI-L4-7be" id="pAW-6Y-Vx0"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="ic_close" id="G8S-Gc-5cS">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="c5E-j9-e9g"/>
+                                                <segue destination="vHj-TS-CFv" kind="unwind" identifier="Qnfinish" unwindAction="unwindToMainMenu:" id="CMS-cx-XnC"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -8249,7 +8243,7 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="下一題" backgroundImage="header_blank"/>
                                 <connections>
-                                    <segue destination="ulF-dK-yeo" kind="show" animates="NO" id="7rc-5r-bIU"/>
+                                    <action selector="Qnfinish:" destination="sZI-L4-7be" eventType="touchUpInside" id="2FG-mE-48F"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfb-QQ-Fte">
@@ -8470,6 +8464,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YkN-n1-20l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vHj-TS-CFv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="12249" y="-1553"/>
         </scene>
@@ -8536,27 +8531,8 @@
         <image name="tour_select_robot" width="360" height="510"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nrf-a5-KTc"/>
-        <segue reference="7U1-zQ-2hl"/>
-        <segue reference="uiM-cm-Acy"/>
-        <segue reference="5Wt-bj-VDn"/>
-        <segue reference="oUD-T1-Pz4"/>
-        <segue reference="xVQ-cz-OqY"/>
-        <segue reference="Du8-cX-hbz"/>
-        <segue reference="sJc-Hv-Xjb"/>
-        <segue reference="cuf-LF-EVd"/>
-        <segue reference="wbW-br-e8O"/>
-        <segue reference="e3Z-MT-7Ey"/>
-        <segue reference="7rd-gw-zaa"/>
-        <segue reference="x3U-uM-aAC"/>
-        <segue reference="JuA-UC-s9u"/>
-        <segue reference="YqI-FA-v20"/>
-        <segue reference="WRL-pY-vdJ"/>
-        <segue reference="3MP-9b-T0j"/>
-        <segue reference="jni-QM-2Jw"/>
-        <segue reference="aG0-Nu-Nj0"/>
-        <segue reference="p5a-T4-JX4"/>
-        <segue reference="2AN-pq-RSe"/>
+        <segue reference="Cnl-Gv-YWL"/>
+        <segue reference="idq-79-TG6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

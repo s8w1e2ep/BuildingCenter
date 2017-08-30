@@ -24,6 +24,34 @@ class Q2ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false);
+    }
+    
+    @IBAction func clk_1(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q2toQ3", sender: self);
+    }
+    @IBAction func clk_2(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q2toQ3", sender: self);
+    }
+    @IBAction func clk_3(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q2toQ3", sender: self);
+    }
+    @IBAction func clk_4(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q2toQ3", sender: self);
+    }
+    @IBAction func clk_5(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q2toQ3", sender: self);
+    }
+    @IBAction func clk_6(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q2toQ3", sender: self);
+    }
+    @IBAction func clk_7(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q2toQ3", sender: self);
+    }
+
     
 
     /*
