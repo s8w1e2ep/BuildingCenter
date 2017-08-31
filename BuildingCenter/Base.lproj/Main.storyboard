@@ -1393,7 +1393,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="8eF-Rh-JK0" kind="show" id="n7B-Xa-AxJ"/>
+                                            <action selector="clkToQn:" destination="2CP-yP-3YF" eventType="touchUpInside" id="Hfd-uW-LjK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oz-x7-g1X">
@@ -1467,6 +1467,7 @@
                     <connections>
                         <outlet property="cancel" destination="1Oz-x7-g1X" id="tzO-eD-qql"/>
                         <segue destination="S9K-b3-vn1" kind="unwind" identifier="unwindToMainMenu" unwindAction="unwindToMainMenu:" id="bpm-Ag-t5S"/>
+                        <segue destination="8eF-Rh-JK0" kind="show" identifier="feedbackhintToQn" id="Vu4-pS-F83"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3N-cg-v8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
