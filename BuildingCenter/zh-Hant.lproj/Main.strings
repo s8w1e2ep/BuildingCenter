@@ -1,0 +1,1137 @@
+
+/* Class = "UILabel"; text = "Question 3"; ObjectID = "0Cl-qw-dAL"; */
+"0Cl-qw-dAL.text" = "Question 3";
+
+/* Class = "UILabel"; text = "9/12"; ObjectID = "0M8-lB-S7v"; */
+"0M8-lB-S7v.text" = "9/12";
+
+/* Class = "UITextView"; text = "內政部建築研究所長期推動“智慧建築”，期盼透過健吾與資通訊科技技術的整合，以達成人性化空間、提升生活環境品質之目的．為了讓國人了解與輕鬆體驗智慧化生活，建研所於民國97年創建“LIVING 3.0 至慧化居住空間展示中心”，作為國內智慧建築教育訓練基地，推廣智慧建築概念、提供功能體驗，進而開創國內資通訊科技產業異業結合的新契機．本展示中心以“人性關懷、創新科技、前瞻生活、環保節能、智慧永續”為主題，整合了多元的智慧化科技、創新的資通訊主動感知及控制技術，並應用情境與示範系統的建置，提供國人體驗智慧化居住及辦公空間與多種情境模式，及創照前瞻優質的生活環境與品質之願景．"; ObjectID = "0WS-NB-UfG"; */
+"0WS-NB-UfG.text" = "內政部建築研究所長期推動“智慧建築”，期盼透過健吾與資通訊科技技術的整合，以達成人性化空間、提升生活環境品質之目的．為了讓國人了解與輕鬆體驗智慧化生活，建研所於民國97年創建“LIVING 3.0 至慧化居住空間展示中心”，作為國內智慧建築教育訓練基地，推廣智慧建築概念、提供功能體驗，進而開創國內資通訊科技產業異業結合的新契機．本展示中心以“人性關懷、創新科技、前瞻生活、環保節能、智慧永續”為主題，整合了多元的智慧化科技、創新的資通訊主動感知及控制技術，並應用情境與示範系統的建置，提供國人體驗智慧化居住及辦公空間與多種情境模式，及創照前瞻優質的生活環境與品質之願景．";
+
+/* Class = "UILabel"; text = "4種模式"; ObjectID = "0Wf-aX-bEd"; */
+"0Wf-aX-bEd.text" = "4種模式";
+
+/* Class = "UIViewController"; title = "意見表q3"; ObjectID = "0XT-N4-EjK"; */
+"0XT-N4-EjK.title" = "意見表q3";
+
+/* Class = "UIButton"; normalTitle = "10年以上"; ObjectID = "0ta-NF-7Lg"; */
+"0ta-NF-7Lg.normalTitle" = "10年以上";
+
+/* Class = "UIButton"; normalTitle = "功能良好"; ObjectID = "1Ah-Nh-WEe"; */
+"1Ah-Nh-WEe.normalTitle" = "功能良好";
+
+/* Class = "UITextView"; text = "景觀植生牆已是綠美化戶外或室內空間牆面的常見手法，其妥善、永續養護是重要的一環。在植生牆的架體上佈設自動澆灌管線，可自動、定時定量地提供植物所需的水分，且不會發生積水情形而影響環境衛生。"; ObjectID = "1CF-Mc-bMA"; */
+"1CF-Mc-bMA.text" = "景觀植生牆已是綠美化戶外或室內空間牆面的常見手法，其妥善、永續養護是重要的一環。在植生牆的架體上佈設自動澆灌管線，可自動、定時定量地提供植物所需的水分，且不會發生積水情形而影響環境衛生。";
+
+/* Class = "UIButton"; normalTitle = "其它"; ObjectID = "1Hu-39-o8h"; */
+"1Hu-39-o8h.normalTitle" = "其它";
+
+/* Class = "UIButton"; normalTitle = "不用，我要繼續導覽"; ObjectID = "1Oz-x7-g1X"; */
+"1Oz-x7-g1X.normalTitle" = "不用，我要繼續導覽";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "1hf-fF-lsN"; */
+"1hf-fF-lsN.title" = "問卷";
+
+/* Class = "UIButton"; normalTitle = "我要給意見"; ObjectID = "1yQ-Iv-WV3"; */
+"1yQ-Iv-WV3.normalTitle" = "我要給意見";
+
+/* Class = "UIViewController"; title = "意見表q5"; ObjectID = "233-DG-1FX"; */
+"233-DG-1FX.title" = "意見表q5";
+
+/* Class = "UILabel"; text = "因為商品具有：(可複選)"; ObjectID = "287-A3-fMV"; */
+"287-A3-fMV.text" = "因為商品具有：(可複選)";
+
+/* Class = "UIViewController"; title = "意見回饋"; ObjectID = "2CP-yP-3YF"; */
+"2CP-yP-3YF.title" = "意見回饋";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "2KK-hM-68d"; */
+"2KK-hM-68d.title" = "問卷";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "2nr-XZ-nKQ"; */
+"2nr-XZ-nKQ.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "2sg-bQ-eyP"; */
+"2sg-bQ-eyP.text" = "本資料受個資法保護";
+
+/* Class = "UIButton"; normalTitle = "無"; ObjectID = "3GS-Md-sT6"; */
+"3GS-Md-sT6.normalTitle" = "無";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "3Lp-23-AGe"; */
+"3Lp-23-AGe.text" = "本資料受個資法保護";
+
+/* Class = "UIButton"; normalTitle = "網際網路"; ObjectID = "3Ox-Mf-Rga"; */
+"3Ox-Mf-Rga.normalTitle" = "網際網路";
+
+/* Class = "UILabel"; text = "3/12"; ObjectID = "3Pu-Sc-NsS"; */
+"3Pu-Sc-NsS.text" = "3/12";
+
+/* Class = "UIButton"; normalTitle = "有65歲以上老人"; ObjectID = "3Ta-Nz-AeG"; */
+"3Ta-Nz-AeG.normalTitle" = "有65歲以上老人";
+
+/* Class = "UIButton"; normalTitle = "男"; ObjectID = "3ef-Dr-nML"; */
+"3ef-Dr-nML.normalTitle" = "男";
+
+/* Class = "UIButton"; normalTitle = "5-10萬"; ObjectID = "3qB-U1-ClH"; */
+"3qB-U1-ClH.normalTitle" = "5-10萬";
+
+/* Class = "UIButton"; normalTitle = "實用操作性佳"; ObjectID = "49J-kv-4vo"; */
+"49J-kv-4vo.normalTitle" = "實用操作性佳";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "4K2-3n-D8p"; */
+"4K2-3n-D8p.text" = "本資料受個資法保護";
+
+/* Class = "UIButton"; normalTitle = "人性化設計"; ObjectID = "4Qa-JC-cTL"; */
+"4Qa-JC-cTL.normalTitle" = "人性化設計";
+
+/* Class = "UIButton"; normalTitle = "其它"; ObjectID = "4Td-CO-8rK"; */
+"4Td-CO-8rK.normalTitle" = "其它";
+
+/* Class = "UIButton"; normalTitle = "節能特性"; ObjectID = "4oJ-Uz-3qM"; */
+"4oJ-Uz-3qM.normalTitle" = "節能特性";
+
+/* Class = "UILabel"; text = "第五項"; ObjectID = "4uX-Wl-N9s"; */
+"4uX-Wl-N9s.text" = "第五項";
+
+/* Class = "UINavigationItem"; title = "展館起源"; ObjectID = "51P-Ej-VYK"; */
+"51P-Ej-VYK.title" = "展館起源";
+
+/* Class = "UILabel"; text = "未來您是否會購買相關智慧化系統或設備？"; ObjectID = "5VG-0h-uwm"; */
+"5VG-0h-uwm.text" = "未來您是否會購買相關智慧化系統或設備？";
+
+/* Class = "UIButton"; normalTitle = "下一題"; ObjectID = "5js-0k-DOd"; */
+"5js-0k-DOd.normalTitle" = "下一題";
+
+/* Class = "UILabel"; text = "曾從事之行業工作與智慧化產品開發有相關之經歷"; ObjectID = "5pr-Op-TMg"; */
+"5pr-Op-TMg.text" = "曾從事之行業工作與智慧化產品開發有相關之經歷";
+
+/* Class = "UIButton"; normalTitle = "了解"; ObjectID = "5zX-Rk-kOP"; */
+"5zX-Rk-kOP.normalTitle" = "了解";
+
+/* Class = "UIViewController"; title = "展館起源"; ObjectID = "6Ca-X1-FUf"; */
+"6Ca-X1-FUf.title" = "展館起源";
+
+/* Class = "UIViewController"; title = "導覽簡介"; ObjectID = "6EC-71-KF1"; */
+"6EC-71-KF1.title" = "導覽簡介";
+
+/* Class = "UIButton"; normalTitle = "其它"; ObjectID = "6WI-w1-Qb4"; */
+"6WI-w1-Qb4.normalTitle" = "其它";
+
+/* Class = "UIButton"; normalTitle = "是"; ObjectID = "6ri-tg-i4e"; */
+"6ri-tg-i4e.normalTitle" = "是";
+
+/* Class = "UIButton"; normalTitle = "節能特性"; ObjectID = "6tf-AH-cVr"; */
+"6tf-AH-cVr.normalTitle" = "節能特性";
+
+/* Class = "UIButton"; normalTitle = "進入導覽"; ObjectID = "6wa-QE-9q0"; */
+"6wa-QE-9q0.normalTitle" = "進入導覽";
+
+/* Class = "UILabel"; text = "Question 4"; ObjectID = "74w-UX-3dL"; */
+"74w-UX-3dL.text" = "Question 4";
+
+/* Class = "UIButton"; normalTitle = "略過"; ObjectID = "7D6-l8-vhF"; */
+"7D6-l8-vhF.normalTitle" = "略過";
+
+/* Class = "UIButton"; normalTitle = "否"; ObjectID = "7O7-oN-jUe"; */
+"7O7-oN-jUe.normalTitle" = "否";
+
+/* Class = "UILabel"; text = "未參觀點位"; ObjectID = "7XB-dV-XC7"; */
+"7XB-dV-XC7.text" = "未參觀點位";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "7gP-cQ-lYP"; */
+"7gP-cQ-lYP.text" = "本資料受個資法保護";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "83Q-0u-qiY"; */
+"83Q-0u-qiY.normalTitle" = "下一頁";
+
+/* Class = "UIButton"; normalTitle = "功能良好"; ObjectID = "8Mx-Hx-HKE"; */
+"8Mx-Hx-HKE.normalTitle" = "功能良好";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "8PR-Hp-hHg"; */
+"8PR-Hp-hHg.text" = "本資料受個資法保護";
+
+/* Class = "UIViewController"; title = "意見表"; ObjectID = "8eF-Rh-JK0"; */
+"8eF-Rh-JK0.title" = "意見表";
+
+/* Class = "UILabel"; text = "第三項"; ObjectID = "92g-nq-hXn"; */
+"92g-nq-hXn.text" = "第三項";
+
+/* Class = "UITextField"; placeholder = "姓名"; ObjectID = "93M-ow-0Pm"; */
+"93M-ow-0Pm.placeholder" = "姓名";
+
+/* Class = "UIButton"; normalTitle = "台灣東部"; ObjectID = "9Vl-Df-che"; */
+"9Vl-Df-che.normalTitle" = "台灣東部";
+
+/* Class = "UIButton"; normalTitle = "非常不重要"; ObjectID = "9wW-eg-14v"; */
+"9wW-eg-14v.normalTitle" = "非常不重要";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "9zr-Yh-PS3"; */
+"9zr-Yh-PS3.title" = "問卷";
+
+/* Class = "UILabel"; text = "功能性"; ObjectID = "AC6-rJ-89J"; */
+"AC6-rJ-89J.text" = "功能性";
+
+/* Class = "UILabel"; text = "12/12"; ObjectID = "AHh-t2-7r4"; */
+"AHh-t2-7r4.text" = "12/12";
+
+/* Class = "UIButton"; normalTitle = "功能良好"; ObjectID = "ARB-4l-2RL"; */
+"ARB-4l-2RL.normalTitle" = "功能良好";
+
+/* Class = "UIButton"; normalTitle = "下一題"; ObjectID = "Aqg-tf-nuJ"; */
+"Aqg-tf-nuJ.normalTitle" = "下一題";
+
+/* Class = "UIButton"; normalTitle = "31歲~40歲"; ObjectID = "AvM-ew-ro5"; */
+"AvM-ew-ro5.normalTitle" = "31歲~40歲";
+
+/* Class = "UILabel"; text = "現在位置"; ObjectID = "AwY-CK-Ty9"; */
+"AwY-CK-Ty9.text" = "現在位置";
+
+/* Class = "UILabel"; text = "願意提供給我們寶貴的意見嗎？"; ObjectID = "B5K-Ot-Oj2"; */
+"B5K-Ot-Oj2.text" = "願意提供給我們寶貴的意見嗎？";
+
+/* Class = "UILabel"; text = "大氣環境監測模式"; ObjectID = "B7N-SL-zgQ"; */
+"B7N-SL-zgQ.text" = "大氣環境監測模式";
+
+/* Class = "UILabel"; text = "您認為單項智慧化系統或設備的平均合理價格為多少？"; ObjectID = "BBm-Lh-RsK"; */
+"BBm-Lh-RsK.text" = "您認為單項智慧化系統或設備的平均合理價格為多少？";
+
+/* Class = "UIButton"; normalTitle = "非常重要"; ObjectID = "BZd-nW-w75"; */
+"BZd-nW-w75.normalTitle" = "非常重要";
+
+/* Class = "UILabel"; text = "人性化設計性"; ObjectID = "C2b-gT-0ab"; */
+"C2b-gT-0ab.text" = "人性化設計性";
+
+/* Class = "UIButton"; normalTitle = "26歲~30歲"; ObjectID = "C7D-ke-oxo"; */
+"C7D-ke-oxo.normalTitle" = "26歲~30歲";
+
+/* Class = "UIButton"; normalTitle = "公寓"; ObjectID = "CCt-YB-nfU"; */
+"CCt-YB-nfU.normalTitle" = "公寓";
+
+/* Class = "UIButton"; normalTitle = "人性化設計"; ObjectID = "CE2-1c-k0T"; */
+"CE2-1c-k0T.normalTitle" = "人性化設計";
+
+/* Class = "UIViewController"; title = "意見表q2"; ObjectID = "CJ6-YA-4Gq"; */
+"CJ6-YA-4Gq.title" = "意見表q2";
+
+/* Class = "UILabel"; text = "下一個參觀點位"; ObjectID = "CbS-rq-Uux"; */
+"CbS-rq-Uux.text" = "下一個參觀點位";
+
+/* Class = "UIButton"; normalTitle = "尚可"; ObjectID = "Cfb-yq-97n"; */
+"Cfb-yq-97n.normalTitle" = "尚可";
+
+/* Class = "UIButton"; normalTitle = "非常不重要"; ObjectID = "Cg3-bM-nct"; */
+"Cg3-bM-nct.normalTitle" = "非常不重要";
+
+/* Class = "UIViewController"; title = "Q12"; ObjectID = "CgT-dp-Lpp"; */
+"CgT-dp-Lpp.title" = "Q12";
+
+/* Class = "UILabel"; text = "因為商品具有：(可複選)"; ObjectID = "CmX-7Y-ZPF"; */
+"CmX-7Y-ZPF.text" = "因為商品具有：(可複選)";
+
+/* Class = "UINavigationItem"; title = "導覽簡介"; ObjectID = "Col-9b-tam"; */
+"Col-9b-tam.title" = "導覽簡介";
+
+/* Class = "UILabel"; text = "您個人目前每月平均收入"; ObjectID = "CyB-VB-ADv"; */
+"CyB-VB-ADv.text" = "您個人目前每月平均收入";
+
+/* Class = "UIButton"; normalTitle = "節能特性"; ObjectID = "D4k-f7-ktq"; */
+"D4k-f7-ktq.normalTitle" = "節能特性";
+
+/* Class = "UIButton"; normalTitle = "1-3年"; ObjectID = "D7g-Ev-QmR"; */
+"D7g-Ev-QmR.normalTitle" = "1-3年";
+
+/* Class = "UIButton"; normalTitle = "尚可"; ObjectID = "DYX-CJ-knQ"; */
+"DYX-CJ-knQ.normalTitle" = "尚可";
+
+/* Class = "UIButton"; normalTitle = "營造建築業"; ObjectID = "DbC-G1-0lR"; */
+"DbC-G1-0lR.normalTitle" = "營造建築業";
+
+/* Class = "UIViewController"; title = "問卷"; ObjectID = "DkL-DR-66f"; */
+"DkL-DR-66f.title" = "問卷";
+
+/* Class = "UIViewController"; title = "意見表q4"; ObjectID = "Dof-ym-5fi"; */
+"Dof-ym-5fi.title" = "意見表q4";
+
+/* Class = "UIViewController"; title = "自動導覽規定"; ObjectID = "Drj-IC-pZK"; */
+"Drj-IC-pZK.title" = "自動導覽規定";
+
+/* Class = "UIButton"; normalTitle = "5-10年"; ObjectID = "E5y-3x-NKA"; */
+"E5y-3x-NKA.normalTitle" = "5-10年";
+
+/* Class = "UIViewController"; title = "選擇版型"; ObjectID = "E87-QH-G13"; */
+"E87-QH-G13.title" = "選擇版型";
+
+/* Class = "UIButton"; normalTitle = "略過"; ObjectID = "EIn-aH-9QB"; */
+"EIn-aH-9QB.normalTitle" = "略過";
+
+/* Class = "UIButton"; normalTitle = "視覺美觀佳"; ObjectID = "EOb-8f-byR"; */
+"EOb-8f-byR.normalTitle" = "視覺美觀佳";
+
+/* Class = "UIButton"; normalTitle = "非常重要"; ObjectID = "EUW-kN-7g3"; */
+"EUW-kN-7g3.normalTitle" = "非常重要";
+
+/* Class = "UIButton"; normalTitle = "親友、同事推薦"; ObjectID = "EYa-tc-z2X"; */
+"EYa-tc-z2X.normalTitle" = "親友、同事推薦";
+
+/* Class = "UIButton"; normalTitle = "非常重要"; ObjectID = "Eof-sL-GUk"; */
+"Eof-sL-GUk.normalTitle" = "非常重要";
+
+/* Class = "UIButton"; normalTitle = "台灣南部"; ObjectID = "Eyd-Xk-X5C"; */
+"Eyd-Xk-X5C.normalTitle" = "台灣南部";
+
+/* Class = "UILabel"; text = "家庭組織型態"; ObjectID = "FJs-Kn-7Ap"; */
+"FJs-Kn-7Ap.text" = "家庭組織型態";
+
+/* Class = "UIButton"; normalTitle = "製造業"; ObjectID = "FUB-JR-pZE"; */
+"FUB-JR-pZE.normalTitle" = "製造業";
+
+/* Class = "UIButton"; normalTitle = "電子業"; ObjectID = "FXh-f5-Ghz"; */
+"FXh-f5-Ghz.normalTitle" = "電子業";
+
+/* Class = "UILabel"; text = "第一項"; ObjectID = "FaD-3x-hYi"; */
+"FaD-3x-hYi.text" = "第一項";
+
+/* Class = "UIButton"; normalTitle = "下一題"; ObjectID = "FzQ-W3-aQA"; */
+"FzQ-W3-aQA.normalTitle" = "下一題";
+
+/* Class = "UIButton"; normalTitle = "不重要"; ObjectID = "G1W-WT-xbM"; */
+"G1W-WT-xbM.normalTitle" = "不重要";
+
+/* Class = "UIViewController"; title = "Launch"; ObjectID = "G1c-tb-Vlu"; */
+"G1c-tb-Vlu.title" = "Launch";
+
+/* Class = "UIButton"; normalTitle = "支持"; ObjectID = "GSa-uu-mH8"; */
+"GSa-uu-mH8.normalTitle" = "支持";
+
+/* Class = "UIViewController"; title = "模式景觀"; ObjectID = "H93-C3-x5J"; */
+"H93-C3-x5J.title" = "模式景觀";
+
+/* Class = "UILabel"; text = "第三項"; ObjectID = "HR1-54-C8K"; */
+"HR1-54-C8K.text" = "第三項";
+
+/* Class = "UIButton"; normalTitle = "20萬以上"; ObjectID = "HaV-LV-gW9"; */
+"HaV-LV-gW9.normalTitle" = "20萬以上";
+
+/* Class = "UIButton"; normalTitle = "確定"; ObjectID = "Ham-TR-jEj"; */
+"Ham-TR-jEj.normalTitle" = "確定";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "HdW-ue-Lbk"; */
+"HdW-ue-Lbk.text" = "本資料受個資法保護";
+
+/* Class = "UIButton"; normalTitle = "了解"; ObjectID = "Hg2-nB-PMh"; */
+"Hg2-nB-PMh.normalTitle" = "了解";
+
+/* Class = "UIButton"; normalTitle = "尚可"; ObjectID = "Hy9-f6-hgB"; */
+"Hy9-f6-hgB.normalTitle" = "尚可";
+
+/* Class = "UIButton"; normalTitle = "確定"; ObjectID = "I9J-qq-UjJ"; */
+"I9J-qq-UjJ.normalTitle" = "確定";
+
+/* Class = "UIButton"; normalTitle = "台灣中部"; ObjectID = "ICt-IM-Yyo"; */
+"ICt-IM-Yyo.normalTitle" = "台灣中部";
+
+/* Class = "UIButton"; normalTitle = "非常重要"; ObjectID = "Irb-rd-IGQ"; */
+"Irb-rd-IGQ.normalTitle" = "非常重要";
+
+/* Class = "UILabel"; text = "展示中心系統或設備介紹過程中，您認為印象良好的系統或設備有哪些？"; ObjectID = "Ixw-Ad-mHn"; */
+"Ixw-Ad-mHn.text" = "展示中心系統或設備介紹過程中，您認為印象良好的系統或設備有哪些？";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "J2c-v1-dLq"; */
+"J2c-v1-dLq.title" = "問卷";
+
+/* Class = "UIButton"; normalTitle = "10-20萬"; ObjectID = "J4u-nV-AEp"; */
+"J4u-nV-AEp.normalTitle" = "10-20萬";
+
+/* Class = "UIButton"; normalTitle = "其它"; ObjectID = "JAa-oO-a05"; */
+"JAa-oO-a05.normalTitle" = "其它";
+
+/* Class = "UIBarButtonItem"; title = "略過"; ObjectID = "JDC-3W-A5q"; */
+"JDC-3W-A5q.title" = "略過";
+
+/* Class = "UIButton"; normalTitle = "不重要"; ObjectID = "JUx-zi-9gr"; */
+"JUx-zi-9gr.normalTitle" = "不重要";
+
+/* Class = "UILabel"; text = "植生牆自動澆灌系統"; ObjectID = "JVa-km-srs"; */
+"JVa-km-srs.text" = "植生牆自動澆灌系統";
+
+/* Class = "UIButton"; normalTitle = "不重要"; ObjectID = "JVv-wD-STT"; */
+"JVv-wD-STT.normalTitle" = "不重要";
+
+/* Class = "UIButton"; normalTitle = "重要"; ObjectID = "JWG-pd-TXy"; */
+"JWG-pd-TXy.normalTitle" = "重要";
+
+/* Class = "UILabel"; text = "安全性"; ObjectID = "JhT-Jo-Unf"; */
+"JhT-Jo-Unf.text" = "安全性";
+
+/* Class = "UIViewController"; title = "下載頁面"; ObjectID = "JsX-64-wi9"; */
+"JsX-64-wi9.title" = "下載頁面";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "KFq-up-QGu"; */
+"KFq-up-QGu.title" = "問卷";
+
+/* Class = "UIButton"; normalTitle = "51歲~60歲"; ObjectID = "KOw-fK-YG5"; */
+"KOw-fK-YG5.normalTitle" = "51歲~60歲";
+
+/* Class = "UIViewController"; title = "模式介紹"; ObjectID = "KPE-ag-WVY"; */
+"KPE-ag-WVY.title" = "模式介紹";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "KSl-nr-W6M"; */
+"KSl-nr-W6M.title" = "問卷";
+
+/* Class = "UILabel"; text = "教育程度"; ObjectID = "KSm-1O-g3q"; */
+"KSm-1O-g3q.text" = "教育程度";
+
+/* Class = "UILabel"; text = "機器人"; ObjectID = "KaL-cN-dMM"; */
+"KaL-cN-dMM.text" = "機器人";
+
+/* Class = "UILabel"; text = "因為商品具有：(可複選)"; ObjectID = "Kjv-T1-wuZ"; */
+"Kjv-T1-wuZ.text" = "因為商品具有：(可複選)";
+
+/* Class = "UIButton"; normalTitle = "下一題"; ObjectID = "KkT-rL-LFV"; */
+"KkT-rL-LFV.normalTitle" = "下一題";
+
+/* Class = "UIButton"; normalTitle = "下一題"; ObjectID = "L00-Ut-yD3"; */
+"L00-Ut-yD3.normalTitle" = "下一題";
+
+/* Class = "UIButton"; normalTitle = "人性化設計"; ObjectID = "LCm-j7-Clz"; */
+"LCm-j7-Clz.normalTitle" = "人性化設計";
+
+/* Class = "UILabel"; text = "迎賓模式"; ObjectID = "Lyd-DL-X50"; */
+"Lyd-DL-X50.text" = "迎賓模式";
+
+/* Class = "UIButton"; normalTitle = "非常重要"; ObjectID = "M5t-HW-Zfb"; */
+"M5t-HW-Zfb.normalTitle" = "非常重要";
+
+/* Class = "UIButton"; normalTitle = "有行動不便者"; ObjectID = "MLL-dT-Hyb"; */
+"MLL-dT-Hyb.normalTitle" = "有行動不便者";
+
+/* Class = "UIButton"; normalTitle = "獨棟透天厝"; ObjectID = "MqU-G0-AY7"; */
+"MqU-G0-AY7.normalTitle" = "獨棟透天厝";
+
+/* Class = "UIButton"; normalTitle = "女"; ObjectID = "MsZ-RE-Jyi"; */
+"MsZ-RE-Jyi.normalTitle" = "女";
+
+/* Class = "UIButton"; normalTitle = "單親家庭"; ObjectID = "Ny1-gD-wGI"; */
+"Ny1-gD-wGI.normalTitle" = "單親家庭";
+
+/* Class = "UILabel"; text = "問卷"; ObjectID = "Nzc-4D-h6W"; */
+"Nzc-4D-h6W.text" = "問卷";
+
+/* Class = "UIButton"; normalTitle = "外島地區"; ObjectID = "OSR-jh-B28"; */
+"OSR-jh-B28.normalTitle" = "外島地區";
+
+/* Class = "UIButton"; normalTitle = "集合式住宅"; ObjectID = "OSf-hr-rVp"; */
+"OSf-hr-rVp.normalTitle" = "集合式住宅";
+
+/* Class = "UILabel"; text = "6/12"; ObjectID = "Oam-5F-4py"; */
+"Oam-5F-4py.text" = "6/12";
+
+/* Class = "UIButton"; normalTitle = "MAP"; ObjectID = "Oq2-KB-H8j"; */
+"Oq2-KB-H8j.normalTitle" = "MAP";
+
+/* Class = "UIButton"; selectedTitle = "MAP"; ObjectID = "Oq2-KB-H8j"; */
+"Oq2-KB-H8j.selectedTitle" = "MAP";
+
+/* Class = "UISegmentedControl"; P5n-y7-cyb.segmentTitles[0] = "設備１"; ObjectID = "P5n-y7-cyb"; */
+"P5n-y7-cyb.segmentTitles[0]" = "設備１";
+
+/* Class = "UISegmentedControl"; P5n-y7-cyb.segmentTitles[1] = "設備２"; ObjectID = "P5n-y7-cyb"; */
+"P5n-y7-cyb.segmentTitles[1]" = "設備２";
+
+/* Class = "UIButton"; normalTitle = "非常不重要"; ObjectID = "PE0-kM-ueY"; */
+"PE0-kM-ueY.normalTitle" = "非常不重要";
+
+/* Class = "UIButton"; normalTitle = "不重要"; ObjectID = "PKN-A6-B2Q"; */
+"PKN-A6-B2Q.normalTitle" = "不重要";
+
+/* Class = "UILabel"; text = "第五優先購買的商品為"; ObjectID = "Pen-bG-VvP"; */
+"Pen-bG-VvP.text" = "第五優先購買的商品為";
+
+/* Class = "UINavigationItem"; title = "植生牆自動澆灌系統"; ObjectID = "Q8U-dB-Z4n"; */
+"Q8U-dB-Z4n.title" = "植生牆自動澆灌系統";
+
+/* Class = "UILabel"; text = "PHOTP"; ObjectID = "QeC-hs-jCn"; */
+"QeC-hs-jCn.text" = "PHOTP";
+
+/* Class = "UIViewController"; title = "Q8"; ObjectID = "RCo-Lk-J2k"; */
+"RCo-Lk-J2k.title" = "Q8";
+
+/* Class = "UITextView"; text = "貴賓您好，感謝您撥冗參觀展示中心，為使本中心未來設備系統開發與服務品質的提升，請您利用簡短時間填寫本表，您所提供的資料受個資法保護，僅供問卷統、計整體分析使用，感謝您的協助。"; ObjectID = "RQV-bN-Odn"; */
+"RQV-bN-Odn.text" = "貴賓您好，感謝您撥冗參觀展示中心，為使本中心未來設備系統開發與服務品質的提升，請您利用簡短時間填寫本表，您所提供的資料受個資法保護，僅供問卷統、計整體分析使用，感謝您的協助。";
+
+/* Class = "UILabel"; text = "我需要得到下列產品之相關資訊"; ObjectID = "RWC-wc-y6I"; */
+"RWC-wc-y6I.text" = "我需要得到下列產品之相關資訊";
+
+/* Class = "UILabel"; text = "您對智慧化科技產品購買與使用傾向，其重要程度看法如何？"; ObjectID = "RXk-uR-aiy"; */
+"RXk-uR-aiy.text" = "您對智慧化科技產品購買與使用傾向，其重要程度看法如何？";
+
+/* Class = "UILabel"; text = "PHOTP"; ObjectID = "Rj0-0z-3Eh"; */
+"Rj0-0z-3Eh.text" = "PHOTP";
+
+/* Class = "UILabel"; text = "您是由何種管道得知本展示中心導覽服務"; ObjectID = "Rpr-BD-6l9"; */
+"Rpr-BD-6l9.text" = "您是由何種管道得知本展示中心導覽服務";
+
+/* Class = "UILabel"; text = "維護與管理性"; ObjectID = "S3b-Yg-uLf"; */
+"S3b-Yg-uLf.text" = "維護與管理性";
+
+/* Class = "UIBarButtonItem"; title = "略過"; ObjectID = "S5u-K1-D8P"; */
+"S5u-K1-D8P.title" = "略過";
+
+/* Class = "UIButton"; normalTitle = "新聞媒體"; ObjectID = "S85-nG-cwZ"; */
+"S85-nG-cwZ.normalTitle" = "新聞媒體";
+
+/* Class = "UILabel"; text = "第三優先購買的商品為"; ObjectID = "S9H-Tz-AhT"; */
+"S9H-Tz-AhT.text" = "第三優先購買的商品為";
+
+/* Class = "UIButton"; normalTitle = "節能特性"; ObjectID = "SAY-z4-nlW"; */
+"SAY-z4-nlW.normalTitle" = "節能特性";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "SJE-3V-7Q6"; */
+"SJE-3V-7Q6.normalTitle" = "下一頁";
+
+/* Class = "UIButton"; normalTitle = "重要"; ObjectID = "SXp-3J-dbt"; */
+"SXp-3J-dbt.normalTitle" = "重要";
+
+/* Class = "UIButton"; normalTitle = "尚可"; ObjectID = "Sdo-ga-wja"; */
+"Sdo-ga-wja.normalTitle" = "尚可";
+
+/* Class = "UIButton"; normalTitle = "尚可"; ObjectID = "Skf-4q-nJg"; */
+"Skf-4q-nJg.normalTitle" = "尚可";
+
+/* Class = "UIViewController"; title = "區域介紹"; ObjectID = "Spq-Sh-c9A"; */
+"Spq-Sh-c9A.title" = "區域介紹";
+
+/* Class = "UIButton"; normalTitle = "夫婦二人"; ObjectID = "TV3-QX-Rkj"; */
+"TV3-QX-Rkj.normalTitle" = "夫婦二人";
+
+/* Class = "UILabel"; text = "大廳區"; ObjectID = "TXj-2T-LsT"; */
+"TXj-2T-LsT.text" = "大廳區";
+
+/* Class = "UIButton"; normalTitle = "非常不支持"; ObjectID = "TYP-xx-Uuf"; */
+"TYP-xx-Uuf.normalTitle" = "非常不支持";
+
+/* Class = "UIButton"; normalTitle = "安全特性"; ObjectID = "UQF-4w-Fk3"; */
+"UQF-4w-Fk3.normalTitle" = "安全特性";
+
+/* Class = "UILabel"; text = "5/12"; ObjectID = "UaB-Zv-BYZ"; */
+"UaB-Zv-BYZ.text" = "5/12";
+
+/* Class = "UILabel"; text = "第一項"; ObjectID = "UhP-jI-mv4"; */
+"UhP-jI-mv4.text" = "第一項";
+
+/* Class = "UIButton"; normalTitle = "非常不重要"; ObjectID = "UnW-Dg-kVa"; */
+"UnW-Dg-kVa.normalTitle" = "非常不重要";
+
+/* Class = "UIButton"; normalTitle = "非常支持"; ObjectID = "VBX-2O-r3t"; */
+"VBX-2O-r3t.normalTitle" = "非常支持";
+
+/* Class = "UILabel"; text = "第四項"; ObjectID = "VV2-jA-4rd"; */
+"VV2-jA-4rd.text" = "第四項";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "VpC-59-zaJ"; */
+"VpC-59-zaJ.title" = "問卷";
+
+/* Class = "UILabel"; text = "依您目前生活條件或機能需求狀況，針對展示中心系統及設備中您最想購買的前兩項產品為哪些？其原因為何？"; ObjectID = "WQr-se-ttX"; */
+"WQr-se-ttX.text" = "依您目前生活條件或機能需求狀況，針對展示中心系統及設備中您最想購買的前兩項產品為哪些？其原因為何？";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "WUd-u0-rs5"; */
+"WUd-u0-rs5.text" = "本資料受個資法保護";
+
+/* Class = "UILabel"; text = "價格性"; ObjectID = "Wd6-LK-Yl3"; */
+"Wd6-LK-Yl3.text" = "價格性";
+
+/* Class = "UILabel"; text = "性別"; ObjectID = "WdL-lB-dIa"; */
+"WdL-lB-dIa.text" = "性別";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "WiZ-hk-9k9"; */
+"WiZ-hk-9k9.text" = "本資料受個資法保護";
+
+/* Class = "UIButton"; normalTitle = "確定"; ObjectID = "X2W-dr-TLS"; */
+"X2W-dr-TLS.normalTitle" = "確定";
+
+/* Class = "UINavigationItem"; title = "1F住宅空間展示中心"; ObjectID = "X9p-jD-aeq"; */
+"X9p-jD-aeq.title" = "1F住宅空間展示中心";
+
+/* Class = "UIBarButtonItem"; title = "略過"; ObjectID = "Xgi-sN-hi1"; */
+"Xgi-sN-hi1.title" = "略過";
+
+/* Class = "UITextView"; text = "向上滑動即可 看到更多模式"; ObjectID = "XkG-Mk-rxx"; */
+"XkG-Mk-rxx.text" = "向上滑動即可 看到更多模式";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "XzO-kC-qWg"; */
+"XzO-kC-qWg.title" = "問卷";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "Y5B-RB-v5F"; */
+"Y5B-RB-v5F.text" = "本資料受個資法保護";
+
+/* Class = "UIButton"; normalTitle = "節能特性"; ObjectID = "Y9j-0s-U6l"; */
+"Y9j-0s-U6l.normalTitle" = "節能特性";
+
+/* Class = "UITextView"; text = "植生牆可視環境特質與需求，選植適合的植種，且因桶植式架體的構造特性，所以大小面積的植栽都能選用。"; ObjectID = "Yvo-5h-Gxk"; */
+"Yvo-5h-Gxk.text" = "植生牆可視環境特質與需求，選植適合的植種，且因桶植式架體的構造特性，所以大小面積的植栽都能選用。";
+
+/* Class = "UIButton"; normalTitle = "字型縮放"; ObjectID = "YxY-1C-8w9"; */
+"YxY-1C-8w9.normalTitle" = "字型縮放";
+
+/* Class = "UIButton"; selectedTitle = "字型縮放"; ObjectID = "YxY-1C-8w9"; */
+"YxY-1C-8w9.selectedTitle" = "字型縮放";
+
+/* Class = "UIButton"; normalTitle = "視覺美觀佳"; ObjectID = "ZC8-km-0Iy"; */
+"ZC8-km-0Iy.normalTitle" = "視覺美觀佳";
+
+/* Class = "UIButton"; normalTitle = "了解"; ObjectID = "ZOD-8f-tBR"; */
+"ZOD-8f-tBR.normalTitle" = "了解";
+
+/* Class = "UIButton"; normalTitle = "易維護管理"; ObjectID = "ZYX-NP-e8p"; */
+"ZYX-NP-e8p.normalTitle" = "易維護管理";
+
+/* Class = "UILabel"; text = "Question 8"; ObjectID = "Zfb-QQ-Fte"; */
+"Zfb-QQ-Fte.text" = "Question 8";
+
+/* Class = "UITextView"; text = "向左或向右滑動即可 變更設備資訊"; ObjectID = "a1w-TS-3zR"; */
+"a1w-TS-3zR.text" = "向左或向右滑動即可 變更設備資訊";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "a43-Oa-KOu"; */
+"a43-Oa-KOu.title" = "問卷";
+
+/* Class = "UIButton"; normalTitle = "非常重要"; ObjectID = "aLH-WO-bXF"; */
+"aLH-WO-bXF.normalTitle" = "非常重要";
+
+/* Class = "UIButton"; normalTitle = "不重要"; ObjectID = "aZz-dT-6Zp"; */
+"aZz-dT-6Zp.normalTitle" = "不重要";
+
+/* Class = "UIBarButtonItem"; title = "略過"; ObjectID = "aqY-PU-qZu"; */
+"aqY-PU-qZu.title" = "略過";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "atP-sY-aDF"; */
+"atP-sY-aDF.title" = "問卷";
+
+/* Class = "UIButton"; normalTitle = "重要"; ObjectID = "bCQ-Ie-lEs"; */
+"bCQ-Ie-lEs.normalTitle" = "重要";
+
+/* Class = "UIButton"; normalTitle = "5千-1萬元"; ObjectID = "bCV-vf-BBE"; */
+"bCV-vf-BBE.normalTitle" = "5千-1萬元";
+
+/* Class = "UIButton"; normalTitle = "下一題"; ObjectID = "bF5-wU-EFJ"; */
+"bF5-wU-EFJ.normalTitle" = "下一題";
+
+/* Class = "UIButton"; normalTitle = "視覺美觀佳"; ObjectID = "bF9-pa-xsA"; */
+"bF9-pa-xsA.normalTitle" = "視覺美觀佳";
+
+/* Class = "UILabel"; text = "您是否需要這些系統或設備廠商提供您產品相關資訊？"; ObjectID = "bKj-q2-wWy"; */
+"bKj-q2-wWy.text" = "您是否需要這些系統或設備廠商提供您產品相關資訊？";
+
+/* Class = "UIButton"; normalTitle = "非常不重要"; ObjectID = "bRv-ae-yz9"; */
+"bRv-ae-yz9.normalTitle" = "非常不重要";
+
+/* Class = "UIButton"; normalTitle = "高中以下"; ObjectID = "bSW-jw-jR1"; */
+"bSW-jw-jR1.normalTitle" = "高中以下";
+
+/* Class = "UIButton"; normalTitle = "易維護管理"; ObjectID = "bxC-Ww-86Q"; */
+"bxC-Ww-86Q.normalTitle" = "易維護管理";
+
+/* Class = "UIButton"; normalTitle = "不動產業"; ObjectID = "cBf-2i-Iwg"; */
+"cBf-2i-Iwg.normalTitle" = "不動產業";
+
+/* Class = "UIViewController"; title = "文青日誌"; ObjectID = "cC2-Vq-QEH"; */
+"cC2-Vq-QEH.title" = "文青日誌";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "cGF-Nh-JxW"; */
+"cGF-Nh-JxW.title" = "問卷";
+
+/* Class = "UIButton"; normalTitle = "不重要"; ObjectID = "cIW-eI-8dJ"; */
+"cIW-eI-8dJ.normalTitle" = "不重要";
+
+/* Class = "UIButton"; normalTitle = "服務業"; ObjectID = "cJk-fg-rPO"; */
+"cJk-fg-rPO.normalTitle" = "服務業";
+
+/* Class = "UIButton"; normalTitle = "實用操作性佳"; ObjectID = "cPc-4V-3hg"; */
+"cPc-4V-3hg.normalTitle" = "實用操作性佳";
+
+/* Class = "UIButton"; normalTitle = "1年以下"; ObjectID = "cbO-8B-MZG"; */
+"cbO-8B-MZG.normalTitle" = "1年以下";
+
+/* Class = "UIButton"; normalTitle = "非常重要"; ObjectID = "cbt-nz-PL1"; */
+"cbt-nz-PL1.normalTitle" = "非常重要";
+
+/* Class = "UILabel"; text = "室內植生牆"; ObjectID = "cfB-rh-a2H"; */
+"cfB-rh-a2H.text" = "室內植生牆";
+
+/* Class = "UIButton"; normalTitle = "6萬元以上"; ObjectID = "cfw-sx-4X7"; */
+"cfw-sx-4X7.normalTitle" = "6萬元以上";
+
+/* Class = "UIButton"; normalTitle = "廠商資訊"; ObjectID = "cn8-Gl-GmA"; */
+"cn8-Gl-GmA.normalTitle" = "廠商資訊";
+
+/* Class = "UINavigationItem"; title = "植生牆自動澆灌系統"; ObjectID = "cqc-Qo-Snw"; */
+"cqc-Qo-Snw.title" = "植生牆自動澆灌系統";
+
+/* Class = "UIButton"; normalTitle = "研究所(含)以上"; ObjectID = "cvx-fK-hXQ"; */
+"cvx-fK-hXQ.normalTitle" = "研究所(含)以上";
+
+/* Class = "UIButton"; normalTitle = "易維護管理"; ObjectID = "cxo-vg-UcT"; */
+"cxo-vg-UcT.normalTitle" = "易維護管理";
+
+/* Class = "UIButton"; normalTitle = "非常不重要"; ObjectID = "d22-OE-VaO"; */
+"d22-OE-VaO.normalTitle" = "非常不重要";
+
+/* Class = "UIButton"; normalTitle = "視覺美觀佳"; ObjectID = "d9X-vE-9Yy"; */
+"d9X-vE-9Yy.normalTitle" = "視覺美觀佳";
+
+/* Class = "UIButton"; normalTitle = "不重要"; ObjectID = "dHR-8j-i0y"; */
+"dHR-8j-i0y.normalTitle" = "不重要";
+
+/* Class = "UIButton"; normalTitle = "安全特性"; ObjectID = "dJS-Mo-eXI"; */
+"dJS-Mo-eXI.normalTitle" = "安全特性";
+
+/* Class = "UILabel"; text = "目前職業"; ObjectID = "dSp-Wf-OD1"; */
+"dSp-Wf-OD1.text" = "目前職業";
+
+/* Class = "UIButton"; normalTitle = "報章媒體"; ObjectID = "dak-kO-4iP"; */
+"dak-kO-4iP.normalTitle" = "報章媒體";
+
+/* Class = "UILabel"; text = "年齡"; ObjectID = "dvH-Vx-drc"; */
+"dvH-Vx-drc.text" = "年齡";
+
+/* Class = "UIButton"; normalTitle = "尚可"; ObjectID = "eLr-z7-Uxm"; */
+"eLr-z7-Uxm.normalTitle" = "尚可";
+
+/* Class = "UIButton"; normalTitle = "非常重要"; ObjectID = "eNa-BC-paF"; */
+"eNa-BC-paF.normalTitle" = "非常重要";
+
+/* Class = "UIButton"; normalTitle = "安全特性"; ObjectID = "eNb-Kz-fLb"; */
+"eNb-Kz-fLb.normalTitle" = "安全特性";
+
+/* Class = "UIButton"; normalTitle = "住商混合大樓"; ObjectID = "eTj-eh-RJG"; */
+"eTj-eh-RJG.normalTitle" = "住商混合大樓";
+
+/* Class = "UIButton"; normalTitle = "下一題"; ObjectID = "eV3-tm-1YI"; */
+"eV3-tm-1YI.normalTitle" = "下一題";
+
+/* Class = "UIButton"; normalTitle = "41歲~50歲"; ObjectID = "eYR-73-2tw"; */
+"eYR-73-2tw.normalTitle" = "41歲~50歲";
+
+/* Class = "UIButton"; normalTitle = "實用操作性佳"; ObjectID = "eZK-3x-huk"; */
+"eZK-3x-huk.normalTitle" = "實用操作性佳";
+
+/* Class = "UINavigationItem"; title = "自動導覽規定"; ObjectID = "eZu-XP-m8X"; */
+"eZu-XP-m8X.title" = "自動導覽規定";
+
+/* Class = "UIButton"; normalTitle = "實用操作性佳"; ObjectID = "ewU-tA-kPu"; */
+"ewU-tA-kPu.normalTitle" = "實用操作性佳";
+
+/* Class = "UILabel"; text = "第二優先購買的商品為"; ObjectID = "f32-gL-xaf"; */
+"f32-gL-xaf.text" = "第二優先購買的商品為";
+
+/* Class = "UIButton"; normalTitle = "20歲以下"; ObjectID = "fFY-SY-biT"; */
+"fFY-SY-biT.normalTitle" = "20歲以下";
+
+/* Class = "UIButton"; normalTitle = "易維護管理"; ObjectID = "fJD-uZ-a8q"; */
+"fJD-uZ-a8q.normalTitle" = "易維護管理";
+
+/* Class = "UINavigationItem"; title = "問卷"; ObjectID = "fJL-Ee-OWU"; */
+"fJL-Ee-OWU.title" = "問卷";
+
+/* Class = "UIBarButtonItem"; title = "略過"; ObjectID = "fWd-Np-9fo"; */
+"fWd-Np-9fo.title" = "略過";
+
+/* Class = "UIButton"; normalTitle = "重要"; ObjectID = "fao-qz-M6D"; */
+"fao-qz-M6D.normalTitle" = "重要";
+
+/* Class = "UIButton"; normalTitle = "人性化設計"; ObjectID = "fed-yr-tuc"; */
+"fed-yr-tuc.normalTitle" = "人性化設計";
+
+/* Class = "UINavigationItem"; title = "請選擇導覽人員"; ObjectID = "ffd-lb-GdH"; */
+"ffd-lb-GdH.title" = "請選擇導覽人員";
+
+/* Class = "UIViewController"; title = "Q2"; ObjectID = "foP-Lu-t8M"; */
+"foP-Lu-t8M.title" = "Q2";
+
+/* Class = "UILabel"; text = "第五項"; ObjectID = "gFM-VD-ng1"; */
+"gFM-VD-ng1.text" = "第五項";
+
+/* Class = "UIButton"; normalTitle = "3-5年"; ObjectID = "gLP-Zb-m3S"; */
+"gLP-Zb-m3S.normalTitle" = "3-5年";
+
+/* Class = "UILabel"; text = "視覺美觀性"; ObjectID = "gLq-tb-VBl"; */
+"gLq-tb-VBl.text" = "視覺美觀性";
+
+/* Class = "UILabel"; text = "植生牆自動澆灌系統"; ObjectID = "gMS-VK-go1"; */
+"gMS-VK-go1.text" = "植生牆自動澆灌系統";
+
+/* Class = "UIButton"; normalTitle = "三代家庭"; ObjectID = "gVE-9U-AjW"; */
+"gVE-9U-AjW.normalTitle" = "三代家庭";
+
+/* Class = "UIButton"; normalTitle = "5萬1千-6萬元"; ObjectID = "gZn-ds-u42"; */
+"gZn-ds-u42.normalTitle" = "5萬1千-6萬元";
+
+/* Class = "UILabel"; text = "家中具有右列成員"; ObjectID = "gbd-FR-A5i"; */
+"gbd-FR-A5i.text" = "家中具有右列成員";
+
+/* Class = "UIButton"; normalTitle = "2萬1千-3萬元"; ObjectID = "ghz-yP-cZY"; */
+"ghz-yP-cZY.normalTitle" = "2萬1千-3萬元";
+
+/* Class = "UIButton"; normalTitle = "易維護管理"; ObjectID = "glQ-f6-2uM"; */
+"glQ-f6-2uM.normalTitle" = "易維護管理";
+
+/* Class = "UILabel"; text = "7/12"; ObjectID = "gqp-ej-FCW"; */
+"gqp-ej-FCW.text" = "7/12";
+
+/* Class = "UITextView"; text = "大廳是 living 3.0 的門面，透過多項感測、顯示、照相設備、多媒體設計的整合及景觀佈設，大器展現智能化迎賓的特色、引領大眾對時下環境議題、區域微氣候、綠生活的重視，為來賓開創智能生活與應用的第一印象。"; ObjectID = "hF4-TN-zLY"; */
+"hF4-TN-zLY.text" = "大廳是 living 3.0 的門面，透過多項感測、顯示、照相設備、多媒體設計的整合及景觀佈設，大器展現智能化迎賓的特色、引領大眾對時下環境議題、區域微氣候、綠生活的重視，為來賓開創智能生活與應用的第一印象。";
+
+/* Class = "UIViewController"; title = "Q4"; ObjectID = "hYa-eQ-HyH"; */
+"hYa-eQ-HyH.title" = "Q4";
+
+/* Class = "UILabel"; text = "恭喜完成１樓導覽"; ObjectID = "hYb-2N-l1p"; */
+"hYb-2N-l1p.text" = "恭喜完成１樓導覽";
+
+/* Class = "UILabel"; text = "實用操作性"; ObjectID = "haP-dh-W9I"; */
+"haP-dh-W9I.text" = "實用操作性";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "hkL-4m-cY8"; */
+"hkL-4m-cY8.text" = "本資料受個資法保護";
+
+/* Class = "UILabel"; text = "參觀動線"; ObjectID = "htF-7A-etK"; */
+"htF-7A-etK.text" = "參觀動線";
+
+/* Class = "UITextView"; text = "智能路燈除了提供人工照明之外，結合了許多環境感測器，具即時感測區域性戶外環境的狀態。"; ObjectID = "iGi-JP-JBv"; */
+"iGi-JP-JBv.text" = "智能路燈除了提供人工照明之外，結合了許多環境感測器，具即時感測區域性戶外環境的狀態。";
+
+/* Class = "UIButton"; normalTitle = "尚可"; ObjectID = "iY9-AA-9nt"; */
+"iY9-AA-9nt.normalTitle" = "尚可";
+
+/* Class = "UIViewController"; title = "模式內容"; ObjectID = "iYc-1s-yfQ"; */
+"iYc-1s-yfQ.title" = "模式內容";
+
+/* Class = "UIButton"; normalTitle = "不重要"; ObjectID = "igf-yD-CfM"; */
+"igf-yD-CfM.normalTitle" = "不重要";
+
+/* Class = "UIViewController"; title = "Q9"; ObjectID = "ihL-J4-iKS"; */
+"ihL-J4-iKS.title" = "Q9";
+
+/* Class = "UIViewController"; title = "Q10"; ObjectID = "inI-2t-m3S"; */
+"inI-2t-m3S.title" = "Q10";
+
+/* Class = "UILabel"; text = "讀取中 ...請稍候"; ObjectID = "iuL-Ks-pG0"; */
+"iuL-Ks-pG0.text" = "讀取中 ...請稍候";
+
+/* Class = "UIButton"; normalTitle = "金融及保險業"; ObjectID = "jBi-zs-4Jr"; */
+"jBi-zs-4Jr.normalTitle" = "金融及保險業";
+
+/* Class = "UILabel"; text = "第二項"; ObjectID = "jSf-FP-7d7"; */
+"jSf-FP-7d7.text" = "第二項";
+
+/* Class = "UILabel"; text = "Question 5"; ObjectID = "jZK-d1-SKe"; */
+"jZK-d1-SKe.text" = "Question 5";
+
+/* Class = "UIButton"; normalTitle = "功能良好"; ObjectID = "jZg-zz-FJP"; */
+"jZg-zz-FJP.normalTitle" = "功能良好";
+
+/* Class = "UILabel"; text = "4/12"; ObjectID = "jn6-k6-NLo"; */
+"jn6-k6-NLo.text" = "4/12";
+
+/* Class = "UINavigationItem"; title = "大廳區"; ObjectID = "jrU-XH-wXB"; */
+"jrU-XH-wXB.title" = "大廳區";
+
+/* Class = "UIButton"; normalTitle = "視覺美觀佳"; ObjectID = "kEw-KH-ie8"; */
+"kEw-KH-ie8.normalTitle" = "視覺美觀佳";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "kIv-IS-rYW"; */
+"kIv-IS-rYW.normalTitle" = "下一頁";
+
+/* Class = "UIButton"; normalTitle = "公職人員"; ObjectID = "kQz-Ep-agW"; */
+"kQz-Ep-agW.normalTitle" = "公職人員";
+
+/* Class = "UINavigationItem"; title = "大廳區"; ObjectID = "kSt-Bn-9fU"; */
+"kSt-Bn-9fU.title" = "大廳區";
+
+/* Class = "UILabel"; text = "已參觀點位"; ObjectID = "kb0-Jz-r9K"; */
+"kb0-Jz-r9K.text" = "已參觀點位";
+
+/* Class = "UILabel"; text = "Question 6"; ObjectID = "knb-kD-19n"; */
+"knb-kD-19n.text" = "Question 6";
+
+/* Class = "UILabel"; text = "廠商資訊"; ObjectID = "kue-Ad-P8h"; */
+"kue-Ad-P8h.text" = "廠商資訊";
+
+/* Class = "UILabel"; text = "地圖指引"; ObjectID = "lGx-Xz-19r"; */
+"lGx-Xz-19r.text" = "地圖指引";
+
+/* Class = "UITextView"; text = "按下信息圖標 即可查看地圖標示"; ObjectID = "lIS-es-WRc"; */
+"lIS-es-WRc.text" = "按下信息圖標 即可查看地圖標示";
+
+/* Class = "UIButton"; normalTitle = "不支持"; ObjectID = "lOF-P8-qF6"; */
+"lOF-P8-qF6.normalTitle" = "不支持";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "lUt-wb-lvw"; */
+"lUt-wb-lvw.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "教育服務業"; ObjectID = "lWH-dx-SYK"; */
+"lWH-dx-SYK.normalTitle" = "教育服務業";
+
+/* Class = "UIButton"; normalTitle = "文青日誌"; ObjectID = "le0-AW-Lik"; */
+"le0-AW-Lik.normalTitle" = "文青日誌";
+
+/* Class = "UIButton"; selectedTitle = "文青日誌"; ObjectID = "le0-AW-Lik"; */
+"le0-AW-Lik.selectedTitle" = "文青日誌";
+
+/* Class = "UIButton"; normalTitle = "功能良好"; ObjectID = "lfW-Uj-ok2"; */
+"lfW-Uj-ok2.normalTitle" = "功能良好";
+
+/* Class = "UILabel"; text = "第四項"; ObjectID = "lxA-r4-eKW"; */
+"lxA-r4-eKW.text" = "第四項";
+
+/* Class = "UIButton"; normalTitle = "非常不重要"; ObjectID = "lxc-oU-TVM"; */
+"lxc-oU-TVM.normalTitle" = "非常不重要";
+
+/* Class = "UIButton"; normalTitle = "重要"; ObjectID = "mUK-Xq-Iv2"; */
+"mUK-Xq-Iv2.normalTitle" = "重要";
+
+/* Class = "UIButton"; normalTitle = "重要"; ObjectID = "mXW-79-2PM"; */
+"mXW-79-2PM.normalTitle" = "重要";
+
+/* Class = "UIBarButtonItem"; title = "略過"; ObjectID = "meD-C7-yP9"; */
+"meD-C7-yP9.title" = "略過";
+
+/* Class = "UILabel"; text = "因為商品具有：(可複選)"; ObjectID = "mr3-kZ-cm2"; */
+"mr3-kZ-cm2.text" = "因為商品具有：(可複選)";
+
+/* Class = "UIButton"; normalTitle = "核心家庭"; ObjectID = "n1I-8k-QRA"; */
+"n1I-8k-QRA.normalTitle" = "核心家庭";
+
+/* Class = "UITextView"; text = "按下問卷圖標 即可填寫問卷"; ObjectID = "nPF-Le-bOg"; */
+"nPF-Le-bOg.text" = "按下問卷圖標 即可填寫問卷";
+
+/* Class = "UIButton"; normalTitle = "實用操作性佳"; ObjectID = "nTs-EP-pt7"; */
+"nTs-EP-pt7.normalTitle" = "實用操作性佳";
+
+/* Class = "UILabel"; text = "1/12"; ObjectID = "nnU-tS-3Bw"; */
+"nnU-tS-3Bw.text" = "1/12";
+
+/* Class = "UIButton"; normalTitle = "重要"; ObjectID = "nrT-et-933"; */
+"nrT-et-933.normalTitle" = "重要";
+
+/* Class = "UIViewController"; title = "請選擇導覽人員"; ObjectID = "nvl-hP-JkO"; */
+"nvl-hP-JkO.title" = "請選擇導覽人員";
+
+/* Class = "UITextView"; text = "左右滑動即可 變更導覽人員"; ObjectID = "o0P-AW-3c2"; */
+"o0P-AW-3c2.text" = "左右滑動即可 變更導覽人員";
+
+/* Class = "UIButton"; normalTitle = "安全特性"; ObjectID = "o3g-zZ-XGF"; */
+"o3g-zZ-XGF.normalTitle" = "安全特性";
+
+/* Class = "UILabel"; text = "智慧路燈 暨 微氣候資訊站"; ObjectID = "oMO-aa-9WH"; */
+"oMO-aa-9WH.text" = "智慧路燈 暨 微氣候資訊站";
+
+/* Class = "UILabel"; text = "10/12"; ObjectID = "oWq-yW-Yz2"; */
+"oWq-yW-Yz2.text" = "10/12";
+
+/* Class = "UIButton"; normalTitle = "1-5萬"; ObjectID = "od3-eG-k0Z"; */
+"od3-eG-k0Z.normalTitle" = "1-5萬";
+
+/* Class = "UIViewController"; title = "模式選擇"; ObjectID = "of8-G8-XJ5"; */
+"of8-G8-XJ5.title" = "模式選擇";
+
+/* Class = "UIButton"; normalTitle = "20歲~25歲"; ObjectID = "og1-pa-Swq"; */
+"og1-pa-Swq.normalTitle" = "20歲~25歲";
+
+/* Class = "UILabel"; text = "Question 2"; ObjectID = "olp-dl-GVw"; */
+"olp-dl-GVw.text" = "Question 2";
+
+/* Class = "UILabel"; text = "第四優先購買的商品為"; ObjectID = "q12-Z5-6Ni"; */
+"q12-Z5-6Ni.text" = "第四優先購買的商品為";
+
+/* Class = "UIButton"; normalTitle = "大學"; ObjectID = "q2u-Fh-1FO"; */
+"q2u-Fh-1FO.normalTitle" = "大學";
+
+/* Class = "UILabel"; text = "2/12"; ObjectID = "qGo-yO-gx2"; */
+"qGo-yO-gx2.text" = "2/12";
+
+/* Class = "UIButton"; normalTitle = "重要"; ObjectID = "qHh-Lf-CzA"; */
+"qHh-Lf-CzA.normalTitle" = "重要";
+
+/* Class = "UIButton"; normalTitle = "了解"; ObjectID = "qXP-il-ufV"; */
+"qXP-il-ufV.normalTitle" = "了解";
+
+/* Class = "UIButton"; normalTitle = "61歲以上"; ObjectID = "qa7-0V-9Vc"; */
+"qa7-0V-9Vc.normalTitle" = "61歲以上";
+
+/* Class = "UIViewController"; title = "意見表q6"; ObjectID = "qgd-GU-8NR"; */
+"qgd-GU-8NR.title" = "意見表q6";
+
+/* Class = "UILabel"; text = "Question 7"; ObjectID = "qjc-Bn-1RY"; */
+"qjc-Bn-1RY.text" = "Question 7";
+
+/* Class = "UINavigationItem"; title = "植生牆自動澆灌系統"; ObjectID = "qsW-gC-zwm"; */
+"qsW-gC-zwm.title" = "植生牆自動澆灌系統";
+
+/* Class = "UIButton"; normalTitle = "下一題"; ObjectID = "r5P-fl-f43"; */
+"r5P-fl-f43.normalTitle" = "下一題";
+
+/* Class = "UIButton"; normalTitle = "1萬以下"; ObjectID = "rKI-GX-5Ai"; */
+"rKI-GX-5Ai.normalTitle" = "1萬以下";
+
+/* Class = "UIButton"; normalTitle = "專科"; ObjectID = "rOc-hj-LUJ"; */
+"rOc-hj-LUJ.normalTitle" = "專科";
+
+/* Class = "UILabel"; text = "您對智慧化科技產品的態度傾向"; ObjectID = "reU-5n-LFZ"; */
+"reU-5n-LFZ.text" = "您對智慧化科技產品的態度傾向";
+
+/* Class = "UIButton"; normalTitle = "尚可"; ObjectID = "rpm-7k-I0h"; */
+"rpm-7k-I0h.normalTitle" = "尚可";
+
+/* Class = "UITextField"; placeholder = "電子信箱"; ObjectID = "rwZ-h7-QQE"; */
+"rwZ-h7-QQE.placeholder" = "電子信箱";
+
+/* Class = "UIButton"; normalTitle = "3萬1千-4萬元"; ObjectID = "ryo-bR-CXA"; */
+"ryo-bR-CXA.normalTitle" = "3萬1千-4萬元";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "rz8-i7-HvX"; */
+"rz8-i7-HvX.text" = "本資料受個資法保護";
+
+/* Class = "UILabel"; text = "節能性"; ObjectID = "sD0-5P-KiE"; */
+"sD0-5P-KiE.text" = "節能性";
+
+/* Class = "UILabel"; text = "因為商品具有：(可複選)"; ObjectID = "sMJ-ho-zup"; */
+"sMJ-ho-zup.text" = "因為商品具有：(可複選)";
+
+/* Class = "UILabel"; text = "第二項"; ObjectID = "sVZ-BX-pfb"; */
+"sVZ-BX-pfb.text" = "第二項";
+
+/* Class = "UIButton"; normalTitle = "通訊及傳播業"; ObjectID = "sYh-eU-m97"; */
+"sYh-eU-m97.normalTitle" = "通訊及傳播業";
+
+/* Class = "UIViewController"; title = "意見表q8"; ObjectID = "sZI-L4-7be"; */
+"sZI-L4-7be.title" = "意見表q8";
+
+/* Class = "UIButton"; disabledTitle = "語音導覽"; ObjectID = "soE-Ez-1uH"; */
+"soE-Ez-1uH.disabledTitle" = "語音導覽";
+
+/* Class = "UIButton"; normalTitle = "語音導覽"; ObjectID = "soE-Ez-1uH"; */
+"soE-Ez-1uH.normalTitle" = "語音導覽";
+
+/* Class = "UIButton"; selectedTitle = "語音導覽"; ObjectID = "soE-Ez-1uH"; */
+"soE-Ez-1uH.selectedTitle" = "語音導覽";
+
+/* Class = "UILabel"; text = "室內植生牆"; ObjectID = "srB-pW-ij2"; */
+"srB-pW-ij2.text" = "室內植生牆";
+
+/* Class = "UIViewController"; title = "Q7"; ObjectID = "t5j-Kj-Dst"; */
+"t5j-Kj-Dst.title" = "Q7";
+
+/* Class = "UIButton"; normalTitle = "非常不重要"; ObjectID = "t95-56-4gU"; */
+"t95-56-4gU.normalTitle" = "非常不重要";
+
+/* Class = "UILabel"; text = "11/12"; ObjectID = "u9d-Rx-HNB"; */
+"u9d-Rx-HNB.text" = "11/12";
+
+/* Class = "UIButton"; normalTitle = "4萬1千-5萬元"; ObjectID = "uGC-6D-AAJ"; */
+"uGC-6D-AAJ.normalTitle" = "4萬1千-5萬元";
+
+/* Class = "UIViewController"; title = "Q6"; ObjectID = "uHO-lc-A1W"; */
+"uHO-lc-A1W.title" = "Q6";
+
+/* Class = "UILabel"; text = "您目前居住地"; ObjectID = "uJe-Tp-wYv"; */
+"uJe-Tp-wYv.text" = "您目前居住地";
+
+/* Class = "UIButton"; normalTitle = "無"; ObjectID = "uZr-7h-OPr"; */
+"uZr-7h-OPr.normalTitle" = "無";
+
+/* Class = "UIButton"; normalTitle = "台灣北部"; ObjectID = "uap-Or-f3f"; */
+"uap-Or-f3f.normalTitle" = "台灣北部";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "ump-SJ-i9X"; */
+"ump-SJ-i9X.text" = "1";
+
+/* Class = "UIButton"; normalTitle = "學校、機關團體"; ObjectID = "v8u-uD-dmH"; */
+"v8u-uD-dmH.normalTitle" = "學校、機關團體";
+
+/* Class = "UIViewController"; title = "開頭頁面"; ObjectID = "vLW-h4-bF9"; */
+"vLW-h4-bF9.title" = "開頭頁面";
+
+/* Class = "UIViewController"; title = "Q5"; ObjectID = "vRf-wU-bFR"; */
+"vRf-wU-bFR.title" = "Q5";
+
+/* Class = "UIButton"; normalTitle = "1萬1千-2萬元"; ObjectID = "vta-73-2iJ"; */
+"vta-73-2iJ.normalTitle" = "1萬1千-2萬元";
+
+/* Class = "UILabel"; text = "如果現在廠商可以免費在家幫您安裝5項系統或是設備，您會選擇哪5項？"; ObjectID = "vxO-hN-4SZ"; */
+"vxO-hN-4SZ.text" = "如果現在廠商可以免費在家幫您安裝5項系統或是設備，您會選擇哪5項？";
+
+/* Class = "UIViewController"; title = "1F住宅空間展示中心"; ObjectID = "w5y-cL-xo6"; */
+"w5y-cL-xo6.title" = "1F住宅空間展示中心";
+
+/* Class = "UILabel"; text = "本資料受個資法保護"; ObjectID = "w7X-kk-eCd"; */
+"w7X-kk-eCd.text" = "本資料受個資法保護";
+
+/* Class = "UIButton"; normalTitle = "管家"; ObjectID = "w7b-ht-Lau"; */
+"w7b-ht-Lau.normalTitle" = "管家";
+
+/* Class = "UIButton"; normalTitle = "學生"; ObjectID = "wDc-dz-G7Z"; */
+"wDc-dz-G7Z.normalTitle" = "學生";
+
+/* Class = "UIButton"; normalTitle = "尚可"; ObjectID = "wFs-CX-0gg"; */
+"wFs-CX-0gg.normalTitle" = "尚可";
+
+/* Class = "UIButton"; normalTitle = "安全特性"; ObjectID = "wlp-Kr-xTH"; */
+"wlp-Kr-xTH.normalTitle" = "安全特性";
+
+/* Class = "UILabel"; text = "第一優先購買的商品為"; ObjectID = "x0E-zv-H9p"; */
+"x0E-zv-H9p.text" = "第一優先購買的商品為";
+
+/* Class = "UILabel"; text = "浮空投影模式"; ObjectID = "xBI-xu-0b6"; */
+"xBI-xu-0b6.text" = "浮空投影模式";
+
+/* Class = "UIViewController"; title = "意見表q7"; ObjectID = "xiv-xy-U5o"; */
+"xiv-xy-U5o.title" = "意見表q7";
+
+/* Class = "UILabel"; text = "8/12"; ObjectID = "y32-QF-pqB"; */
+"y32-QF-pqB.text" = "8/12";
+
+/* Class = "UILabel"; text = "請輸入您的資料"; ObjectID = "yLd-ai-zQB"; */
+"yLd-ai-zQB.text" = "請輸入您的資料";
+
+/* Class = "UIButton"; normalTitle = "人性化設計"; ObjectID = "yN9-fH-fjA"; */
+"yN9-fH-fjA.normalTitle" = "人性化設計";
+
+/* Class = "UILabel"; text = "問卷填寫"; ObjectID = "yO5-vf-08U"; */
+"yO5-vf-08U.text" = "問卷填寫";
+
+/* Class = "UIButton"; normalTitle = "是"; ObjectID = "yUd-uq-3Hu"; */
+"yUd-uq-3Hu.normalTitle" = "是";
+
+/* Class = "UIViewController"; title = "Q3"; ObjectID = "yZH-tZ-CoA"; */
+"yZH-tZ-CoA.title" = "Q3";
+
+/* Class = "UILabel"; text = "歡迎使用Living 3.0 自動導覽系統"; ObjectID = "ybP-2f-QpR"; */
+"ybP-2f-QpR.text" = "歡迎使用Living 3.0 自動導覽系統";
+
+/* Class = "UIButton"; normalTitle = "其它"; ObjectID = "yiB-N2-yZy"; */
+"yiB-N2-yZy.normalTitle" = "其它";
+
+/* Class = "UIButton"; normalTitle = "單人家庭"; ObjectID = "yt4-Te-aw8"; */
+"yt4-Te-aw8.normalTitle" = "單人家庭";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "zLA-iO-nhl"; */
+"zLA-iO-nhl.normalTitle" = "下一頁";
+
+/* Class = "UIViewController"; title = "Q11"; ObjectID = "zNT-5w-3AO"; */
+"zNT-5w-3AO.title" = "Q11";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "zSB-T9-MUY"; */
+"zSB-T9-MUY.normalTitle" = "OK";
+
+/* Class = "UIButton"; normalTitle = "否"; ObjectID = "zTo-5t-mY6"; */
+"zTo-5t-mY6.normalTitle" = "否";
+
+/* Class = "UIButton"; normalTitle = "下一頁"; ObjectID = "zVX-Mc-u9i"; */
+"zVX-Mc-u9i.normalTitle" = "下一頁";
+
+/* Class = "UIButton"; normalTitle = "了解"; ObjectID = "zhv-Xj-GaT"; */
+"zhv-Xj-GaT.normalTitle" = "了解";
+
+/* Class = "UILabel"; text = "居住房屋類型"; ObjectID = "zoR-4x-k0Y"; */
+"zoR-4x-k0Y.text" = "居住房屋類型";
+
+/* Class = "UILabel"; text = "Question 1"; ObjectID = "zsG-dz-8Rh"; */
+"zsG-dz-8Rh.text" = "Question 1";

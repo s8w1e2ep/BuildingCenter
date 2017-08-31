@@ -10,10 +10,18 @@ import UIKit
 
 class BeginViewController: UIViewController {
 
+    static let defaults = UserDefaults.standard
+    static let GET_IS_ENGLISH: String = "GET_IS_ENGLISH";
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        // Default value forkey GET_IS_ENGLISH is false.
+        //BeginViewController.defaults.bool(forKey: BeginViewController.GET_IS_ENGLISH)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,6 +31,17 @@ class BeginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func onClickChinese(_ sender: UIButton) {
+        // Set value forkey GET_IS_ENGLISH false.
+        BeginViewController.defaults.set(false, forKey: BeginViewController.GET_IS_ENGLISH)
+        performSegue(withIdentifier: "BeginToAboutOne", sender: self)
+    }
+    @IBAction func onClickEnglish(_ sender: UIButton) {
+        // Set value forkey GET_IS_ENGLISH true.
+        BeginViewController.defaults.set(true, forKey: BeginViewController.GET_IS_ENGLISH)
+        performSegue(withIdentifier: "BeginToAboutOne", sender: self)
     }
 
     /*
