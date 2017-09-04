@@ -59,6 +59,12 @@ class Qn5ViewController: UIViewController ,ZHDropDownMenuDelegate{
         print("\(menu) input text \(text)")
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    @IBAction func nextQ(_ sender: Any) {
+        self.performSegue(withIdentifier: "Qn5toQn6", sender: self);
+    }
 
     /*
     // MARK: - Navigation

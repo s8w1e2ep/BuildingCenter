@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedbackHintViewController: UIViewController {
+class FeedbackHintViewController: UIViewController{
     
     
     @IBOutlet weak var cancel: UIButton!
@@ -27,7 +27,13 @@ class FeedbackHintViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func dismissViewController() {
+    @IBAction func clkToQn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "feedbackhintToQn", sender: self)
+        
+    }
+    
+    func dismissViewController() {
+        self.performSegue(withIdentifier: "unwindToMainMenu", sender: self)
     }
 }

@@ -23,6 +23,13 @@ class Qn7ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    @IBAction func nextQ(_ sender: Any) {
+        self.performSegue(withIdentifier: "Qn7toQn8", sender: self);
+    }
+    
 
     /*
     // MARK: - Navigation

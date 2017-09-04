@@ -30,44 +30,36 @@ class QuestionViewController: UIViewController {
             }
     
     @IBAction func dismissSurvey(_ sender: Any) {
-        
         surveyPop.removeFromSuperview()
-        
     }
-    /*@IBAction func showquestion2(_ sender: Any) {
-        
-        var initalConstraint = [NSLayoutConstraint]()
-        
-        question2view.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(question2view)
-        
-        let leadingConstraint = question2view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-        let trailingConstraint = question2view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-        let topConstraint = question2view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 130)
-        let bottomConstraint = question2view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        
-        initalConstraint.append(contentsOf: [leadingConstraint,trailingConstraint,topConstraint,bottomConstraint])
-        
-        NSLayoutConstraint.activate(initalConstraint)
-        
-        questiontitle.text = "年齡"
-        
-        indexText.text = "\(indexofquestion+1)/12"
-        self.view.addSubview(questiontitle)
-        
-        self.view.addSubview(buttomalert)
-        
-        
-    }*/
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: false);
+    }
+    
+    
+    
+    @IBAction func clkGirl(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q1toQ2", sender: self);
+    }
+    
+   
+    @IBAction func clkBoy(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q1toQ2", sender: self);
+    }
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
     
 }

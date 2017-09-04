@@ -24,6 +24,34 @@ class Q9ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false);
+    }
+    @IBAction func clkPass(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q9toQ10", sender: self);
+    }
+    @IBAction func clk1(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q9toQ10", sender: self);
+    }
+    @IBAction func clk2(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q9toQ10", sender: self);
+    }
+    
+    @IBAction func clk3(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q9toQ10", sender: self);
+    }
+    
+    @IBAction func clk4(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q9toQ10", sender: self);
+    }
+    @IBAction func clk5(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q9toQ10", sender: self);
+    }
+    
+    @IBAction func clk6(_ sender: Any) {
+        self.performSegue(withIdentifier: "Q9toQ10", sender: self);
+    }
+    
 
     /*
     // MARK: - Navigation

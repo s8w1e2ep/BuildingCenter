@@ -10,10 +10,18 @@ import UIKit
 
 class BeginViewController: UIViewController {
 
+    static let defaults = UserDefaults.standard
+    static var selectedLanguage: String = "zh-Hant";
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        // Default value forkey GET_IS_ENGLISH is false.
+        //BeginViewController.defaults.bool(forKey: BeginViewController.GET_IS_ENGLISH)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,6 +31,17 @@ class BeginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func onClickChinese(_ sender: UIButton) {
+        // Set Language zh-Hant(Chinese).
+        BeginViewController.selectedLanguage = "zh-Hant"
+        performSegue(withIdentifier: "BeginToAboutOne", sender: self)
+    }
+    @IBAction func onClickEnglish(_ sender: UIButton) {
+        // Set Set Language en(English).
+        BeginViewController.selectedLanguage = "en"
+        performSegue(withIdentifier: "BeginToAboutOne", sender: self)
     }
 
     /*
