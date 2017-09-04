@@ -11,7 +11,7 @@ import UIKit
 class BeginViewController: UIViewController {
 
     static let defaults = UserDefaults.standard
-    static let GET_IS_ENGLISH: String = "GET_IS_ENGLISH";
+    static var selectedLanguage: String = "zh-Hant";
 
     
     override func viewDidLoad() {
@@ -34,13 +34,13 @@ class BeginViewController: UIViewController {
     }
 
     @IBAction func onClickChinese(_ sender: UIButton) {
-        // Set value forkey GET_IS_ENGLISH false.
-        BeginViewController.defaults.set(false, forKey: BeginViewController.GET_IS_ENGLISH)
+        // Set Language zh-Hant(Chinese).
+        BeginViewController.selectedLanguage = "zh-Hant"
         performSegue(withIdentifier: "BeginToAboutOne", sender: self)
     }
     @IBAction func onClickEnglish(_ sender: UIButton) {
-        // Set value forkey GET_IS_ENGLISH true.
-        BeginViewController.defaults.set(true, forKey: BeginViewController.GET_IS_ENGLISH)
+        // Set Set Language en(English).
+        BeginViewController.selectedLanguage = "en"
         performSegue(withIdentifier: "BeginToAboutOne", sender: self)
     }
 

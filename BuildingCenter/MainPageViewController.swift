@@ -78,6 +78,8 @@ class MainPageViewController: UIViewController {
     @IBAction func onMapClick(_ sender: UIButton) {
         changeTab(to: mapButton)
         changePage(to: mapNavigationController)
+        
+        mapNavigationController.popToRootViewController(animated: true)//////
     }
     @IBAction func onHipsterClick(_ sender: UIButton) {
         changeTab(to: hipsterButton)
