@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         databasehelper.deletezonetable()
         databasehelper.createzoneTable()
         let zones = databasehelper.queryzoneTable();
-        //print(zones)
+        //print("123")
         for i in zones{
             print(((i as! ZoneItem).name)as! String)
         }

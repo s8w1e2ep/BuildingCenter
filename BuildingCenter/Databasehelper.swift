@@ -12,6 +12,8 @@ import SQLite
 class Databasehelper {
     let databaseFileName = "buildingcenterdb.sqlite"
     let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\("buildingcenterdb.sqlite")"
+    let ip = "http://60.251.33.54:98"
+    //let ip = "http://192.168.65.28"
     func deletezonetable(){
         do{
             let db = try Connection(databaseFilePath)
@@ -53,8 +55,8 @@ class Databasehelper {
         
         //let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
         //let db = try Connection(databaseFilePath)
-        let url = URL(string: "http://192.168.65.28/interface/getfile.php?data=zone")
-        
+        //let url = URL(string: "http://192.168.65.28/interface/getfile.php?data=zone")
+        let url = URL(string: ip+"/interface/getfile.php?data=zone")
         do{
             let db = try Connection(databaseFilePath)
             let zone = Table("zone")
