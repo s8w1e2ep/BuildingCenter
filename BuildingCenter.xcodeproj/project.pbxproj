@@ -23,6 +23,7 @@
 		5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9716C1F1CB4F5005EDE58 /* AboutOneViewController.swift */; };
 		5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9716E1F1CB56B005EDE58 /* AboutTwoViewController.swift */; };
 		5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE971701F1CB5A6005EDE58 /* AboutThreeViewController.swift */; };
+		709EB43E1F5D2C05007665E3 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB43D1F5D2C02007665E3 /* WritingViewController.swift */; };
 		70C57B661F27E76B00F83F77 /* HipsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C57B651F27E76B00F83F77 /* HipsterViewController.swift */; };
 		70C57B681F27F00500F83F77 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C57B671F27F00500F83F77 /* SelectViewController.swift */; };
 		762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D411F1E74EF004295A9 /* AreaViewController.swift */; };
@@ -123,6 +124,7 @@
 		5FE9716E1F1CB56B005EDE58 /* AboutTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTwoViewController.swift; sourceTree = "<group>"; };
 		5FE971701F1CB5A6005EDE58 /* AboutThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutThreeViewController.swift; sourceTree = "<group>"; };
 		6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildingCenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		709EB43D1F5D2C02007665E3 /* WritingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		70C57B651F27E76B00F83F77 /* HipsterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipsterViewController.swift; sourceTree = "<group>"; };
 		70C57B671F27F00500F83F77 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		762D8D411F1E74EF004295A9 /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			children = (
 				70C57B651F27E76B00F83F77 /* HipsterViewController.swift */,
 				70C57B671F27F00500F83F77 /* SelectViewController.swift */,
+				709EB43D1F5D2C02007665E3 /* WritingViewController.swift */,
 			);
 			name = Hipster;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				A22C411D1F4AB1C200BCB043 /* QuestionnaireViewController.swift in Sources */,
 				A22657A71F43CD2900668EDF /* Q11ViewController.swift in Sources */,
 				5FE9716B1F1CA3D2005EDE58 /* BeginViewController.swift in Sources */,
+				709EB43E1F5D2C05007665E3 /* WritingViewController.swift in Sources */,
 				A23FCA2D1F4F116600A91294 /* Qn3ViewController.swift in Sources */,
 				762D8D531F1E7565004295A9 /* ModeSelectViewController.swift in Sources */,
 				762D8D481F1E752E004295A9 /* MapViewController.swift in Sources */,
