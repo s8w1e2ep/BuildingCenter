@@ -44,6 +44,9 @@
 		76705BB61F5585BC00047414 /* QuestionHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BB51F5585BC00047414 /* QuestionHintViewController.swift */; };
 		769FF6A81F20ECEE00153C87 /* FeedbackHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */; };
 		76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */; };
+		76CE4F8E1F5E5796008219D4 /* ModeContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */; };
+		76CE4F921F5E8E0C008219D4 /* ModeContentDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE4F911F5E8E0C008219D4 /* ModeContentDetailViewController2.swift */; };
+		76CE4F941F5E9665008219D4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE4F931F5E9665008219D4 /* PageViewController.swift */; };
 		76EB971A1F27871500DAEB03 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */; };
 		76EB971C1F2799E000DAEB03 /* map.svg in Resources */ = {isa = PBXBuildFile; fileRef = 76EB971B1F2799E000DAEB03 /* map.svg */; };
 		76EB971E1F27A88700DAEB03 /* FirmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */; };
@@ -148,6 +151,9 @@
 		76705BB51F5585BC00047414 /* QuestionHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionHintViewController.swift; sourceTree = "<group>"; };
 		769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackHintViewController.swift; sourceTree = "<group>"; };
 		76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInstructionViewController.swift; sourceTree = "<group>"; };
+		76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentDetailViewController.swift; sourceTree = "<group>"; };
+		76CE4F911F5E8E0C008219D4 /* ModeContentDetailViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentDetailViewController2.swift; sourceTree = "<group>"; };
+		76CE4F931F5E9665008219D4 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 		76EB971B1F2799E000DAEB03 /* map.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.svg; sourceTree = "<group>"; };
 		76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmInfoViewController.swift; sourceTree = "<group>"; };
@@ -318,6 +324,9 @@
 				762D8D4C1F1E7553004295A9 /* LandscapeViewController.swift */,
 				762D8D411F1E74EF004295A9 /* AreaViewController.swift */,
 				76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */,
+				76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */,
+				76CE4F911F5E8E0C008219D4 /* ModeContentDetailViewController2.swift */,
+				76CE4F931F5E9665008219D4 /* PageViewController.swift */,
 			);
 			name = Area;
 			sourceTree = "<group>";
@@ -736,8 +745,10 @@
 				5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */,
 				76705BAE1F555F0E00047414 /* GuiderHintViewController.swift in Sources */,
 				762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */,
+				76CE4F941F5E9665008219D4 /* PageViewController.swift in Sources */,
 				5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */,
 				A20453E01F50FF1100162025 /* Qn5ViewController.swift in Sources */,
+				76CE4F921F5E8E0C008219D4 /* ModeContentDetailViewController2.swift in Sources */,
 				76EB971E1F27A88700DAEB03 /* FirmInfoViewController.swift in Sources */,
 				A20453E41F50FF2800162025 /* Qn7ViewController.swift in Sources */,
 				A20453E21F50FF1B00162025 /* Qn6ViewController.swift in Sources */,
@@ -757,6 +768,7 @@
 				A22C411F1F4AB6FA00BCB043 /* RadioButton.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
 				5F8C48581F4DB6C0006E7BEB /* Databasehelper.swift in Sources */,
+				76CE4F8E1F5E5796008219D4 /* ModeContentDetailViewController.swift in Sources */,
 				762D8D511F1E755F004295A9 /* ModeContentViewController.swift in Sources */,
 				76705BB41F5585A000047414 /* InfoHintViewController.swift in Sources */,
 				5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */,
