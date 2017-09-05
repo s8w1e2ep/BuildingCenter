@@ -41,30 +41,13 @@ class MainPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        hipsterViewController = (self.storyboard?.instantiateViewController(withIdentifier: "HipsterViewController"))! as! HipsterViewController
         
-        // Set init button and viewController
-        selectedViewController = mapNavigationController
-        selectedButton = mapButton
         
-        // Notification setting
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(enterTextNoti(noti:)), name: notificationEnterText, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(exitTextNoti(noti:)), name: notificationExitText, object: nil)
-        
-        // Some TTS setting
-        do{
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            do{
-                try AVAudioSession.sharedInstance().setActive(true)
-            }catch{
-            }
-        }catch{
-        }
-        //slider.maximumValue = 40
-        //slider.minimumValue = 15
-        //slider.value = Float((text.font?.pointSize)!)
+        getViewController()
+        setInitSelected()
+        setNotification()
+        setTTS()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,9 +55,9 @@ class MainPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindToMainMenu(_ sender:UIStoryboardSegue){
+    @IBAction func unwindToMainMenu(_ sender: UIStoryboardSegue) {
+        
     }
-
     @IBAction func onMapClick(_ sender: UIButton) {
         changeTab(to: mapButton)
         changePage(to: mapNavigationController)
@@ -112,12 +95,43 @@ class MainPageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ContainerViewSegue" {
             mapNavigationController = segue.destination as! UINavigationController
         }
     }
+    func getViewController() {
+        hipsterViewController = (self.storyboard?.instantiateViewController(withIdentifier: "HipsterViewController"))! as! HipsterViewController
+    }
     
+    func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(enterTextNoti(noti:)), name: notificationEnterText, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(exitTextNoti(noti:)), name: notificationExitText, object: nil)
+    }
+    func setInitSelected() {
+        selectedViewController = mapNavigationController
+        selectedButton = mapButton
+    }
+    func setTTS() {
+        do{
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            do{
+                try AVAudioSession.sharedInstance().setActive(true)
+            }catch{
+            }
+        }catch{
+        }
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        infoButton.setTitle("main_info".localized(language: selectLanguage), for: .normal)
+        hipsterButton.setTitle("main_diary".localized(language: selectLanguage), for: .normal)
+        speechButton.setTitle("main_sound".localized(language: selectLanguage), for: .normal)
+        textButton.setTitle("main_font".localized(language: selectLanguage), for: .normal)
+        
+    }
     func changePage(to newViewController: UIViewController) {
         // Remove previous viewController
         selectedViewController.willMove(toParentViewController: nil)

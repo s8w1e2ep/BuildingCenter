@@ -10,10 +10,14 @@ import UIKit
 
 class ModeHintViewController: UIViewController {
 
+    @IBOutlet weak var content: UITextView!
+    
+    @IBOutlet weak var understand: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +29,13 @@ class ModeHintViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
+    func setText(selectLanguage: String) {
+        // according to language set text
+        
+        content.text = "coach_swapup".localized(language: selectLanguage)
+        
+        understand.setTitle("understand".localized(language: selectLanguage), for: .normal)
+    }
     /*
     // MARK: - Navigation
 

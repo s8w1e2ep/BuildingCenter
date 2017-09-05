@@ -10,12 +10,14 @@ import UIKit
 
 class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet weak var navbar: UINavigationBar!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     //@IBOutlet weak var scrollImg: UIScrollView!
     @IBOutlet weak var imgTour: UIImageView!
     @IBOutlet weak var lbTour: UILabel!
     @IBOutlet weak var pcTour: UIPageControl!
+    @IBOutlet weak var confirm: UIButton!
     
     let imgList = [
         "tour_select_designer.png",
@@ -23,34 +25,16 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         "tour_select_housekeeper.png"
     ]
     
-    let nameList = [
+    var nameList = [
         "設計師", "機器人", "管家"
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pcTour.isHidden = true
-        
-        // set navigation bar background image
-        let navBackgroundImage:UIImage! = UIImage(named: "tour_select_background.png")
-        self.navbar.setBackgroundImage(navBackgroundImage, for: .default)
-        
-        // swift left
-        let swipeLeft = UISwipeGestureRecognizer(
-            target:self,
-            action:#selector(self.swipe(recognizer:)))
-        swipeLeft.direction = .left
-        
-        // swift right
-        let swipeRight = UISwipeGestureRecognizer(
-            target:self,
-            action:#selector(self.swipe(recognizer:)))
-        swipeRight.direction = .right
-        
-        // add gesture event into view
-        self.view.addGestureRecognizer(swipeLeft)
-        self.view.addGestureRecognizer(swipeRight)
+        setLayout()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
+        setSwipe()
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -66,6 +50,51 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
+
+    func setLayout() {
+        // set navigation bar background image
+        let navBackgroundImage:UIImage! = UIImage(named: "tour_select_background.png")
+        self.navBar.setBackgroundImage(navBackgroundImage, for: .default)
+        
+        pcTour.isHidden = true
+        pcTour.currentPage = 1
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        navItem.title = "tour_title".localized(language: selectLanguage)
+        lbTour.text = "tour_select_robot".localized(language: selectLanguage)
+        nameList = [
+            "tour_select_designer".localized(language: selectLanguage), "tour_select_robot".localized(language: selectLanguage), "tour_select_housekeeper".localized(language: selectLanguage)
+        ]
+
+        confirm.setTitle("confirm".localized(language: selectLanguage), for: .normal)
+    }
+    func setSwipe() {
+        // swipe left
+        let swipeLeft = UISwipeGestureRecognizer(
+            target:self,
+            action:#selector(self.swipe(recognizer:)))
+        swipeLeft.direction = .left
+        
+        // swipe right
+        let swipeRight = UISwipeGestureRecognizer(
+            target:self,
+            action:#selector(self.swipe(recognizer:)))
+        swipeRight.direction = .right
+        
+        // add gesture event into view
+        self.view.addGestureRecognizer(swipeLeft)
+        self.view.addGestureRecognizer(swipeRight)
+    }
+
     // gesture event function
     func swipe(recognizer:UISwipeGestureRecognizer) {
         if recognizer.direction == .left {
@@ -75,15 +104,6 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         }
         imgTour.image = UIImage(named: imgList[pcTour.currentPage])
         lbTour.text = nameList[pcTour.currentPage]
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func goBack(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
     }
 
     /*

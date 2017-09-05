@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     
@@ -17,4 +18,18 @@ extension String {
     }
     
 }
+extension String {
+    var attributedString: NSAttributedString? {
+        do {
+            return try NSAttributedString(
+                data: self.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
+                options:[NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+                documentAttributes: nil)
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+}
+
 

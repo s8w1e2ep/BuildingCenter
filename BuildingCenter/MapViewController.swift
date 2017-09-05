@@ -13,29 +13,18 @@ class MapViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var SVGView: UIWebView!
+    
+    @IBOutlet weak var enter: UIButton!
+    
     var jsContext: JSContext!
     var nowRegion: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVGView.delegate = self
+        
         // Do any additional setup after loading the view, typically from a nib.
-        // set navigation bar background image
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
-        
-        
-        do {
-            let indexPath = Bundle.main.path(forResource: "index", ofType: "html")!
-            let contents = try String(contentsOfFile: indexPath, encoding: .utf8)
-            let indexURL = URL(fileURLWithPath: indexPath)
-            SVGView.loadHTMLString(contents as String, baseURL: indexURL)
-            
-            
-            
-        }
-        catch {
-            print ("File HTML error")
-        }
+        setLayout()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
+        setSVG()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +47,30 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     @IBAction func goQuestionnaire(_ sender: Any) {
         self.performSegue(withIdentifier: "mainToQuestionnaire", sender: self);
     }
+    
+    func setLayout() {
+        // set navigation bar background image
+        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        
+        enter.setTitle("map_area_enter".localized(language: selectLanguage), for: .normal)
+    }
+    func setSVG() {
+        SVGView.delegate = self
+        do {
+            let indexPath = Bundle.main.path(forResource: "index", ofType: "html")!
+            let contents = try String(contentsOfFile: indexPath, encoding: .utf8)
+            let indexURL = URL(fileURLWithPath: indexPath)
+            SVGView.loadHTMLString(contents as String, baseURL: indexURL)
+        }
+        catch {
+            print ("File HTML error")
+        }
+    }
+    
     func webViewDidFinishLoad(_ webView: UIWebView){
         //check view have load finish jsContext will be set
         jsContext = self.SVGView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext
@@ -89,8 +102,8 @@ class MapViewController: UIViewController, UIWebViewDelegate {
             let request = request.url?.absoluteString as! String
             let argu = request.components(separatedBy: "://")
             let argu2 = argu[1].components(separatedBy: "?")
-            let width = SVGView.frame.width
-            let height = SVGView.frame.height
+            //let width = SVGView.frame.width
+            //let height = SVGView.frame.height
             
             switch argu2[0]{
             case "ma":

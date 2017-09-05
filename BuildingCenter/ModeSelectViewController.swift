@@ -10,12 +10,14 @@ import UIKit
 
 class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var modeSelectTitle: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        setLayout()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +45,14 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
-    
+    func setLayout() {
+        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        modeSelectTitle.text = "mode_select_title".localized(language: selectLanguage)
+    }
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         return 4

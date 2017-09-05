@@ -11,10 +11,19 @@ import UIKit
 class MapInstructionViewController: UIViewController {
     
     @IBOutlet var tap: UITapGestureRecognizer!
+    
+    @IBOutlet weak var mapGuide: UILabel!
+    @IBOutlet weak var currentLocation: UILabel!
+    @IBOutlet weak var tourRoute: UILabel!
+    @IBOutlet weak var visitedLocation: UILabel!
+    @IBOutlet weak var unvisitedLocation: UILabel!
+    @IBOutlet weak var nextLocation: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tap.addTarget(self, action: #selector(MapInstructionViewController.dismissViewController))
+        setTapAction()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,5 +37,19 @@ class MapInstructionViewController: UIViewController {
     
     func dismissViewController() {
         self.dismiss(animated: true, completion: nil)
+    }
+    func setTapAction() {
+        tap.addTarget(self, action: #selector(MapInstructionViewController.dismissViewController))
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        
+        mapGuide.text = "mapguide_title".localized(language: selectLanguage)
+        currentLocation.text = "mapguide_now".localized(language: selectLanguage)
+        tourRoute.text = "mapguide_tour".localized(language: selectLanguage)
+        visitedLocation.text = "mapguide_visited".localized(language: selectLanguage)
+        unvisitedLocation.text = "mapguide_unvisited".localized(language: selectLanguage)
+        nextLocation.text = "mapguide_next_visited".localized(language: selectLanguage)
+        
     }
 }

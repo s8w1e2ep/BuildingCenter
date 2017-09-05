@@ -11,12 +11,14 @@ import UIKit
 
 class LandscapeViewController: UIViewController {
     
+    @IBOutlet weak var nextPage: UIButton!
     @IBOutlet weak var navBar: UINavigationBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        setLayout()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +32,14 @@ class LandscapeViewController: UIViewController {
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
+    }
+    func setLayout() {
+        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        nextPage.setTitle("next_page".localized(language: selectLanguage), for: .normal)
     }
     
 }

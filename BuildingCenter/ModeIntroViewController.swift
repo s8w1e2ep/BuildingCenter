@@ -13,6 +13,8 @@ class ModeIntroViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var nextPage: UIButton!
+    
     let notificationEnterText = Notification.Name("enterTextNoti")
     let notificationExitText = Notification.Name("exitTextNoti")
     
@@ -21,11 +23,10 @@ class ModeIntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NotificationCenter.default.addObserver(self, selector: #selector(sliderChangedNoti(noti:)), name: notificationSliderChanged, object: nil)
-        
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
-        
+        setLayout()
+        setNotification()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
+
         
     }
     
@@ -43,7 +44,18 @@ class ModeIntroViewController: UIViewController {
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
-    
+    func setLayout() {
+        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+    }
+    func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(sliderChangedNoti(noti:)), name: notificationSliderChanged, object: nil)
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        nextPage.setTitle("next_page".localized(language: selectLanguage), for: .normal)
+    }
+
     func sliderChangedNoti(noti:Notification) {
         let sliderValue = noti.userInfo!["sliderValue"] as! Float
         textView.font = textView.font?.withSize(CGFloat(sliderValue))

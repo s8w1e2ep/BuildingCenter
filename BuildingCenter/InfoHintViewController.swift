@@ -10,11 +10,15 @@ import UIKit
 
 class InfoHintViewController: UIViewController {
 
+    @IBOutlet weak var content: UITextView!
+    @IBOutlet weak var understand: UIButton!
+    
     @IBOutlet var myView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,8 +30,20 @@ class InfoHintViewController: UIViewController {
 
     @IBAction func onClick(_ sender: UIButton) {
         self.myView.isHidden = true
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "QuestionHint"){
+            present(vc, animated: true)
+            
+        }
+        
     }
 
+    func setText(selectLanguage: String) {
+        // according to language set text
+        
+        content.text = "coach_info".localized(language: selectLanguage)
+        
+        understand.setTitle("understand".localized(language: selectLanguage), for: .normal)
+    }
     /*
     // MARK: - Navigation
 

@@ -10,15 +10,16 @@ import UIKit
 
 class AboutThreeViewController: UIViewController {
 
-    @IBOutlet weak var navbar: UINavigationBar!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var content: UITextView!
+    @IBOutlet weak var nextPage: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // set navigation bar background image
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navbar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
-        //content.contentOffset = CGPoint.zero
+        setLayout()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,6 +31,22 @@ class AboutThreeViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    func setLayout() {
+        // set navigation bar background image
+        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        
+        // set textView
+        content.contentOffset = CGPoint.zero
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        navItem.title = "rules_automated_guide".localized(language: selectLanguage)
+        
+        content.attributedText = "rule_content".localized(language: selectLanguage).attributedString
+        
+        nextPage.setTitle("ok".localized(language: selectLanguage), for: .normal)
+    }
     /*
     // MARK: - Navigation
 

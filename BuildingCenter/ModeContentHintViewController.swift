@@ -10,21 +10,33 @@ import UIKit
 
 class ModeContentHintViewController: UIViewController {
 
+    @IBOutlet weak var content: UITextView!
+    @IBOutlet weak var understand: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func onClick(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
 
+    func setText(selectLanguage: String) {
+        // according to language set text
+        
+        content.text = "coach_swip_leftright".localized(language: selectLanguage)
+        
+        understand.setTitle("understand".localized(language: selectLanguage), for: .normal)
+    }
     /*
     // MARK: - Navigation
 

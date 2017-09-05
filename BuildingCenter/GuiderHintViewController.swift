@@ -10,10 +10,14 @@ import UIKit
 
 class GuiderHintViewController: UIViewController {
 
+    @IBOutlet weak var content: UITextView!
+    @IBOutlet weak var understand: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +29,13 @@ class GuiderHintViewController: UIViewController {
     @IBAction func onClick(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
         
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        
+        content.text = "tour_select_guide".localized(language: selectLanguage)
+        
+        understand.setTitle("understand".localized(language: selectLanguage), for: .normal)
     }
     /*
     // MARK: - Navigation

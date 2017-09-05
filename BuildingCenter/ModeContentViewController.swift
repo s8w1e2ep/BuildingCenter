@@ -42,6 +42,7 @@ class ModeContentViewController: UIViewController {
             }
             defaults.set(true, forKey: "isModeContentLaunchBefore")
         }
+
     }
     
     override func didReceiveMemoryWarning() {

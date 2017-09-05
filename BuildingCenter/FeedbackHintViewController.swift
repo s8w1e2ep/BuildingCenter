@@ -10,12 +10,17 @@ import UIKit
 
 class FeedbackHintViewController: UIViewController{
     
+    @IBOutlet weak var feedbackTitle: UILabel!
+    @IBOutlet weak var feedbackText: UITextView!
     
+    @IBOutlet weak var feedbackYes: UIButton!
     @IBOutlet weak var cancel: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        cancel.addTarget(self, action: #selector(MapInstructionViewController.dismissViewController), for: .touchUpInside)
+        setButtonAction()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,8 +37,19 @@ class FeedbackHintViewController: UIViewController{
         self.performSegue(withIdentifier: "feedbackhintToQn", sender: self)
         
     }
-    
+    func setButtonAction() {
+        cancel.addTarget(self, action: #selector(self.dismissViewController), for: .touchUpInside)
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        
+        feedbackTitle.text = "feedback_title".localized(language: selectLanguage)
+        feedbackText.text = "feedback_text".localized(language: selectLanguage)
+        feedbackYes.setTitle("feedback_yes".localized(language: selectLanguage), for: .normal)
+        cancel.setTitle("feedback_no".localized(language: selectLanguage), for: .normal)
+        
+    }
     func dismissViewController() {
-        self.performSegue(withIdentifier: "unwindToMainMenu", sender: self)
+        self.dismiss(animated: true, completion: nil)
     }
 }

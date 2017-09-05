@@ -10,17 +10,17 @@ import UIKit
 
 class AboutTwoViewController: UIViewController {
 
-    @IBOutlet weak var navbar: UINavigationBar!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
+    
     @IBOutlet weak var content: UITextView!
+    @IBOutlet weak var nextPage: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // set navigation bar background image
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navbar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
-        content.text = "本展示中心的參訪範圍有2層樓，1F展示居住空間情境。總共引進200多項的智慧型設備，合計有90多家國內廠商參與，其中95%的設備現今都以產品化發展。部分情境應用與設備，歡迎來賓實際動手體驗。\n\n導覽系統裡有3個導覽人物，來賓可依喜好自由選擇，將由他陪伴您進行自動導覽之旅，並認識、體驗智慧生活。"
-        content.contentOffset = CGPoint.zero
+        
+        setLayout()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,6 +31,21 @@ class AboutTwoViewController: UIViewController {
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
+    }
+
+    func setLayout() {
+        // set navigation bar background image
+        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        
+        // set textView
+        content.contentOffset = CGPoint.zero
+    }
+    func setText(selectLanguage: String) {
+        // according to language set text
+        navItem.title = "guide_introduction".localized(language: selectLanguage)
+        content.text = "tour_content".localized(language: selectLanguage)
+        nextPage.setTitle("next_page".localized(language: selectLanguage), for: .normal)
     }
 
     /*
