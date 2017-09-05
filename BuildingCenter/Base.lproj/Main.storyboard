@@ -2636,7 +2636,7 @@
         <!--模式內容-->
         <scene sceneID="paV-6A-GQh">
             <objects>
-                <viewController title="模式內容" modalTransitionStyle="crossDissolve" id="iYc-1s-yfQ" customClass="ModeContentViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="模式內容" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="iYc-1s-yfQ" customClass="ModeContentViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="azj-cq-Uag"/>
                         <viewControllerLayoutGuide type="bottom" id="hB7-Od-DPE"/>
@@ -2661,74 +2661,102 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHZ-W6-wMf">
-                                <rect key="frame" x="0.0" y="108" width="375" height="495"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSt-UX-AtN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="36"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tK1-sN-jb6">
+                                        <rect key="frame" x="0.0" y="0.0" width="450" height="36"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="AHM-7W-Phe"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="a9V-V1-Tcc"/>
+                                            <constraint firstAttribute="height" constant="36" id="kYR-l3-NIg"/>
+                                            <constraint firstAttribute="width" constant="450" id="zVv-qJ-d6Z"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0E-zL-q9A">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="設備1"/>
+                                        <connections>
+                                            <action selector="showPage1:" destination="iYc-1s-yfQ" eventType="touchUpInside" id="Zwv-rn-ats"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNm-Fs-v0W">
+                                        <rect key="frame" x="90" y="0.0" width="90" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="設備2"/>
+                                        <connections>
+                                            <action selector="showPage2:" destination="iYc-1s-yfQ" eventType="touchUpInside" id="IUc-Xn-UdP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHh-cc-5zD">
+                                        <rect key="frame" x="180" y="0.0" width="90" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="設備3"/>
+                                        <connections>
+                                            <action selector="showPage3:" destination="iYc-1s-yfQ" eventType="touchUpInside" id="KUq-qA-Jm7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr7-lc-gVa">
+                                        <rect key="frame" x="270" y="-1" width="90" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="設備4"/>
+                                        <connections>
+                                            <action selector="showPage4:" destination="iYc-1s-yfQ" eventType="touchUpInside" id="mnR-Nf-t4c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciZ-H8-y6M">
+                                        <rect key="frame" x="360" y="0.0" width="90" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="按鈕1"/>
+                                        <connections>
+                                            <action selector="showPage5:" destination="iYc-1s-yfQ" eventType="touchUpInside" id="ckf-iq-xOd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tK1-sN-jb6" firstAttribute="top" secondItem="FSt-UX-AtN" secondAttribute="top" id="1s2-dQ-c1R"/>
+                                    <constraint firstAttribute="height" constant="36" id="5V1-Yu-AUx"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="Dah-6A-cEg"/>
+                                    <constraint firstAttribute="bottom" secondItem="tK1-sN-jb6" secondAttribute="bottom" id="JHs-wW-1gq"/>
+                                    <constraint firstItem="tK1-sN-jb6" firstAttribute="leading" secondItem="FSt-UX-AtN" secondAttribute="leading" id="h1Z-Ar-lRM"/>
+                                    <constraint firstAttribute="trailing" secondItem="tK1-sN-jb6" secondAttribute="trailing" id="h4K-4U-Lww"/>
+                                </constraints>
+                            </scrollView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uO-0F-FlA">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <connections>
-                                    <segue destination="aCT-66-CX5" kind="embed" id="ZCO-Al-bG0"/>
-                                </connections>
-                            </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P5n-y7-cyb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
-                                <segments>
-                                    <segment title="設備１"/>
-                                    <segment title="設備２"/>
-                                </segments>
-                                <connections>
-                                    <action selector="indexChanged:" destination="iYc-1s-yfQ" eventType="valueChanged" id="scB-bX-ZIe"/>
-                                </connections>
-                            </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abw-4H-QMk">
-                                <rect key="frame" x="0.0" y="108" width="375" height="495"/>
-                                <connections>
-                                    <segue destination="LCC-6r-sd4" kind="embed" id="YzQ-pL-lc9"/>
+                                    <segue destination="rtu-WG-mhF" kind="embed" identifier="ContainerViewSegue" id="dqo-ak-Q3n"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="JHZ-W6-wMf" firstAttribute="leading" secondItem="Abw-4H-QMk" secondAttribute="leading" id="0DM-Jc-CsX"/>
-                            <constraint firstAttribute="trailing" secondItem="vo4-eG-R5i" secondAttribute="trailing" id="1Ox-xf-Jr1"/>
-                            <constraint firstItem="P5n-y7-cyb" firstAttribute="leading" secondItem="Abw-4H-QMk" secondAttribute="leading" id="208-01-1cV"/>
-                            <constraint firstItem="P5n-y7-cyb" firstAttribute="trailing" secondItem="JHZ-W6-wMf" secondAttribute="trailing" id="2v9-NE-LLX"/>
+                            <constraint firstItem="FSt-UX-AtN" firstAttribute="top" secondItem="vo4-eG-R5i" secondAttribute="bottom" id="30R-3R-4NC"/>
                             <constraint firstItem="vo4-eG-R5i" firstAttribute="width" secondItem="cyZ-pX-HMR" secondAttribute="width" id="6sP-Gn-3Hc"/>
-                            <constraint firstItem="JHZ-W6-wMf" firstAttribute="top" secondItem="P5n-y7-cyb" secondAttribute="bottom" constant="16" id="CuB-dm-uAJ"/>
-                            <constraint firstItem="P5n-y7-cyb" firstAttribute="top" secondItem="vo4-eG-R5i" secondAttribute="bottom" id="E8g-Nc-g5r"/>
-                            <constraint firstItem="hB7-Od-DPE" firstAttribute="top" secondItem="JHZ-W6-wMf" secondAttribute="bottom" constant="64" id="NI8-4f-urV"/>
-                            <constraint firstItem="vo4-eG-R5i" firstAttribute="leading" secondItem="cyZ-pX-HMR" secondAttribute="leading" id="OIW-qR-sbc"/>
+                            <constraint firstItem="6uO-0F-FlA" firstAttribute="top" secondItem="FSt-UX-AtN" secondAttribute="bottom" id="EYT-V8-Snm"/>
+                            <constraint firstItem="FSt-UX-AtN" firstAttribute="centerX" secondItem="cyZ-pX-HMR" secondAttribute="centerX" id="Q5H-wB-ILH"/>
                             <constraint firstItem="vo4-eG-R5i" firstAttribute="top" secondItem="azj-cq-Uag" secondAttribute="bottom" id="RCO-sa-sv4"/>
-                            <constraint firstItem="JHZ-W6-wMf" firstAttribute="trailing" secondItem="Abw-4H-QMk" secondAttribute="trailing" id="SrB-1C-swM"/>
-                            <constraint firstItem="JHZ-W6-wMf" firstAttribute="bottom" secondItem="Abw-4H-QMk" secondAttribute="bottom" id="Yzy-QE-Wu3"/>
-                            <constraint firstItem="vo4-eG-R5i" firstAttribute="leading" secondItem="P5n-y7-cyb" secondAttribute="leading" id="inE-r4-4uy"/>
+                            <constraint firstItem="FSt-UX-AtN" firstAttribute="width" secondItem="cyZ-pX-HMR" secondAttribute="width" id="S6d-bZ-6jx"/>
+                            <constraint firstItem="hB7-Od-DPE" firstAttribute="top" secondItem="6uO-0F-FlA" secondAttribute="bottom" id="T1q-gc-2R9"/>
+                            <constraint firstItem="6uO-0F-FlA" firstAttribute="width" secondItem="cyZ-pX-HMR" secondAttribute="width" id="a3H-gB-xcg"/>
                             <constraint firstItem="vo4-eG-R5i" firstAttribute="centerX" secondItem="cyZ-pX-HMR" secondAttribute="centerX" id="nWz-Zt-0Om"/>
-                            <constraint firstItem="vo4-eG-R5i" firstAttribute="trailing" secondItem="P5n-y7-cyb" secondAttribute="trailing" id="ngz-xZ-v6g"/>
-                            <constraint firstItem="JHZ-W6-wMf" firstAttribute="top" secondItem="Abw-4H-QMk" secondAttribute="top" id="tjF-nY-cow"/>
+                            <constraint firstItem="6uO-0F-FlA" firstAttribute="centerX" secondItem="cyZ-pX-HMR" secondAttribute="centerX" id="wBe-a9-Vnp"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="55G-SD-5du" appends="YES" id="2Ow-KK-kOa"/>
-                            <outletCollection property="gestureRecognizers" destination="r2k-fz-qOn" appends="YES" id="xX1-hS-QDS"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="firstView" destination="JHZ-W6-wMf" id="9c0-dI-rxf"/>
+                        <outlet property="button1" destination="o0E-zL-q9A" id="FKo-Xk-qoa"/>
+                        <outlet property="button2" destination="oNm-Fs-v0W" id="BL9-GZ-hjA"/>
+                        <outlet property="button3" destination="rHh-cc-5zD" id="piF-Yk-1vY"/>
+                        <outlet property="button4" destination="rr7-lc-gVa" id="XIJ-2D-aBi"/>
+                        <outlet property="button5" destination="ciZ-H8-y6M" id="che-9h-gGz"/>
+                        <outlet property="containerView" destination="6uO-0F-FlA" id="aN2-ao-YwA"/>
                         <outlet property="navBar" destination="vo4-eG-R5i" id="XM3-dm-qDn"/>
-                        <outlet property="secondView" destination="Abw-4H-QMk" id="Omn-tC-GFg"/>
-                        <outlet property="segmentControl" destination="P5n-y7-cyb" id="wio-cB-bdx"/>
-                        <outlet property="swipeLeft" destination="r2k-fz-qOn" id="1bf-xh-AXW"/>
-                        <outlet property="swipeRight" destination="55G-SD-5du" id="T8j-Oh-MCR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTe-yd-MHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="55G-SD-5du">
-                    <connections>
-                        <action selector="slideRight:" destination="iYc-1s-yfQ" id="25d-zz-fE2"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="r2k-fz-qOn">
-                    <connections>
-                        <action selector="slideLeft:" destination="iYc-1s-yfQ" id="9AD-WG-7ve"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="13460" y="104.7976011994003"/>
         </scene>
@@ -2750,10 +2778,18 @@
             </objects>
             <point key="canvasLocation" x="-274" y="105"/>
         </scene>
-        <!--View Controller-->
+        <!--Page View Controller-->
+        <scene sceneID="yMU-Lg-Xhj">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="rtu-WG-mhF" customClass="PageViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oI0-4N-FqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14222" y="109"/>
+        </scene>
+        <!--Mode Content Detail View Controller-->
         <scene sceneID="QPB-aC-io5">
             <objects>
-                <viewController id="aCT-66-CX5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aCT-66-CX5" customClass="ModeContentDetailViewController" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fWS-xJ-hFu"/>
                         <viewControllerLayoutGuide type="bottom" id="18A-QX-lJI"/>
@@ -2794,7 +2830,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bW6-mi-HnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14324" y="105"/>
+            <point key="canvasLocation" x="14890" y="105"/>
         </scene>
         <!--Mode Content Hint View Controller-->
         <scene sceneID="XKe-Bw-Ij9">
@@ -2858,10 +2894,10 @@
             </objects>
             <point key="canvasLocation" x="13460" y="955.77211394302856"/>
         </scene>
-        <!--View Controller-->
+        <!--Mode Content Detail View Controller2-->
         <scene sceneID="LoE-uN-pg9">
             <objects>
-                <viewController id="LCC-6r-sd4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LCC-6r-sd4" customClass="ModeContentDetailViewController2" customModule="BuildingCenter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hWh-Yn-Bth"/>
                         <viewControllerLayoutGuide type="bottom" id="ahP-hq-M1y"/>
@@ -2909,7 +2945,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUi-Ap-lVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14324" y="682.3088455772114"/>
+            <point key="canvasLocation" x="14890" y="829"/>
         </scene>
         <!--Q3-->
         <scene sceneID="1mJ-eX-LQg">
