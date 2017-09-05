@@ -11,17 +11,45 @@ import UIKit
 class Q12ViewController: UIViewController {
 
     @IBOutlet var navbar: UINavigationBar!
+    @IBOutlet var navItem: UINavigationItem!
+    @IBOutlet var questionTitle: UILabel!
+    @IBOutlet var buttomHint: UILabel!
+    
+    @IBOutlet var fieldName: UITextField!
+    @IBOutlet var fieldEmail: UITextField!
+    @IBOutlet var confirm: UIButton!
+    @IBOutlet var skip: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLayout()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
 
-        // Do any additional setup after loading the view.
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navbar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setLayout() {
+        // set navigation bar background image
+        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        self.navbar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+    }
+    
+    func setText(selectLanguage: String) {
+        // according to language set text
+        navItem.title = "survey_title".localized(language: selectLanguage)
+        questionTitle.text = "survey12_personal".localized(language: selectLanguage)
+        buttomHint.text = "txt_privacy".localized(language: selectLanguage)
+        
+        fieldName.placeholder = "name".localized(language: selectLanguage)
+        fieldEmail.placeholder = "mail".localized(language: selectLanguage)
+        confirm.setTitle("confirm".localized(language: selectLanguage), for: .normal)
+        skip.setTitle("skip".localized(language: selectLanguage), for: .normal)
+        
     }
     
     @IBAction func goBack(_ sender: Any) {
