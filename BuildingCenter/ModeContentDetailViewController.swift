@@ -9,19 +9,13 @@
 import UIKit
 
 class ModeContentDetailViewController: UIViewController {
-
-    
-    let notificationFirmClicked = Notification.Name("firmClickedNoti")
-    
-    lazy var firmInfoViewController: FirmInfoViewController = (self.storyboard?.instantiateViewController(withIdentifier: "FirmInfo"))! as! FirmInfoViewController
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        setNotification()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,18 +31,7 @@ class ModeContentDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     */
-    func setNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(firmClickedNoti(noti:)), name: notificationFirmClicked, object: nil)
-        
-        
-    }
-    func firmClickedNoti(noti:Notification) {
-        addChildViewController(firmInfoViewController)
-        view.addSubview(firmInfoViewController.view)
-        firmInfoViewController.didMove(toParentViewController: self)
-        
-    }
-
+    
     
 
 }

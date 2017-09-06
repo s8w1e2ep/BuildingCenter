@@ -10,9 +10,13 @@ import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate{
 
+    
+    let notificationFirmClicked = Notification.Name("firmClickedNoti")
+    
     lazy var page1ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
     lazy var page2ViewController: ModeContentDetailViewController2 = (self.storyboard?.instantiateViewController(withIdentifier: "Page2"))! as! ModeContentDetailViewController2
     
+    lazy var firmInfoViewController: FirmInfoViewController = (self.storyboard?.instantiateViewController(withIdentifier: "FirmInfo"))! as! FirmInfoViewController
     
     lazy var orderedViewControllers: [UIViewController] = {
         [self.page1ViewController, self.page2ViewController]
@@ -29,6 +33,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         self.delegate = self
         
         setViewControllers([page1ViewController], direction: .forward, animated: false, completion: nil)
+        
+        setNotification()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +51,20 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
     }
     */
+    func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(firmClickedNoti(noti:)), name: notificationFirmClicked, object: nil)
+    }
+    func firmClickedNoti(noti:Notification) {
+        
+        //UIView.transition(with: self.page1ViewController.view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlUp, animations:{self.view.}, completion: nil)
+        if (noti.userInfo!["isAdded"] as! Int == 0) {
+            self.page1ViewController.view.addSubview(self.firmInfoViewController.view)
+        }else {
+            self.firmInfoViewController.view.removeFromSuperview()
+            
+        }
+    }
+
         
     func showPage(byIndex index: Int) {
         let viewController = orderedViewControllers[index]

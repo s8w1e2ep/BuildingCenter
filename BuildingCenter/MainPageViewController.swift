@@ -71,29 +71,47 @@ class MainPageViewController: UIViewController {
     }
     
     @IBAction func onInfoClick(_ sender: UIButton) {
-        NotificationCenter.default.post(name: notificationFirmClicked, object: nil, userInfo: nil)
+        if infoButton.isSelected {
+            
+            infoButton.isSelected = false
+            NotificationCenter.default.post(name: notificationFirmClicked, object: nil, userInfo: ["isAdded":1])
+        }
+        else {
+            changeTab(to: infoButton)
+            NotificationCenter.default.post(name: notificationFirmClicked, object: nil, userInfo: ["isAdded":0])
+        }
     }
-    
     
     @IBAction func onHipsterClick(_ sender: UIButton) {
         changeTab(to: hipsterButton)
         changePage(to: hipsterViewController)
     }
     @IBAction func onSpeechClick(_ sender: UIButton) {
-        changeTab(to: speechButton)
         
-        myUtterance = AVSpeechUtterance(string: TTS)
-        myUtterance.rate = 0.4
-        myUtterance.pitchMultiplier = 1.2
-        myUtterance.postUtteranceDelay = 0.1
-        myUtterance.volume = 1
-        myUtterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
-        
-        synth.speak(myUtterance)
+        if speechButton.isSelected {
+            synth.stopSpeaking(at: AVSpeechBoundary.immediate)
+            speechButton.isSelected = false
+        }else {
+            changeTab(to: speechButton)
+            myUtterance = AVSpeechUtterance(string: TTS)
+            myUtterance.rate = 0.4
+            myUtterance.pitchMultiplier = 1.2
+            myUtterance.postUtteranceDelay = 0.1
+            myUtterance.volume = 1
+            myUtterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
+            
+            synth.speak(myUtterance)
+        }
     }
     @IBAction func onTextClick(_ sender: UIButton) {
-        changeTab(to: textButton)
-        slider.isHidden = false
+        if textButton.isSelected {
+            slider.isHidden = true
+            textButton.isSelected = false
+        }
+            else {
+            changeTab(to: textButton)
+            slider.isHidden = false
+        }
     }
     /*
     // MARK: - Navigation
