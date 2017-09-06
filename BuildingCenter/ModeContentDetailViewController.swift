@@ -10,10 +10,18 @@ import UIKit
 
 class ModeContentDetailViewController: UIViewController {
 
+    
+    let notificationFirmClicked = Notification.Name("firmClickedNoti")
+    
+    lazy var firmInfoViewController: FirmInfoViewController = (self.storyboard?.instantiateViewController(withIdentifier: "FirmInfo"))! as! FirmInfoViewController
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        setNotification()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +35,20 @@ class ModeContentDetailViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     */
+    func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(firmClickedNoti(noti:)), name: notificationFirmClicked, object: nil)
+        
+        
+    }
+    func firmClickedNoti(noti:Notification) {
+        addChildViewController(firmInfoViewController)
+        view.addSubview(firmInfoViewController.view)
+        firmInfoViewController.didMove(toParentViewController: self)
+        
+    }
+
+    
 
 }

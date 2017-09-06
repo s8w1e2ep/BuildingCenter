@@ -12,6 +12,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
 
     lazy var page1ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
     lazy var page2ViewController: ModeContentDetailViewController2 = (self.storyboard?.instantiateViewController(withIdentifier: "Page2"))! as! ModeContentDetailViewController2
+    
+    
     lazy var orderedViewControllers: [UIViewController] = {
         [self.page1ViewController, self.page2ViewController]
     }()
@@ -40,10 +42,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
     */
+        
     func showPage(byIndex index: Int) {
         let viewController = orderedViewControllers[index]
         setViewControllers([viewController], direction: .forward, animated: false, completion: nil)

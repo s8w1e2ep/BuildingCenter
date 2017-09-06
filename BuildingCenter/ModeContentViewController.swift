@@ -22,6 +22,10 @@ class ModeContentViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     
+    let notificationEnterModeContent = Notification.Name("enterModeContentNoti")
+    let notificationExitModeContent = Notification.Name("exitModeContentNoti")
+    
+    
     var selectedButton: UIButton!
     var pageViewController: PageViewController!
     
@@ -30,12 +34,17 @@ class ModeContentViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         setLayout()
+        
         selectedButton = button1
         changeTab(to: button1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = true
+        
+        NotificationCenter.default.post(name: notificationEnterModeContent, object: nil, userInfo: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: notificationExitModeContent, object: nil, userInfo: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
@@ -94,6 +103,8 @@ class ModeContentViewController: UIViewController {
         changeTab(to: button5)
         pageViewController.showPage(byIndex: 0)
     }
+    
+    
     func changeTab(byIndex index: Int) {
         switch index {
         case 0: changeTab(to: button1)

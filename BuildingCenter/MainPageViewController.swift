@@ -38,6 +38,11 @@ class MainPageViewController: UIViewController {
     
     let notificationSliderChanged = Notification.Name("sliderChangedNoti")
     
+    let notificationEnterModeContent = Notification.Name("enterModeContentNoti")
+    let notificationExitModeContent = Notification.Name("exitModeContentNoti")
+    let notificationFirmClicked = Notification.Name("firmClickedNoti")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -64,6 +69,12 @@ class MainPageViewController: UIViewController {
         
         mapNavigationController.popToRootViewController(animated: true)//////
     }
+    
+    @IBAction func onInfoClick(_ sender: UIButton) {
+        NotificationCenter.default.post(name: notificationFirmClicked, object: nil, userInfo: nil)
+    }
+    
+    
     @IBAction func onHipsterClick(_ sender: UIButton) {
         changeTab(to: hipsterButton)
         changePage(to: hipsterViewController)
@@ -79,8 +90,6 @@ class MainPageViewController: UIViewController {
         myUtterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
         
         synth.speak(myUtterance)
-        
-        
     }
     @IBAction func onTextClick(_ sender: UIButton) {
         changeTab(to: textButton)
@@ -109,6 +118,11 @@ class MainPageViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(enterTextNoti(noti:)), name: notificationEnterText, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(exitTextNoti(noti:)), name: notificationExitText, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(enterModeContentNoti(noti:)), name: notificationEnterModeContent, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(exitModeContentNoti(noti:)), name: notificationExitModeContent, object: nil)
+        
     }
     func setInitSelected() {
         selectedViewController = mapNavigationController
@@ -167,10 +181,18 @@ class MainPageViewController: UIViewController {
         synth.stopSpeaking(at: AVSpeechBoundary.immediate)
         slider.isHidden = true
         changeTab(to: mapButton)
+    }
+    func enterModeContentNoti(noti:Notification) {
+        infoButton.isEnabled = true
         
     }
+    func exitModeContentNoti(noti:Notification) {
+        infoButton.isEnabled = false
+        changeTab(to: mapButton)
+    }
+
     @IBAction func sliderChange(_ sender: UISlider) {
-        print(slider.value)
+        //print(slider.value)
         NotificationCenter.default.post(name: notificationSliderChanged, object: nil, userInfo: ["sliderValue":slider.value])
     }
 
