@@ -14,12 +14,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     let notificationFirmClicked = Notification.Name("firmClickedNoti")
     
     lazy var page1ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
+    lazy var page11ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
+    
     lazy var page2ViewController: ModeContentDetailViewController2 = (self.storyboard?.instantiateViewController(withIdentifier: "Page2"))! as! ModeContentDetailViewController2
     
     lazy var firmInfoViewController: FirmInfoViewController = (self.storyboard?.instantiateViewController(withIdentifier: "FirmInfo"))! as! FirmInfoViewController
     
     lazy var orderedViewControllers: [UIViewController] = {
-        [self.page1ViewController, self.page2ViewController]
+        [self.page1ViewController, self.page2ViewController, self.page11ViewController]
     }()
     
     var mainViewController: ModeContentViewController!
@@ -56,11 +58,13 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
     func firmClickedNoti(noti:Notification) {
         
-        //UIView.transition(with: self.page1ViewController.view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlUp, animations:{self.view.}, completion: nil)
+        //
         if (noti.userInfo!["isAdded"] as! Int == 0) {
-            self.page1ViewController.view.addSubview(self.firmInfoViewController.view)
+            //self.page1ViewController.view.addSubview(self.firmInfoViewController.view)
+            UIView.transition(with: self.page1ViewController.view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlDown, animations:{self.page1ViewController.view.addSubview(self.firmInfoViewController.view)}, completion: nil)
         }else {
-            self.firmInfoViewController.view.removeFromSuperview()
+            UIView.transition(with: self.page1ViewController.view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlUp, animations:{self.firmInfoViewController.view.removeFromSuperview()}, completion: nil)
+            
             
         }
     }

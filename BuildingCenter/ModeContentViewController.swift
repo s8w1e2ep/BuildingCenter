@@ -12,6 +12,7 @@ class ModeContentViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationBar!
     
+    @IBOutlet weak var thumbButton: UIBarButtonItem!
     // test scroller button
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -74,6 +75,12 @@ class ModeContentViewController: UIViewController {
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func onThumbClick(_ sender: UIBarButtonItem) {
+        thumbButton.image = UIImage(named: "thumbup_orange.png")
+        thumbButton.tintColor = UIColor.orange
+    }
+    
     func setLayout() {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)

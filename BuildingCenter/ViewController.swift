@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let zones = databasehelper.queryzoneTable();
         //print("123")
         for i in zones{
-            print(((i as! ZoneItem).name)as! String)
+            print(((i as! ZoneItem).name)!)
         }
         //print((zones[0] as! ZoneItem).name)
         //let stringUrl = "http://192.168.65.28/interface/survey.php?survey={\"gender\":\"1\",\"age\":\"3\"}"

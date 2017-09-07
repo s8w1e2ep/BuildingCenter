@@ -10,7 +10,8 @@ import UIKit
 import JavaScriptCore
 class MapViewController: UIViewController, UIWebViewDelegate {
     
-
+    let notificationExitMap = Notification.Name("exitMapNoti")
+    
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var SVGView: UIWebView!
     
@@ -30,6 +31,9 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = false
         
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: notificationExitMap, object: nil, userInfo: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard

@@ -10,6 +10,8 @@ import UIKit
 
 class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var thumbButton: UIBarButtonItem!
+    
     @IBOutlet weak var modeSelectTitle: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
     
@@ -45,6 +47,14 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
+    
+
+    @IBAction func onThumbClick(_ sender: UIBarButtonItem) {
+        
+        thumbButton.image = UIImage(named: "thumbup_orange.png")
+        thumbButton.tintColor = UIColor.orange
+    }
+    
     func setLayout() {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
@@ -63,12 +73,25 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             // 依據前面註冊設置的識別名稱 "Cell" 取得目前使用的 cell
             let cell =
                 collectionView.dequeueReusableCell(
-                    withReuseIdentifier: "ModeCell", for: indexPath as IndexPath)
+                    withReuseIdentifier: "ModeCell", for: indexPath as IndexPath) as! ModeCollectionViewCell
 
             // 設置 cell 內容 (即自定義元件裡 增加的圖片與文字元件)
-            /*cell.imageView.image =
-                UIImage(named: "a1m4_bg.png")
-             */
+            
+            // set image
+            let imageName = "a1m\(indexPath.item + 1)_bg.png"
+            cell.backImage.image =
+                UIImage(named: imageName)
+            
+            //set text
+            cell.textView.text = cell.textView.text+"\(indexPath.item + 1)"
+            
             return cell
+    }
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        print("第 \(indexPath.item + 1) 張圖片")
+        
+        // ModeSelectView to ModeIntroView
+        performSegue(withIdentifier: "ModeSelectToIntro", sender: self)
     }
 }
