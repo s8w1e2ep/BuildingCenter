@@ -27,7 +27,7 @@ class Databasehelper {
     /*func surveyupload(stringUrl: String){
         //let stringUrl = "http://192.168.65.28/interface/survey.php?survey={\"gender\":\"1\",\"age\":\"3\"}"
         if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-            let url = URL(string: encodedURL) {
+            let _ = URL(string: encodedURL) {
             let url2 = NSURL(string: encodedURL)
             
             do{
@@ -215,7 +215,7 @@ class Databasehelper {
             let table = Table("zone")
             //var z = ZoneItem()
             for rows in try db.prepare(table) {
-                var z = ZoneItem()
+                let z = ZoneItem()
                 
                 
                 /*var zone: [String] = []

@@ -11,6 +11,7 @@ import UIKit
 
 class ModeIntroViewController: UIViewController {
     
+    @IBOutlet weak var thumbButton: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var nextPage: UIButton!
@@ -44,6 +45,12 @@ class ModeIntroViewController: UIViewController {
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func onThumbClick(_ sender: UIBarButtonItem) {
+        thumbButton.image = UIImage(named: "thumbup_orange.png")
+        thumbButton.tintColor = UIColor.orange
+    }
+    
     func setLayout() {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)

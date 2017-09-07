@@ -10,25 +10,42 @@ import UIKit
 
 class ModeContentViewController: UIViewController {
     
-    @IBOutlet weak var segmentControl: UISegmentedControl!
-    
-    @IBOutlet weak var firstView: UIView!
-    @IBOutlet weak var secondView: UIView!
-    
     @IBOutlet weak var navBar: UINavigationBar!
+    
+    @IBOutlet weak var thumbButton: UIBarButtonItem!
+    // test scroller button
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var button5: UIButton!
+    
+    
+    @IBOutlet weak var containerView: UIView!
+    
+    let notificationEnterModeContent = Notification.Name("enterModeContentNoti")
+    let notificationExitModeContent = Notification.Name("exitModeContentNoti")
+    
+    
+    var selectedButton: UIButton!
+    var pageViewController: PageViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
         
-        firstView.isHidden = false
-        secondView.isHidden = true
-        segmentControl.selectedSegmentIndex = 0
+        setLayout()
+        
+        selectedButton = button1
+        changeTab(to: button1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = true
+        
+        NotificationCenter.default.post(name: notificationEnterModeContent, object: nil, userInfo: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: notificationExitModeContent, object: nil, userInfo: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
@@ -49,45 +66,72 @@ class ModeContentViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ContainerViewSegue" {
+            pageViewController = segue.destination as! PageViewController
+            pageViewController.mainViewController = self
+        }
+    }
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
-
-    @IBOutlet var swipeLeft: UISwipeGestureRecognizer!
-    @IBOutlet var swipeRight: UISwipeGestureRecognizer!
-    @IBAction func slideRight(_ sender: Any)
-    {
-        let index = (segmentControl.selectedSegmentIndex == 0) ? 0 : segmentControl.selectedSegmentIndex-1
-        segmentControl.selectedSegmentIndex = index
-        changePage()
-    }
-    @IBAction func slideLeft(_ sender: Any)
-    {
-        let index = (segmentControl.selectedSegmentIndex == segmentControl.numberOfSegments-1
-                ) ? segmentControl.numberOfSegments-1 : segmentControl.selectedSegmentIndex+1
-        segmentControl.selectedSegmentIndex = index
-        changePage()
-    }
-
     
-    @IBAction func indexChanged(_ sender: Any) {
-        changePage()
+    @IBAction func onThumbClick(_ sender: UIBarButtonItem) {
+        thumbButton.image = UIImage(named: "thumbup_orange.png")
+        thumbButton.tintColor = UIColor.orange
     }
-    func changePage()
-    {
-        switch segmentControl.selectedSegmentIndex
-        {
-        case 0:
-            firstView.isHidden = false
-            secondView.isHidden = true
-        case 1:
-            firstView.isHidden = true
-            secondView.isHidden = false
-        default:
-            break;
+    
+    func setLayout() {
+        let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
+        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+    }
+    
+    @IBAction func showPage1(_ sender: Any) {
+        changeTab(to:button1)
+        pageViewController.showPage(byIndex: 0)
+    }
+    
+    @IBAction func showPage2(_ sender: Any) {
+        changeTab(to: button2)
+        pageViewController.showPage(byIndex: 1)
+    }
+    
+    @IBAction func showPage3(_ sender: Any) {
+        changeTab(to: button3)
+        pageViewController.showPage(byIndex: 2)
+    }
+    
+    @IBAction func showPage4(_ sender: Any) {
+        changeTab(to: button4)
+        pageViewController.showPage(byIndex: 3)
+    }
+    
+    @IBAction func showPage5(_ sender: Any) {
+        changeTab(to: button5)
+        pageViewController.showPage(byIndex: 4)
+    }
+    
+    
+    func changeTab(byIndex index: Int) {
+        switch index {
+        case 0: changeTab(to: button1)
+        case 1: changeTab(to: button2)
+        case 2: changeTab(to: button3)
+        case 3: changeTab(to: button4)
+        case 4: changeTab(to: button5)
+        default: return
         }
-    
+    }
+    func changeTab(to newButton: UIButton) {
+        // 先利用 tintColor 取得 Button 預設的文字顏色
+        let defaultColor = selectedButton.tintColor
+        // 將目前選取的按鈕改成未選取的顏色
+        selectedButton.backgroundColor = UIColor.white
+        selectedButton.setTitleColor(defaultColor, for: .normal)
+        // 將參數傳來的新按鈕改成選取的顏色
+        newButton.backgroundColor = UIColor.lightGray
+        newButton.setTitleColor(UIColor.black, for: .normal)
+        // 將目前選取的按鈕改為新的按鈕
+        selectedButton = newButton
     }
 }

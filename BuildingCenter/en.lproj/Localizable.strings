@@ -49,9 +49,8 @@
 "survey_age_31_40" = "31~40 years old";
 "survey_age_41_50" = "41~50 years old";
 "survey_age_51_60" = "51~60 years old";
-"survey_age_61_65" = "61~65 years old";
 "survey_age_below_20" = "Under 20";
-"survey_age_over_66" = "Over 61";
+"survey_age_over_61" = "Over 61";
 "survey_education_college" = "Vocational school";
 "survey_education_high_school" = "High School or less";
 "survey_education_master" = "Graduate school or above";

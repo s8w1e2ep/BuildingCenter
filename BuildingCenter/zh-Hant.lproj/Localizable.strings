@@ -66,8 +66,7 @@
 "survey_age_31_40" = "31歲~40歲";
 "survey_age_41_50" = "41歲~50歲";
 "survey_age_51_60" = "51歲~60歲";
-"survey_age_61_65" = "61歲~65歲";
-"survey_age_over_66" = "61歲以上";
+"survey_age_over_61" = "61歲以上";
 "survey_education_high_school" = "高中以下";
 "survey_education_college" = "專科";
 "survey_education_university" = "大學";
