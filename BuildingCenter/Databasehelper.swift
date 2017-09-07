@@ -12,7 +12,7 @@ import SQLite
 class Databasehelper {
     let databaseFileName = "buildingcenterdb.sqlite"
     let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\("buildingcenterdb.sqlite")"
-    let ip = "http://60.251.33.54:98"
+    //let ip = "http://60.251.33.54:98"
     //let ip = "http://192.168.65.28"
     func deletezonetable(){
         do{
@@ -24,7 +24,7 @@ class Databasehelper {
         }
     }
     
-    func surveyupload(stringUrl: String){
+    /*func surveyupload(stringUrl: String){
         //let stringUrl = "http://192.168.65.28/interface/survey.php?survey={\"gender\":\"1\",\"age\":\"3\"}"
         if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let url = URL(string: encodedURL) {
@@ -38,10 +38,10 @@ class Databasehelper {
              }
         }
         
-    }
+    };*/
     
     func createzoneTable() {
-        let zone_id = Expression<String?>("zone_id")
+        /*let zone_id = Expression<String?>("zone_id")
         let name = Expression<String?>("name")
         let name_en = Expression<String?>("name_en")
         let introduction = Expression<String?>("introduction")
@@ -52,26 +52,27 @@ class Databasehelper {
         let photo = Expression<String?>("photo")
         let photo_vertical = Expression<String?>("photo_vertical")
         let field_id = Expression<String?>("field_id")
-        
+        */
         //let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
         //let db = try Connection(databaseFilePath)
         //let url = URL(string: "http://192.168.65.28/interface/getfile.php?data=zone")
-        let url = URL(string: ip+"/interface/getfile.php?data=zone")
+        //let url = URL(string: ip+"/interface/getfile.php?data=zone")
+        let url = URL(string:DatabaseUtilizer.downloadURL + "?data=zone")
         do{
             let db = try Connection(databaseFilePath)
             let zone = Table("zone")
-            try db.run(zone.create { t in
-                t.column(zone_id)
-                t.column(name)
-                t.column(name_en)
-                t.column(introduction)
-                t.column(introduction_en)
-                t.column(guide_voice)
-                t.column(guide_voice_en)
-                t.column(hint)
-                t.column(photo)
-                t.column(photo_vertical)
-                t.column(field_id)
+            try db.run(zone.create(ifNotExists: true) { t in
+                t.column(DBColExpress.zone_id)
+                t.column(DBColExpress.name)
+                t.column(DBColExpress.name_en)
+                t.column(DBColExpress.introduction)
+                t.column(DBColExpress.introduction_en)
+                t.column(DBColExpress.guide_voice)
+                t.column(DBColExpress.guide_voice_en)
+                t.column(DBColExpress.hint)
+                t.column(DBColExpress.photo)
+                t.column(DBColExpress.photo_vertical)
+                t.column(DBColExpress.field_id)
             })
             
             if let data = try? Data(contentsOf: url!){
@@ -93,17 +94,80 @@ class Databasehelper {
                         if((p["photo_vertical"] as? String)?.isEmpty)!{
                             p["photo_vertical"] = ""
                         }
-                        try db.run(zone.insert(zone_id <- p["zone_id"] as? String ,
-                                               name <- (p["name"] as? String),
-                                               name_en <- (p["name_en"] as? String),
-                                               introduction <- (p["introduction"] as? String),
-                                            introduction_en <- (p["introduction_en"] as? String),
-                                            guide_voice <- (p["guide_voice"] as? String),
-                                            guide_voice_en <- (p["guide_voice_en"] as? String),
-                                            hint <- (p["hint"] as? String),
-                                            photo <- (p["photo"] as? String),
-                                            photo_vertical <- (p["photo_vertical"] as? String),
-                                            field_id <- (p["field_id"] as? String)
+                        try db.run(zone.insert(DBColExpress.zone_id <- p["zone_id"] as? String ,
+                                               DBColExpress.name <- (p["name"] as? String),
+                                               DBColExpress.name_en <- (p["name_en"] as? String),
+                                               DBColExpress.introduction <- (p["introduction"] as? String),
+                                            DBColExpress.introduction_en <- (p["introduction_en"] as? String),
+                                            DBColExpress.guide_voice <- (p["guide_voice"] as? String),
+                                            DBColExpress.guide_voice_en <- (p["guide_voice_en"] as? String),
+                                            DBColExpress.hint <- (p["hint"] as? String),
+                                            DBColExpress.photo <- (p["photo"] as? String),
+                                            DBColExpress.photo_vertical <- (p["photo_vertical"] as? String),
+                                            DBColExpress.field_id <- (p["field_id"] as? String)
+                        ))
+                        
+                    }
+                }
+            }
+        }
+        catch {
+            print(error)
+        }
+        
+    }
+    
+    func createmodeTable() {
+        
+        let url = URL(string:DatabaseUtilizer.downloadURL + "?data=mode")
+        do{
+            let db = try Connection(databaseFilePath)
+            let mode = Table("mode")
+            try db.run(mode.create(ifNotExists: true) { t in
+                t.column(DBColExpress.mode_id)
+                t.column(DBColExpress.name)
+                t.column(DBColExpress.name_en)
+                t.column(DBColExpress.introduction)
+                t.column(DBColExpress.introduction_en)
+                t.column(DBColExpress.guide_voice)
+                t.column(DBColExpress.guide_voice_en)
+                t.column(DBColExpress.video)
+                t.column(DBColExpress.splash_bg_vertical)
+                t.column(DBColExpress.splash_fg_vertical)
+                t.column(DBColExpress.splash_blur_vertical)
+                t.column(DBColExpress.zone_id)
+            })
+            
+            if let data = try? Data(contentsOf: url!){
+                if let jsonObj = try? JSONSerialization.jsonObject(with: data, options:.allowFragments){
+                    for p in jsonObj as! [[String: Any]]{
+                        var p = p
+                        if((p["introduction_en"] as? String)?.isEmpty)!{
+                            p["introduction_en"] = ""
+                        }
+                        if((p["guide_voice"] as? String) == nil){
+                            p["guide_voice"] = ""
+                        }
+                        if((p["guide_voice_en"] as? String) == nil){
+                            p["guide_voice_en"] = ""
+                        }
+                        if((p["video"] as? String) == nil){
+                            p["video"] = ""
+                        }
+                        
+                        
+                        try db.run(mode.insert(DBColExpress.mode_id <- p["zone_id"] as? String ,
+                                               DBColExpress.name <- (p["name"] as? String),
+                                               DBColExpress.name_en <- (p["name_en"] as? String),
+                                               DBColExpress.introduction <- (p["introduction"] as? String),
+                                               DBColExpress.introduction_en <- (p["introduction_en"] as? String),
+                                               DBColExpress.guide_voice <- (p["guide_voice"] as? String),
+                                               DBColExpress.guide_voice_en <- (p["guide_voice_en"] as? String),
+                                               DBColExpress.video <- (p["video"] as? String),
+                                               DBColExpress.splash_bg_vertical <- (p["splash_bg_vertical"] as? String),
+                                               DBColExpress.splash_fg_vertical <- (p["splash_fg_vertical"] as? String),
+                                               DBColExpress.splash_blur_vertical <- (p["splash_blur_vertical"] as? String),
+                                               DBColExpress.zone_id <- (p["zone_id"] as? String)
                         ))
                         
                     }
@@ -122,7 +186,20 @@ class Databasehelper {
         //let zones = NSMutableArray()
         var zones: [ZoneItem] = []
         //var zones = [[String: String]]()
-        let zone_id = Expression<String>("zone_id")
+        //let zone_id = Expression<String>("zone_id")
+        let zone_id = DBColExpress.zone_id
+        let name = DBColExpress.name
+        let name_en = DBColExpress.name_en
+        let introduction = DBColExpress.introduction
+        let introduction_en = DBColExpress.introduction_en
+        let guide_voice = DBColExpress.guide_voice
+        let guide_voice_en = DBColExpress.guide_voice_en
+        let hint = DBColExpress.hint
+        let photo = DBColExpress.photo
+        let photo_vertical = DBColExpress.photo_vertical
+        let field_id = DBColExpress.field_id
+        
+        /*
         let name = Expression<String>("name")
         let name_en = Expression<String>("name_en")
         let introduction = Expression<String>("introduction")
@@ -132,7 +209,7 @@ class Databasehelper {
         let hint = Expression<String>("hint")
         let photo = Expression<String>("photo")
         let photo_vertical = Expression<String>("photo_vertical")
-        let field_id = Expression<String>("field_id")
+        let field_id = Expression<String>("field_id")*/
         do {
             let db = try Connection(databaseFilePath)
             let table = Table("zone")
@@ -177,6 +254,55 @@ class Databasehelper {
         }
         return zones
     }
+    
+    func querymodeTable() -> Array<Any> {
+        
+        var modes: [ModeItem] = []
+
+        let mode_id = DBColExpress.mode_id
+        let name = DBColExpress.name
+        let name_en = DBColExpress.name_en
+        let introduction = DBColExpress.introduction
+        let introduction_en = DBColExpress.introduction_en
+        let guide_voice = DBColExpress.guide_voice
+        let guide_voice_en = DBColExpress.guide_voice_en
+        let video = DBColExpress.video
+        let splash_bg_vertical = DBColExpress.splash_bg_vertical
+        let splash_fg_vertical = DBColExpress.splash_fg_vertical
+        let splash_blur_vertical = DBColExpress.splash_blur_vertical
+        let zone_id = DBColExpress.zone_id
+        
+        
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("mode")
+            //var z = ZoneItem()
+            for rows in try db.prepare(table) {
+                var m = ModeItem()
+                m.mode_id = rows[zone_id]
+                m.name = rows[name]
+                m.name_en = rows[name_en]
+                m.introduction = rows[introduction]
+                m.introduction_en = rows[introduction_en]
+                m.guide_voice = rows[guide_voice]
+                m.guide_voice_en = rows[guide_voice_en]
+                m.video = rows[video]
+                m.splash_bg_vertical = rows[splash_bg_vertical]
+                m.splash_fg_vertical = rows[splash_fg_vertical]
+                m.splash_blur_vertical = rows[splash_blur_vertical]
+                m.zone_id = rows[zone_id]
+                
+                //print(rows[zone_id])
+                //let data = ZoneItem(zone_id: rows[zone_id], name: rows[name], introduction: rows[introduction])
+                //zones.append(zone)
+                modes.append(m)
+            }
+        } catch _ {
+            print("error")
+        }
+        return modes
+    }
+
 
 
 }
