@@ -12,6 +12,9 @@
 		5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F700B321F349B7E00D8C138 /* LaunchViewController.swift */; };
 		5F8C48581F4DB6C0006E7BEB /* Databasehelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48571F4DB6C0006E7BEB /* Databasehelper.swift */; };
 		5F8C485A1F544E9E006E7BEB /* ZoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48591F544E9E006E7BEB /* ZoneItem.swift */; };
+		5F8C48601F5E94F9006E7BEB /* DBColExpress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C485F1F5E94F9006E7BEB /* DBColExpress.swift */; };
+		5F8C48621F5ED5B4006E7BEB /* ModeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48611F5ED5B4006E7BEB /* ModeItem.swift */; };
+		5F8C48641F619DC0006E7BEB /* DeviceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48631F619DC0006E7BEB /* DeviceItem.swift */; };
 		5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */; };
 		5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */; };
 		5FE971421F1C9F0A005EDE58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE971401F1C9F0A005EDE58 /* Main.storyboard */; };
@@ -50,6 +53,7 @@
 		76EB971A1F27871500DAEB03 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */; };
 		76EB971C1F2799E000DAEB03 /* map.svg in Resources */ = {isa = PBXBuildFile; fileRef = 76EB971B1F2799E000DAEB03 /* map.svg */; };
 		76EB971E1F27A88700DAEB03 /* FirmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */; };
+		76ED5B1B1F6136400085D4F5 /* ModeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ED5B1A1F6136400085D4F5 /* ModeCollectionViewCell.swift */; };
 		933E3CE478B22CB16A6A1A3E /* Pods_BuildingCenterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13617F0FAF90C9CB493A56D2 /* Pods_BuildingCenterUITests.framework */; };
 		A20453DE1F50FF0200162025 /* Qn4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20453DD1F50FF0200162025 /* Qn4ViewController.swift */; };
 		A20453E01F50FF1100162025 /* Qn5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20453DF1F50FF1100162025 /* Qn5ViewController.swift */; };
@@ -109,6 +113,9 @@
 		5F700B321F349B7E00D8C138 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		5F8C48571F4DB6C0006E7BEB /* Databasehelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Databasehelper.swift; sourceTree = "<group>"; };
 		5F8C48591F544E9E006E7BEB /* ZoneItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneItem.swift; sourceTree = "<group>"; };
+		5F8C485F1F5E94F9006E7BEB /* DBColExpress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBColExpress.swift; sourceTree = "<group>"; };
+		5F8C48611F5ED5B4006E7BEB /* ModeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeItem.swift; sourceTree = "<group>"; };
+		5F8C48631F619DC0006E7BEB /* DeviceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceItem.swift; sourceTree = "<group>"; };
 		5FE971391F1C9F0A005EDE58 /* BuildingCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +164,7 @@
 		76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 		76EB971B1F2799E000DAEB03 /* map.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.svg; sourceTree = "<group>"; };
 		76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmInfoViewController.swift; sourceTree = "<group>"; };
+		76ED5B1A1F6136400085D4F5 /* ModeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A20453DD1F50FF0200162025 /* Qn4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn4ViewController.swift; sourceTree = "<group>"; };
 		A20453DF1F50FF1100162025 /* Qn5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn5ViewController.swift; sourceTree = "<group>"; };
 		A20453E11F50FF1B00162025 /* Qn6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn6ViewController.swift; sourceTree = "<group>"; };
@@ -424,6 +432,10 @@
 		767B6E5B1F56701900894B66 /* CustomizedObject */ = {
 			isa = PBXGroup;
 			children = (
+				5F8C485F1F5E94F9006E7BEB /* DBColExpress.swift */,
+				5F8C48611F5ED5B4006E7BEB /* ModeItem.swift */,
+				76ED5B1A1F6136400085D4F5 /* ModeCollectionViewCell.swift */,
+				5F8C48631F619DC0006E7BEB /* DeviceItem.swift */,
 			);
 			name = CustomizedObject;
 			sourceTree = "<group>";
@@ -735,6 +747,7 @@
 				7658BA8B1F39B94000C1552B /* MainPageViewController.swift in Sources */,
 				A23875281F3AC8CF00D9FB90 /* Q2ViewController.swift in Sources */,
 				A22C411D1F4AB1C200BCB043 /* QuestionnaireViewController.swift in Sources */,
+				76ED5B1B1F6136400085D4F5 /* ModeCollectionViewCell.swift in Sources */,
 				A22657A71F43CD2900668EDF /* Q11ViewController.swift in Sources */,
 				5FE9716B1F1CA3D2005EDE58 /* BeginViewController.swift in Sources */,
 				709EB43E1F5D2C05007665E3 /* WritingViewController.swift in Sources */,
@@ -760,6 +773,7 @@
 				7652CF5B1F57F91D00F7F733 /* StringExtension.swift in Sources */,
 				5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */,
 				A22657A11F43CD0000668EDF /* Q8ViewController.swift in Sources */,
+				5F8C48621F5ED5B4006E7BEB /* ModeItem.swift in Sources */,
 				A226579C1F43CCD500668EDF /* Q6ViewController.swift in Sources */,
 				A20453DE1F50FF0200162025 /* Qn4ViewController.swift in Sources */,
 				A23FCA2B1F4F115300A91294 /* Qn2ViewController.swift in Sources */,
@@ -774,6 +788,7 @@
 				5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */,
 				5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */,
 				76705BB21F556DF000047414 /* ModeContentHintViewController.swift in Sources */,
+				5F8C48641F619DC0006E7BEB /* DeviceItem.swift in Sources */,
 				A20453E61F50FF3400162025 /* Qn8ViewController.swift in Sources */,
 				A23FCA271F4EF82700A91294 /* ZHDropDownMenu.swift in Sources */,
 				76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */,
@@ -786,6 +801,7 @@
 				A22657941F43CC2900668EDF /* Q4ViewController.swift in Sources */,
 				76705BB01F55643A00047414 /* ModeHintViewController.swift in Sources */,
 				A238752A1F3AC9F400D9FB90 /* Q3ViewController.swift in Sources */,
+				5F8C48601F5E94F9006E7BEB /* DBColExpress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

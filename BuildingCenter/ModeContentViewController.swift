@@ -12,6 +12,7 @@ class ModeContentViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationBar!
     
+    @IBOutlet weak var thumbButton: UIBarButtonItem!
     // test scroller button
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
@@ -74,6 +75,12 @@ class ModeContentViewController: UIViewController {
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func onThumbClick(_ sender: UIBarButtonItem) {
+        thumbButton.image = UIImage(named: "thumbup_orange.png")
+        thumbButton.tintColor = UIColor.orange
+    }
+    
     func setLayout() {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
@@ -91,17 +98,17 @@ class ModeContentViewController: UIViewController {
     
     @IBAction func showPage3(_ sender: Any) {
         changeTab(to: button3)
-        pageViewController.showPage(byIndex: 0)
+        pageViewController.showPage(byIndex: 2)
     }
     
     @IBAction func showPage4(_ sender: Any) {
         changeTab(to: button4)
-        pageViewController.showPage(byIndex: 1)
+        pageViewController.showPage(byIndex: 3)
     }
     
     @IBAction func showPage5(_ sender: Any) {
         changeTab(to: button5)
-        pageViewController.showPage(byIndex: 0)
+        pageViewController.showPage(byIndex: 4)
     }
     
     

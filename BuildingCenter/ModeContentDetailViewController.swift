@@ -9,19 +9,19 @@
 import UIKit
 
 class ModeContentDetailViewController: UIViewController {
-
     
-    let notificationFirmClicked = Notification.Name("firmClickedNoti")
     
-    lazy var firmInfoViewController: FirmInfoViewController = (self.storyboard?.instantiateViewController(withIdentifier: "FirmInfo"))! as! FirmInfoViewController
-
+    @IBOutlet weak var equipmentTitle: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var textView: UITextView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        setNotification()
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +29,11 @@ class ModeContentDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func setUp(number:Int) {
+        equipmentTitle.text = equipmentTitle.text!+"\(number)"
+        image.image = UIImage(named: "a1m\(number)_bg")
+        textView.text = textView.text + "\(number)"
+    }
     /*
     // MARK: - Navigation
 
@@ -37,18 +41,7 @@ class ModeContentDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     */
-    func setNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(firmClickedNoti(noti:)), name: notificationFirmClicked, object: nil)
-        
-        
-    }
-    func firmClickedNoti(noti:Notification) {
-        addChildViewController(firmInfoViewController)
-        view.addSubview(firmInfoViewController.view)
-        firmInfoViewController.didMove(toParentViewController: self)
-        
-    }
-
+    
     
 
 }

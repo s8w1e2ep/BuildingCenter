@@ -9,7 +9,8 @@
 import Foundation
 
 class ZoneItem {
-    var zone_id: String? 
+    
+    var zone_id: String?
     var name: String?
     var name_en: String?
     var introduction: String?
@@ -20,6 +21,7 @@ class ZoneItem {
     var photo: String?
     var photo_vertical: String?
     var field_id: String?
+    
     
     /*init(zone_id: String, name: String, name_en: String, introduction: String, introduction_en: String, guide_voice: String, guide_voice_en: String, hint: String, photo: String, photo_vertical: String, field_id: String) {
         self.zone_id = zone_id

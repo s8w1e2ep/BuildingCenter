@@ -10,16 +10,27 @@ import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate{
 
-    lazy var page1ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
-    lazy var page2ViewController: ModeContentDetailViewController2 = (self.storyboard?.instantiateViewController(withIdentifier: "Page2"))! as! ModeContentDetailViewController2
     
+    let notificationFirmClicked = Notification.Name("firmClickedNoti")
     
-    lazy var orderedViewControllers: [UIViewController] = {
-        [self.page1ViewController, self.page2ViewController]
+    /*lazy var page1ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
+    lazy var page11ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
+    
+    lazy var page2ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
+    */
+    lazy var firmInfoViewController: FirmInfoViewController = (self.storyboard?.instantiateViewController(withIdentifier: "FirmInfo"))! as! FirmInfoViewController
+    
+    lazy var orderedViewControllers: [ModeContentDetailViewController] = {
+        [(self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController,
+         (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController,
+         (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController,
+         (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController]
     }()
     
     var mainViewController: ModeContentViewController!
     var willTransitionTo: UIViewController!
+    
+    var currentIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +39,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         self.dataSource = self
         self.delegate = self
         
-        setViewControllers([page1ViewController], direction: .forward, animated: false, completion: nil)
+        setViewControllers([orderedViewControllers[0]], direction: .forward, animated: false, completion: nil)
+        
+        orderedViewControllers[0].setUp(number: 1)
+        /*orderedViewControllers[0].setUp(number: 2)
+        orderedViewControllers[2].setUp(number: 3)
+        orderedViewControllers[3].setUp(number: 4)
+        */
+        setNotification()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,14 +63,29 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
     }
     */
+    func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(firmClickedNoti(noti:)), name: notificationFirmClicked, object: nil)
+    }
+    func firmClickedNoti(noti:Notification) {
+        
+        //
+        if (noti.userInfo!["isAdded"] as! Int == 0) {
+            //self.page1ViewController.view.addSubview(self.firmInfoViewController.view)
+            UIView.transition(with: self.orderedViewControllers[currentIndex].view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlDown, animations:{self.orderedViewControllers[self.currentIndex].view.addSubview(self.firmInfoViewController.view)}, completion: nil)
+        }else {
+            UIView.transition(with: self.orderedViewControllers[currentIndex].view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlUp, animations:{self.firmInfoViewController.view.removeFromSuperview()}, completion: nil)
+        }
+    }
+
         
     func showPage(byIndex index: Int) {
         let viewController = orderedViewControllers[index]
         setViewControllers([viewController], direction: .forward, animated: false, completion: nil)
+        currentIndex = index
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let index = orderedViewControllers.index(of: viewController) else {
+        guard let index = orderedViewControllers.index(of: viewController as! ModeContentDetailViewController) else {
             return nil
         }
         let previousIndex = index - 1
@@ -63,7 +96,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let index = orderedViewControllers.index(of: viewController) else {
+        guard let index = orderedViewControllers.index(of: viewController as! ModeContentDetailViewController) else {
             return nil
         }
         let nextIndex = index + 1
@@ -78,11 +111,13 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     
     @objc(pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:) func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers previousVieControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            guard let index = orderedViewControllers.index(of: self.willTransitionTo) else { return }
+            guard let index = orderedViewControllers.index(of: self.willTransitionTo as! ModeContentDetailViewController) else { return }
             let previousViewController = previousVieControllers.first!
-            let previousIndex = orderedViewControllers.index(of: previousViewController)
+            let previousIndex = orderedViewControllers.index(of: previousViewController as! ModeContentDetailViewController)
             if index != previousIndex {
                 mainViewController.changeTab(byIndex: index)
+                currentIndex = index
+                print(currentIndex)
             }
         }
     }

@@ -14,6 +14,9 @@ class LandscapeViewController: UIViewController {
     @IBOutlet weak var nextPage: UIButton!
     @IBOutlet weak var navBar: UINavigationBar!
     
+    @IBOutlet weak var highlightImage: UIImageView!
+    @IBOutlet weak var markImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,9 +24,18 @@ class LandscapeViewController: UIViewController {
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = true
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        
+        UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseOut, .repeat, .autoreverse], animations: { self.highlightImage.alpha = 1 }, completion: {_ in self.markImage.isHidden = false })
+        DispatchQueue.main.asyncAfter(deadline: (.now()+1.5), execute: {
+            self.highlightImage.layer.removeAllAnimations()
+        })
+        
+        
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
