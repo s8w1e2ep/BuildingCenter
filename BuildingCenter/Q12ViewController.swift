@@ -15,6 +15,9 @@ class Q12ViewController: UIViewController {
     @IBOutlet var questionTitle: UILabel!
     @IBOutlet var buttomHint: UILabel!
     
+    //struct survey
+    var survey = NSMutableDictionary()
+    
     @IBOutlet var fieldName: UITextField!
     @IBOutlet var fieldEmail: UITextField!
     @IBOutlet var confirm: UIButton!
@@ -56,8 +59,36 @@ class Q12ViewController: UIViewController {
         self.navigationController?.popViewController(animated: false);
     }
     @IBAction func clkFinish(_ sender: Any) {
+        
+        self.survey["name"] = fieldName.text
+        self.survey["email"] = fieldEmail.text
+        
+        if let JsonData = try? JSONSerialization.data(withJSONObject: self.survey, options: [])
+        {
+            let theJsonnext = String(data:JsonData,encoding:.ascii)
+            var stringUrl = DatabaseUtilizer.surveyOneURL + "?survey="
+            stringUrl += theJsonnext!
+            print(stringUrl)
+            var url:String
+            url = stringUrl
+            
+            if let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+                let url2 = NSURL(string: encodedURL)
+                do{
+                    let html = try String(contentsOf: url2! as URL)
+                    print(html)
+                }catch{
+                    print(error)
+                }
+                
+            }
+            
+            
+        }
+        
         self.performSegue(withIdentifier: "Q12finish", sender: self);
     }
+    
     @IBAction func clkPass(_ sender: Any) {
         self.performSegue(withIdentifier: "Q12finish", sender: self);
     }

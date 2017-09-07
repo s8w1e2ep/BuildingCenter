@@ -15,6 +15,9 @@ class Q2ViewController: UIViewController {
     @IBOutlet var questionTitle: UILabel!
     @IBOutlet var buttomHint: UILabel!
     
+    //struct survey
+    var survey = NSMutableDictionary()
+    
     @IBOutlet var btn1: UIButton!
     @IBOutlet var btn2: UIButton!
     @IBOutlet var btn3: UIButton!
@@ -22,7 +25,8 @@ class Q2ViewController: UIViewController {
     @IBOutlet var btn5: UIButton!
     @IBOutlet var btn6: UIButton!
     @IBOutlet var btn7: UIButton!
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,37 +68,49 @@ class Q2ViewController: UIViewController {
     }
     
     @IBAction func clk_1(_ sender: Any) {
+        self.survey["age"] = 1
         self.performSegue(withIdentifier: "Q2toQ3", sender: self);
+        
     }
     @IBAction func clk_2(_ sender: Any) {
+        self.survey["age"] = 2
         self.performSegue(withIdentifier: "Q2toQ3", sender: self);
     }
     @IBAction func clk_3(_ sender: Any) {
+        self.survey["age"] = 3
         self.performSegue(withIdentifier: "Q2toQ3", sender: self);
     }
     @IBAction func clk_4(_ sender: Any) {
+        self.survey["age"] = 4
         self.performSegue(withIdentifier: "Q2toQ3", sender: self);
     }
     @IBAction func clk_5(_ sender: Any) {
+        self.survey["age"] = 5
         self.performSegue(withIdentifier: "Q2toQ3", sender: self);
     }
     @IBAction func clk_6(_ sender: Any) {
+        self.survey["age"] = 6
         self.performSegue(withIdentifier: "Q2toQ3", sender: self);
     }
     @IBAction func clk_7(_ sender: Any) {
+        self.survey["age"] = 7
         self.performSegue(withIdentifier: "Q2toQ3", sender: self);
     }
 
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+        if let q3 : Q3ViewController = segue.destination as? Q3ViewController{
+            q3.survey = self.survey
+        }
+        
+        
     }
-    */
+    
 
 }

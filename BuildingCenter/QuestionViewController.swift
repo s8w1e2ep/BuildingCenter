@@ -20,12 +20,17 @@ class QuestionViewController: UIViewController {
     @IBOutlet var popviewConfirm: UIButton!
     @IBOutlet var popviewSkip: UIButton!
     
+    
+    //struct survey
+    var survey = NSMutableDictionary()
+    
     @IBOutlet var btn1: UIButton!
     @IBOutlet var btn2: UIButton!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.view.addSubview(surveyPopView)
         surveyPopView.center = self.view.center
@@ -78,12 +83,18 @@ class QuestionViewController: UIViewController {
     
     
     @IBAction func clkGirl(_ sender: Any) {
+        
+        self.survey["gender"] = 1
         self.performSegue(withIdentifier: "Q1toQ2", sender: self);
+        
     }
     
    
     @IBAction func clkBoy(_ sender: Any) {
+        
+        self.survey["gender"] = 2
         self.performSegue(withIdentifier: "Q1toQ2", sender: self);
+        
     }
     
     
@@ -91,8 +102,10 @@ class QuestionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let q2 : Q2ViewController = segue.destination as? Q2ViewController{
+            q2.survey = self.survey
+        }
+        
     }
     
 }

@@ -11,7 +11,7 @@ import Foundation
 class DatabaseUtilizer {
     // base IP address
     //static let IP :String = "140.116.82.48";
-    static let IP :String = "60.251.33.54:98";
+    static let IP :String = "192.168.65.28";
     
     static let serverURL :String = "http://" + IP + "/interface/jsondecode.php";
     static let testServer  :String = "http://" + IP + "/interface/test.php"; // test server

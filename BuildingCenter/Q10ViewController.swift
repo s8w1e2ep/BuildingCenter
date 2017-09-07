@@ -15,6 +15,9 @@ class Q10ViewController: UIViewController {
     @IBOutlet var questionTitle: UILabel!
     @IBOutlet var buttomHint: UILabel!
     
+    //struct survey
+    var survey = NSMutableDictionary()
+    
     @IBOutlet var btn1: UIButton!
     @IBOutlet var btn2: UIButton!
     @IBOutlet var btn3: UIButton!
@@ -61,23 +64,27 @@ class Q10ViewController: UIViewController {
         self.performSegue(withIdentifier: "Q10toQ11", sender: self);
     }
     @IBAction func clk1(_ sender: Any) {
+        self.survey["family_member"] = 1
         self.performSegue(withIdentifier: "Q10toQ11", sender: self);
     }
     @IBAction func clk2(_ sender: Any) {
+        self.survey["family_member"] = 2
         self.performSegue(withIdentifier: "Q10toQ11", sender: self);
     }
     @IBAction func clk3(_ sender: Any) {
+        self.survey["family_member"] = 3
         self.performSegue(withIdentifier: "Q10toQ11", sender: self);
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let q11 : Q11ViewController = segue.destination as? Q11ViewController{
+            q11.survey = self.survey
+        }
     }
-    */
+ 
 
 }

@@ -15,6 +15,9 @@ class Q4ViewController: UIViewController {
     @IBOutlet var questionTitle: UILabel!
     @IBOutlet var buttomHint: UILabel!
     
+    //struct survey
+    var survey = NSMutableDictionary()
+    
     @IBOutlet var btn1: UIButton!
     @IBOutlet var btn2: UIButton!
     @IBOutlet var btn3: UIButton!
@@ -75,53 +78,66 @@ class Q4ViewController: UIViewController {
     }
     
     @IBAction func clk1(_ sender: Any) {
+        self.survey["career"] = 1
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk2(_ sender: Any) {
+        self.survey["career"] = 2
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk3(_ sender: Any) {
+        self.survey["career"] = 3
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk4(_ sender: Any) {
+        self.survey["career"] = 4
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk5(_ sender: Any) {
+        self.survey["career"] = 5
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk6(_ sender: Any) {
+        self.survey["career"] = 6
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk7(_ sender: Any) {
+        self.survey["career"] = 7
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk8(_ sender: Any) {
+        self.survey["career"] = 8
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk9(_ sender: Any) {
+        self.survey["career"] = 9
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk10(_ sender: Any) {
+        self.survey["career"] = 10
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk11(_ sender: Any) {
+        self.survey["career"] = 11
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     @IBAction func clk12(_ sender: Any) {
+        self.survey["career"] = 12
         self.performSegue(withIdentifier: "Q4toQ5", sender: self);
     }
     
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let q5 : Q5ViewController = segue.destination as? Q5ViewController{
+            q5.survey = self.survey
+        }
     }
-    */
+    
 
 }

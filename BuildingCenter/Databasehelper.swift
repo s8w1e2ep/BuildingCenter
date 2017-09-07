@@ -25,20 +25,20 @@ class Databasehelper {
     }
     
     func surveyupload(stringUrl: String){
-        //let stringUrl = "http://192.168.65.28/interface/survey.php?survey={\"gender\":\"1\",\"age\":\"3\"}"
-        if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-            let url = URL(string: encodedURL) {
-            let url2 = NSURL(string: encodedURL)
-            
-            do{
-             let html = try String(contentsOf: url2! as URL)
-             print(html)
-             }catch{
-             print(error)
-             }
+     //let stringUrl = "http://192.168.65.28/interface/survey.php?survey={\"gender\":\"1\",\"age\"\"3\"}"
+    if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+     let url = NSURL(string: encodedURL)
+        do{
+            let html = try String(contentsOf: url! as URL)
+            print(html)
+        }catch{
+            print(error)
         }
         
+        }
+     
     }
+    
     
     func createzoneTable() {
         let zone_id = Expression<String?>("zone_id")

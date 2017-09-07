@@ -14,10 +14,15 @@ class Q3ViewController: UIViewController {
     @IBOutlet var questionTitle: UILabel!
     @IBOutlet var buttomHint: UILabel!
     
+    //struct survey 
+    var survey = NSMutableDictionary()
+    
     @IBOutlet var btn1: UIButton!
     @IBOutlet var btn2: UIButton!
     @IBOutlet var btn3: UIButton!
     @IBOutlet var btn4: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,15 +63,19 @@ class Q3ViewController: UIViewController {
     }
 
     @IBAction func clk1(_ sender: Any) {
+        self.survey["education"] = 1
         self.performSegue(withIdentifier: "Q3toQ4", sender: self);
     }
     @IBAction func clk2(_ sender: Any) {
+        self.survey["education"] = 2
         self.performSegue(withIdentifier: "Q3toQ4", sender: self);
     }
     @IBAction func clk3(_ sender: Any) {
+        self.survey["education"] = 3
         self.performSegue(withIdentifier: "Q3toQ4", sender: self);
     }
     @IBAction func clk4(_ sender: Any) {
+        self.survey["education"] = 4
         self.performSegue(withIdentifier: "Q3toQ4", sender: self);
     }
 
@@ -76,8 +85,9 @@ class Q3ViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let q4 : Q4ViewController = segue.destination as? Q4ViewController{
+            q4.survey = self.survey
+        }
     }
     
 
