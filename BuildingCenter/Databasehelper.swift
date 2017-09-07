@@ -180,6 +180,63 @@ class Databasehelper {
         
     }
     
+    func createdeviceTable() {
+        
+        let url = URL(string:DatabaseUtilizer.downloadURL + "?data=device")
+        do{
+            let db = try Connection(databaseFilePath)
+            let device = Table("device")
+            try db.run(device.create(ifNotExists: true) { t in
+                t.column(DBColExpress.device_id)
+                t.column(DBColExpress.name)
+                t.column(DBColExpress.name_en)
+                t.column(DBColExpress.introduction)
+                t.column(DBColExpress.introduction_en)
+                t.column(DBColExpress.photo)
+                t.column(DBColExpress.photo_vertical)
+                t.column(DBColExpress.mode_id)
+                t.column(DBColExpress.company_id)
+            })
+            
+            if let data = try? Data(contentsOf: url!){
+                if let jsonObj = try? JSONSerialization.jsonObject(with: data, options:.allowFragments){
+                    for p in jsonObj as! [[String: Any]]{
+                        var p = p
+                        /*if((p["introduction_en"] as? String)?.isEmpty)!{
+                            p["introduction_en"] = ""
+                        }*/
+                        if((p["introduction_en"] as? String) == nil){
+                            p["introduction_en"] = ""
+                        }
+                        if((p["photo"] as? String) == nil){
+                            p["photo"] = ""
+                        }
+                        if((p["photo_vertical"] as? String) == nil){
+                            p["photo_vertical"] = ""
+                        }
+                        
+                        try db.run(device.insert(DBColExpress.device_id <- p["device_id"] as? String ,
+                                               DBColExpress.name <- (p["name"] as? String),
+                                               DBColExpress.name_en <- (p["name_en"] as? String),
+                                               DBColExpress.introduction <- (p["introduction"] as? String),
+                                               DBColExpress.introduction_en <- (p["introduction_en"] as? String),
+                                               DBColExpress.photo <- (p["photo"] as? String),
+                                               DBColExpress.photo_vertical <- (p["photo_vertical"] as? String),
+                                               DBColExpress.mode_id <- (p["mode_id"] as? String),
+                                               DBColExpress.company_id <- (p["company_id"] as? String)
+                        ))
+                        
+                    }
+                }
+            }
+        }
+        catch {
+            print(error)
+        }
+        
+    }
+
+    
     func queryzoneTable() -> Array<Any> {
         //let databaseFileName = "buildingcenterdb.sqlite"
         //let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
@@ -302,6 +359,48 @@ class Databasehelper {
         }
         return modes
     }
+    
+    func querydeviceTable() -> Array<Any> {
+        
+        var devices: [DeviceItem] = []
+        
+        let device_id = DBColExpress.mode_id
+        let name = DBColExpress.name
+        let name_en = DBColExpress.name_en
+        let introduction = DBColExpress.introduction
+        let introduction_en = DBColExpress.introduction_en
+        let photo = DBColExpress.photo
+        let photo_vertical = DBColExpress.photo_vertical
+        let mode_id = DBColExpress.mode_id
+        let company_id = DBColExpress.company_id
+        
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("device")
+            //var z = ZoneItem()
+            for rows in try db.prepare(table) {
+                var m = DeviceItem()
+                m.device_id = rows[device_id]
+                m.name = rows[name]
+                m.name_en = rows[name_en]
+                m.introduction = rows[introduction]
+                m.introduction_en = rows[introduction_en]
+                m.photo = rows[photo]
+                m.photo_vertical = rows[photo_vertical]
+                m.mode_id = rows[mode_id]
+                m.company_id = rows[company_id]
+                
+                //print(rows[zone_id])
+                //let data = ZoneItem(zone_id: rows[zone_id], name: rows[name], introduction: rows[introduction])
+                //zones.append(zone)
+                devices.append(m)
+            }
+        } catch _ {
+            print("error")
+        }
+        return devices
+    }
+
 
 
 

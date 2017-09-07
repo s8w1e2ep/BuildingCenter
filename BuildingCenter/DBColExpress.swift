@@ -30,5 +30,8 @@ class DBColExpress{
     static let splash_fg_vertical = Expression<String?>(DatabaseUtilizer.MODE_SPLASH_FG)
     static let splash_blur_vertical = Expression<String?>(DatabaseUtilizer.MODE_SPLASH_BLUR)
     
+    //device
+    static let device_id = Expression<String?>(DatabaseUtilizer.DEVICE_ID)
+    static let company_id = Expression<String?>(DatabaseUtilizer.COMPANY_ID)
 
 }

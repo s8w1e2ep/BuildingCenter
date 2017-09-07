@@ -19,11 +19,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         databasehelper = Databasehelper()
         //databasehelper.deletezonetable()
-        databasehelper.createmodeTable()
-        let modes = databasehelper.querymodeTable();
-        for i in modes{
-            print(((i as! ModeItem).name)as! String)
-            print(((i as! ModeItem).introduction)as! String)
+        databasehelper.createdeviceTable()
+        let devices = databasehelper.querydeviceTable();
+        for i in devices{
+            print(((i as! DeviceItem).name)as! String)
+            print(((i as! DeviceItem).introduction)as! String)
         }
         //print((zones[0] as! ZoneItem).name)
         //let stringUrl = "http://192.168.65.28/interface/survey.php?survey={\"gender\":\"1\",\"age\":\"3\"}"
