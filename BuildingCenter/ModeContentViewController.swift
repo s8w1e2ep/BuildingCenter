@@ -98,17 +98,17 @@ class ModeContentViewController: UIViewController {
     
     @IBAction func showPage3(_ sender: Any) {
         changeTab(to: button3)
-        pageViewController.showPage(byIndex: 0)
+        pageViewController.showPage(byIndex: 2)
     }
     
     @IBAction func showPage4(_ sender: Any) {
         changeTab(to: button4)
-        pageViewController.showPage(byIndex: 1)
+        pageViewController.showPage(byIndex: 3)
     }
     
     @IBAction func showPage5(_ sender: Any) {
         changeTab(to: button5)
-        pageViewController.showPage(byIndex: 0)
+        pageViewController.showPage(byIndex: 4)
     }
     
     
