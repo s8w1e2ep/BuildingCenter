@@ -43,7 +43,7 @@ class MainPageViewController: UIViewController {
     let notificationEnterModeContent = Notification.Name("enterModeContentNoti")
     let notificationExitModeContent = Notification.Name("exitModeContentNoti")
     let notificationFirmClicked = Notification.Name("firmClickedNoti")
-    
+    let notificationPageChanged = Notification.Name("pageChangededNoti")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,6 +144,7 @@ class MainPageViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(enterModeContentNoti(noti:)), name: notificationEnterModeContent, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(exitModeContentNoti(noti:)), name: notificationExitModeContent, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pageChangedNoti(noti:)), name: notificationPageChanged, object: nil)
         
     }
     func setInitSelected() {
@@ -210,13 +211,28 @@ class MainPageViewController: UIViewController {
     }
     func enterModeContentNoti(noti:Notification) {
         infoButton.isEnabled = true
+        textButton.isEnabled = true
+        speechButton.isEnabled = true
         
     }
     func exitModeContentNoti(noti:Notification) {
         infoButton.isEnabled = false
         infoButton.isSelected = false
+        textButton.isEnabled = false
+        textButton.isSelected = false
+        speechButton.isEnabled = false
+        speechButton.isSelected = false
     }
 
+    func pageChangedNoti(noti:Notification) {
+        TTS = noti.userInfo!["TTS"] as! String
+        synth.stopSpeaking(at: AVSpeechBoundary.immediate)
+        slider.isHidden = true
+        speechButton.isSelected = false
+        textButton.isSelected = false
+        infoButton.isSelected = false
+    }
+    
     @IBAction func sliderChange(_ sender: UISlider) {
         //print(slider.value)
         NotificationCenter.default.post(name: notificationSliderChanged, object: nil, userInfo: ["sliderValue":slider.value])

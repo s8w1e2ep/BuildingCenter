@@ -27,6 +27,7 @@ class ModeContentViewController: UIViewController {
     let notificationExitModeContent = Notification.Name("exitModeContentNoti")
     
     
+    
     var selectedButton: UIButton!
     var pageViewController: PageViewController!
     
@@ -40,13 +41,6 @@ class ModeContentViewController: UIViewController {
         changeTab(to: button1)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        NotificationCenter.default.post(name: notificationEnterModeContent, object: nil, userInfo: nil)
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.post(name: notificationExitModeContent, object: nil, userInfo: nil)
-    }
     override func viewDidAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         let isModeContentLaunchBefore = defaults.bool(forKey: "isModeContentLaunchBefore")
@@ -60,6 +54,12 @@ class ModeContentViewController: UIViewController {
             defaults.set(true, forKey: "isModeContentLaunchBefore")
         }
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.post(name: notificationEnterModeContent, object: nil, userInfo: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: notificationExitModeContent, object: nil, userInfo: nil)
     }
     
     override func didReceiveMemoryWarning() {

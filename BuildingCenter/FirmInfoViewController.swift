@@ -10,11 +10,17 @@ import UIKit
 
 class FirmInfoViewController: UIViewController {
 
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var equipmentTitle: UILabel!
+    
+    var equipmentNumber: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        equipmentTitle.text = equipmentTitle.text!+"\(equipmentNumber+1)"
+        image.image = UIImage(named: "a1m\(equipmentNumber+1)_bg")
     }
 
     override func didReceiveMemoryWarning() {

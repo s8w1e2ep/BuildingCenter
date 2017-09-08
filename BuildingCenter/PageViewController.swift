@@ -12,20 +12,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
 
     
     let notificationFirmClicked = Notification.Name("firmClickedNoti")
+    let notificationPageChanged = Notification.Name("pageChangededNoti")
     
-    /*lazy var page1ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
-    lazy var page11ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
-    
-    lazy var page2ViewController: ModeContentDetailViewController = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
-    */
-    lazy var firmInfoViewController: FirmInfoViewController = (self.storyboard?.instantiateViewController(withIdentifier: "FirmInfo"))! as! FirmInfoViewController
-    
-    lazy var orderedViewControllers: [ModeContentDetailViewController] = {
-        [(self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController,
-         (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController,
-         (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController,
-         (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController]
-    }()
+    let notificationSliderChanged = Notification.Name("sliderChangedNoti")
+
+    var orderedViewControllers = [ModeContentDetailViewController]()
+    var firmInfoViewControllers = [FirmInfoViewController]()
     
     var mainViewController: ModeContentViewController!
     var willTransitionTo: UIViewController!
@@ -39,14 +31,23 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         self.dataSource = self
         self.delegate = self
         
+        
+        for index in 0 ... 3 {
+            let page = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
+            page.equipmentNumber = index
+            orderedViewControllers.append(page)
+            
+            let firmInfo = (self.storyboard?.instantiateViewController(withIdentifier: "FirmInfo"))! as! FirmInfoViewController
+            firmInfo.equipmentNumber = index
+            firmInfoViewControllers.append(firmInfo)
+        }
+        
         setViewControllers([orderedViewControllers[0]], direction: .forward, animated: false, completion: nil)
         
-        orderedViewControllers[0].setUp(number: 1)
-        /*orderedViewControllers[0].setUp(number: 2)
-        orderedViewControllers[2].setUp(number: 3)
-        orderedViewControllers[3].setUp(number: 4)
-        */
         setNotification()
+        
+        NotificationCenter.default.post(name: notificationPageChanged, object: nil, userInfo: ["TTS":orderedViewControllers[currentIndex].textView.text])
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,18 +66,24 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     */
     func setNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(firmClickedNoti(noti:)), name: notificationFirmClicked, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sliderChangedNoti(noti:)), name: notificationSliderChanged, object: nil)
     }
     func firmClickedNoti(noti:Notification) {
         
         //
         if (noti.userInfo!["isAdded"] as! Int == 0) {
             //self.page1ViewController.view.addSubview(self.firmInfoViewController.view)
-            UIView.transition(with: self.orderedViewControllers[currentIndex].view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlDown, animations:{self.orderedViewControllers[self.currentIndex].view.addSubview(self.firmInfoViewController.view)}, completion: nil)
+            UIView.transition(with: self.orderedViewControllers[currentIndex].view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlDown, animations:{self.orderedViewControllers[self.currentIndex].view.addSubview(self.firmInfoViewControllers[self.currentIndex].view)}, completion: nil)
+            orderedViewControllers[currentIndex].isShowed = true
         }else {
-            UIView.transition(with: self.orderedViewControllers[currentIndex].view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlUp, animations:{self.firmInfoViewController.view.removeFromSuperview()}, completion: nil)
+            UIView.transition(with: self.orderedViewControllers[currentIndex].view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlUp, animations:{self.firmInfoViewControllers[self.currentIndex].view.removeFromSuperview()}, completion: nil)
+            orderedViewControllers[currentIndex].isShowed = false
         }
     }
-
+    func sliderChangedNoti(noti:Notification) {
+        let sliderValue = noti.userInfo!["sliderValue"] as! Float
+        orderedViewControllers[currentIndex].textView.font = orderedViewControllers[currentIndex].textView.font?.withSize(CGFloat(sliderValue))
+    }
         
     func showPage(byIndex index: Int) {
         let viewController = orderedViewControllers[index]
@@ -109,15 +116,18 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         self.willTransitionTo = pendingViewControllers.first
     }
     
-    @objc(pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:) func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers previousVieControllers: [UIViewController], transitionCompleted completed: Bool) {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers previousVieControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
             guard let index = orderedViewControllers.index(of: self.willTransitionTo as! ModeContentDetailViewController) else { return }
-            let previousViewController = previousVieControllers.first!
-            let previousIndex = orderedViewControllers.index(of: previousViewController as! ModeContentDetailViewController)
+            let previousViewController = previousVieControllers.first! as! ModeContentDetailViewController
+            let previousIndex = orderedViewControllers.index(of: previousViewController )
             if index != previousIndex {
                 mainViewController.changeTab(byIndex: index)
                 currentIndex = index
-                print(currentIndex)
+            }
+            NotificationCenter.default.post(name: notificationPageChanged, object: nil, userInfo: ["TTS":orderedViewControllers[currentIndex].textView.text])
+            if previousViewController.isShowed {
+                UIView.transition(with: self.orderedViewControllers[previousIndex!].view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlUp, animations:{self.firmInfoViewControllers[previousIndex!].view.removeFromSuperview()}, completion: nil)
             }
         }
     }
