@@ -33,5 +33,11 @@ class DBColExpress{
     //device
     static let device_id = Expression<String?>(DatabaseUtilizer.DEVICE_ID)
     static let company_id = Expression<String?>(DatabaseUtilizer.COMPANY_ID)
+    
+    //company
+    static let tel = Expression<String?>(DatabaseUtilizer.COMPANY_TEL)
+    static let fax = Expression<String?>(DatabaseUtilizer.COMPANY_FAX)
+    static let web = Expression<String?>(DatabaseUtilizer.COMPANY_WEB)
+    static let qrcode = Expression<String?>(DatabaseUtilizer.QRCODE)
 
 }

@@ -40,6 +40,12 @@ class Databasehelper {
         
     };*/
     
+    func creatTable(){
+        createzoneTable()
+        createmodeTable()
+        createcompanyTable()
+        createdeviceTable()
+    }
     
     func createzoneTable() {
         /*let zone_id = Expression<String?>("zone_id")
@@ -236,6 +242,63 @@ class Databasehelper {
         }
         
     }
+    
+    func createcompanyTable() {
+        
+        let url = URL(string:DatabaseUtilizer.downloadURL + "?data=company")
+        do{
+            let db = try Connection(databaseFilePath)
+            let company = Table("company")
+            try db.run(company.create(ifNotExists: true) { t in
+                t.column(DBColExpress.company_id)
+                t.column(DBColExpress.name)
+                t.column(DBColExpress.name_en)
+                t.column(DBColExpress.tel)
+                t.column(DBColExpress.fax)
+                t.column(DBColExpress.web)
+                t.column(DBColExpress.qrcode)
+            })
+            
+            if let data = try? Data(contentsOf: url!){
+                if let jsonObj = try? JSONSerialization.jsonObject(with: data, options:.allowFragments){
+                    for p in jsonObj as! [[String: Any]]{
+                        var p = p
+                        /*if((p["introduction_en"] as? String)?.isEmpty)!{
+                         p["introduction_en"] = ""
+                         }*/
+                        if((p["introduction_en"] as? String) == nil){
+                            p["introduction_en"] = ""
+                        }
+                        if((p["qrcode"] as? String) == nil){
+                            p["qrcode"] = ""
+                        }
+                        if((p["tel"] as? String) == nil){
+                            p["tel"] = ""
+                        }
+                        if((p["fax"] as? String) == nil){
+                            p["fax"] = ""
+                        }
+                        
+                        try db.run(company.insert(DBColExpress.company_id <- p["company_id"] as? String ,
+                                                 DBColExpress.name <- (p["name"] as? String),
+                                                 DBColExpress.name_en <- (p["name_en"] as? String),
+                                                 DBColExpress.tel <- (p["tel"] as? String),
+                                                 DBColExpress.fax <- (p["fax"] as? String),
+                                                 DBColExpress.web <- (p["web"] as? String),
+                                                 DBColExpress.qrcode <- (p["qrcode"] as? String)
+                        ))
+                        
+                    }
+                }
+            }
+        }
+        catch {
+            print(error)
+        }
+        
+    }
+
+    
 
     
     func queryzoneTable() -> Array<Any> {
@@ -402,6 +465,43 @@ class Databasehelper {
         return devices
     }
 
+    func querycompanyTable() -> Array<Any> {
+        
+        var companys: [CompanyItem] = []
+        
+        let company_id = DBColExpress.company_id
+        let name = DBColExpress.name
+        let name_en = DBColExpress.name_en
+        let tel = DBColExpress.tel
+        let fax = DBColExpress.fax
+        let web = DBColExpress.web
+        let qrcode = DBColExpress.qrcode
+
+        
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("company")
+            for rows in try db.prepare(table) {
+                var m = CompanyItem()
+                m.company_id = rows[company_id]
+                m.name = rows[name]
+                m.name_en = rows[name_en]
+                m.tel = rows[tel]
+                m.fax = rows[fax]
+                m.web = rows[web]
+                m.qrcode = rows[qrcode]
+                
+                
+                //print(rows[zone_id])
+                //let data = ZoneItem(zone_id: rows[zone_id], name: rows[name], introduction: rows[introduction])
+                //zones.append(zone)
+                companys.append(m)
+            }
+        } catch _ {
+            print("error")
+        }
+        return companys
+    }
 
 
 
