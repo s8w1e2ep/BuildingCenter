@@ -25,6 +25,8 @@ public class  RadioButton: UIButton {
     
     //      Size of icon, default is 15.0.
     
+    @IBInspectable public var index:String = ""
+    
     @IBInspectable public var iconSize:CGFloat = 15.0
     
     //    Size of selection indicator, default is iconSize * 0.5.

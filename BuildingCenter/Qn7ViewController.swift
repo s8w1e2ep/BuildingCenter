@@ -10,6 +10,8 @@ import UIKit
 
 class Qn7ViewController: UIViewController {
 
+    var survey2 = NSMutableDictionary()
+    
     @IBOutlet var navbar: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +32,21 @@ class Qn7ViewController: UIViewController {
         self.performSegue(withIdentifier: "Qn7toQn8", sender: self);
     }
     
+    
+    func setText(selectLanguage: String) {
+        // according to language set text
+    }
+    
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let qn7 : Qn7ViewController = segue.destination as? Qn7ViewController{
+            qn7.survey2 = self.survey2
+        }
     }
-    */
+ 
 
 }

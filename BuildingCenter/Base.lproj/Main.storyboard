@@ -226,7 +226,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6EC-71-KF1" kind="show" id="vks-3T-y3p"/>
+                                    <action selector="nextBtn:" destination="6Ca-X1-FUf" eventType="touchUpInside" id="HWD-7N-kBM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -252,6 +252,7 @@
                         <outlet property="navBar" destination="mVU-m9-R14" id="Orq-aA-LuO"/>
                         <outlet property="navItem" destination="51P-Ej-VYK" id="IWY-54-XK9"/>
                         <outlet property="nextPage" destination="zVX-Mc-u9i" id="W42-bm-NsD"/>
+                        <segue destination="6EC-71-KF1" kind="show" identifier="toNext" id="645-5Y-UkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUA-VI-HTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -312,7 +313,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Drj-IC-pZK" kind="show" id="m2E-gg-Lno"/>
+                                    <action selector="nextBtn:" destination="6EC-71-KF1" eventType="touchUpInside" id="eOP-L8-PoT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -338,6 +339,7 @@
                         <outlet property="navBar" destination="fnd-YG-I3X" id="a7m-Kg-TwL"/>
                         <outlet property="navItem" destination="Col-9b-tam" id="BQh-9r-rx3"/>
                         <outlet property="nextPage" destination="SJE-3V-7Q6" id="59C-io-8jz"/>
+                        <segue destination="Drj-IC-pZK" kind="show" identifier="toNext" id="wgP-18-JiN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5D-u7-ubQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,7 +400,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nvl-hP-JkO" kind="show" id="eXD-Nb-Zd3"/>
+                                    <action selector="nextBtn:" destination="Drj-IC-pZK" eventType="touchUpInside" id="bfJ-o3-nVy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -424,6 +426,7 @@
                         <outlet property="navBar" destination="Osj-6V-q8H" id="TAy-7g-HNP"/>
                         <outlet property="navItem" destination="eZu-XP-m8X" id="UxQ-Rs-WWe"/>
                         <outlet property="nextPage" destination="zSB-T9-MUY" id="dJ9-JH-UeA"/>
+                        <segue destination="nvl-hP-JkO" kind="show" identifier="toNext" id="I5j-ju-aKX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fz5-Mv-Als" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -478,7 +481,7 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_nextstep_active_1"/>
                                 <connections>
-                                    <segue destination="DkL-DR-66f" kind="show" id="Du8-cX-hbz"/>
+                                    <action selector="nextBtn:" destination="nvl-hP-JkO" eventType="touchUpInside" id="ecU-kE-oHV"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIL-mI-Vsp">
@@ -507,6 +510,7 @@
                         <outlet property="navBar" destination="l8l-4N-mAD" id="Dnq-7C-bEM"/>
                         <outlet property="navItem" destination="ffd-lb-GdH" id="2fQ-QD-f9B"/>
                         <outlet property="scrollView" destination="bIL-mI-Vsp" id="4ZK-Y8-jIm"/>
+                        <segue destination="DkL-DR-66f" kind="show" identifier="toNext" id="fbs-b5-5dm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQk-cC-bfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -858,7 +862,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本資料受個資法保護" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lp-23-AGe">
-                                <rect key="frame" x="46" y="626.5" width="283" height="20.5"/>
+                                <rect key="frame" x="46" y="626" width="283" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1628,8 +1632,8 @@
                                     <action selector="nextQ:" destination="8eF-Rh-JK0" eventType="touchUpInside" id="mkZ-Fa-hoS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您對智慧化科技產品的態度傾向" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reU-5n-LFZ">
-                                <rect key="frame" x="16" y="114" width="286" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您對智慧化科技產品的態度傾向" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reU-5n-LFZ">
+                                <rect key="frame" x="16" y="114" width="323" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1643,10 +1647,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBX-2O-r3t" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="148" width="170" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBX-2O-r3t" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="148" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="U7z-iQ-Bji"/>
+                                    <constraint firstAttribute="width" constant="200" id="U7z-iQ-Bji"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="非常支持">
@@ -1676,16 +1680,17 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="logSelectedButton:" destination="8eF-Rh-JK0" eventType="touchUpInside" id="mjF-n8-oT4"/>
                                     <outletCollection property="otherButtons" destination="GSa-uu-mH8" collectionClass="NSMutableArray" id="wcd-Jd-8Ck"/>
                                     <outletCollection property="otherButtons" destination="rpm-7k-I0h" collectionClass="NSMutableArray" id="ljF-kG-zg9"/>
                                     <outletCollection property="otherButtons" destination="lOF-P8-qF6" collectionClass="NSMutableArray" id="axl-Dn-xiE"/>
                                     <outletCollection property="otherButtons" destination="TYP-xx-Uuf" collectionClass="NSMutableArray" id="qyR-Ng-ytH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSa-uu-mH8" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="187" width="170" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSa-uu-mH8" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="187" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="J6X-dB-ysI"/>
+                                    <constraint firstAttribute="width" constant="200" id="J6X-dB-ysI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="支持">
@@ -1714,11 +1719,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logSelectedButton:" destination="8eF-Rh-JK0" eventType="touchUpInside" id="NGU-vJ-K0w"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpm-7k-I0h" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="226" width="170" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpm-7k-I0h" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="226" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="5JT-57-aH0"/>
+                                    <constraint firstAttribute="width" constant="200" id="5JT-57-aH0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="尚可">
@@ -1747,11 +1755,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logSelectedButton:" destination="8eF-Rh-JK0" eventType="touchUpInside" id="nh9-j7-mNT"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOF-P8-qF6" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="265" width="170" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOF-P8-qF6" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="265" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="gMw-Eo-NBh"/>
+                                    <constraint firstAttribute="width" constant="200" id="gMw-Eo-NBh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="不支持">
@@ -1780,11 +1791,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logSelectedButton:" destination="8eF-Rh-JK0" eventType="touchUpInside" id="HAk-MQ-jsg"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYP-xx-Uuf" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="304" width="170" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="5" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYP-xx-Uuf" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
+                                <rect key="frame" x="16" y="304" width="200" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="ZYF-23-IZZ"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZYF-23-IZZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="非常不支持">
@@ -1813,10 +1827,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logSelectedButton:" destination="8eF-Rh-JK0" eventType="touchUpInside" id="dnO-7J-iEU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="reU-5n-LFZ" secondAttribute="trailing" constant="20" id="06L-UT-u9H"/>
                             <constraint firstItem="r5P-fl-f43" firstAttribute="leading" secondItem="VdL-x7-FB5" secondAttribute="leading" id="4UG-Om-CUl"/>
                             <constraint firstAttribute="trailing" secondItem="1bS-D9-jpP" secondAttribute="trailing" id="4WX-5w-ahd"/>
                             <constraint firstItem="1bS-D9-jpP" firstAttribute="top" secondItem="VdL-x7-FB5" secondAttribute="top" constant="20" id="A4k-bc-pJc"/>
@@ -1842,6 +1860,13 @@
                     <navigationItem key="navigationItem" id="hur-Fv-LfJ"/>
                     <connections>
                         <outlet property="navbar" destination="1bS-D9-jpP" id="SKV-dD-r87"/>
+                        <outlet property="nextBtn" destination="r5P-fl-f43" id="PXH-GO-k1y"/>
+                        <outlet property="questionTitle" destination="reU-5n-LFZ" id="n4V-Hd-s7i"/>
+                        <outlet property="radio1" destination="VBX-2O-r3t" id="E2I-YO-eHL"/>
+                        <outlet property="radio2" destination="GSa-uu-mH8" id="2sl-WF-UFs"/>
+                        <outlet property="radio3" destination="rpm-7k-I0h" id="qqu-0C-bhL"/>
+                        <outlet property="radio4" destination="lOF-P8-qF6" id="gUs-OE-PT5"/>
+                        <outlet property="radio5" destination="TYP-xx-Uuf" id="Dhv-kx-MhK"/>
                         <segue destination="CJ6-YA-4Gq" kind="show" identifier="Qn1toQn2" animates="NO" id="4vy-Um-nbC"/>
                     </connections>
                 </viewController>
@@ -2238,7 +2263,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已讀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMh-gX-bUx">
-                                                    <rect key="frame" x="129" y="16" width="44" height="19.5"/>
+                                                    <rect key="frame" x="129" y="16" width="44" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -2430,7 +2455,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLA-iO-nhl">
-                                <rect key="frame" x="107.5" y="468" width="160" height="45"/>
+                                <rect key="frame" x="108" y="468" width="160" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="DOb-XZ-v5F"/>
                                     <constraint firstAttribute="width" constant="160" id="l5Y-qI-SKN"/>
@@ -2542,7 +2567,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIv-IS-rYW">
-                                <rect key="frame" x="107.5" y="468" width="160" height="45"/>
+                                <rect key="frame" x="108" y="468" width="160" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="GPm-Hi-gJj"/>
                                     <constraint firstAttribute="width" constant="160" id="PEC-Km-yzg"/>
@@ -4865,9 +4890,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您對智慧化科技產品購買與使用傾向，其重要程度看法如何？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXk-uR-aiy">
-                                <rect key="frame" x="16" y="114" width="350" height="50"/>
+                                <rect key="frame" x="16" y="114" width="350" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="WKr-LC-bc8"/>
                                     <constraint firstAttribute="width" constant="350" id="dcf-tF-USu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -4884,7 +4908,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LeR-ZK-pGF">
-                                <rect key="frame" x="16" y="164" width="343" height="453"/>
+                                <rect key="frame" x="16" y="162" width="343" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X40-0c-g7m">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="1350"/>
@@ -4935,8 +4959,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="1"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
+                                                                    <action selector="logSelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="5DF-uQ-9wF"/>
                                                                     <outletCollection property="otherButtons" destination="nrT-et-933" collectionClass="NSMutableArray" id="3eB-Iv-6uL"/>
                                                                     <outletCollection property="otherButtons" destination="Hy9-f6-hgB" collectionClass="NSMutableArray" id="tyG-Nf-ncA"/>
                                                                     <outletCollection property="otherButtons" destination="aZz-dT-6Zp" collectionClass="NSMutableArray" id="R7Y-Ny-scx"/>
@@ -4974,7 +5000,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="2"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="logSelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="VEW-af-wys"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hy9-f6-hgB" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="107" width="200" height="34"/>
@@ -5007,7 +5037,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="3"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="logSelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="5oi-2d-V1y"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZz-dT-6Zp" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="146" width="200" height="34"/>
@@ -5040,7 +5074,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="4"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="logSelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="xKN-uv-67W"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxc-oU-TVM" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="185" width="200" height="34"/>
@@ -5073,7 +5111,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="5"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="logSelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="BWb-wZ-AQE"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -5128,8 +5170,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="1"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
+                                                                    <action selector="log1SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="eUh-4z-8vd"/>
                                                                     <outletCollection property="otherButtons" destination="mXW-79-2PM" collectionClass="NSMutableArray" id="K8T-aH-3wv"/>
                                                                     <outletCollection property="otherButtons" destination="wFs-CX-0gg" collectionClass="NSMutableArray" id="52d-gC-d40"/>
                                                                     <outletCollection property="otherButtons" destination="dHR-8j-i0y" collectionClass="NSMutableArray" id="rHt-SX-I5h"/>
@@ -5167,7 +5211,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="2"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log1SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="mWa-1Q-3sm"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFs-CX-0gg" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="107" width="200" height="34"/>
@@ -5200,7 +5248,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="3"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log1SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="kAl-TE-yC7"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-8j-i0y" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="146" width="200" height="34"/>
@@ -5233,7 +5285,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="4"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log1SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="TBT-Th-erP"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnW-Dg-kVa" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="185" width="200" height="34"/>
@@ -5266,7 +5322,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="5"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log1SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="4IZ-75-ejy"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -5321,8 +5381,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="1"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
+                                                                    <action selector="log2SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="q89-qD-aGb"/>
                                                                     <outletCollection property="otherButtons" destination="fao-qz-M6D" collectionClass="NSMutableArray" id="z0V-s2-CCU"/>
                                                                     <outletCollection property="otherButtons" destination="Skf-4q-nJg" collectionClass="NSMutableArray" id="oV6-gK-KLD"/>
                                                                     <outletCollection property="otherButtons" destination="JVv-wD-STT" collectionClass="NSMutableArray" id="dN1-c1-t3s"/>
@@ -5360,7 +5422,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="2"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log2SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="eQd-iS-s4w"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skf-4q-nJg" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="107" width="200" height="34"/>
@@ -5393,7 +5459,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="3"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log2SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="K4g-oG-AYo"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVv-wD-STT" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="146" width="200" height="34"/>
@@ -5426,7 +5496,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="4"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log2SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="o04-wk-ZK9"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d22-OE-VaO" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="185" width="200" height="34"/>
@@ -5459,7 +5533,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="5"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log2SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="NNW-aS-mvF"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -5506,8 +5584,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="1"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
+                                                                    <action selector="log3SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="sfZ-4n-hah"/>
                                                                     <outletCollection property="otherButtons" destination="SXp-3J-dbt" collectionClass="NSMutableArray" id="cd6-7Y-j7t"/>
                                                                     <outletCollection property="otherButtons" destination="iY9-AA-9nt" collectionClass="NSMutableArray" id="7GP-VI-d7j"/>
                                                                     <outletCollection property="otherButtons" destination="igf-yD-CfM" collectionClass="NSMutableArray" id="APM-bU-gzv"/>
@@ -5545,7 +5625,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="2"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log3SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="URU-sN-ej8"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iY9-AA-9nt" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="107" width="200" height="34"/>
@@ -5578,7 +5662,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="3"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log3SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="9jL-Qp-b60"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igf-yD-CfM" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="146" width="200" height="34"/>
@@ -5611,7 +5699,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="4"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log3SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="MSV-WP-ynF"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg3-bM-nct" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="185" width="200" height="34"/>
@@ -5644,7 +5736,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="5"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log3SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="Jap-w8-bvI"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -5699,8 +5795,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="1"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
+                                                                    <action selector="log4SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="sam-7k-gzI"/>
                                                                     <outletCollection property="otherButtons" destination="mUK-Xq-Iv2" collectionClass="NSMutableArray" id="WJt-bZ-zH4"/>
                                                                     <outletCollection property="otherButtons" destination="DYX-CJ-knQ" collectionClass="NSMutableArray" id="OBG-JU-GON"/>
                                                                     <outletCollection property="otherButtons" destination="G1W-WT-xbM" collectionClass="NSMutableArray" id="5Vb-QX-CGE"/>
@@ -5738,7 +5836,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="2"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log4SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="OKM-tZ-7t0"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYX-CJ-knQ" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="107" width="200" height="34"/>
@@ -5771,7 +5873,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="3"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log4SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="9Gw-JX-1Kc"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1W-WT-xbM" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="146" width="200" height="34"/>
@@ -5804,7 +5910,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="4"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log4SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="WNp-0r-g9k"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wW-eg-14v" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="185" width="200" height="34"/>
@@ -5837,7 +5947,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="5"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log4SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="emK-Kh-T82"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -5852,7 +5966,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vlM-yz-LjV">
                                                         <rect key="frame" x="0.0" y="1120" width="200" height="219"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="維護與管理性" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3b-Yg-uLf">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="維護與管理性" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3b-Yg-uLf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="200" id="OXc-qk-Sxv"/>
@@ -5892,8 +6006,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="1"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
+                                                                    <action selector="log5SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="yO0-4Z-W2L"/>
                                                                     <outletCollection property="otherButtons" destination="qHh-Lf-CzA" collectionClass="NSMutableArray" id="iv5-in-EfU"/>
                                                                     <outletCollection property="otherButtons" destination="eLr-z7-Uxm" collectionClass="NSMutableArray" id="Hu0-MO-xyW"/>
                                                                     <outletCollection property="otherButtons" destination="cIW-eI-8dJ" collectionClass="NSMutableArray" id="ASH-47-UNG"/>
@@ -5931,7 +6047,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="2"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log5SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="KbP-eW-Xp3"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLr-z7-Uxm" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="107" width="200" height="34"/>
@@ -5964,7 +6084,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="3"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log5SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="SD4-EM-rYF"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-eI-8dJ" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="146" width="200" height="34"/>
@@ -5997,7 +6121,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="4"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log5SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="Wjs-Xo-xWQ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t95-56-4gU" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="185" width="200" height="34"/>
@@ -6030,7 +6158,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="5"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log5SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="vyi-3Y-Pio"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -6085,8 +6217,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="1"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
+                                                                    <action selector="log6SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="wtf-Cu-tNH"/>
                                                                     <outletCollection property="otherButtons" destination="bCQ-Ie-lEs" collectionClass="NSMutableArray" id="Z5b-72-EYo"/>
                                                                     <outletCollection property="otherButtons" destination="Sdo-ga-wja" collectionClass="NSMutableArray" id="fch-AP-hBo"/>
                                                                     <outletCollection property="otherButtons" destination="PKN-A6-B2Q" collectionClass="NSMutableArray" id="mqx-bL-gf8"/>
@@ -6124,7 +6258,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="2"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log6SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="0aF-t1-ZcG"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdo-ga-wja" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="107" width="200" height="34"/>
@@ -6157,7 +6295,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="3"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log6SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="1Lh-xa-VB0"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKN-A6-B2Q" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="146" width="200" height="34"/>
@@ -6190,7 +6332,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="4"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log6SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="fE6-Xk-bVQ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PE0-kM-ueY" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="185" width="200" height="34"/>
@@ -6223,7 +6369,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="5"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log6SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="Trl-Hl-GNr"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -6278,8 +6428,10 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="1"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
+                                                                    <action selector="log7SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="QqA-9X-4oJ"/>
                                                                     <outletCollection property="otherButtons" destination="JWG-pd-TXy" collectionClass="NSMutableArray" id="9jT-29-wqX"/>
                                                                     <outletCollection property="otherButtons" destination="Cfb-yq-97n" collectionClass="NSMutableArray" id="UHW-Ny-hk3"/>
                                                                     <outletCollection property="otherButtons" destination="JUx-zi-9gr" collectionClass="NSMutableArray" id="TmR-gb-JYZ"/>
@@ -6317,7 +6469,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="2"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log7SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="ZhX-kr-WhQ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfb-yq-97n" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="107" width="200" height="34"/>
@@ -6350,7 +6506,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="3"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log7SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="UQ7-TG-H6M"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUx-zi-9gr" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="146" width="200" height="34"/>
@@ -6383,7 +6543,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="4"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log7SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="lWu-F9-R0h"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRv-ae-yz9" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="185" width="200" height="34"/>
@@ -6416,7 +6580,11 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="index" value="5"/>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="log7SelectedButton:" destination="CJ6-YA-4Gq" eventType="touchUpInside" id="T0t-RJ-YpA"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -6472,6 +6640,56 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="TuW-wT-2TH" id="Si9-qa-n2o"/>
+                        <outlet property="nextBtn" destination="eV3-tm-1YI" id="DWf-pS-9pQ"/>
+                        <outlet property="questionTitle" destination="RXk-uR-aiy" id="YHM-T0-KJA"/>
+                        <outlet property="radio1" destination="Irb-rd-IGQ" id="3rL-Qy-Xkt"/>
+                        <outlet property="radio10" destination="UnW-Dg-kVa" id="T4A-0j-znk"/>
+                        <outlet property="radio11" destination="eNa-BC-paF" id="DNC-HA-bRa"/>
+                        <outlet property="radio12" destination="fao-qz-M6D" id="A7N-RZ-z7b"/>
+                        <outlet property="radio13" destination="Skf-4q-nJg" id="RQ7-zW-PvM"/>
+                        <outlet property="radio14" destination="JVv-wD-STT" id="v2R-YJ-2jW"/>
+                        <outlet property="radio15" destination="d22-OE-VaO" id="0T5-1j-aFd"/>
+                        <outlet property="radio16" destination="aLH-WO-bXF" id="crz-kg-WNd"/>
+                        <outlet property="radio17" destination="SXp-3J-dbt" id="Bbn-Xs-9zy"/>
+                        <outlet property="radio18" destination="iY9-AA-9nt" id="Yuq-1r-Qzn"/>
+                        <outlet property="radio19" destination="igf-yD-CfM" id="wJ4-e4-UO1"/>
+                        <outlet property="radio2" destination="nrT-et-933" id="NdY-np-fgM"/>
+                        <outlet property="radio20" destination="Cg3-bM-nct" id="4Ho-NY-5kI"/>
+                        <outlet property="radio21" destination="M5t-HW-Zfb" id="iZp-h9-7B7"/>
+                        <outlet property="radio22" destination="mUK-Xq-Iv2" id="p2F-Bq-tcU"/>
+                        <outlet property="radio23" destination="DYX-CJ-knQ" id="Rf5-zM-8Zl"/>
+                        <outlet property="radio24" destination="G1W-WT-xbM" id="cSi-kp-eHT"/>
+                        <outlet property="radio25" destination="9wW-eg-14v" id="xUv-iR-aDU"/>
+                        <outlet property="radio26" destination="Eof-sL-GUk" id="o74-bG-cGA"/>
+                        <outlet property="radio27" destination="qHh-Lf-CzA" id="yKd-UD-akH"/>
+                        <outlet property="radio28" destination="eLr-z7-Uxm" id="p2o-yx-PDx"/>
+                        <outlet property="radio29" destination="cIW-eI-8dJ" id="vuL-0C-NIt"/>
+                        <outlet property="radio3" destination="Hy9-f6-hgB" id="jGE-Ni-s1S"/>
+                        <outlet property="radio30" destination="t95-56-4gU" id="iCn-kN-RUj"/>
+                        <outlet property="radio31" destination="BZd-nW-w75" id="k60-z3-XgE"/>
+                        <outlet property="radio32" destination="bCQ-Ie-lEs" id="EVj-i1-B33"/>
+                        <outlet property="radio33" destination="Sdo-ga-wja" id="wVg-hF-Q1g"/>
+                        <outlet property="radio34" destination="PKN-A6-B2Q" id="TrO-DA-7TV"/>
+                        <outlet property="radio35" destination="PE0-kM-ueY" id="Fqi-5O-SP5"/>
+                        <outlet property="radio36" destination="EUW-kN-7g3" id="nLG-nN-WPW"/>
+                        <outlet property="radio37" destination="JWG-pd-TXy" id="qEx-f8-O0w"/>
+                        <outlet property="radio38" destination="Cfb-yq-97n" id="8nJ-ok-Fa6"/>
+                        <outlet property="radio39" destination="JUx-zi-9gr" id="n1f-9o-adP"/>
+                        <outlet property="radio4" destination="aZz-dT-6Zp" id="n57-4x-zmA"/>
+                        <outlet property="radio40" destination="bRv-ae-yz9" id="KMB-cC-POB"/>
+                        <outlet property="radio5" destination="lxc-oU-TVM" id="AJm-sm-j9h"/>
+                        <outlet property="radio6" destination="cbt-nz-PL1" id="NDt-KJ-Qlg"/>
+                        <outlet property="radio7" destination="mXW-79-2PM" id="EQP-Ml-LaY"/>
+                        <outlet property="radio8" destination="wFs-CX-0gg" id="woz-9d-X21"/>
+                        <outlet property="radio9" destination="dHR-8j-i0y" id="CnX-mU-S7e"/>
+                        <outlet property="subTitle1" destination="AC6-rJ-89J" id="km5-b6-XeY"/>
+                        <outlet property="subTitle2" destination="gLq-tb-VBl" id="sTh-IR-lB0"/>
+                        <outlet property="subTitle3" destination="haP-dh-W9I" id="MM6-oC-W6y"/>
+                        <outlet property="subTitle4" destination="C2b-gT-0ab" id="eNP-Dl-mjw"/>
+                        <outlet property="subTitle5" destination="Wd6-LK-Yl3" id="1Kl-4Y-SLT"/>
+                        <outlet property="subTitle6" destination="S3b-Yg-uLf" id="9TE-bx-I7S"/>
+                        <outlet property="subTitle7" destination="JhT-Jo-Unf" id="LsZ-i2-98K"/>
+                        <outlet property="subTitle8" destination="sD0-5P-KiE" id="GL7-kZ-z8d"/>
                         <segue destination="0XT-N4-EjK" kind="show" identifier="Qn2toQn3" animates="NO" id="m6R-eG-476"/>
                     </connections>
                 </viewController>
@@ -6552,7 +6770,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34j-yQ-dIQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="1500"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一優先購買的商品為" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0E-zv-H9p">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一優先購買的商品為" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0E-zv-H9p">
                                                 <rect key="frame" x="10" y="0.0" width="300" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="H84-hj-IaY"/>
@@ -6857,7 +7075,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第二優先購買的商品為" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f32-gL-xaf">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第二優先購買的商品為" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f32-gL-xaf">
                                                 <rect key="frame" x="10" y="382" width="300" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Uhw-7Y-epd"/>
@@ -7132,7 +7350,7 @@
                                                     <constraint firstItem="o3g-zZ-XGF" firstAttribute="leading" secondItem="3Lv-kr-mwQ" secondAttribute="leading" id="qot-og-2qG"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第三優先購買的商品為" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-Tz-AhT">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第三優先購買的商品為" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-Tz-AhT">
                                                 <rect key="frame" x="10" y="764" width="300" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="4ES-h8-opo"/>
@@ -7422,7 +7640,7 @@
                                                     <constraint firstItem="ARB-4l-2RL" firstAttribute="leading" secondItem="ukX-ef-RdP" secondAttribute="leading" id="t0H-qC-ORB"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第四優先購買的商品為" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q12-Z5-6Ni">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第四優先購買的商品為" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q12-Z5-6Ni">
                                                 <rect key="frame" x="10" y="1146" width="300" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="gaq-qT-o2R"/>
@@ -7712,7 +7930,7 @@
                                                     <constraint firstItem="287-A3-fMV" firstAttribute="top" secondItem="NWS-mk-qLL" secondAttribute="top" id="vJP-hx-Y6q"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第五優先購買的商品為" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pen-bG-VvP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第五優先購買的商品為" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pen-bG-VvP">
                                                 <rect key="frame" x="10" y="1528" width="300" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="UBx-s6-3nI"/>
@@ -8081,6 +8299,53 @@
                         <outlet property="menu4" destination="jW3-Va-sMO" id="Syi-ZJ-aYb"/>
                         <outlet property="menu5" destination="Yf2-oo-nKD" id="7jL-dU-hCM"/>
                         <outlet property="navbar" destination="lIo-sy-DWi" id="AWW-Hc-zgT"/>
+                        <outlet property="nextBtn" destination="5js-0k-DOd" id="WMx-7a-ejd"/>
+                        <outlet property="order1" destination="x0E-zv-H9p" id="ZeV-vr-B6X"/>
+                        <outlet property="order2" destination="f32-gL-xaf" id="aSE-tf-4ye"/>
+                        <outlet property="order3" destination="S9H-Tz-AhT" id="xPr-3y-nYd"/>
+                        <outlet property="order4" destination="q12-Z5-6Ni" id="Luu-x2-qjm"/>
+                        <outlet property="order5" destination="Pen-bG-VvP" id="rA7-jj-Scz"/>
+                        <outlet property="questionTitle" destination="WQr-se-ttX" id="PiX-eZ-bxL"/>
+                        <outlet property="radio1" destination="1Ah-Nh-WEe" id="kub-Su-4YA"/>
+                        <outlet property="radio10" destination="cPc-4V-3hg" id="DCH-rX-XqI"/>
+                        <outlet property="radio11" destination="CE2-1c-k0T" id="68J-tZ-mCI"/>
+                        <outlet property="radio12" destination="glQ-f6-2uM" id="55U-67-b4G"/>
+                        <outlet property="radio13" destination="o3g-zZ-XGF" id="wxG-5Q-Rvs"/>
+                        <outlet property="radio14" destination="4oJ-Uz-3qM" id="kfj-g6-Xdk"/>
+                        <outlet property="radio15" destination="ARB-4l-2RL" id="iKA-jA-OjP"/>
+                        <outlet property="radio16" destination="EOb-8f-byR" id="pzW-k8-d5s"/>
+                        <outlet property="radio17" destination="49J-kv-4vo" id="BQb-s8-3Pq"/>
+                        <outlet property="radio18" destination="yN9-fH-fjA" id="tfV-hE-K6J"/>
+                        <outlet property="radio19" destination="fJD-uZ-a8q" id="rHU-yK-gpn"/>
+                        <outlet property="radio2" destination="ZC8-km-0Iy" id="kNX-VW-YVp"/>
+                        <outlet property="radio20" destination="eNb-Kz-fLb" id="hcV-OJ-X5K"/>
+                        <outlet property="radio21" destination="Y9j-0s-U6l" id="YL1-XA-MjC"/>
+                        <outlet property="radio22" destination="lfW-Uj-ok2" id="91K-v0-aFL"/>
+                        <outlet property="radio23" destination="d9X-vE-9Yy" id="FMs-5J-Kka"/>
+                        <outlet property="radio24" destination="eZK-3x-huk" id="q5f-oa-4JA"/>
+                        <outlet property="radio25" destination="4Qa-JC-cTL" id="4hZ-O0-4le"/>
+                        <outlet property="radio26" destination="cxo-vg-UcT" id="H4s-4o-k4l"/>
+                        <outlet property="radio27" destination="UQF-4w-Fk3" id="cFP-jU-RU4"/>
+                        <outlet property="radio28" destination="6tf-AH-cVr" id="Bme-eg-HjH"/>
+                        <outlet property="radio29" destination="8Mx-Hx-HKE" id="0cZ-kF-Jhf"/>
+                        <outlet property="radio3" destination="nTs-EP-pt7" id="KAp-7L-tMa"/>
+                        <outlet property="radio30" destination="kEw-KH-ie8" id="Z1P-sJ-xyN"/>
+                        <outlet property="radio31" destination="ewU-tA-kPu" id="OGf-bH-uSD"/>
+                        <outlet property="radio32" destination="LCm-j7-Clz" id="QsX-IU-IpN"/>
+                        <outlet property="radio33" destination="bxC-Ww-86Q" id="OSc-Pz-2Wd"/>
+                        <outlet property="radio34" destination="dJS-Mo-eXI" id="vRH-sY-PG1"/>
+                        <outlet property="radio35" destination="SAY-z4-nlW" id="ul9-cz-Nht"/>
+                        <outlet property="radio4" destination="fed-yr-tuc" id="5ty-rq-t6t"/>
+                        <outlet property="radio5" destination="ZYX-NP-e8p" id="1eu-1B-CHl"/>
+                        <outlet property="radio6" destination="wlp-Kr-xTH" id="8cx-h5-raD"/>
+                        <outlet property="radio7" destination="D4k-f7-ktq" id="cJf-uq-r8S"/>
+                        <outlet property="radio8" destination="jZg-zz-FJP" id="Ixn-pt-XoO"/>
+                        <outlet property="radio9" destination="bF9-pa-xsA" id="x8c-Sp-UMI"/>
+                        <outlet property="subTitle1" destination="Kjv-T1-wuZ" id="nxS-2L-J73"/>
+                        <outlet property="subTitle2" destination="mr3-kZ-cm2" id="jDN-vR-hOg"/>
+                        <outlet property="subTitle3" destination="CmX-7Y-ZPF" id="ZGE-jA-qvS"/>
+                        <outlet property="subTitle4" destination="287-A3-fMV" id="wJG-1y-R9R"/>
+                        <outlet property="subTitle5" destination="sMJ-ho-zup" id="juR-WF-pr0"/>
                         <segue destination="Dof-ym-5fi" kind="show" identifier="Qn3toQn4" animates="NO" id="AF6-GK-WGV"/>
                     </connections>
                 </viewController>
@@ -9357,7 +9622,7 @@
         <image name="tour_select_coachmarks" width="359" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cnl-Gv-YWL"/>
+        <segue reference="51g-2q-v7G"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

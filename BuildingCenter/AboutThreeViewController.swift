@@ -30,6 +30,10 @@ class AboutThreeViewController: UIViewController {
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func nextBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "toNext", sender: self);
+    }
 
     func setLayout() {
         // set navigation bar background image
