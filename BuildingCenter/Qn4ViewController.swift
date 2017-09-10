@@ -10,6 +10,8 @@ import UIKit
 
 class Qn4ViewController: UIViewController ,ZHDropDownMenuDelegate{
 
+    var survey2 = NSMutableDictionary()
+    
     @IBOutlet var menu1: ZHDropDownMenu!
     @IBOutlet var menu2: ZHDropDownMenu!
     @IBOutlet var menu3: ZHDropDownMenu!
@@ -50,6 +52,14 @@ class Qn4ViewController: UIViewController ,ZHDropDownMenuDelegate{
         print("\(menu) input text \(text)")
     }
     
+    func setText(selectLanguage: String) {
+        // according to language set text
+        
+    }
+    
+    
+    
+    
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
@@ -57,14 +67,15 @@ class Qn4ViewController: UIViewController ,ZHDropDownMenuDelegate{
         self.performSegue(withIdentifier: "Qn4toQn5", sender: self);
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let qn5 : Qn5ViewController = segue.destination as? Qn5ViewController{
+            qn5.survey2 = self.survey2
+        }
     }
-    */
+ 
 
 }

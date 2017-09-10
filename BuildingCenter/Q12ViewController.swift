@@ -65,7 +65,9 @@ class Q12ViewController: UIViewController {
         
         if let JsonData = try? JSONSerialization.data(withJSONObject: self.survey, options: [])
         {
-            let theJsonnext = String(data:JsonData,encoding:.ascii)
+            print(JsonData)
+            let theJsonnext = String(data:JsonData,encoding:.utf8)
+            print(theJsonnext!)
             var stringUrl = DatabaseUtilizer.surveyOneURL + "?survey="
             stringUrl += theJsonnext!
             print(stringUrl)
@@ -80,10 +82,10 @@ class Q12ViewController: UIViewController {
                 }catch{
                     print(error)
                 }
-                
+             
             }
-            
-            
+        
+    
         }
         
         self.performSegue(withIdentifier: "Q12finish", sender: self);

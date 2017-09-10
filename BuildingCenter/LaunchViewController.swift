@@ -28,6 +28,7 @@ class LaunchViewController: UIViewController {
             (finish1: Bool) in
             self.performSegue(withIdentifier: "launchToDownload", sender: nil)
         })
+        
     }
 
     override func didReceiveMemoryWarning() {

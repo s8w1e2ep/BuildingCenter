@@ -10,6 +10,8 @@ import UIKit
 
 class Qn8ViewController: UIViewController {
 
+    var survey2 = NSMutableDictionary()
+    
     @IBOutlet var navbar: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,13 @@ class Qn8ViewController: UIViewController {
     @IBAction func Qnfinish(_ sender: Any) {
         self.performSegue(withIdentifier: "Qnfinish", sender: self);
     }
+    
+    func setText(selectLanguage: String) {
+        // according to language set text
+        
+    }
+    
+    
 
     /*
     // MARK: - Navigation
