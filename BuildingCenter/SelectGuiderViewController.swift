@@ -13,28 +13,24 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navItem: UINavigationItem!
     
-    //@IBOutlet weak var scrollImg: UIScrollView!
-    @IBOutlet weak var imgTour: UIImageView!
-    @IBOutlet weak var lbTour: UILabel!
-    @IBOutlet weak var pcTour: UIPageControl!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var confirm: UIButton!
     
-    let imgList = [
-        "tour_select_designer.png",
-        "tour_select_robot.png",
-        "tour_select_housekeeper.png"
+    var courses = [
+        ["name":"設計師","pic":"tour_select_designer.png"],
+        ["name":"機器人","pic":"tour_select_robot.png"],
+        ["name":"管家","pic":"tour_select_housekeeper.png"]
     ]
-    
-    var nameList = [
-        "設計師", "機器人", "管家"
-    ]
+    let pageCutRate:CGFloat = 0.1
+    var currentIndex = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setLayout()
+        
         setText(selectLanguage: BeginViewController.selectedLanguage)
-        setSwipe()
+        setLayout()
+        
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -64,48 +60,67 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         let navBackgroundImage:UIImage! = UIImage(named: "tour_select_background.png")
         self.navBar.setBackgroundImage(navBackgroundImage, for: .default)
         
-        pcTour.isHidden = true
-        pcTour.currentPage = 1
+        scrollView.delegate = self
+        
+        scrollView.contentSize = CGSize(
+            width: CGFloat(self.view.bounds.width) * (1-pageCutRate*2) * CGFloat(self.courses.count),
+            height: scrollView.bounds.size.height
+            
+        )
+        let size = scrollView.bounds.size
+        
+        for (seq,course) in courses.enumerated() {
+            let page = UIView()
+            page.frame = CGRect(x: CGFloat(seq) * size.width * (1-pageCutRate*2), y: 0,
+                                width: size.width * (1-pageCutRate*2), height: size.height)
+            page.backgroundColor = UIColor.clear
+            
+            let imageView = UIImageView(image: UIImage(named: course["pic"]!))
+            imageView.frame = CGRect(x: size.width * (-0.5*pageCutRate), y: 0, width: size.width * (1-pageCutRate*1), height: size.height)
+            
+            let label = UILabel(frame: CGRect(x: 0, y: size.height*0.83, width: size.width * (1-pageCutRate*2), height: 20))
+            label.text = course["name"]
+            label.textAlignment = .center
+            label.textColor = UIColor.white
+            //label.font = UIFont(name: "Helvetica-Light", size: 24)
+            label.font = label.font.withSize(25)
+            
+            page.addSubview(imageView)
+            page.addSubview(label)
+            
+            scrollView.addSubview(page)
+            scrollView.contentOffset.x = CGFloat(currentIndex) * scrollView.bounds.width * (1-3*pageCutRate)
+        }
+
+        
     }
     func setText(selectLanguage: String) {
         // according to language set text
         navItem.title = "tour_title".localized(language: selectLanguage)
-        lbTour.text = "tour_select_robot".localized(language: selectLanguage)
-        nameList = [
-            "tour_select_designer".localized(language: selectLanguage), "tour_select_robot".localized(language: selectLanguage), "tour_select_housekeeper".localized(language: selectLanguage)
-        ]
 
+        courses = [
+            ["name":"tour_select_designer".localized(language: selectLanguage),"pic":"tour_select_designer.png"],
+            ["name":"tour_select_robot".localized(language: selectLanguage),"pic":"tour_select_robot.png"],
+            ["name":"tour_select_housekeeper".localized(language: selectLanguage),"pic":"tour_select_housekeeper.png"]
+        ]
         confirm.setTitle("confirm".localized(language: selectLanguage), for: .normal)
     }
-    func setSwipe() {
-        // swipe left
-        let swipeLeft = UISwipeGestureRecognizer(
-            target:self,
-            action:#selector(self.swipe(recognizer:)))
-        swipeLeft.direction = .left
-        
-        // swipe right
-        let swipeRight = UISwipeGestureRecognizer(
-            target:self,
-            action:#selector(self.swipe(recognizer:)))
-        swipeRight.direction = .right
-        
-        // add gesture event into view
-        self.view.addGestureRecognizer(swipeLeft)
-        self.view.addGestureRecognizer(swipeRight)
-    }
 
-    // gesture event function
-    func swipe(recognizer:UISwipeGestureRecognizer) {
-        if recognizer.direction == .left {
-            pcTour.currentPage = (self.pcTour.currentPage + 1) % 3
-        } else if recognizer.direction == .right {
-            pcTour.currentPage = (self.pcTour.currentPage + 2) % 3
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>){
+        
+        let maxIndex = CGFloat(courses.count)
+        let tarX = scrollView.contentOffset.x + velocity.x * 80
+        var tarIndex = round(tarX / (scrollView.bounds.width * (1-3*pageCutRate)))
+        if tarIndex < 0 {
+            tarIndex = 0
         }
-        imgTour.image = UIImage(named: imgList[pcTour.currentPage])
-        lbTour.text = nameList[pcTour.currentPage]
+        if tarIndex > maxIndex {
+            tarIndex = maxIndex
+        }
+        targetContentOffset.pointee.x = tarIndex * scrollView.bounds.width * (1-3*pageCutRate)
+        currentIndex = Int(tarIndex)
     }
-
     /*
     // MARK: - Navigation
 
