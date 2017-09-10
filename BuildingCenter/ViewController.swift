@@ -19,12 +19,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         databasehelper = Databasehelper()
         //databasehelper.deletezonetable()
+        //databasehelper.deletezonetable()
         databasehelper.creatTable()
-        /*let companys = databasehelper.querycompanyTable();
-        for i in companys{
-            print(((i as! CompanyItem).name)as! String)
-            print(((i as! CompanyItem).web)as! String)
-        }*/
+        //databasehelper.getzone(zoneID: "1")
+        let zones = databasehelper.queryzoneTable();
+        for i in zones{
+            print(((i as! ZoneItem).name)as! String)
+            //print(((i as! CompanyItem).web)as! String)
+        }
         //print((zones[0] as! ZoneItem).name)
         //let stringUrl = "http://192.168.65.28/interface/survey.php?survey={\"gender\":\"1\",\"age\":\"3\"}"
         //databasehelper.surveyupload(stringUrl: stringUrl)

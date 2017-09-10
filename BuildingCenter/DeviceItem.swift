@@ -21,6 +21,7 @@ class DeviceItem{
     var photo_vertical: String?
     var mode_id: String?
     var company_id: String?
+    var companys: CompanyItem?
 
     
 }

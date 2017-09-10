@@ -25,5 +25,6 @@ class ModeItem{
     //var splash_blur: String?
     var splash_blur_vertical: String?
     var zone_id: String?
+    var devices: [DeviceItem]?
     
 }
