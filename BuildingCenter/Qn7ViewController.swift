@@ -13,11 +13,18 @@ class Qn7ViewController: UIViewController {
     var survey2 = NSMutableDictionary()
     
     @IBOutlet var navbar: UINavigationBar!
+    @IBOutlet var questionTitle: UILabel!
+    @IBOutlet var nextBtn: UIButton!
+    @IBOutlet var radio1: RadioButton!
+    @IBOutlet var radio2: RadioButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navbar.barTintColor = UIColor.white
-        // Do any additional setup after loading the view.
+        setText(selectLanguage: BeginViewController.selectedLanguage)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +42,11 @@ class Qn7ViewController: UIViewController {
     
     func setText(selectLanguage: String) {
         // according to language set text
+        questionTitle.text = "feedback_question_7".localized(language: selectLanguage)
+        nextBtn.setTitle("feedback_next".localized(language: selectLanguage), for: .normal)
+        radio1.setTitle("feedback_nicht".localized(language: selectLanguage), for: .normal)
+        radio2.setTitle("feedback_ja".localized(language: selectLanguage), for: .normal)
+        
     }
     
 

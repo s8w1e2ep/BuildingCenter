@@ -16,10 +16,18 @@ class Qn4ViewController: UIViewController ,ZHDropDownMenuDelegate{
     @IBOutlet var menu2: ZHDropDownMenu!
     @IBOutlet var menu3: ZHDropDownMenu!
     @IBOutlet var navbar: UINavigationBar!
+    @IBOutlet var questionTitle: UILabel!
+    @IBOutlet var nextBtn: UIButton!
+    @IBOutlet var radio1: RadioButton!
+    @IBOutlet var radio2: RadioButton!
+    @IBOutlet var subTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navbar.barTintColor = UIColor.white
-
+        setText(selectLanguage: BeginViewController.selectedLanguage)
+        
+        
         menu1.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
         menu2.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
         menu3.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
@@ -54,6 +62,12 @@ class Qn4ViewController: UIViewController ,ZHDropDownMenuDelegate{
     
     func setText(selectLanguage: String) {
         // according to language set text
+        questionTitle.text = "feedback_question_4".localized(language: selectLanguage)
+        nextBtn.setTitle("feedback_next".localized(language: selectLanguage), for: .normal)
+        
+        subTitle.text = "feedback_equip_info".localized(language: selectLanguage)
+        radio1.setTitle("feedback_nicht".localized(language: selectLanguage), for: .normal)
+        radio2.setTitle("feedback_ja".localized(language: selectLanguage), for: .normal)
         
     }
     

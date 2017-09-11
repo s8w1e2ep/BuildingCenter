@@ -1648,7 +1648,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您對智慧化科技產品的態度傾向" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reU-5n-LFZ">
-                                <rect key="frame" x="16" y="114" width="323" height="24"/>
+                                <rect key="frame" x="16" y="114" width="343" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1849,7 +1849,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="reU-5n-LFZ" secondAttribute="trailing" constant="20" id="06L-UT-u9H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="reU-5n-LFZ" secondAttribute="trailing" id="06L-UT-u9H"/>
                             <constraint firstItem="r5P-fl-f43" firstAttribute="leading" secondItem="VdL-x7-FB5" secondAttribute="leading" id="4UG-Om-CUl"/>
                             <constraint firstAttribute="trailing" secondItem="1bS-D9-jpP" secondAttribute="trailing" id="4WX-5w-ahd"/>
                             <constraint firstItem="1bS-D9-jpP" firstAttribute="top" secondItem="VdL-x7-FB5" secondAttribute="top" constant="20" id="A4k-bc-pJc"/>
@@ -4905,10 +4905,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您對智慧化科技產品購買與使用傾向，其重要程度看法如何？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXk-uR-aiy">
-                                <rect key="frame" x="16" y="114" width="350" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="dcf-tF-USu"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="114" width="343" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -6640,6 +6637,7 @@
                             <constraint firstItem="TuW-wT-2TH" firstAttribute="leading" secondItem="PKN-9m-qAE" secondAttribute="leading" id="7nV-L9-egH"/>
                             <constraint firstItem="eV3-tm-1YI" firstAttribute="trailing" secondItem="PKN-9m-qAE" secondAttribute="trailing" id="9Kr-ng-jzK"/>
                             <constraint firstItem="olp-dl-GVw" firstAttribute="top" secondItem="TuW-wT-2TH" secondAttribute="bottom" id="AgZ-aC-M9w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RXk-uR-aiy" secondAttribute="trailing" id="B0K-89-ABc"/>
                             <constraint firstItem="eV3-tm-1YI" firstAttribute="bottom" secondItem="14Q-ct-DgL" secondAttribute="top" id="B29-XP-pnt"/>
                             <constraint firstItem="LeR-ZK-pGF" firstAttribute="trailing" secondItem="PKN-9m-qAE" secondAttribute="trailingMargin" id="FFY-He-jMb"/>
                             <constraint firstItem="eV3-tm-1YI" firstAttribute="top" secondItem="LeR-ZK-pGF" secondAttribute="bottom" id="IYs-AO-lHu"/>
@@ -6761,11 +6759,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="依您目前生活條件或機能需求狀況，針對展示中心系統及設備中您最想購買的前兩項產品為哪些？其原因為何？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQr-se-ttX">
-                                <rect key="frame" x="16" y="114" width="350" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="3jK-Qy-hoy"/>
-                                    <constraint firstAttribute="width" constant="350" id="h41-Y9-GnB"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="114" width="343" height="95.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -6780,7 +6774,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZL-cY-ivs">
-                                <rect key="frame" x="16" y="189" width="343" height="428"/>
+                                <rect key="frame" x="16" y="209.5" width="343" height="407.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34j-yQ-dIQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="1500"/>
@@ -8302,6 +8296,7 @@
                             <constraint firstItem="jZL-cY-ivs" firstAttribute="trailing" secondItem="keV-I1-hRN" secondAttribute="trailingMargin" id="l9Z-80-fS1"/>
                             <constraint firstAttribute="trailing" secondItem="5js-0k-DOd" secondAttribute="trailing" id="mkv-rT-2gL"/>
                             <constraint firstAttribute="trailing" secondItem="lIo-sy-DWi" secondAttribute="trailing" id="nLX-gb-Six"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WQr-se-ttX" secondAttribute="trailing" id="pYE-2j-Bff"/>
                             <constraint firstItem="WQr-se-ttX" firstAttribute="top" secondItem="0Cl-qw-dAL" secondAttribute="bottom" constant="10" id="uYD-Q9-c1C"/>
                             <constraint firstItem="5js-0k-DOd" firstAttribute="leading" secondItem="keV-I1-hRN" secondAttribute="leading" id="xgg-VN-a5U"/>
                             <constraint firstItem="0Cl-qw-dAL" firstAttribute="leading" secondItem="keV-I1-hRN" secondAttribute="leadingMargin" id="ynz-eb-ADh"/>
@@ -8426,17 +8421,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您是否需要這些系統或設備廠商提供您產品相關資訊？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKj-q2-wWy">
-                                <rect key="frame" x="16" y="114" width="350" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bHN-cV-9am"/>
-                                    <constraint firstAttribute="width" constant="350" id="wvK-al-xjD"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="114" width="343" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="d5v-ls-sjw">
-                                <rect key="frame" x="16" y="169" width="300" height="49"/>
+                                <rect key="frame" x="16" y="167" width="300" height="49"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTo-5t-mY6" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="22"/>
@@ -8509,18 +8500,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我需要得到下列產品之相關資訊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWC-wc-y6I">
-                                <rect key="frame" x="16" y="223" width="260" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="8Fy-Rh-Kpb"/>
-                                    <constraint firstAttribute="height" constant="40" id="MhS-e0-T5f"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我需要得到下列產品之相關資訊" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWC-wc-y6I">
+                                <rect key="frame" x="16" y="221" width="343" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izQ-kw-X8P" customClass="ZHDropDownMenu" customModule="BuildingCenter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="273" width="300" height="40"/>
+                                <rect key="frame" x="16" y="252.5" width="300" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dJC-l4-c9i"/>
@@ -8535,7 +8522,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3M-xL-jaN" customClass="ZHDropDownMenu" customModule="BuildingCenter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="338" width="300" height="40"/>
+                                <rect key="frame" x="16" y="317.5" width="300" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ne3-0A-PjK"/>
@@ -8550,7 +8537,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhx-Fk-yyD" customClass="ZHDropDownMenu" customModule="BuildingCenter" customModuleProvider="target">
-                                <rect key="frame" x="16" y="403" width="300" height="40"/>
+                                <rect key="frame" x="16" y="382.5" width="300" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="I33-8N-wSk"/>
@@ -8582,10 +8569,12 @@
                             <constraint firstAttribute="trailing" secondItem="WxD-t6-IeD" secondAttribute="trailing" id="hxN-3R-QR9"/>
                             <constraint firstItem="T3M-xL-jaN" firstAttribute="top" secondItem="izQ-kw-X8P" secondAttribute="bottom" constant="25" id="iHq-Oq-Upa"/>
                             <constraint firstItem="Qcj-7e-Icr" firstAttribute="top" secondItem="KkT-rL-LFV" secondAttribute="bottom" id="iX4-I4-tni"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bKj-q2-wWy" secondAttribute="trailing" id="jid-in-QzZ"/>
                             <constraint firstItem="d5v-ls-sjw" firstAttribute="top" secondItem="bKj-q2-wWy" secondAttribute="bottom" constant="5" id="lj5-Fs-Rql"/>
                             <constraint firstItem="RWC-wc-y6I" firstAttribute="leading" secondItem="raN-ze-Fq4" secondAttribute="leadingMargin" id="oyO-fZ-F5a"/>
                             <constraint firstItem="izQ-kw-X8P" firstAttribute="top" secondItem="RWC-wc-y6I" secondAttribute="bottom" constant="10" id="q4V-1m-9nH"/>
                             <constraint firstItem="Dhx-Fk-yyD" firstAttribute="leading" secondItem="raN-ze-Fq4" secondAttribute="leadingMargin" id="veh-42-iwt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RWC-wc-y6I" secondAttribute="trailing" id="xh8-nz-Xtg"/>
                             <constraint firstItem="izQ-kw-X8P" firstAttribute="leading" secondItem="raN-ze-Fq4" secondAttribute="leadingMargin" id="zfz-tS-uVN"/>
                         </constraints>
                     </view>
@@ -8594,6 +8583,11 @@
                         <outlet property="menu2" destination="T3M-xL-jaN" id="T3u-RG-89p"/>
                         <outlet property="menu3" destination="Dhx-Fk-yyD" id="vR9-ye-VnZ"/>
                         <outlet property="navbar" destination="WxD-t6-IeD" id="Flx-HH-XEM"/>
+                        <outlet property="nextBtn" destination="KkT-rL-LFV" id="6IY-eO-ya4"/>
+                        <outlet property="questionTitle" destination="bKj-q2-wWy" id="iQN-bI-gOY"/>
+                        <outlet property="radio1" destination="zTo-5t-mY6" id="ojl-Yh-Diu"/>
+                        <outlet property="radio2" destination="6ri-tg-i4e" id="ziA-Tt-cg3"/>
+                        <outlet property="subTitle" destination="RWC-wc-y6I" id="sOV-2s-JOM"/>
                         <segue destination="233-DG-1FX" kind="show" identifier="Qn4toQn5" animates="NO" id="E0o-rx-4BR"/>
                     </connections>
                 </viewController>
@@ -8659,17 +8653,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如果現在廠商可以免費在家幫您安裝5項系統或是設備，您會選擇哪5項？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxO-hN-4SZ">
-                                <rect key="frame" x="16" y="114" width="350" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="02c-n7-gBd"/>
-                                    <constraint firstAttribute="width" constant="350" id="rdm-QS-9a8"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="114" width="343" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sl-iG-26j">
-                                <rect key="frame" x="16" y="164" width="343" height="453"/>
+                                <rect key="frame" x="16" y="162" width="343" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGw-h9-m0l">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="620"/>
@@ -8840,6 +8830,7 @@
                             <constraint firstItem="vxO-hN-4SZ" firstAttribute="leading" secondItem="APt-c4-h4D" secondAttribute="leadingMargin" id="0BH-0n-FhL"/>
                             <constraint firstItem="vxO-hN-4SZ" firstAttribute="top" secondItem="jZK-d1-SKe" secondAttribute="bottom" constant="10" id="4FY-Mo-oNj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5sl-iG-26j" secondAttribute="trailing" id="A6l-ta-hkB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vxO-hN-4SZ" secondAttribute="trailing" id="Eoz-uV-01V"/>
                             <constraint firstItem="bF5-wU-EFJ" firstAttribute="leading" secondItem="APt-c4-h4D" secondAttribute="leading" id="L0u-Ta-jDo"/>
                             <constraint firstItem="jZK-d1-SKe" firstAttribute="leading" secondItem="APt-c4-h4D" secondAttribute="leadingMargin" id="LeN-9X-kd9"/>
                             <constraint firstItem="bF5-wU-EFJ" firstAttribute="top" secondItem="5sl-iG-26j" secondAttribute="bottom" id="OT5-8m-gAh"/>
@@ -8860,6 +8851,13 @@
                         <outlet property="menu4" destination="qM6-NC-TU1" id="lyQ-u9-xeD"/>
                         <outlet property="menu5" destination="umZ-9z-xJ7" id="11a-fY-gnF"/>
                         <outlet property="navbar" destination="EXz-Tq-pcQ" id="UQv-gV-MRp"/>
+                        <outlet property="nextBtn" destination="bF5-wU-EFJ" id="TMs-Z0-BoB"/>
+                        <outlet property="questionTitle" destination="vxO-hN-4SZ" id="pVx-Ks-49v"/>
+                        <outlet property="subTitle1" destination="UhP-jI-mv4" id="dS4-np-c2B"/>
+                        <outlet property="subTitle2" destination="sVZ-BX-pfb" id="Vmv-SW-Gsb"/>
+                        <outlet property="subTitle3" destination="92g-nq-hXn" id="wcW-lC-3Nt"/>
+                        <outlet property="subTitle4" destination="VV2-jA-4rd" id="nMh-th-gPW"/>
+                        <outlet property="subTitle5" destination="4uX-Wl-N9s" id="fkg-dn-YHJ"/>
                         <segue destination="qgd-GU-8NR" kind="show" identifier="Qn5toQn6" animates="NO" id="aph-ml-Ihn"/>
                     </connections>
                 </viewController>
@@ -8925,17 +8923,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="展示中心系統或設備介紹過程中，您認為印象良好的系統或設備有哪些？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixw-Ad-mHn">
-                                <rect key="frame" x="16" y="114" width="350" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="MKY-n5-5ia"/>
-                                    <constraint firstAttribute="width" constant="350" id="Vr1-FP-RQP"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="114" width="343" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGg-rE-OwG">
-                                <rect key="frame" x="16" y="164" width="343" height="453"/>
+                                <rect key="frame" x="16" y="162" width="343" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udS-ti-K1W">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="620"/>
@@ -9117,6 +9111,7 @@
                             <constraint firstAttribute="bottom" secondItem="L00-Ut-yD3" secondAttribute="bottom" id="tMn-8q-i91"/>
                             <constraint firstItem="BGg-rE-OwG" firstAttribute="top" secondItem="Ixw-Ad-mHn" secondAttribute="bottom" id="tWH-ft-ptm"/>
                             <constraint firstItem="BGg-rE-OwG" firstAttribute="bottom" secondItem="L00-Ut-yD3" secondAttribute="top" id="ujD-7e-nQo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ixw-Ad-mHn" secondAttribute="trailing" id="y2K-eh-nEh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -9126,6 +9121,13 @@
                         <outlet property="menu4" destination="PMx-lc-mBt" id="rHo-5d-ssB"/>
                         <outlet property="menu5" destination="ETy-YR-7wj" id="EuR-1j-TTY"/>
                         <outlet property="navbar" destination="s2e-uv-SBy" id="czk-fe-cax"/>
+                        <outlet property="nextBtn" destination="L00-Ut-yD3" id="xO0-5N-RSG"/>
+                        <outlet property="questionTitle" destination="Ixw-Ad-mHn" id="qFF-iU-XMM"/>
+                        <outlet property="subTitle1" destination="FaD-3x-hYi" id="9LX-kt-C0Z"/>
+                        <outlet property="subTitle2" destination="jSf-FP-7d7" id="arm-Ay-2Ui"/>
+                        <outlet property="subTitle3" destination="HR1-54-C8K" id="pEM-MK-uFH"/>
+                        <outlet property="subTitle4" destination="lxA-r4-eKW" id="sW0-o0-s9I"/>
+                        <outlet property="subTitle5" destination="gFM-VD-ng1" id="kcB-6k-SCi"/>
                         <segue destination="xiv-xy-U5o" kind="show" identifier="Qn6toQn7" animates="NO" id="Obl-Zs-hMi"/>
                     </connections>
                 </viewController>
@@ -9191,17 +9193,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未來您是否會購買相關智慧化系統或設備？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VG-0h-uwm">
-                                <rect key="frame" x="16" y="114" width="350" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="3mn-A2-Po1"/>
-                                    <constraint firstAttribute="width" constant="350" id="wqB-h7-IuP"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="114" width="343" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H6V-G4-7TP">
-                                <rect key="frame" x="16" y="169" width="300" height="54"/>
+                                <rect key="frame" x="16" y="167" width="300" height="54"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7O7-oN-jUe" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="22"/>
@@ -9285,6 +9283,7 @@
                             <constraint firstAttribute="trailing" secondItem="Aqg-tf-nuJ" secondAttribute="trailing" id="RGh-oh-YLs"/>
                             <constraint firstItem="5VG-0h-uwm" firstAttribute="top" secondItem="qjc-Bn-1RY" secondAttribute="bottom" constant="10" id="TEo-al-82g"/>
                             <constraint firstItem="5VG-0h-uwm" firstAttribute="leading" secondItem="xJU-Ar-3hX" secondAttribute="leadingMargin" id="V2Y-fR-jIK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5VG-0h-uwm" secondAttribute="trailing" id="VMd-6Y-FwX"/>
                             <constraint firstItem="H6V-G4-7TP" firstAttribute="top" secondItem="5VG-0h-uwm" secondAttribute="bottom" constant="5" id="bid-Tx-pEE"/>
                             <constraint firstItem="LUE-e2-BpV" firstAttribute="leading" secondItem="xJU-Ar-3hX" secondAttribute="leading" id="cQ4-Pr-DUB"/>
                             <constraint firstAttribute="bottom" secondItem="Aqg-tf-nuJ" secondAttribute="bottom" id="erW-LM-fGS"/>
@@ -9294,6 +9293,10 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="LUE-e2-BpV" id="x9d-s9-2W9"/>
+                        <outlet property="nextBtn" destination="Aqg-tf-nuJ" id="q9H-3K-Bwb"/>
+                        <outlet property="questionTitle" destination="5VG-0h-uwm" id="zx4-UZ-54E"/>
+                        <outlet property="radio1" destination="7O7-oN-jUe" id="j38-cj-jbs"/>
+                        <outlet property="radio2" destination="yUd-uq-3Hu" id="Wqd-9v-atH"/>
                         <segue destination="sZI-L4-7be" kind="show" identifier="Qn7toQn8" animates="NO" action="showDetailViewController:sender:" id="TxE-FH-nhK"/>
                     </connections>
                 </viewController>
@@ -9359,17 +9362,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您認為單項智慧化系統或設備的平均合理價格為多少？" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBm-Lh-RsK">
-                                <rect key="frame" x="16" y="114" width="350" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="VOS-O3-tDB"/>
-                                    <constraint firstAttribute="height" constant="50" id="wXL-cd-R5B"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="114" width="343" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rcY-h2-n9a">
-                                <rect key="frame" x="16" y="169" width="300" height="150"/>
+                                <rect key="frame" x="16" y="167" width="300" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKI-GX-5Ai" customClass="RadioButton" customModule="BuildingCenter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="22"/>
@@ -9556,6 +9555,7 @@
                             <constraint firstItem="FzQ-W3-aQA" firstAttribute="leading" secondItem="hoS-BY-leE" secondAttribute="leading" id="PC1-FQ-cG4"/>
                             <constraint firstAttribute="bottom" secondItem="FzQ-W3-aQA" secondAttribute="bottom" id="PaM-T2-HR9"/>
                             <constraint firstItem="Zfb-QQ-Fte" firstAttribute="top" secondItem="Lj6-9b-JRZ" secondAttribute="bottom" id="ZLf-kN-pQe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BBm-Lh-RsK" secondAttribute="trailing" id="csH-tZ-w1i"/>
                             <constraint firstAttribute="trailing" secondItem="Lj6-9b-JRZ" secondAttribute="trailing" id="gQ3-l8-YRc"/>
                             <constraint firstItem="rcY-h2-n9a" firstAttribute="top" secondItem="BBm-Lh-RsK" secondAttribute="bottom" constant="5" id="jSo-1o-lD8"/>
                             <constraint firstItem="Zfb-QQ-Fte" firstAttribute="leading" secondItem="hoS-BY-leE" secondAttribute="leadingMargin" id="mBe-tF-vwr"/>
@@ -9564,12 +9564,19 @@
                     </view>
                     <connections>
                         <outlet property="navbar" destination="Lj6-9b-JRZ" id="kl5-oa-a9U"/>
+                        <outlet property="nextBtn" destination="FzQ-W3-aQA" id="Dtp-ED-UrZ"/>
+                        <outlet property="questionTitle" destination="BBm-Lh-RsK" id="ecM-FZ-ytA"/>
+                        <outlet property="radio1" destination="rKI-GX-5Ai" id="xiP-MB-MQL"/>
+                        <outlet property="radio2" destination="od3-eG-k0Z" id="whn-Fv-s2s"/>
+                        <outlet property="radio3" destination="3qB-U1-ClH" id="2Sa-Wr-2OA"/>
+                        <outlet property="radio4" destination="J4u-nV-AEp" id="tVx-nM-QDr"/>
+                        <outlet property="radio5" destination="HaV-LV-gW9" id="OjL-n0-blK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YkN-n1-20l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vHj-TS-CFv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="12249" y="-1553"/>
+            <point key="canvasLocation" x="12248.799999999999" y="-1553.0734632683659"/>
         </scene>
     </scenes>
     <resources>
