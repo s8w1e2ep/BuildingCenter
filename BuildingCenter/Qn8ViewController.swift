@@ -13,11 +13,22 @@ class Qn8ViewController: UIViewController {
     var survey2 = NSMutableDictionary()
     
     @IBOutlet var navbar: UINavigationBar!
+    @IBOutlet var questionTitle: UILabel!
+    @IBOutlet var nextBtn: UIButton!
+    @IBOutlet var radio1: RadioButton!
+    @IBOutlet var radio2: RadioButton!
+    @IBOutlet var radio3: RadioButton!
+    @IBOutlet var radio4: RadioButton!
+    @IBOutlet var radio5: RadioButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navbar.barTintColor = UIColor.white
-        // Do any additional setup after loading the view.
+        setText(selectLanguage: BeginViewController.selectedLanguage)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +45,16 @@ class Qn8ViewController: UIViewController {
     
     func setText(selectLanguage: String) {
         // according to language set text
+        questionTitle.text = "feedback_question_8".localized(language: selectLanguage)
+        nextBtn.setTitle("feedback_next".localized(language: selectLanguage), for: .normal)
+        
+        radio1.setTitle("feedback_price_10k".localized(language: selectLanguage), for: .normal)
+        radio2.setTitle("feedback_price_50k".localized(language: selectLanguage), for: .normal)
+        radio3.setTitle("feedback_price_100k".localized(language: selectLanguage), for: .normal)
+        radio4.setTitle("feedback_price_200k".localized(language: selectLanguage), for: .normal)
+        radio5.setTitle("feedback_price_over_200k".localized(language: selectLanguage), for: .normal)
+        
+        
         
     }
     

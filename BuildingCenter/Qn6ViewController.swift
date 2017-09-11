@@ -17,12 +17,21 @@ class Qn6ViewController: UIViewController ,ZHDropDownMenuDelegate{
     @IBOutlet var menu3: ZHDropDownMenu!
     @IBOutlet var menu4: ZHDropDownMenu!
     @IBOutlet var menu5: ZHDropDownMenu!
+    
     @IBOutlet var navbar: UINavigationBar!
+    @IBOutlet var questionTitle: UILabel!
+    @IBOutlet var nextBtn: UIButton!
+    @IBOutlet var subTitle1: UILabel!
+    @IBOutlet var subTitle2: UILabel!
+    @IBOutlet var subTitle3: UILabel!
+    @IBOutlet var subTitle4: UILabel!
+    @IBOutlet var subTitle5: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navbar.barTintColor = UIColor.white
+        setText(selectLanguage: BeginViewController.selectedLanguage)
         
         menu1.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
         menu2.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
@@ -59,6 +68,20 @@ class Qn6ViewController: UIViewController ,ZHDropDownMenuDelegate{
         self.performSegue(withIdentifier: "Qn6toQn7", sender: self);
     }
     
+    func setText(selectLanguage: String) {
+        // according to language set text
+        questionTitle.text = "feedback_question_6".localized(language: selectLanguage)
+        nextBtn.setTitle("feedback_next".localized(language: selectLanguage), for: .normal)
+        
+        subTitle1.text = "feedback_free_1".localized(language: selectLanguage)
+        subTitle2.text = "feedback_free_2".localized(language: selectLanguage)
+        subTitle3.text = "feedback_free_3".localized(language: selectLanguage)
+        subTitle4.text = "feedback_free_4".localized(language: selectLanguage)
+        subTitle5.text = "feedback_free_5".localized(language: selectLanguage)
+        
+        
+    }
+    
     func dropDownMenu(_ menu: ZHDropDownMenu!, didChoose index: Int) {
         print("\(menu) choosed at index \(index)")
     }
@@ -67,13 +90,7 @@ class Qn6ViewController: UIViewController ,ZHDropDownMenuDelegate{
     func dropDownMenu(_ menu: ZHDropDownMenu!, didInput text: String!) {
         print("\(menu) input text \(text)")
     }
-    
 
-    
-    func setText(selectLanguage: String) {
-        // according to language set text
-        
-    }
     
 
     
