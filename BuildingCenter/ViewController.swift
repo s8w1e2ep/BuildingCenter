@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         databasehelper.creatTable()
         //databasehelper.getzone(zoneID: "1")
         //let devices = databasehelper.querydeviceTable(modeID:"1");
-        let modes = databasehelper.querymodeTable(zoneID: "1")
+        /*let modes = databasehelper.querymodeTable(zoneID: "1")
         
         for i in modes{
             print(i.name)
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             //print(((i as! ModeItem).name)as! String)
             //print(((i as! CompanyItem).web)as! String)
         }
-        
+        */
         // Do any additional setup after loading the view, typically from a nib.
     }
     
