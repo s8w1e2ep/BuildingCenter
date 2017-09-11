@@ -14,11 +14,41 @@ class Databasehelper {
     let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\("buildingcenterdb.sqlite")"
     //let ip = "http://60.251.33.54:98"
     //let ip = "http://192.168.65.28"
-    func deletezonetable(){
+    func deleteZoneTable(){
         do{
             let db = try Connection(databaseFilePath)
             let zone = Table("zone")
             try db.run(zone.drop(ifExists: true))
+        }catch {
+            print(error)
+        }
+    }
+    
+    func deleteModeTable(){
+        do{
+            let db = try Connection(databaseFilePath)
+            let mode = Table("mode")
+            try db.run(mode.drop(ifExists: true))
+        }catch {
+            print(error)
+        }
+    }
+    
+    func deleteDeviceTable(){
+        do{
+            let db = try Connection(databaseFilePath)
+            let device = Table("device")
+            try db.run(device.drop(ifExists: true))
+        }catch {
+            print(error)
+        }
+    }
+    
+    func deleteCompanyTable(){
+        do{
+            let db = try Connection(databaseFilePath)
+            let company = Table("company")
+            try db.run(company.drop(ifExists: true))
         }catch {
             print(error)
         }
@@ -45,6 +75,13 @@ class Databasehelper {
         createmodeTable()
         createcompanyTable()
         createdeviceTable()
+    }
+    
+    func deleteTable(){
+        deleteZoneTable()
+        deleteDeviceTable()
+        deleteCompanyTable()
+        deleteModeTable()
     }
     
     func createzoneTable() {
@@ -179,7 +216,24 @@ class Databasehelper {
                         if((p["video"] as? String) == nil){
                             p["video"] = ""
                         }
-                        
+                        let filtering = Table("mode").filter(DBColExpress.mode_id == p["mode_id"] as? String)
+                        let plucking = try db.pluck(filtering)
+                        if (plucking != nil) {
+                            try db.run(filtering.update(DBColExpress.mode_id <- p["mode_id"] as? String ,
+                                                   DBColExpress.name <- (p["name"] as? String),
+                                                   DBColExpress.name_en <- (p["name_en"] as? String),
+                                                   DBColExpress.introduction <- (p["introduction"] as? String),
+                                                   DBColExpress.introduction_en <- (p["introduction_en"] as? String),
+                                                   DBColExpress.guide_voice <- (p["guide_voice"] as? String),
+                                                   DBColExpress.guide_voice_en <- (p["guide_voice_en"] as? String),
+                                                   DBColExpress.video <- (p["video"] as? String),
+                                                   DBColExpress.splash_bg_vertical <- (p["splash_bg_vertical"] as? String),
+                                                   DBColExpress.splash_fg_vertical <- (p["splash_fg_vertical"] as? String),
+                                                   DBColExpress.splash_blur_vertical <- (p["splash_blur_vertical"] as? String),
+                                                   DBColExpress.zone_id <- (p["zone_id"] as? String)
+                            ))
+                        }
+                        else{
                         
                         try db.run(mode.insert(DBColExpress.mode_id <- p["mode_id"] as? String ,
                                                DBColExpress.name <- (p["name"] as? String),
@@ -194,6 +248,7 @@ class Databasehelper {
                                                DBColExpress.splash_blur_vertical <- (p["splash_blur_vertical"] as? String),
                                                DBColExpress.zone_id <- (p["zone_id"] as? String)
                         ))
+                        }
                         
                     }
                 }
@@ -239,7 +294,22 @@ class Databasehelper {
                         if((p["photo_vertical"] as? String) == nil){
                             p["photo_vertical"] = ""
                         }
-                        
+                        let filtering = Table("device").filter(DBColExpress.device_id == p["device_id"] as? String)
+                        let plucking = try db.pluck(filtering)
+                        if (plucking != nil) {
+                            try db.run(filtering.update(DBColExpress.device_id <- p["device_id"] as? String ,
+                                                     DBColExpress.name <- (p["name"] as? String),
+                                                     DBColExpress.name_en <- (p["name_en"] as? String),
+                                                     DBColExpress.introduction <- (p["introduction"] as? String),
+                                                     DBColExpress.introduction_en <- (p["introduction_en"] as? String),
+                                                     DBColExpress.photo <- (p["photo"] as? String),
+                                                     DBColExpress.photo_vertical <- (p["photo_vertical"] as? String),
+                                                     DBColExpress.mode_id <- (p["mode_id"] as? String),
+                                                     DBColExpress.company_id <- (p["company_id"] as? String)
+                            ))
+                        }
+                        else{
+
                         try db.run(device.insert(DBColExpress.device_id <- p["device_id"] as? String ,
                                                DBColExpress.name <- (p["name"] as? String),
                                                DBColExpress.name_en <- (p["name_en"] as? String),
@@ -249,7 +319,7 @@ class Databasehelper {
                                                DBColExpress.photo_vertical <- (p["photo_vertical"] as? String),
                                                DBColExpress.mode_id <- (p["mode_id"] as? String),
                                                DBColExpress.company_id <- (p["company_id"] as? String)
-                        ))
+                        ))}
                         
                     }
                 }
@@ -296,7 +366,19 @@ class Databasehelper {
                         if((p["fax"] as? String) == nil){
                             p["fax"] = ""
                         }
-                        
+                        let filtering = Table("device").filter(DBColExpress.company_id == p["company_id"] as? String)
+                        let plucking = try db.pluck(filtering)
+                        if (plucking != nil) {
+                            try db.run(filtering.update(DBColExpress.company_id <- p["company_id"] as? String ,
+                                                      DBColExpress.name <- (p["name"] as? String),
+                                                      DBColExpress.name_en <- (p["name_en"] as? String),
+                                                      DBColExpress.tel <- (p["tel"] as? String),
+                                                      DBColExpress.fax <- (p["fax"] as? String),
+                                                      DBColExpress.web <- (p["web"] as? String),
+                                                      DBColExpress.qrcode <- (p["qrcode"] as? String)
+                            ))
+                        }
+                        else{
                         try db.run(company.insert(DBColExpress.company_id <- p["company_id"] as? String ,
                                                  DBColExpress.name <- (p["name"] as? String),
                                                  DBColExpress.name_en <- (p["name_en"] as? String),
@@ -304,7 +386,7 @@ class Databasehelper {
                                                  DBColExpress.fax <- (p["fax"] as? String),
                                                  DBColExpress.web <- (p["web"] as? String),
                                                  DBColExpress.qrcode <- (p["qrcode"] as? String)
-                        ))
+                        ))}
                         
                     }
                 }
@@ -319,7 +401,7 @@ class Databasehelper {
     
 
     
-    func queryzoneTable() -> Array<Any> {
+    func queryzoneTable() -> Array<ZoneItem> {
         //let databaseFileName = "buildingcenterdb.sqlite"
         //let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
         //let zones = NSMutableArray()
@@ -337,6 +419,7 @@ class Databasehelper {
         let photo = DBColExpress.photo
         let photo_vertical = DBColExpress.photo_vertical
         let field_id = DBColExpress.field_id
+        //let modes = "modes"
         
         /*
         let name = Expression<String>("name")
@@ -381,8 +464,8 @@ class Databasehelper {
                 z.photo = rows[photo]
                 z.photo_vertical = rows[photo_vertical]
                 z.field_id = rows[field_id]
- 
-                
+                z.modes = querymodeTable(zoneID:rows[zone_id]!)
+
                 //print(rows[zone_id])
                 //let data = ZoneItem(zone_id: rows[zone_id], name: rows[name], introduction: rows[introduction])
                 //zones.append(zone)
@@ -394,7 +477,7 @@ class Databasehelper {
         return zones
     }
     
-    func querymodeTable() -> Array<Any> {
+    func querymodeTable() -> Array<ModeItem> {
         
         var modes: [ModeItem] = []
 
@@ -417,8 +500,8 @@ class Databasehelper {
             let table = Table("mode")
             //var z = ZoneItem()
             for rows in try db.prepare(table) {
-                var m = ModeItem()
-                m.mode_id = rows[zone_id]
+                let m = ModeItem()
+                m.mode_id = rows[mode_id]
                 m.name = rows[name]
                 m.name_en = rows[name_en]
                 m.introduction = rows[introduction]
@@ -430,10 +513,8 @@ class Databasehelper {
                 m.splash_fg_vertical = rows[splash_fg_vertical]
                 m.splash_blur_vertical = rows[splash_blur_vertical]
                 m.zone_id = rows[zone_id]
-                
+                m.devices = querydeviceTable(modeID: rows[mode_id]!)
                 //print(rows[zone_id])
-                //let data = ZoneItem(zone_id: rows[zone_id], name: rows[name], introduction: rows[introduction])
-                //zones.append(zone)
                 modes.append(m)
             }
         } catch _ {
@@ -442,7 +523,52 @@ class Databasehelper {
         return modes
     }
     
-    func querydeviceTable() -> Array<Any> {
+    func querymodeTable(zoneID: String) -> Array<ModeItem> {
+        
+        var modes: [ModeItem] = []
+        let mode_id = DBColExpress.mode_id
+        let name = DBColExpress.name
+        let name_en = DBColExpress.name_en
+        let introduction = DBColExpress.introduction
+        let introduction_en = DBColExpress.introduction_en
+        let guide_voice = DBColExpress.guide_voice
+        let guide_voice_en = DBColExpress.guide_voice_en
+        let video = DBColExpress.video
+        let splash_bg_vertical = DBColExpress.splash_bg_vertical
+        let splash_fg_vertical = DBColExpress.splash_fg_vertical
+        let splash_blur_vertical = DBColExpress.splash_blur_vertical
+        let zone_id = DBColExpress.zone_id
+       
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("mode")
+            let filtering = table.filter(DBColExpress.zone_id.like(zoneID))
+            for rows in try db.prepare(filtering) {
+                let m = ModeItem()
+                m.mode_id = rows[mode_id]
+                m.name = rows[name]
+                m.name_en = rows[name_en]
+                m.introduction = rows[introduction]
+                m.introduction_en = rows[introduction_en]
+                m.guide_voice = rows[guide_voice]
+                m.guide_voice_en = rows[guide_voice_en]
+                m.video = rows[video]
+                m.splash_bg_vertical = rows[splash_bg_vertical]
+                m.splash_fg_vertical = rows[splash_fg_vertical]
+                m.splash_blur_vertical = rows[splash_blur_vertical]
+                m.zone_id = rows[zone_id]
+                m.devices = querydeviceTable(modeID: rows[mode_id]!)
+                //print(rows[zone_id])
+                modes.append(m)
+            }
+        } catch _ {
+            print("error")
+        }
+        return modes
+    }
+
+    
+    func querydeviceTable() -> Array<DeviceItem> {
         
         var devices: [DeviceItem] = []
         
@@ -461,7 +587,7 @@ class Databasehelper {
             let table = Table("device")
             //var z = ZoneItem()
             for rows in try db.prepare(table) {
-                var m = DeviceItem()
+                let m = DeviceItem()
                 m.device_id = rows[device_id]
                 m.name = rows[name]
                 m.name_en = rows[name_en]
@@ -482,9 +608,49 @@ class Databasehelper {
         }
         return devices
     }
-
-    func querycompanyTable() -> Array<Any> {
+    
+    func querydeviceTable(modeID: String) -> Array<DeviceItem> {
         
+        var devices: [DeviceItem] = []
+        
+        let device_id = DBColExpress.mode_id
+        let name = DBColExpress.name
+        let name_en = DBColExpress.name_en
+        let introduction = DBColExpress.introduction
+        let introduction_en = DBColExpress.introduction_en
+        let photo = DBColExpress.photo
+        let photo_vertical = DBColExpress.photo_vertical
+        let mode_id = DBColExpress.mode_id
+        let company_id = DBColExpress.company_id
+        
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("device")
+            //var z = ZoneItem()
+            let filtering = table.filter(DBColExpress.mode_id.like(modeID))
+            for rows in try db.prepare(filtering) {
+                let m = DeviceItem()
+                m.device_id = rows[device_id]
+                m.name = rows[name]
+                m.name_en = rows[name_en]
+                m.introduction = rows[introduction]
+                m.introduction_en = rows[introduction_en]
+                m.photo = rows[photo]
+                m.photo_vertical = rows[photo_vertical]
+                m.mode_id = rows[mode_id]
+                m.company_id = rows[company_id]
+                //m.companys = querycompanyTable(companyID: rows[company_id]! as String)
+                m.companys = querycompanyTable(companyID: rows[company_id]!)
+                devices.append(m)
+            }
+        } catch _ {
+            print("error")
+        }
+        return devices
+    }
+
+
+    func querycompanyTable() -> Array<CompanyItem> {
         var companys: [CompanyItem] = []
         
         let company_id = DBColExpress.company_id
@@ -495,12 +661,11 @@ class Databasehelper {
         let web = DBColExpress.web
         let qrcode = DBColExpress.qrcode
 
-        
         do {
             let db = try Connection(databaseFilePath)
             let table = Table("company")
             for rows in try db.prepare(table) {
-                var m = CompanyItem()
+                let m = CompanyItem()
                 m.company_id = rows[company_id]
                 m.name = rows[name]
                 m.name_en = rows[name_en]
@@ -509,10 +674,6 @@ class Databasehelper {
                 m.web = rows[web]
                 m.qrcode = rows[qrcode]
                 
-                
-                //print(rows[zone_id])
-                //let data = ZoneItem(zone_id: rows[zone_id], name: rows[name], introduction: rows[introduction])
-                //zones.append(zone)
                 companys.append(m)
             }
         } catch _ {
@@ -521,28 +682,44 @@ class Databasehelper {
         return companys
     }
     
-    /*func getmode(zoneID: String){
-        var modes: [ModeItem] = []
-        let xx = querymodeTable()
+    func querycompanyTable(companyID: String) -> CompanyItem {
+        //var companys: [CompanyItem] = []
+        var companys =  CompanyItem()
+        let company_id = DBColExpress.company_id
+        let name = DBColExpress.name
+        let name_en = DBColExpress.name_en
+        let tel = DBColExpress.tel
+        let fax = DBColExpress.fax
+        let web = DBColExpress.web
+        let qrcode = DBColExpress.qrcode
         
         do {
             let db = try Connection(databaseFilePath)
-            let table = Table("mode")
-            //let XDs = try db.prepare(table)
-            let filtering = table.filter(DBColExpress.zone_id.like(zoneID))
-            for rows in try db.prepare(filtering)
-            {
-                //print(rows[DBColExpress.name])
-                
-                //modes.append(rows)
+            let table = Table("company")
+            let filtering = table.filter(DBColExpress.company_id.like(companyID))
+            let m = CompanyItem()
+            
+            for rows in try db.prepare(filtering) {
+                //let m = CompanyItem()
+                m.company_id = rows[company_id]
+                m.name = rows[name]
+                m.name_en = rows[name_en]
+                m.tel = rows[tel]
+                m.fax = rows[fax]
+                m.web = rows[web]
+                m.qrcode = rows[qrcode]
+                companys = m
+                return m
+                //break
+                //companys.append(m)
             }
+            
         } catch _ {
             print("error")
         }
-        
-        
-    }*/
+        return companys
+    }
 
-
-
+    
+    
 }
