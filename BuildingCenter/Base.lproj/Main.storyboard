@@ -449,9 +449,6 @@
                                 <rect key="frame" x="0.0" y="65" width="375" height="667"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="GX2-l8-ZoH">
-                                <rect key="frame" x="168" y="559" width="39" height="37"/>
-                            </pageControl>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8l-4N-mAD">
                                 <rect key="frame" x="0.0" y="20" width="375" height="45"/>
                                 <color key="backgroundColor" red="0.25980332493782043" green="0.31166338920593262" blue="0.41985651850700378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -472,15 +469,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tour_select_robot" translatesAutoresizingMaskIntoConstraints="NO" id="Unl-j7-MvB">
-                                <rect key="frame" x="28" y="65" width="319" height="434"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="機器人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaL-cN-dMM">
-                                <rect key="frame" x="151" y="423" width="73" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ham-TR-jEj">
                                 <rect key="frame" x="108" y="572" width="160" height="45"/>
                                 <constraints>
@@ -496,23 +484,22 @@
                                     <action selector="nextBtn:" destination="nvl-hP-JkO" eventType="touchUpInside" id="ecU-kE-oHV"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIL-mI-Vsp">
+                                <rect key="frame" x="0.0" y="80" width="375" height="467"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JGQ-p4-q8p" firstAttribute="height" secondItem="G9v-3d-zpY" secondAttribute="height" id="9YL-62-Pfj"/>
                             <constraint firstItem="Ham-TR-jEj" firstAttribute="bottom" secondItem="SMc-hN-tVn" secondAttribute="top" constant="-50" id="Bf1-ke-hrv"/>
                             <constraint firstItem="JGQ-p4-q8p" firstAttribute="width" secondItem="G9v-3d-zpY" secondAttribute="width" id="JPg-up-X7N"/>
-                            <constraint firstItem="KaL-cN-dMM" firstAttribute="centerX" secondItem="G9v-3d-zpY" secondAttribute="centerX" id="K6p-fz-c7w"/>
                             <constraint firstItem="l8l-4N-mAD" firstAttribute="width" secondItem="G9v-3d-zpY" secondAttribute="width" id="MIW-tT-wFh"/>
-                            <constraint firstItem="Unl-j7-MvB" firstAttribute="width" secondItem="G9v-3d-zpY" secondAttribute="width" multiplier="0.85" id="PcT-TI-lhI"/>
-                            <constraint firstItem="KaL-cN-dMM" firstAttribute="bottom" secondItem="Ham-TR-jEj" secondAttribute="top" constant="-120" id="QU0-tj-wqx"/>
+                            <constraint firstItem="bIL-mI-Vsp" firstAttribute="width" secondItem="G9v-3d-zpY" secondAttribute="width" id="QRn-Wo-Pt5"/>
+                            <constraint firstItem="bIL-mI-Vsp" firstAttribute="centerX" secondItem="G9v-3d-zpY" secondAttribute="centerX" id="WYK-M0-WqI"/>
                             <constraint firstItem="JGQ-p4-q8p" firstAttribute="top" secondItem="l8l-4N-mAD" secondAttribute="bottom" id="X8r-tx-DWn"/>
-                            <constraint firstItem="GX2-l8-ZoH" firstAttribute="bottom" secondItem="SMc-hN-tVn" secondAttribute="top" constant="-71" id="YMQ-so-PUe"/>
-                            <constraint firstItem="GX2-l8-ZoH" firstAttribute="centerX" secondItem="G9v-3d-zpY" secondAttribute="centerX" id="aqa-Y1-GwF"/>
-                            <constraint firstItem="Unl-j7-MvB" firstAttribute="height" secondItem="G9v-3d-zpY" secondAttribute="height" multiplier="0.65" id="bq7-Ci-c5K"/>
+                            <constraint firstItem="bIL-mI-Vsp" firstAttribute="height" secondItem="G9v-3d-zpY" secondAttribute="height" multiplier="0.7" id="aDW-So-mBe"/>
                             <constraint firstItem="l8l-4N-mAD" firstAttribute="top" secondItem="eUC-Ei-Yfm" secondAttribute="bottom" id="cSm-1B-g1Z"/>
-                            <constraint firstItem="Unl-j7-MvB" firstAttribute="top" secondItem="l8l-4N-mAD" secondAttribute="bottom" id="dzU-zg-yru"/>
-                            <constraint firstItem="Unl-j7-MvB" firstAttribute="centerX" secondItem="G9v-3d-zpY" secondAttribute="centerX" id="elr-Cr-XHE"/>
+                            <constraint firstItem="bIL-mI-Vsp" firstAttribute="top" secondItem="eUC-Ei-Yfm" secondAttribute="bottom" constant="60" id="lug-F1-aP5"/>
                             <constraint firstItem="Ham-TR-jEj" firstAttribute="centerX" secondItem="G9v-3d-zpY" secondAttribute="centerX" id="mwy-TY-oQZ"/>
                             <constraint firstItem="JGQ-p4-q8p" firstAttribute="centerX" secondItem="G9v-3d-zpY" secondAttribute="centerX" id="uMf-vb-4rf"/>
                             <constraint firstItem="l8l-4N-mAD" firstAttribute="centerX" secondItem="G9v-3d-zpY" secondAttribute="centerX" id="v80-dW-QGd"/>
@@ -520,11 +507,9 @@
                     </view>
                     <connections>
                         <outlet property="confirm" destination="Ham-TR-jEj" id="fsT-d7-77C"/>
-                        <outlet property="imgTour" destination="Unl-j7-MvB" id="cQc-VZ-FWv"/>
-                        <outlet property="lbTour" destination="KaL-cN-dMM" id="kGc-cZ-TfM"/>
                         <outlet property="navBar" destination="l8l-4N-mAD" id="Dnq-7C-bEM"/>
                         <outlet property="navItem" destination="ffd-lb-GdH" id="2fQ-QD-f9B"/>
-                        <outlet property="pcTour" destination="GX2-l8-ZoH" id="2Hf-BN-pxC"/>
+                        <outlet property="scrollView" destination="bIL-mI-Vsp" id="4ZK-Y8-jIm"/>
                         <segue destination="DkL-DR-66f" kind="show" identifier="toNext" id="fbs-b5-5dm"/>
                     </connections>
                 </viewController>
@@ -9642,7 +9627,6 @@
         <image name="title_chinese" width="118" height="132"/>
         <image name="tour_select_background" width="360" height="640"/>
         <image name="tour_select_coachmarks" width="359" height="640"/>
-        <image name="tour_select_robot" width="360" height="510"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="51g-2q-v7G"/>

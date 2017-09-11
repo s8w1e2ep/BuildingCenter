@@ -21,6 +21,7 @@ class ZoneItem {
     var photo: String?
     var photo_vertical: String?
     var field_id: String?
+    var modes: [ModeItem]?
     
     
     /*init(zone_id: String, name: String, name_en: String, introduction: String, introduction_en: String, guide_voice: String, guide_voice_en: String, hint: String, photo: String, photo_vertical: String, field_id: String) {

@@ -101,7 +101,24 @@ class Databasehelper {
                         if((p["photo_vertical"] as? String)?.isEmpty)!{
                             p["photo_vertical"] = ""
                         }
-                        try db.run(zone.insert(DBColExpress.zone_id <- p["zone_id"] as? String ,
+                        let filtering = Table("zone").filter(DBColExpress.name == p["name"] as? String)
+                        //print(filtering)
+                        let plucking = try db.pluck(filtering)
+                        if (plucking != nil) {
+                            try db.run(filtering.update(DBColExpress.zone_id <- p["zone_id"] as? String ,
+                                                   DBColExpress.name <- (p["name"] as? String),
+                                                   DBColExpress.name_en <- (p["name_en"] as? String),
+                                                   DBColExpress.introduction <- (p["introduction"] as? String),
+                                                   DBColExpress.introduction_en <- (p["introduction_en"] as? String),
+                                                   DBColExpress.guide_voice <- (p["guide_voice"] as? String),
+                                                   DBColExpress.guide_voice_en <- (p["guide_voice_en"] as? String),
+                                                   DBColExpress.hint <- (p["hint"] as? String),
+                                                   DBColExpress.photo <- (p["photo"] as? String),
+                                                   DBColExpress.photo_vertical <- (p["photo_vertical"] as? String),
+                                                   DBColExpress.field_id <- (p["field_id"] as? String)))
+                        }
+                        else{
+                            try db.run(zone.insert(DBColExpress.zone_id <- p["zone_id"] as? String ,
                                                DBColExpress.name <- (p["name"] as? String),
                                                DBColExpress.name_en <- (p["name_en"] as? String),
                                                DBColExpress.introduction <- (p["introduction"] as? String),
@@ -112,7 +129,8 @@ class Databasehelper {
                                             DBColExpress.photo <- (p["photo"] as? String),
                                             DBColExpress.photo_vertical <- (p["photo_vertical"] as? String),
                                             DBColExpress.field_id <- (p["field_id"] as? String)
-                        ))
+                            ))
+                        }
                         
                     }
                 }
@@ -163,7 +181,7 @@ class Databasehelper {
                         }
                         
                         
-                        try db.run(mode.insert(DBColExpress.mode_id <- p["zone_id"] as? String ,
+                        try db.run(mode.insert(DBColExpress.mode_id <- p["mode_id"] as? String ,
                                                DBColExpress.name <- (p["name"] as? String),
                                                DBColExpress.name_en <- (p["name_en"] as? String),
                                                DBColExpress.introduction <- (p["introduction"] as? String),
@@ -502,6 +520,28 @@ class Databasehelper {
         }
         return companys
     }
+    
+    /*func getmode(zoneID: String){
+        var modes: [ModeItem] = []
+        let xx = querymodeTable()
+        
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("mode")
+            //let XDs = try db.prepare(table)
+            let filtering = table.filter(DBColExpress.zone_id.like(zoneID))
+            for rows in try db.prepare(filtering)
+            {
+                //print(rows[DBColExpress.name])
+                
+                //modes.append(rows)
+            }
+        } catch _ {
+            print("error")
+        }
+        
+        
+    }*/
 
 
 
