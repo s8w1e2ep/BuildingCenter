@@ -18,11 +18,15 @@ class AreaViewController: UIViewController {
     
     let notificationSliderChanged = Notification.Name("sliderChangedNoti")
     
+    var zone: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setNotification()
         setText(selectLanguage: BeginViewController.selectedLanguage)
+        
+        print(zone)
         
     }
     

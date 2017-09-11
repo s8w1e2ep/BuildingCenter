@@ -10,52 +10,83 @@ import UIKit
 import JavaScriptCore
 class MapViewController: UIViewController, UIWebViewDelegate {
     
-    let notificationExitMap = Notification.Name("exitMapNoti")
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var SVGView: UIWebView!
     
+    // To enter zone introduction
+    @IBOutlet weak var notice: UIImageView!
     @IBOutlet weak var enter: UIButton!
+    @IBOutlet weak var cancel: UIButton!
+    @IBOutlet weak var zoneName: UILabel!
+    @IBOutlet weak var enterImage: UIImageView!
+    
+    let notificationExitMap = Notification.Name("exitMapNoti")
+    
+    var zoneViewController: AreaViewController!
     
     var jsContext: JSContext!
     var nowRegion: Int = 0
+    
+    var selectedZone = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view, typically from a nib.
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setSVG()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        //self.navigationController?.isNavigationBarHidden = false
-        
-    }
     override func viewWillDisappear(_ animated: Bool) {
+        // Need to disselect map button in MainPageViewController
         NotificationCenter.default.post(name: notificationExitMap, object: nil, userInfo: nil)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
+        // Check if launch before to show useful hint.
         let defaults = UserDefaults.standard
         let isMapLaunchBefore = defaults.bool(forKey: "isMapLaunchBefore")
         
         if (!isMapLaunchBefore) {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "InfoHint"){
-                //show(vc, sender: self)
                 present(vc, animated: true)
-                
             }
             defaults.set(true, forKey: "isMapLaunchBefore")
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "map_to_zone" {
+            zoneViewController = segue.destination as! AreaViewController
+            zoneViewController.zone = selectedZone
+        }
+    }
+    
     @IBAction func goQuestionnaire(_ sender: Any) {
         self.performSegue(withIdentifier: "mainToQuestionnaire", sender: self);
+    }
+    
+    @IBAction func onEnterClick(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "map_to_zone", sender: self);
+    }
+    
+    @IBAction func onCancelClick(_ sender: UIButton) {
+        setNoticeIsHidden(isHidden: true)
     }
     
     func setLayout() {
         // set navigation bar background image
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        // set notice init hidden
+        setNoticeIsHidden(isHidden: true)
+    }
+    func setNoticeIsHidden(isHidden: Bool) {
+        notice.isHidden = isHidden
+        enter.isHidden = isHidden
+        enterImage.isHidden = isHidden
+        cancel.isHidden = isHidden
+        zoneName.isHidden = isHidden
     }
     func setText(selectLanguage: String) {
         // according to language set text
@@ -120,6 +151,8 @@ class MapViewController: UIViewController, UIWebViewDelegate {
                     SVGView.stringByEvaluatingJavaScript(from: "onRegionChanged(\(nowRegion),\(nowRegion+1),'p\(nowRegion-1)-\(nowRegion)','p\(nowRegion)-\(nowRegion+1)')")
                 }
                 //set bar changed
+                selectedZone = nowRegion
+                setNoticeIsHidden(isHidden: false)
                 break
             case "mv":
                 //set bar changed

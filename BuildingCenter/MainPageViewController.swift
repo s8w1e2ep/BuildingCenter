@@ -11,24 +11,30 @@ import AVFoundation
 
 class MainPageViewController: UIViewController {
 
+    // main page button
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var hipsterButton: UIButton!
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var speechButton: UIButton!
     @IBOutlet weak var textButton: UIButton!
     
+    // for change text size
     @IBOutlet weak var slider: UISlider!
     
+    // view for display main content
     @IBOutlet weak var mainContainerView: UIView!
+    
+    // NavigationViewController contains zones, modes, devices, companies infomation.
     var mapNavigationController: UINavigationController!
+    // ViewController for hipster selecting or taking a picture to do some thing.
     var hipsterViewController: HipsterViewController!
 
+    // Record the ViewController and button selected.
     var selectedViewController: UIViewController!
     var selectedButton: UIButton!
     
-    // TTS
+    // For text speak
     var TTS: String!
-    
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
     
@@ -38,18 +44,16 @@ class MainPageViewController: UIViewController {
     let notificationEnterText = Notification.Name("enterTextNoti")
     let notificationExitText = Notification.Name("exitTextNoti")
     
-    let notificationSliderChanged = Notification.Name("sliderChangedNoti")
-    
     let notificationEnterModeContent = Notification.Name("enterModeContentNoti")
     let notificationExitModeContent = Notification.Name("exitModeContentNoti")
-    let notificationFirmClicked = Notification.Name("firmClickedNoti")
     let notificationPageChanged = Notification.Name("pageChangededNoti")
+    
+    let notificationSliderChanged = Notification.Name("sliderChangedNoti")
+    let notificationFirmClicked = Notification.Name("firmClickedNoti")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
         getViewController()
         setInitSelected()
         setNotification()
@@ -68,8 +72,8 @@ class MainPageViewController: UIViewController {
     @IBAction func onMapClick(_ sender: UIButton) {
         changeTab(to: mapButton)
         changePage(to: mapNavigationController)
-        
-        mapNavigationController.popToRootViewController(animated: true)//////
+        // Back to SVG map
+        mapNavigationController.popToRootViewController(animated: true)
     }
     
     @IBAction func onInfoClick(_ sender: UIButton) {
