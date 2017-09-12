@@ -49,14 +49,20 @@ class Qn7ViewController: UIViewController {
         
     }
     
+    @IBAction func logSelectedButton(_ isRadioButton:RadioButton){
+        
+        self.survey2["buy"] = isRadioButton.index
+        
+    }
+    
 
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let qn7 : Qn7ViewController = segue.destination as? Qn7ViewController{
-            qn7.survey2 = self.survey2
+        if let qn8 : Qn8ViewController = segue.destination as? Qn8ViewController{
+            qn8.survey2 = self.survey2
         }
     }
  

@@ -66,18 +66,16 @@ class Q12ViewController: UIViewController {
         if let JsonData = try? JSONSerialization.data(withJSONObject: self.survey, options: [])
         {
             print(JsonData)
-            let theJsonnext = String(data:JsonData,encoding:.utf8)
-            print(theJsonnext!)
+            let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
             var stringUrl = DatabaseUtilizer.surveyOneURL + "?survey="
-            stringUrl += theJsonnext!
+            stringUrl += JsontoUtf8!
             print(stringUrl)
-            var url:String
-            url = stringUrl
             
-            if let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
-                let url2 = NSURL(string: encodedURL)
+            
+            if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+                let url = NSURL(string: encodedURL)
                 do{
-                    let html = try String(contentsOf: url2! as URL)
+                    let html = try String(contentsOf: url! as URL)
                     print(html)
                 }catch{
                     print(error)

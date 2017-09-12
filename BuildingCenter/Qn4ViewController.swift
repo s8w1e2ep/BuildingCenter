@@ -44,6 +44,13 @@ class Qn4ViewController: UIViewController ,ZHDropDownMenuDelegate{
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func logSelectedButton(_ isRadioButton:RadioButton){
+        
+        //self.survey2["buy"] = isRadioButton.index
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

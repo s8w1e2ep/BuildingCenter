@@ -52,7 +52,7 @@ class QuestionnaireViewController: UIViewController {
 
     @IBAction func logSelectedButton(_ isRadioButton:RadioButton){
         
-        self.survey2["attitude"] = isRadioButton.restorationIdentifier
+        self.survey2["attitude"] = isRadioButton.index
         
     }
     

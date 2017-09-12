@@ -160,10 +160,103 @@ class Qn3ViewController: UIViewController ,ZHDropDownMenuDelegate{
         radio35.setTitle("feedback_feature_energy".localized(language: selectLanguage), for: .normal)
         
         
-        
-        
-        
     }
+    
+    @IBAction func log1SelectedButton(_ isRadioButton:RadioButton){
+        
+        var tmp:String = ""
+        
+        if isRadioButton.isSelected {
+            tmp += isRadioButton.index
+        }
+        for radioButton in isRadioButton.otherButtons! {
+            if(radioButton.isSelected)
+            {
+                tmp += radioButton.index
+            }
+        }
+        
+        self.survey2["first_consider"] = tmp
+        print(self.survey2)
+    }
+    
+    @IBAction func log2SelectedButton(_ isRadioButton:RadioButton){
+        
+        var tmp:String = ""
+        
+        if isRadioButton.isSelected {
+            tmp += isRadioButton.index
+        }
+        for radioButton in isRadioButton.otherButtons! {
+            if(radioButton.isSelected)
+            {
+                tmp += radioButton.index
+            }
+        }
+        
+        self.survey2["second_consider"] = tmp
+        print(self.survey2)
+    }
+    
+    @IBAction func log3SelectedButton(_ isRadioButton:RadioButton){
+        
+        var tmp:String = ""
+        
+        if isRadioButton.isSelected {
+            tmp += isRadioButton.index
+        }
+        for radioButton in isRadioButton.otherButtons! {
+            if(radioButton.isSelected)
+            {
+                tmp += radioButton.index
+            }
+        }
+        
+        self.survey2["third_consider"] = tmp
+        print(self.survey2)
+    }
+    @IBAction func log4SelectedButton(_ isRadioButton:RadioButton){
+        
+        var tmp:String = ""
+        
+        if isRadioButton.isSelected {
+            tmp += isRadioButton.index
+        }
+        for radioButton in isRadioButton.otherButtons! {
+            if(radioButton.isSelected)
+            {
+                tmp += radioButton.index
+            }
+        }
+        
+        self.survey2["fourth_consider"] = tmp
+        print(self.survey2)
+    }
+    @IBAction func log5SelectedButton(_ isRadioButton:RadioButton){
+        
+        var tmp:String = ""
+        
+        if isRadioButton.isSelected {
+            tmp += isRadioButton.index
+        }
+        for radioButton in isRadioButton.otherButtons! {
+            if(radioButton.isSelected)
+            {
+                tmp += radioButton.index
+            }
+        }
+        
+        self.survey2["fifth_consider"] = tmp
+        print(self.survey2)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -58,7 +58,36 @@ class Qn8ViewController: UIViewController {
         
     }
     
+    @IBAction func logSelectedButton(_ isRadioButton:RadioButton){
+        
+        self.survey2["reasonable_price"] = isRadioButton.index
+    }
     
+    @IBAction func clkFinish(_ sender: Any) {
+        
+        if let JsonData = try? JSONSerialization.data(withJSONObject: self.survey2, options: [])
+        {
+            print(JsonData)
+            let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
+            var stringUrl = DatabaseUtilizer.feedbackURL + "?feedback="
+            stringUrl += JsontoUtf8!
+            print(stringUrl)
+            
+            
+            if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+                let url = NSURL(string: encodedURL)
+                do{
+                    let html = try String(contentsOf: url! as URL)
+                    print(html)
+                }catch{
+                    print(error)
+                }
+                
+            }
+            
+            
+        }
+    }
 
     /*
     // MARK: - Navigation
