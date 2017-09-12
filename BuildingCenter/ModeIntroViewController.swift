@@ -12,6 +12,7 @@ import UIKit
 class ModeIntroViewController: UIViewController {
     
     @IBOutlet weak var thumbButton: UIBarButtonItem!
+    @IBOutlet weak var modeName: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var nextPage: UIButton!
@@ -21,13 +22,15 @@ class ModeIntroViewController: UIViewController {
     
     let notificationSliderChanged = Notification.Name("sliderChangedNoti")
     
+    var modeItem: ModeItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setLayout()
         setNotification()
         setText(selectLanguage: BeginViewController.selectedLanguage)
-
+        setContent()
         
     }
     
@@ -62,7 +65,16 @@ class ModeIntroViewController: UIViewController {
         // according to language set text
         nextPage.setTitle("next_page".localized(language: selectLanguage), for: .normal)
     }
-
+    func setContent() {
+        if BeginViewController.isEnglish {
+            modeName.text = modeItem.name_en
+            textView.text = modeItem.introduction_en
+        }else {
+            modeName.text = modeItem.name
+            textView.text = modeItem.introduction
+        }
+        
+    }
     func sliderChangedNoti(noti:Notification) {
         let sliderValue = noti.userInfo!["sliderValue"] as! Float
         textView.font = textView.font?.withSize(CGFloat(sliderValue))

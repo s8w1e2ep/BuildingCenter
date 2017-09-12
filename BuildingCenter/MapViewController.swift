@@ -30,6 +30,9 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     
     var selectedZone = 0
     
+    var databaseHelper: Databasehelper!
+    var zoneItem: ZoneItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -58,7 +61,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "map_to_zone" {
             zoneViewController = segue.destination as! AreaViewController
-            zoneViewController.zone = selectedZone
+            zoneViewController.zoneItem = zoneItem
         }
     }
     
@@ -82,16 +85,36 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         setNoticeIsHidden(isHidden: true)
     }
     func setNoticeIsHidden(isHidden: Bool) {
+        
         notice.isHidden = isHidden
         enter.isHidden = isHidden
         enterImage.isHidden = isHidden
         cancel.isHidden = isHidden
         zoneName.isHidden = isHidden
     }
+    func setNoticeZoneName() {
+        if BeginViewController.isEnglish {
+            zoneName.text = zoneItem.name_en
+        }
+        else {
+            zoneName.text = zoneItem.name
+        }
+    }
     func setText(selectLanguage: String) {
         // according to language set text
         
         enter.setTitle("map_area_enter".localized(language: selectLanguage), for: .normal)
+    }
+    func getZoneItem() {
+        // test for delete
+        databaseHelper = Databasehelper()
+        let zones = databaseHelper.queryzoneTable()
+        for zone in zones {
+            if zone.zone_id == String(selectedZone) {
+                zoneItem = zone
+                break
+            }
+        }
     }
     func setSVG() {
         SVGView.delegate = self
@@ -152,6 +175,8 @@ class MapViewController: UIViewController, UIWebViewDelegate {
                 }
                 //set bar changed
                 selectedZone = nowRegion
+                getZoneItem()
+                setNoticeZoneName()
                 setNoticeIsHidden(isHidden: false)
                 break
             case "mv":

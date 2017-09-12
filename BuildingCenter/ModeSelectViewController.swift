@@ -15,6 +15,10 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var modeSelectTitle: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
     
+    var modeIntroViewController: ModeIntroViewController!
+    
+    var modeItems: [ModeItem]!
+    var selectedCell: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -43,6 +47,12 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mode_select_to_intro" {
+            modeIntroViewController = segue.destination as! ModeIntroViewController
+            modeIntroViewController.modeItem = modeItems[selectedCell]
+        }
+    }
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
@@ -65,7 +75,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return modeItems.count
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath)
@@ -83,15 +93,21 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
                 UIImage(named: imageName)
             
             //set text
-            cell.textView.text = cell.textView.text+"\(indexPath.item + 1)"
+            if BeginViewController.isEnglish {
+                cell.textView.text = modeItems[indexPath.item].name_en
+            }else {
+                cell.textView.text = modeItems[indexPath.item].name
+            }
+            
             
             return cell
     }
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        print("第 \(indexPath.item + 1) 張圖片")
-        
+        //print("第 \(indexPath.item + 1) 張圖片")
+        selectedCell = indexPath.item
+        //modeIntroViewController.modeItem = modeItems[indexPath.item]
         // ModeSelectView to ModeIntroView
-        performSegue(withIdentifier: "ModeSelectToIntro", sender: self)
+        performSegue(withIdentifier: "mode_select_to_intro", sender: self)
     }
 }

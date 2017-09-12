@@ -10,7 +10,12 @@ import UIKit
 
 class AreaViewController: UIViewController {
     
+    
+    @IBOutlet weak var zoneTag: UILabel!
+    @IBOutlet weak var zoneName: UILabel!
     @IBOutlet var textView: UITextView!
+    
+    
     @IBOutlet weak var nextPage: UIButton!
     
     let notificationEnterText = Notification.Name("enterTextNoti")
@@ -18,16 +23,22 @@ class AreaViewController: UIViewController {
     
     let notificationSliderChanged = Notification.Name("sliderChangedNoti")
     
-    var zone: Int!
+    var databaseHelper: Databasehelper!
+    
+    var modeSelectViewController: ModeSelectViewController!
+    var zoneItem: ZoneItem!
+    var modes: [ModeItem]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         setNotification()
         setText(selectLanguage: BeginViewController.selectedLanguage)
+        setContent()
         
-        print(zone)
-        
+        databaseHelper = Databasehelper()
+        modes = databaseHelper.querymodeTable(zoneID: zoneItem.zone_id!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +53,12 @@ class AreaViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "zone_to_mode_select" {
+            modeSelectViewController = segue.destination as! ModeSelectViewController
+            modeSelectViewController.modeItems = modes
+        }
+    }
     
     func setNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(sliderChangedNoti(noti:)), name: notificationSliderChanged, object: nil)
@@ -49,6 +66,18 @@ class AreaViewController: UIViewController {
     func setText(selectLanguage: String) {
         // according to language set text
         nextPage.setTitle("next_page".localized(language: selectLanguage), for: .normal)
+    }
+    
+    func setContent() {
+        zoneTag.text = zoneItem.zone_id
+        if BeginViewController.isEnglish {
+            zoneName.text = zoneItem.name_en
+            textView.text = zoneItem.introduction_en
+        }else {
+            zoneName.text = zoneItem.name
+            textView.text = zoneItem.introduction
+            
+        }
     }
     func sliderChangedNoti(noti:Notification) {
         let sliderValue = noti.userInfo!["sliderValue"] as! Float
