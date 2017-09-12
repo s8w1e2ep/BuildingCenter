@@ -16,6 +16,7 @@
 		5F8C48621F5ED5B4006E7BEB /* ModeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48611F5ED5B4006E7BEB /* ModeItem.swift */; };
 		5F8C48641F619DC0006E7BEB /* DeviceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48631F619DC0006E7BEB /* DeviceItem.swift */; };
 		5F8C48661F63D5F7006E7BEB /* CompanyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48651F63D5F7006E7BEB /* CompanyItem.swift */; };
+		5F8C48681F67C858006E7BEB /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48671F67C858006E7BEB /* ImageExtension.swift */; };
 		5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */; };
 		5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */; };
 		5FE971421F1C9F0A005EDE58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE971401F1C9F0A005EDE58 /* Main.storyboard */; };
@@ -118,6 +119,7 @@
 		5F8C48611F5ED5B4006E7BEB /* ModeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeItem.swift; sourceTree = "<group>"; };
 		5F8C48631F619DC0006E7BEB /* DeviceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceItem.swift; sourceTree = "<group>"; };
 		5F8C48651F63D5F7006E7BEB /* CompanyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyItem.swift; sourceTree = "<group>"; };
+		5F8C48671F67C858006E7BEB /* ImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		5FE971391F1C9F0A005EDE58 /* BuildingCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -255,8 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				5F8C48571F4DB6C0006E7BEB /* Databasehelper.swift */,
-				5F8C48591F544E9E006E7BEB /* ZoneItem.swift */,
 				7652CF501F57F78500F7F733 /* DatabaseUtilizer.swift */,
+				5F8C48671F67C858006E7BEB /* ImageExtension.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -434,6 +436,7 @@
 		767B6E5B1F56701900894B66 /* CustomizedObject */ = {
 			isa = PBXGroup;
 			children = (
+				5F8C48591F544E9E006E7BEB /* ZoneItem.swift */,
 				5F8C485F1F5E94F9006E7BEB /* DBColExpress.swift */,
 				5F8C48611F5ED5B4006E7BEB /* ModeItem.swift */,
 				76ED5B1A1F6136400085D4F5 /* ModeCollectionViewCell.swift */,
@@ -746,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A226579A1F43CCCB00668EDF /* Q5ViewController.swift in Sources */,
+				5F8C48681F67C858006E7BEB /* ImageExtension.swift in Sources */,
 				5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */,
 				7658BA8B1F39B94000C1552B /* MainPageViewController.swift in Sources */,
 				A23875281F3AC8CF00D9FB90 /* Q2ViewController.swift in Sources */,

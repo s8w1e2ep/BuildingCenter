@@ -354,9 +354,7 @@ class Databasehelper {
                         /*if((p["introduction_en"] as? String)?.isEmpty)!{
                          p["introduction_en"] = ""
                          }*/
-                        if((p["introduction_en"] as? String) == nil){
-                            p["introduction_en"] = ""
-                        }
+                        
                         if((p["qrcode"] as? String) == nil){
                             p["qrcode"] = ""
                         }
@@ -366,7 +364,7 @@ class Databasehelper {
                         if((p["fax"] as? String) == nil){
                             p["fax"] = ""
                         }
-                        let filtering = Table("device").filter(DBColExpress.company_id == p["company_id"] as? String)
+                        let filtering = Table("company").filter(DBColExpress.company_id == p["company_id"] as? String)
                         let plucking = try db.pluck(filtering)
                         if (plucking != nil) {
                             try db.run(filtering.update(DBColExpress.company_id <- p["company_id"] as? String ,
@@ -398,9 +396,6 @@ class Databasehelper {
         
     }
 
-    
-
-    
     func queryzoneTable() -> Array<ZoneItem> {
         //let databaseFileName = "buildingcenterdb.sqlite"
         //let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
@@ -422,16 +417,16 @@ class Databasehelper {
         //let modes = "modes"
         
         /*
-        let name = Expression<String>("name")
-        let name_en = Expression<String>("name_en")
-        let introduction = Expression<String>("introduction")
-        let introduction_en = Expression<String>("introduction_en")
-        let guide_voice = Expression<String>("guide_voice")
-        let guide_voice_en = Expression<String>("guide_voice_en")
-        let hint = Expression<String>("hint")
-        let photo = Expression<String>("photo")
-        let photo_vertical = Expression<String>("photo_vertical")
-        let field_id = Expression<String>("field_id")*/
+         let name = Expression<String>("name")
+         let name_en = Expression<String>("name_en")
+         let introduction = Expression<String>("introduction")
+         let introduction_en = Expression<String>("introduction_en")
+         let guide_voice = Expression<String>("guide_voice")
+         let guide_voice_en = Expression<String>("guide_voice_en")
+         let hint = Expression<String>("hint")
+         let photo = Expression<String>("photo")
+         let photo_vertical = Expression<String>("photo_vertical")
+         let field_id = Expression<String>("field_id")*/
         do {
             let db = try Connection(databaseFilePath)
             let table = Table("zone")
@@ -441,18 +436,18 @@ class Databasehelper {
                 
                 
                 /*var zone: [String] = []
-                zone.append(rows[zone_id])
-                zone.append(rows[name])
-                zone.append(rows[name_en])
-                zone.append(rows[introduction])
-                zone.append(rows[introduction_en])
-                zone.append(rows[guide_voice])
-                zone.append(rows[guide_voice_en])
-                zone.append(rows[hint])
-                zone.append(rows[photo])
-                zone.append(rows[photo_vertical])
-                zone.append(rows[field_id])
-                */
+                 zone.append(rows[zone_id])
+                 zone.append(rows[name])
+                 zone.append(rows[name_en])
+                 zone.append(rows[introduction])
+                 zone.append(rows[introduction_en])
+                 zone.append(rows[guide_voice])
+                 zone.append(rows[guide_voice_en])
+                 zone.append(rows[hint])
+                 zone.append(rows[photo])
+                 zone.append(rows[photo_vertical])
+                 zone.append(rows[field_id])
+                 */
                 z.zone_id = rows[zone_id]
                 z.name = rows[name]
                 z.name_en = rows[name_en]
@@ -465,11 +460,56 @@ class Databasehelper {
                 z.photo_vertical = rows[photo_vertical]
                 z.field_id = rows[field_id]
                 z.modes = querymodeTable(zoneID:rows[zone_id]!)
-
+                
                 //print(rows[zone_id])
                 //let data = ZoneItem(zone_id: rows[zone_id], name: rows[name], introduction: rows[introduction])
                 //zones.append(zone)
                 zones.append(z)
+            }
+        } catch _ {
+            print("error")
+        }
+        return zones
+    }
+
+
+    
+    func queryzoneTable(zoneID: String) -> ZoneItem {
+        var zones = ZoneItem()
+        let zone_id = DBColExpress.zone_id
+        let name = DBColExpress.name
+        let name_en = DBColExpress.name_en
+        let introduction = DBColExpress.introduction
+        let introduction_en = DBColExpress.introduction_en
+        let guide_voice = DBColExpress.guide_voice
+        let guide_voice_en = DBColExpress.guide_voice_en
+        let hint = DBColExpress.hint
+        let photo = DBColExpress.photo
+        let photo_vertical = DBColExpress.photo_vertical
+        let field_id = DBColExpress.field_id
+        //let modes = "modes"
+        
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("zone")
+            //var z = ZoneItem()
+            let filtering = table.filter(DBColExpress.zone_id.like(zoneID))
+            for rows in try db.prepare(filtering) {
+                let z = ZoneItem()
+                
+                z.zone_id = rows[zone_id]
+                z.name = rows[name]
+                z.name_en = rows[name_en]
+                z.introduction = rows[introduction]
+                z.introduction_en = rows[introduction_en]
+                z.guide_voice = rows[guide_voice]
+                z.guide_voice_en = rows[guide_voice_en]
+                z.hint = rows[hint]
+                z.photo = rows[photo]
+                z.photo_vertical = rows[photo_vertical]
+                z.field_id = rows[field_id]
+                z.modes = querymodeTable(zoneID:rows[zone_id]!)
+                zones = z
             }
         } catch _ {
             print("error")

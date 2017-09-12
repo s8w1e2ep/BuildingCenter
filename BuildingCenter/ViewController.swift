@@ -20,24 +20,23 @@ class ViewController: UIViewController {
         databasehelper = Databasehelper()
         //databasehelper.deleteTable()
         databasehelper.creatTable()
-        //databasehelper.getzone(zoneID: "1")
-        //let devices = databasehelper.querydeviceTable(modeID:"1");
-        /*let modes = databasehelper.querymodeTable(zoneID: "1")
         
-        for i in modes{
+        /*let zones = databasehelper.queryzoneTable(zoneID: "1")
+        print(zones.name)
+        let modes = zones.modes
+        
+        for i in modes!{
             print(i.name)
-            //let devices = databasehelper.querydeviceTable(modeID:i.mode_id!)
             let devices = i.devices
             for j in devices!{
                 print(j.name,j.company_id)
                 //let companys = j.companys?.name
                 
-                print(j.companys?.company_id )
+                print(j.companys?.name )
             }
-            //print(((i as! ModeItem).name)as! String)
-            //print(((i as! CompanyItem).web)as! String)
-        }
-        */
+
+        }*/
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
