@@ -27,7 +27,7 @@ class AreaViewController: UIViewController {
     
     var modeSelectViewController: ModeSelectViewController!
     var zoneItem: ZoneItem!
-    var modes: [ModeItem]!
+    var modeItems: [ModeItem]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +36,6 @@ class AreaViewController: UIViewController {
         setNotification()
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setContent()
-        
-        databaseHelper = Databasehelper()
-        modes = databaseHelper.querymodeTable(zoneID: zoneItem.zone_id!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +53,7 @@ class AreaViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "zone_to_mode_select" {
             modeSelectViewController = segue.destination as! ModeSelectViewController
-            modeSelectViewController.modeItems = modes
+            modeSelectViewController.zoneItem = zoneItem
         }
     }
     

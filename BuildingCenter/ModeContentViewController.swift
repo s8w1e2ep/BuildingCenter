@@ -11,6 +11,7 @@ import UIKit
 class ModeContentViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navBarTitle: UINavigationItem!
     
     @IBOutlet weak var thumbButton: UIBarButtonItem!
     // test scroller button
@@ -26,7 +27,7 @@ class ModeContentViewController: UIViewController {
     let notificationEnterModeContent = Notification.Name("enterModeContentNoti")
     let notificationExitModeContent = Notification.Name("exitModeContentNoti")
     
-    
+    var modeItem: ModeItem!
     
     var selectedButton: UIButton!
     var pageViewController: PageViewController!
@@ -36,9 +37,8 @@ class ModeContentViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         setLayout()
+        sextText()
         
-        selectedButton = button1
-        changeTab(to: button1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,8 +84,19 @@ class ModeContentViewController: UIViewController {
     func setLayout() {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        
+        
+        // init select
+        selectedButton = button1
+        changeTab(to: button1)
     }
-    
+    func setText() {
+        if BeginViewController.isEnglish {
+            navBarTitle.title = modeItem.name_en
+        }else {
+            navBarTitle.title = modeItem.name
+        }
+    }
     @IBAction func showPage1(_ sender: Any) {
         changeTab(to:button1)
         pageViewController.showPage(byIndex: 0)

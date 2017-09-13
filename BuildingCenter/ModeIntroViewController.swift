@@ -15,6 +15,7 @@ class ModeIntroViewController: UIViewController {
     @IBOutlet weak var modeName: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var nextPage: UIButton!
     
     let notificationEnterText = Notification.Name("enterTextNoti")
@@ -22,7 +23,10 @@ class ModeIntroViewController: UIViewController {
     
     let notificationSliderChanged = Notification.Name("sliderChangedNoti")
     
-    var modeItem: ModeItem!
+    var landscapeViewController: LandscapeViewController!
+    
+    var zoneItem: ZoneItem!
+    var selectedCell: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +49,13 @@ class ModeIntroViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mode_intro_to_landscape" {
+            landscapeViewController = segue.destination as! LandscapeViewController
+            landscapeViewController.modeItem = zoneItem.modes?[selectedCell]
+        }
+    }
+    
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
@@ -64,14 +75,19 @@ class ModeIntroViewController: UIViewController {
     func setText(selectLanguage: String) {
         // according to language set text
         nextPage.setTitle("next_page".localized(language: selectLanguage), for: .normal)
+        if BeginViewController.isEnglish {
+            navBarTitle.title = zoneItem.name_en
+        }else {
+            navBarTitle.title = zoneItem.name
+        }
     }
     func setContent() {
         if BeginViewController.isEnglish {
-            modeName.text = modeItem.name_en
-            textView.text = modeItem.introduction_en
+            modeName.text = zoneItem.modes?[selectedCell].name_en
+            textView.text = zoneItem.modes?[selectedCell].introduction_en
         }else {
-            modeName.text = modeItem.name
-            textView.text = modeItem.introduction
+            modeName.text = zoneItem.modes?[selectedCell].name
+            textView.text = zoneItem.modes?[selectedCell].introduction
         }
         
     }

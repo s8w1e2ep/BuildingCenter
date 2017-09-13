@@ -31,6 +31,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     var selectedZone = 0
     
     var databaseHelper: Databasehelper!
+    var zoneItems: [ZoneItem]!
     var zoneItem: ZoneItem!
     
     override func viewDidLoad() {
@@ -39,6 +40,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setSVG()
+        getZoneItems()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -105,11 +107,12 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         
         enter.setTitle("map_area_enter".localized(language: selectLanguage), for: .normal)
     }
-    func getZoneItem() {
-        // test for delete
+    func getZoneItems() {
         databaseHelper = Databasehelper()
-        let zones = databaseHelper.queryzoneTable()
-        for zone in zones {
+        zoneItems = databaseHelper.queryzoneTable()
+    }
+    func getZoneItem() {
+        for zone in zoneItems {
             if zone.zone_id == String(selectedZone) {
                 zoneItem = zone
                 break

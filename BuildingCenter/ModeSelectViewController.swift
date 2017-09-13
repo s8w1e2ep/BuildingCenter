@@ -13,12 +13,15 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var thumbButton: UIBarButtonItem!
     
     @IBOutlet weak var modeSelectTitle: UILabel!
+    @IBOutlet weak var number: UILabel!
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navBarTitle: UINavigationItem!
     
     var modeIntroViewController: ModeIntroViewController!
     
-    var modeItems: [ModeItem]!
+    var zoneItem: ZoneItem!
     var selectedCell: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -50,7 +53,8 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mode_select_to_intro" {
             modeIntroViewController = segue.destination as! ModeIntroViewController
-            modeIntroViewController.modeItem = modeItems[selectedCell]
+            modeIntroViewController.zoneItem = zoneItem
+            modeIntroViewController.selectedCell = selectedCell
         }
     }
     
@@ -72,10 +76,17 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     func setText(selectLanguage: String) {
         // according to language set text
         modeSelectTitle.text = "mode_select_title".localized(language: selectLanguage)
+        number.text = String(zoneItem.modes!.count)
+        if BeginViewController.isEnglish {
+            navBarTitle.title = zoneItem.name_en
+        }else {
+            navBarTitle.title = zoneItem.name
+        }
+
     }
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return modeItems.count
+        return zoneItem.modes!.count
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath)
@@ -88,18 +99,18 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             // 設置 cell 內容 (即自定義元件裡 增加的圖片與文字元件)
             
             // set image
-            let imageName = "a1m\(indexPath.item + 1)_bg.png"
-            cell.backImage.image =
-                UIImage(named: imageName)
+            let path = zoneItem.modes![indexPath.item].splash_bg_vertical
+            let index = path?.index((path?.startIndex)!, offsetBy: 3)
+            let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+            cell.backImage.downloadedFrom(link: imageName)
+            //cell.backImage.image = UIImage(named: imageName)
             
             //set text
             if BeginViewController.isEnglish {
-                cell.textView.text = modeItems[indexPath.item].name_en
+                cell.textView.text = zoneItem.modes![indexPath.item].name_en
             }else {
-                cell.textView.text = modeItems[indexPath.item].name
+                cell.textView.text = zoneItem.modes![indexPath.item].name
             }
-            
-            
             return cell
     }
     func collectionView(_ collectionView: UICollectionView,

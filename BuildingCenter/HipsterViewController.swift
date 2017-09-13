@@ -18,6 +18,7 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
     
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
+        
     }
     
     override func didReceiveMemoryWarning() {
