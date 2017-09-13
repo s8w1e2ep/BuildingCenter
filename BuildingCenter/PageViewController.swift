@@ -22,6 +22,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     var mainViewController: ModeContentViewController!
     var willTransitionTo: UIViewController!
     
+    var modeItem: ModeItem!
+    
     var currentIndex: Int = 0
     
     override func viewDidLoad() {
@@ -32,13 +34,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         self.delegate = self
         
         
-        for index in 0 ... 3 {
+        for index in 0 ... (modeItem.devices?.count)!-1 {
             let page = (self.storyboard?.instantiateViewController(withIdentifier: "Page1"))! as! ModeContentDetailViewController
             page.equipmentNumber = index
+            page.modeItem = modeItem
             orderedViewControllers.append(page)
             
             let firmInfo = (self.storyboard?.instantiateViewController(withIdentifier: "FirmInfo"))! as! FirmInfoViewController
             firmInfo.equipmentNumber = index
+            firmInfo.modeItem = modeItem
             firmInfoViewControllers.append(firmInfo)
         }
         

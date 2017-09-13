@@ -17,19 +17,17 @@ class ModeContentDetailViewController: UIViewController {
     @IBOutlet var viewControl: UISegmentedControl!
     @IBOutlet var videoView: UIWebView!
     
+    var modeItem: ModeItem!
     var equipmentNumber: Int = 0
     var isShowed: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        equipmentTitle.text = equipmentTitle.text!+"\(equipmentNumber+1)"
-        image.image = UIImage(named: "a1m\(equipmentNumber+1)_bg")
-        textView.text = textView.text + "\(equipmentNumber+1)"
-
-        videoView.allowsInlineMediaPlayback = true
-        videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"https://www.youtube.com/embed/7LnSBroCaPA?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+        
+        setLayout()
+        setVideo()
+        setText()
         
         
     }
@@ -47,38 +45,36 @@ class ModeContentDetailViewController: UIViewController {
             videoView.isHidden = true
             image.isHidden = false
         }
-        
-        
-        
     }
     
-    
-    
-/*
-    override func viewDidAppear(_ animated: Bool) {
-        NotificationCenter.default.post(name: notificationEnterModeContent, object: nil, userInfo: ["TTS":textView.text])
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.post(name: notificationExitModeContent, object: nil, userInfo: ["TTS":textView.text])
-    }
-  */  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func setUp(number:Int) {
-        equipmentTitle.text = equipmentTitle.text!+"\(number)"
-        image.image = UIImage(named: "a1m\(number)_bg")
-        textView.text = textView.text + "\(number)"
+    func setLayout(){
+        let path = modeItem.devices?[equipmentNumber].photo_vertical
+        let index = path?.index((path?.startIndex)!, offsetBy: 3)
+        let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+        image.downloadedFrom(link: imageName)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func setVideo() {
+        
+        var videoPtah = modeItem.video
+        videoView.allowsInlineMediaPlayback = true
+        videoPtah = videoPtah?.replacingOccurrences(of: "watch?v=", with: "embed/")
+        
+        videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"\(videoPtah!)"+"?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
     }
-    */
+    func setText() {
+        if BeginViewController.isEnglish {
+            equipmentTitle.text = modeItem.devices?[equipmentNumber].name_en
+            textView.text = modeItem.devices?[equipmentNumber].introduction_en
+        }else {
+            equipmentTitle.text = modeItem.devices?[equipmentNumber].name
+            textView.text = modeItem.devices?[equipmentNumber].introduction
+        }
+        
+    }
     
     
 

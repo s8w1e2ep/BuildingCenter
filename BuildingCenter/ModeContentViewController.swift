@@ -8,19 +8,15 @@
 
 import UIKit
 
-class ModeContentViewController: UIViewController {
+class ModeContentViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     
     @IBOutlet weak var thumbButton: UIBarButtonItem!
     // test scroller button
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
-    @IBOutlet weak var button5: UIButton!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var containerView: UIView!
     
@@ -29,6 +25,8 @@ class ModeContentViewController: UIViewController {
     
     var modeItem: ModeItem!
     
+    var buttons = [UIButton]()
+    var selectedNumber: Int = 0
     var selectedButton: UIButton!
     var pageViewController: PageViewController!
     
@@ -37,7 +35,7 @@ class ModeContentViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         setLayout()
-        sextText()
+        setText()
         
     }
     
@@ -70,6 +68,7 @@ class ModeContentViewController: UIViewController {
         if segue.identifier == "ContainerViewSegue" {
             pageViewController = segue.destination as! PageViewController
             pageViewController.mainViewController = self
+            pageViewController.modeItem = modeItem
         }
     }
     @IBAction func goBack(_ sender: UIBarButtonItem) {
@@ -85,10 +84,30 @@ class ModeContentViewController: UIViewController {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
         
-        
+        let size = scrollView.bounds.size
+        scrollView.contentSize = CGSize(
+            width: CGFloat(size.width * 0.25) * CGFloat((modeItem.devices?.count)!),
+            height: size.height
+        )
+        for index in 0 ... (modeItem.devices?.count)!-1 {
+            print(index)
+            let button = UIButton()
+            button.frame = CGRect(x: CGFloat(index) * size.width * 0.25, y: 0,
+                width: size.width * 0.25, height: size.height)
+            button.tag = index
+            button.addTarget(self, action: #selector(showPage), for: .touchUpInside)
+            button.setTitle("equip".localized(language: BeginViewController.selectedLanguage)+" \(index+1)", for: .normal)
+            button.setTitleColor(UIColor.black, for: .selected)
+            button.setTitleColor(UIColor.lightGray, for: .normal)
+            button.isSelected = false
+            scrollView.addSubview(button)
+            buttons.append(button)
+        }
         // init select
-        selectedButton = button1
-        changeTab(to: button1)
+        selectedNumber = 0
+        selectedButton = buttons[selectedNumber]
+        changeTab(to: selectedButton)
+        
     }
     func setText() {
         if BeginViewController.isEnglish {
@@ -97,51 +116,22 @@ class ModeContentViewController: UIViewController {
             navBarTitle.title = modeItem.name
         }
     }
-    @IBAction func showPage1(_ sender: Any) {
-        changeTab(to:button1)
-        pageViewController.showPage(byIndex: 0)
+    func showPage(sender: UIButton) {
+        changeTab(to: buttons[sender.tag])
+        pageViewController.showPage(byIndex: sender.tag)
     }
-    
-    @IBAction func showPage2(_ sender: Any) {
-        changeTab(to: button2)
-        pageViewController.showPage(byIndex: 1)
-    }
-    
-    @IBAction func showPage3(_ sender: Any) {
-        changeTab(to: button3)
-        pageViewController.showPage(byIndex: 2)
-    }
-    
-    @IBAction func showPage4(_ sender: Any) {
-        changeTab(to: button4)
-        pageViewController.showPage(byIndex: 3)
-    }
-    
-    @IBAction func showPage5(_ sender: Any) {
-        changeTab(to: button5)
-        pageViewController.showPage(byIndex: 4)
-    }
-    
     
     func changeTab(byIndex index: Int) {
-        switch index {
-        case 0: changeTab(to: button1)
-        case 1: changeTab(to: button2)
-        case 2: changeTab(to: button3)
-        case 3: changeTab(to: button4)
-        case 4: changeTab(to: button5)
-        default: return
-        }
+        changeTab(to: buttons[index])
     }
     func changeTab(to newButton: UIButton) {
         // 先利用 tintColor 取得 Button 預設的文字顏色
-        let defaultColor = selectedButton.tintColor
         // 將目前選取的按鈕改成未選取的顏色
         selectedButton.backgroundColor = UIColor.white
-        selectedButton.setTitleColor(defaultColor, for: .normal)
+        selectedButton.isSelected = false
         // 將參數傳來的新按鈕改成選取的顏色
         newButton.backgroundColor = UIColor.lightGray
-        newButton.setTitleColor(UIColor.black, for: .normal)
+        newButton.isSelected = true
         // 將目前選取的按鈕改為新的按鈕
         selectedButton = newButton
     }

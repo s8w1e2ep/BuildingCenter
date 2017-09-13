@@ -69,7 +69,6 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(
             width: CGFloat(self.view.bounds.width) * (1-pageCutRate*2) * CGFloat(self.courses.count),
             height: scrollView.bounds.size.height
-            
         )
         let size = scrollView.bounds.size
         
@@ -91,10 +90,9 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
             
             page.addSubview(imageView)
             page.addSubview(label)
-            
             scrollView.addSubview(page)
-            scrollView.contentOffset.x = CGFloat(currentIndex) * scrollView.bounds.width * (1-3*pageCutRate)
         }
+        scrollView.contentOffset.x = CGFloat(currentIndex) * scrollView.bounds.width * (1-3*pageCutRate)
 
         
     }
