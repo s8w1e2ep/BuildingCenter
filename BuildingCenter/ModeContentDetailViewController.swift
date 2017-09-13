@@ -14,6 +14,8 @@ class ModeContentDetailViewController: UIViewController {
     @IBOutlet weak var equipmentTitle: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet var viewControl: UISegmentedControl!
+    @IBOutlet var videoView: UIWebView!
     
     var equipmentNumber: Int = 0
     var isShowed: Bool = false
@@ -26,7 +28,32 @@ class ModeContentDetailViewController: UIViewController {
         image.image = UIImage(named: "a1m\(equipmentNumber+1)_bg")
         textView.text = textView.text + "\(equipmentNumber+1)"
 
+        videoView.allowsInlineMediaPlayback = true
+        videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"https://www.youtube.com/embed/7LnSBroCaPA?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+        
+        
     }
+    
+    @IBAction func changeView(_ sender: UISegmentedControl) {
+        
+        if viewControl.selectedSegmentIndex == 0
+        {
+            videoView.isHidden = false
+            image.isHidden = true
+        }
+        
+        if viewControl.selectedSegmentIndex == 1
+        {
+            videoView.isHidden = true
+            image.isHidden = false
+        }
+        
+        
+        
+    }
+    
+    
+    
 /*
     override func viewDidAppear(_ animated: Bool) {
         NotificationCenter.default.post(name: notificationEnterModeContent, object: nil, userInfo: ["TTS":textView.text])
