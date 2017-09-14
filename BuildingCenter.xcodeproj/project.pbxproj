@@ -52,6 +52,7 @@
 		76CE4F8E1F5E5796008219D4 /* ModeContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */; };
 		76CE4F921F5E8E0C008219D4 /* ModeContentDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE4F911F5E8E0C008219D4 /* ModeContentDetailViewController2.swift */; };
 		76CE4F941F5E9665008219D4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE4F931F5E9665008219D4 /* PageViewController.swift */; };
+		76E395541F6AC8700003E6C6 /* ModeContentDetailViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E395531F6AC8700003E6C6 /* ModeContentDetailViewController1.swift */; };
 		76EB971A1F27871500DAEB03 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */; };
 		76EB971C1F2799E000DAEB03 /* map.svg in Resources */ = {isa = PBXBuildFile; fileRef = 76EB971B1F2799E000DAEB03 /* map.svg */; };
 		76EB971E1F27A88700DAEB03 /* FirmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */; };
@@ -165,6 +166,7 @@
 		76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentDetailViewController.swift; sourceTree = "<group>"; };
 		76CE4F911F5E8E0C008219D4 /* ModeContentDetailViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentDetailViewController2.swift; sourceTree = "<group>"; };
 		76CE4F931F5E9665008219D4 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		76E395531F6AC8700003E6C6 /* ModeContentDetailViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentDetailViewController1.swift; sourceTree = "<group>"; };
 		76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 		76EB971B1F2799E000DAEB03 /* map.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.svg; sourceTree = "<group>"; };
 		76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmInfoViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				76EB971D1F27A88700DAEB03 /* FirmInfoViewController.swift */,
 				76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */,
 				76CE4F911F5E8E0C008219D4 /* ModeContentDetailViewController2.swift */,
+				76E395531F6AC8700003E6C6 /* ModeContentDetailViewController1.swift */,
 				76CE4F931F5E9665008219D4 /* PageViewController.swift */,
 			);
 			name = Area;
@@ -779,6 +782,7 @@
 				5F8C48661F63D5F7006E7BEB /* CompanyItem.swift in Sources */,
 				A22657A51F43CD1D00668EDF /* Q10ViewController.swift in Sources */,
 				7652CF5B1F57F91D00F7F733 /* StringExtension.swift in Sources */,
+				76E395541F6AC8700003E6C6 /* ModeContentDetailViewController1.swift in Sources */,
 				5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */,
 				A22657A11F43CD0000668EDF /* Q8ViewController.swift in Sources */,
 				5F8C48621F5ED5B4006E7BEB /* ModeItem.swift in Sources */,
