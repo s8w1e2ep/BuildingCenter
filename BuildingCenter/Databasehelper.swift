@@ -343,6 +343,7 @@ class Databasehelper {
                 t.column(DBColExpress.name_en)
                 t.column(DBColExpress.tel)
                 t.column(DBColExpress.fax)
+                t.column(DBColExpress.addr)
                 t.column(DBColExpress.web)
                 t.column(DBColExpress.qrcode)
             })
@@ -364,6 +365,9 @@ class Databasehelper {
                         if((p["fax"] as? String) == nil){
                             p["fax"] = ""
                         }
+                        if((p["addr"] as? String) == nil){
+                            p["addr"] = ""
+                        }
                         let filtering = Table("company").filter(DBColExpress.company_id == p["company_id"] as? String)
                         let plucking = try db.pluck(filtering)
                         if (plucking != nil) {
@@ -371,6 +375,7 @@ class Databasehelper {
                                                       DBColExpress.name <- (p["name"] as? String),
                                                       DBColExpress.name_en <- (p["name_en"] as? String),
                                                       DBColExpress.tel <- (p["tel"] as? String),
+                                                      DBColExpress.addr <- (p["addr"] as? String),
                                                       DBColExpress.fax <- (p["fax"] as? String),
                                                       DBColExpress.web <- (p["web"] as? String),
                                                       DBColExpress.qrcode <- (p["qrcode"] as? String)
@@ -381,6 +386,7 @@ class Databasehelper {
                                                  DBColExpress.name <- (p["name"] as? String),
                                                  DBColExpress.name_en <- (p["name_en"] as? String),
                                                  DBColExpress.tel <- (p["tel"] as? String),
+                                                 DBColExpress.addr <- (p["addr"] as? String),
                                                  DBColExpress.fax <- (p["fax"] as? String),
                                                  DBColExpress.web <- (p["web"] as? String),
                                                  DBColExpress.qrcode <- (p["qrcode"] as? String)
@@ -698,6 +704,7 @@ class Databasehelper {
         let name_en = DBColExpress.name_en
         let tel = DBColExpress.tel
         let fax = DBColExpress.fax
+        let addr = DBColExpress.addr
         let web = DBColExpress.web
         let qrcode = DBColExpress.qrcode
 
@@ -711,6 +718,7 @@ class Databasehelper {
                 m.name_en = rows[name_en]
                 m.tel = rows[tel]
                 m.fax = rows[fax]
+                m.addr = rows[addr]
                 m.web = rows[web]
                 m.qrcode = rows[qrcode]
                 
@@ -730,6 +738,7 @@ class Databasehelper {
         let name_en = DBColExpress.name_en
         let tel = DBColExpress.tel
         let fax = DBColExpress.fax
+        let addr = DBColExpress.addr
         let web = DBColExpress.web
         let qrcode = DBColExpress.qrcode
         
@@ -747,6 +756,7 @@ class Databasehelper {
                 m.tel = rows[tel]
                 m.fax = rows[fax]
                 m.web = rows[web]
+                m.addr = rows[addr]
                 m.qrcode = rows[qrcode]
                 companys = m
                 return m

@@ -15,6 +15,7 @@ class CompanyItem{
     var tel: String?
     var fax: String?
     var web: String?
+    var addr: String?
     var qrcode: String?
 
 }

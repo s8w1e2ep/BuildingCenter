@@ -102,6 +102,9 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             let path = zoneItem.modes![indexPath.item].splash_bg_vertical
             let index = path?.index((path?.startIndex)!, offsetBy: 3)
             let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+            //let downloadImage = UIImageView()
+            //downloadImage.downloadedFrom(link: imageName)
+            //cell.backImage.image = downloadImage.image
             cell.backImage.downloadedFrom(link: imageName)
             //cell.backImage.image = UIImage(named: imageName)
             

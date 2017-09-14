@@ -103,6 +103,7 @@ class FirmInfoViewController: UIViewController {
         company.text = modeItem.devices?[equipmentNumber].companys?.name_en
         web.text = modeItem.devices?[equipmentNumber].companys?.web
         phone.text = modeItem.devices?[equipmentNumber].companys?.tel
+        address.text = modeItem.devices?[equipmentNumber].companys?.addr
         //address.text = modeItem.devices?[equipmentNumber].companys?.
         if BeginViewController.isEnglish {
             deviceName.text = modeItem.devices?[equipmentNumber].name_en

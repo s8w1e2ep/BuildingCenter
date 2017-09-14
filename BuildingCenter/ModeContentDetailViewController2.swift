@@ -10,10 +10,20 @@ import UIKit
 
 class ModeContentDetailViewController2: UIViewController {
 
+    @IBOutlet weak var equipmentTitle: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var textView: UITextView!
+    
+    var modeItem: ModeItem!
+    var equipmentNumber: Int = 0
+    var isShowed: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setLayout()
+        setText()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +32,22 @@ class ModeContentDetailViewController2: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setLayout(){
+        let path = modeItem.devices?[equipmentNumber].photo_vertical
+        let index = path?.index((path?.startIndex)!, offsetBy: 3)
+        let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+        image.downloadedFrom(link: imageName)
     }
-    */
+    func setText() {
+        if BeginViewController.isEnglish {
+            equipmentTitle.text = modeItem.devices?[equipmentNumber].name_en
+            textView.text = modeItem.devices?[equipmentNumber].introduction_en
+        }else {
+            equipmentTitle.text = modeItem.devices?[equipmentNumber].name
+            textView.text = modeItem.devices?[equipmentNumber].introduction
+        }
+        
+    }
+
 
 }

@@ -36,6 +36,7 @@ class DBColExpress{
     
     //company
     static let tel = Expression<String?>(DatabaseUtilizer.COMPANY_TEL)
+    static let addr = Expression<String?>(DatabaseUtilizer.COMPANY_ADDR)
     static let fax = Expression<String?>(DatabaseUtilizer.COMPANY_FAX)
     static let web = Expression<String?>(DatabaseUtilizer.COMPANY_WEB)
     static let qrcode = Expression<String?>(DatabaseUtilizer.QRCODE)
