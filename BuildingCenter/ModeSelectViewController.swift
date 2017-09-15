@@ -17,6 +17,9 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     
+    
+    let defaults = UserDefaults.standard
+    
     var modeIntroViewController: ModeIntroViewController!
     
     var zoneItem: ZoneItem!
@@ -33,7 +36,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         //self.navigationController?.isNavigationBarHidden = false
     }
     override func viewDidAppear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
+        
         let isModeLaunchBefore = defaults.bool(forKey: "isModeLaunchBefore")
         
         if (!isModeLaunchBefore) {
@@ -102,11 +105,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             let path = zoneItem.modes![indexPath.item].splash_bg_vertical
             let index = path?.index((path?.startIndex)!, offsetBy: 3)
             let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
-            //let downloadImage = UIImageView()
-            //downloadImage.downloadedFrom(link: imageName)
-            //cell.backImage.image = downloadImage.image
             cell.backImage.downloadedFrom(link: imageName)
-            //cell.backImage.image = UIImage(named: imageName)
             
             //set text
             if BeginViewController.isEnglish {
@@ -114,13 +113,28 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             }else {
                 cell.textView.text = zoneItem.modes![indexPath.item].name
             }
+            let key = String(indexPath.item) + "in" + zoneItem.zone_id!
+            let isReadBefore = defaults.bool(forKey: key)
+
+            if isReadBefore {
+                cell.readImage.isHidden = false
+                cell.read.isHidden = false
+            }
             return cell
     }
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        //print("第 \(indexPath.item + 1) 張圖片")
         selectedCell = indexPath.item
-        //modeIntroViewController.modeItem = modeItems[indexPath.item]
+        
+        let key = String(indexPath.item) + "in" + zoneItem.zone_id!
+        let isReadBefore = defaults.bool(forKey: key)
+        
+        if (!isReadBefore) {
+            defaults.set(true, forKey: key)
+        }
+        let cell = collectionView.cellForItem(at: indexPath) as! ModeCollectionViewCell
+        cell.readImage.isHidden = false
+        cell.read.isHidden = false
         // ModeSelectView to ModeIntroView
         performSegue(withIdentifier: "mode_select_to_intro", sender: self)
     }

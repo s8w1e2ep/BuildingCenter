@@ -15,5 +15,6 @@ class ModeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var read: UILabel!
     @IBOutlet weak var readImage: UIImageView!
     @IBOutlet weak var textView: UITextView!
-
+    
+    var isRead = false
 }
