@@ -113,6 +113,14 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             }else {
                 cell.textView.text = zoneItem.modes![indexPath.item].name
             }
+            let contentSize = cell.textView.sizeThatFits(cell.textView.bounds.size)
+            var frame = cell.textView.frame
+            frame.size.height = contentSize.height
+            cell.textView.frame = frame
+            
+            let aspectRatioTextViewConstraint = NSLayoutConstraint(item: cell.textView, attribute: .height, relatedBy: .equal, toItem: cell.textView, attribute: .width, multiplier: cell.textView.bounds.height/cell.textView.bounds.width, constant: 1)
+            cell.textView.addConstraint(aspectRatioTextViewConstraint)
+            
             let key = String(indexPath.item) + "in" + zoneItem.zone_id!
             let isReadBefore = defaults.bool(forKey: key)
 
