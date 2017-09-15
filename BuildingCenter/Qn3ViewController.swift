@@ -81,11 +81,7 @@ class Qn3ViewController: UIViewController ,ZHDropDownMenuDelegate{
         
         setText(selectLanguage: BeginViewController.selectedLanguage)
         
-        menu1.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
-        menu2.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
-        menu3.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
-        menu4.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
-        menu5.options = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
+    
         
         menu1.menuHeight = 250;
         menu2.menuHeight = 250;
@@ -158,6 +154,27 @@ class Qn3ViewController: UIViewController ,ZHDropDownMenuDelegate{
         radio33.setTitle("feedback_feature_maintainence".localized(language: selectLanguage), for: .normal)
         radio34.setTitle("feedback_feature_safe".localized(language: selectLanguage), for: .normal)
         radio35.setTitle("feedback_feature_energy".localized(language: selectLanguage), for: .normal)
+        
+        if(BeginViewController.isEnglish){
+            menu1.options = QuestionnaireViewController.deviceEn
+            menu2.options = QuestionnaireViewController.deviceEn
+            menu3.options = QuestionnaireViewController.deviceEn
+            menu4.options = QuestionnaireViewController.deviceEn
+            menu5.options = QuestionnaireViewController.deviceEn
+        }
+        else{
+            menu1.options = QuestionnaireViewController.deviceTw
+            menu2.options = QuestionnaireViewController.deviceTw
+            menu3.options = QuestionnaireViewController.deviceTw
+            menu4.options = QuestionnaireViewController.deviceTw
+            menu5.options = QuestionnaireViewController.deviceTw
+        }
+        
+        menu1.placeholder = "spinner_please_select".localized(language: selectLanguage)
+        menu2.placeholder = "spinner_please_select".localized(language: selectLanguage)
+        menu3.placeholder = "spinner_please_select".localized(language: selectLanguage)
+        menu4.placeholder = "spinner_please_select".localized(language: selectLanguage)
+        menu5.placeholder = "spinner_please_select".localized(language: selectLanguage)
         
         
     }
@@ -283,9 +300,31 @@ class Qn3ViewController: UIViewController ,ZHDropDownMenuDelegate{
  
     
     func dropDownMenu(_ menu: ZHDropDownMenu!, didChoose index: Int) {
-        print("\(menu) choosed at index \(index)")
+        
+        if(menu.index == "1"){
+        
+            self.survey2["first_choise"] = menu.index
+        }
+        
+        if(menu.index == "2"){
+            self.survey2["second_choise"] = menu.index
+        }
+        
+        if(menu.index == "3"){
+            self.survey2["third_choise"] = menu.index
+        }
+        
+        if(menu.index == "4"){
+            self.survey2["fourth_choise"] = menu.index
+        }
+        
+        if(menu.index == "5"){
+            self.survey2["fifth_choise"] = menu.index
+        }
+        
+        
+        
     }
-    
     //编辑完成后回调
     func dropDownMenu(_ menu: ZHDropDownMenu!, didInput text: String!) {
         print("\(menu) input text \(text)")

@@ -21,6 +21,9 @@ class QuestionnaireViewController: UIViewController {
     @IBOutlet var radio4: RadioButton!
     @IBOutlet var radio5: RadioButton!
     
+    static let deviceTw = ["1.互動資訊牆","2.互動資訊牆","3.室內植生牆","4.智慧路燈 暨微氣候資訊站","5.智慧信箱系統","6.","7.","8.","9.","10.","11.","12."]
+    static let deviceEn = ["1.information","2.information","3.information","4.information","5.information","6.","7.","8.","9.","10.","11.","12."]
+    
     
     
     var survey2 = NSMutableDictionary()

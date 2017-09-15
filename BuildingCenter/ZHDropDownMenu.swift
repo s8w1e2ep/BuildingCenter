@@ -73,6 +73,8 @@ public protocol ZHDropDownMenuDelegate:class{
         }
     }
     
+    @IBInspectable public var index:String = ""
+    
     @IBInspectable public var editable:Bool = false { //允许用户编辑,默认不允许
         didSet {
             contentTextField.isEnabled = editable
