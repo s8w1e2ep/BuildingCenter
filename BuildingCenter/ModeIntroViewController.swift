@@ -12,7 +12,7 @@ import UIKit
 class ModeIntroViewController: UIViewController {
     
     @IBOutlet weak var thumbButton: UIBarButtonItem!
-    @IBOutlet weak var modeName: UILabel!
+    @IBOutlet weak var modeName: UITextView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!

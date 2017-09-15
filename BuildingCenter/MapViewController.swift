@@ -18,7 +18,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var notice: UIImageView!
     @IBOutlet weak var enter: UIButton!
     @IBOutlet weak var cancel: UIButton!
-    @IBOutlet weak var zoneName: UILabel!
+    @IBOutlet weak var zoneName: UITextView!
     @IBOutlet weak var enterImage: UIImageView!
     
     let notificationExitMap = Notification.Name("exitMapNoti")
@@ -101,6 +101,13 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         else {
             zoneName.text = zoneItem.name
         }
+        /*let contentSize = zoneName.sizeThatFits(zoneName.bounds.size)
+        var frame = zoneName.frame
+        frame.size.height = contentSize.height
+        zoneName.frame = frame
+        
+        let aspectRatioTextViewConstraint = NSLayoutConstraint(item: zoneName, attribute: .height, relatedBy: .equal, toItem: zoneName, attribute: .width, multiplier: zoneName.bounds.height/zoneName.bounds.width, constant: 1)
+        zoneName.addConstraint(aspectRatioTextViewConstraint)*/
     }
     func setText(selectLanguage: String) {
         // according to language set text

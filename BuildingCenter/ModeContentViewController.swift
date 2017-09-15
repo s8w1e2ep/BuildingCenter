@@ -17,6 +17,7 @@ class ModeContentViewController: UIViewController, UIScrollViewDelegate {
     // test scroller button
     
     @IBOutlet weak var scrollView: UIScrollView!
+    //@IBOutlet weak var viewInScroll: UIView!
     
     @IBOutlet weak var containerView: UIView!
     
@@ -86,14 +87,15 @@ class ModeContentViewController: UIViewController, UIScrollViewDelegate {
         
         let size = scrollView.bounds.size
         scrollView.contentSize = CGSize(
-            width: CGFloat(size.width * 0.25) * CGFloat((modeItem.devices?.count)!),
+            width: CGFloat(size.width * 0.3) * CGFloat((modeItem.devices?.count)!),
             height: size.height
         )
+        //viewInScroll.bounds.size = scrollView.contentSize
         for index in 0 ... (modeItem.devices?.count)!-1 {
             print(index)
             let button = UIButton()
-            button.frame = CGRect(x: CGFloat(index) * size.width * 0.25, y: 0,
-                width: size.width * 0.25, height: size.height)
+            button.frame = CGRect(x: CGFloat(index) * size.width * 0.3, y: 0,
+                width: size.width * 0.3, height: size.height)
             button.tag = index
             button.addTarget(self, action: #selector(showPage), for: .touchUpInside)
             button.setTitle("equip".localized(language: BeginViewController.selectedLanguage)+" \(index+1)", for: .normal)

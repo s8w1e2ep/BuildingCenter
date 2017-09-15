@@ -12,7 +12,7 @@ class AreaViewController: UIViewController {
     
     
     @IBOutlet weak var zoneTag: UILabel!
-    @IBOutlet weak var zoneName: UILabel!
+    @IBOutlet weak var zoneName: UITextView!
     @IBOutlet var textView: UITextView!
     
     
