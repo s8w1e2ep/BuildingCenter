@@ -29,12 +29,22 @@ class ModeContentDetailViewController2: ModeContentDetailViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detail2_to_image" {
+            let deviceImageViewController = segue.destination as! DeviceImageViewController
+            deviceImageViewController.modeItem = modeItem
+            deviceImageViewController.equipmentNumber = equipmentNumber
+            
+        }
+    }
 
     func setLayout(){
-        let path = modeItem.devices?[equipmentNumber].photo_vertical
+        let path = modeItem.devices?[equipmentNumber].photo
         let index = path?.index((path?.startIndex)!, offsetBy: 3)
         let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
         image.downloadedFrom(link: imageName)
+        image.contentMode = .scaleAspectFill
+        
     }
     func setText() {
         if BeginViewController.isEnglish {
