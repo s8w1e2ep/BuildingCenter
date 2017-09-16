@@ -1166,21 +1166,21 @@
                                     <action selector="onCancelClick:" destination="w5y-cL-xo6" eventType="touchUpInside" id="Ogq-7H-soD"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="大廳區" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDJ-CO-Odc">
-                                <rect key="frame" x="83" y="532" width="158" height="40"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="大廳區" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDJ-CO-Odc">
+                                <rect key="frame" x="83" y="534.5" width="165" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="aw0-Rw-Vof"/>
+                                    <constraint firstAttribute="height" constant="35" id="aw0-Rw-Vof"/>
                                 </constraints>
                                 <color key="textColor" red="0.27884808179999998" green="0.60938900709999999" blue="0.87314695119999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wa-QE-9q0">
-                                <rect key="frame" x="231" y="534" width="82" height="36"/>
+                                <rect key="frame" x="238" y="535" width="75" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="82" id="P85-Ka-5A2"/>
+                                    <constraint firstAttribute="width" constant="75" id="P85-Ka-5A2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="進入導覽">
                                     <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>

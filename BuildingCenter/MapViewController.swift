@@ -105,7 +105,6 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         else {
             zoneName.text = zoneItem.name
         }
-        
     }
     func setText(selectLanguage: String) {
         // according to language set text
