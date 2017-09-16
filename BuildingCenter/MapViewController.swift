@@ -12,6 +12,8 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     
     
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navBarTitle: UINavigationItem!
+    
     @IBOutlet weak var SVGView: UIWebView!
     
     // To enter zone introduction
@@ -24,6 +26,8 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     let notificationExitMap = Notification.Name("exitMapNoti")
     
     var zoneViewController: AreaViewController!
+    
+    var currentField = "1"
     
     var jsContext: JSContext!
     var nowRegion: Int = 0
@@ -101,13 +105,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         else {
             zoneName.text = zoneItem.name
         }
-        /*let contentSize = zoneName.sizeThatFits(zoneName.bounds.size)
-        var frame = zoneName.frame
-        frame.size.height = contentSize.height
-        zoneName.frame = frame
         
-        let aspectRatioTextViewConstraint = NSLayoutConstraint(item: zoneName, attribute: .height, relatedBy: .equal, toItem: zoneName, attribute: .width, multiplier: zoneName.bounds.height/zoneName.bounds.width, constant: 1)
-        zoneName.addConstraint(aspectRatioTextViewConstraint)*/
     }
     func setText(selectLanguage: String) {
         // according to language set text
@@ -163,6 +161,12 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         }else{
             jsContext.objectForKeyedSubscript("setSVGLoad")!.call(withArguments: ["" + SVGPath!,0,1,"",""])
         }
+        if BeginViewController.isEnglish {
+            navBarTitle.title = currentField + "F"
+        }else {
+            navBarTitle.title = currentField + "F 住宅空間展示中心"
+        }
+        
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
@@ -175,6 +179,11 @@ class MapViewController: UIViewController, UIWebViewDelegate {
             
             switch argu2[0]{
             case "ma":
+                //set bar changed
+                selectedZone = Int(argu2[1])!
+                getZoneItem()
+                setNoticeZoneName()
+                setNoticeIsHidden(isHidden: false)
                 break
             case "mn":
                 nowRegion += 1
@@ -191,15 +200,21 @@ class MapViewController: UIViewController, UIWebViewDelegate {
                 break
             case "mv":
                 //set bar changed
+                selectedZone = Int(argu2[1])!
+                getZoneItem()
+                setNoticeZoneName()
+                setNoticeIsHidden(isHidden: false)
                 break
             case "set":
                 if (argu2[1] == "focus"){
                     SVGView.stringByEvaluatingJavaScript(from: "setScreenFocus(\(nowRegion),2,2,1)")
                 }else if(argu2[1] == "1f_2f"){
                     nowRegion = 11
+                    currentField = "2"
                     setSVGMap(SVGName: "Map_2F")
                 }else if(argu2[1] == "2f_1f"){
                     nowRegion = 0
+                    currentField = "1"
                     setSVGMap(SVGName: "Map_1F")
                 }
                 break
