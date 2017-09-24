@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class BeginViewController: UIViewController {
-
+    
+    var myPlayer :AVAudioPlayer?
+    
     static let defaults = UserDefaults.standard
     static var selectedLanguage: String = "zh-Hant";
     static var isEnglish: Bool = false
@@ -19,9 +22,8 @@ class BeginViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        // Default value forkey GET_IS_ENGLISH is false.
-        //BeginViewController.defaults.bool(forKey: BeginViewController.GET_IS_ENGLISH)
-
+        //setAudio()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,18 +36,34 @@ class BeginViewController: UIViewController {
     }
 
     @IBAction func onClickChinese(_ sender: UIButton) {
+        //myPlayer?.play()
         // Set Language zh-Hant(Chinese).
         BeginViewController.selectedLanguage = "zh-Hant"
         BeginViewController.isEnglish = false
         performSegue(withIdentifier: "BeginToAboutOne", sender: self)
     }
     @IBAction func onClickEnglish(_ sender: UIButton) {
+        //myPlayer?.play()
         // Set Set Language en(English).
         BeginViewController.selectedLanguage = "en"
         BeginViewController.isEnglish = true
         performSegue(withIdentifier: "BeginToAboutOne", sender: self)
     }
-
+    func setAudio(){
+        let soundPath = Bundle.main.path(
+            forResource: "button", ofType: "mp3")
+        do {
+            myPlayer = try AVAudioPlayer(contentsOf: NSURL.fileURL(withPath: soundPath!))
+            //self.myPlayer =  try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(filename, ofType: Globals.SOUND_TYPE)!))
+            myPlayer?.prepareToPlay()
+            myPlayer?.numberOfLoops = 0
+        }
+        catch{
+            print("Create audioplayer failed")
+        }
+       
+        
+    }
     /*
     // MARK: - Navigation
 

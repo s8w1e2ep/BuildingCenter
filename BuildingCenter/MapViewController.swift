@@ -20,7 +20,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var notice: UIImageView!
     @IBOutlet weak var enter: UIButton!
     @IBOutlet weak var cancel: UIButton!
-    @IBOutlet weak var zoneName: UITextView!
+    @IBOutlet weak var zoneName: UILabel!
     @IBOutlet weak var enterImage: UIImageView!
     
     let notificationExitMap = Notification.Name("exitMapNoti")
