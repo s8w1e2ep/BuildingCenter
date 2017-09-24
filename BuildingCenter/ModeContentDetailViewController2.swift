@@ -22,6 +22,7 @@ class ModeContentDetailViewController2: ModeContentDetailViewController {
         // Do any additional setup after loading the view.
         setLayout()
         setText()
+        setNotification()
     }
 
     override func didReceiveMemoryWarning() {

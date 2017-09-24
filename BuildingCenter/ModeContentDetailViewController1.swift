@@ -27,7 +27,7 @@ class ModeContentDetailViewController1: ModeContentDetailViewController {
         setLayout()
         setVideo()
         setText()
-        
+        setNotification()
         
     }
     

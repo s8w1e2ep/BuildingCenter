@@ -99,8 +99,9 @@ class ModeContentViewController: UIViewController, UIScrollViewDelegate {
             button.tag = index
             button.addTarget(self, action: #selector(showPage), for: .touchUpInside)
             button.setTitle("equip".localized(language: BeginViewController.selectedLanguage)+" \(index+1)", for: .normal)
-            button.setTitleColor(UIColor.black, for: .selected)
+            button.setTitleColor(UIColor.white, for: .selected)
             button.setTitleColor(UIColor.lightGray, for: .normal)
+            button.setBackgroundImage(UIImage(named: "header_blank.png"), for: .selected)
             button.isSelected = false
             scrollView.addSubview(button)
             buttons.append(button)
@@ -129,10 +130,12 @@ class ModeContentViewController: UIViewController, UIScrollViewDelegate {
     func changeTab(to newButton: UIButton) {
         // 先利用 tintColor 取得 Button 預設的文字顏色
         // 將目前選取的按鈕改成未選取的顏色
-        selectedButton.backgroundColor = UIColor.white
+        //selectedButton.backgroundColor = UIColor.white
+        
+        
         selectedButton.isSelected = false
         // 將參數傳來的新按鈕改成選取的顏色
-        newButton.backgroundColor = UIColor.lightGray
+        //newButton.backgroundColor = UIColor.init(red: 0x00/255, green: 0xBB/255, blue: 0xFF/255, alpha: 1)
         newButton.isSelected = true
         // 將目前選取的按鈕改為新的按鈕
         selectedButton = newButton
