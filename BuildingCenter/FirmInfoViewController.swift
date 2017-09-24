@@ -12,6 +12,9 @@ class FirmInfoViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var gradientLayer: CAGradientLayer!
+    
+    
     var modeItem: ModeItem!
     var equipmentNumber: Int = 0
     
@@ -45,6 +48,11 @@ class FirmInfoViewController: UIViewController {
         imageView.downloadedFrom(link: imageName)
         imageView.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height*0.35)
         
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = imageView.bounds
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        imageView.layer.addSublayer(gradientLayer)
+        
         let infoImageView = UIImageView()
         infoImageView.image = UIImage(named: "comanyinfopage_bg.png")
         infoImageView.frame = CGRect(x: 0, y: size.height*0.35, width: size.width, height: (infoImageView.image?.size.height)!)
@@ -74,7 +82,7 @@ class FirmInfoViewController: UIViewController {
             width: size.width,
             height: size.height*0.6 + infoImageView.bounds.size.height
         )
-        
+        scrollView.addSubview(imageView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(infoImageView)
         
@@ -112,5 +120,5 @@ class FirmInfoViewController: UIViewController {
         }
 
     }
-
+    
 }
