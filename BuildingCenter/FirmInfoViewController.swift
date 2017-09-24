@@ -24,6 +24,7 @@ class FirmInfoViewController: UIViewController {
     var web: UILabel!
     var phone: UILabel!
     var address: UILabel!
+    var QRcode: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +43,9 @@ class FirmInfoViewController: UIViewController {
         let size = scrollView.bounds.size
         
         let imageView = UIImageView()
-        let path = modeItem.devices?[equipmentNumber].photo_vertical
-        let index = path?.index((path?.startIndex)!, offsetBy: 3)
-        let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+        var path = modeItem.devices?[equipmentNumber].photo_vertical
+        var index = path?.index((path?.startIndex)!, offsetBy: 3)
+        var imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
         imageView.downloadedFrom(link: imageName)
         imageView.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height*0.35)
         
@@ -76,13 +77,16 @@ class FirmInfoViewController: UIViewController {
         address = UILabel(frame: CGRect(x: size.width*0.2, y: size.height*0.35 + 205, width: size.width, height: 20))
         address.text = ""
         //let QRcode
-        
+        QRcode = UIImageView(frame: CGRect(x: size.width*0.2, y: size.height*0.35 + 265, width: size.width*0.35, height: size.height*0.2))
+        path = modeItem.devices?[equipmentNumber].companys?.qrcode
+        index = path?.index((path?.startIndex)!, offsetBy: 3)
+        imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+        QRcode.downloadedFrom(link: imageName)
         
         scrollView.contentSize = CGSize(
             width: size.width,
             height: size.height*0.6 + infoImageView.bounds.size.height
         )
-        scrollView.addSubview(imageView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(infoImageView)
         
@@ -92,6 +96,7 @@ class FirmInfoViewController: UIViewController {
         scrollView.addSubview(web)
         scrollView.addSubview(phone)
         scrollView.addSubview(address)
+        scrollView.addSubview(QRcode)
         
         
             /*
@@ -108,7 +113,7 @@ class FirmInfoViewController: UIViewController {
     func setText() {
         firmInfo.text = "equipment_manufacture_info".localized(language: BeginViewController.selectedLanguage)
         
-        company.text = modeItem.devices?[equipmentNumber].companys?.name_en
+        company.text = modeItem.devices?[equipmentNumber].companys?.name
         web.text = modeItem.devices?[equipmentNumber].companys?.web
         phone.text = modeItem.devices?[equipmentNumber].companys?.tel
         address.text = modeItem.devices?[equipmentNumber].companys?.addr
