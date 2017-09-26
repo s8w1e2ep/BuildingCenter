@@ -25,8 +25,9 @@
 
 		function setSVGLoad(svg, region, next, oP,nP) {
             $("body").load(svg, function() {
-				onRegionChanged(region,next,oP,nP);
+                onRegionChanged(region,next,oP,nP);
                 setTestClick();
+                           
             });
 		}
     
@@ -219,10 +220,10 @@
         {
 
            if(region == 0){
-               var shiftTop = $("#mn1"+region).offset().top - 50;
+               //var shiftTop = $("#mn1"+region).offset().top - 50;
                var shiftLeft = $("#mn1").offset().left - 110;
-               $("html,body").animate({scrollTop:shiftTop},{duration:40, queue:false});
-               //	$("html,body").animate({scrollLeft:shiftLeft},{duration:40});
+               //$("html,body").animate({scrollTop:shiftTop},{duration:40, queue:false});
+               $("html,body").animate({scrollLeft:shiftLeft},{duration:40});
            }else if(region > 11){
                var shiftLeft = $("#ma"+region).offset().left - 110;
                $("html,body").animate({scrollLeft:shiftLeft},{duration:40, queue:false});
