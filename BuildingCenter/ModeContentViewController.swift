@@ -131,13 +131,27 @@ class ModeContentViewController: UIViewController, UIScrollViewDelegate {
         // 先利用 tintColor 取得 Button 預設的文字顏色
         // 將目前選取的按鈕改成未選取的顏色
         //selectedButton.backgroundColor = UIColor.white
-        
-        
         selectedButton.isSelected = false
         // 將參數傳來的新按鈕改成選取的顏色
         //newButton.backgroundColor = UIColor.init(red: 0x00/255, green: 0xBB/255, blue: 0xFF/255, alpha: 1)
         newButton.isSelected = true
         // 將目前選取的按鈕改為新的按鈕
         selectedButton = newButton
+        
+        //set scroll contentOffset
+        let size = scrollView.bounds.size
+        var targetContentOffset = scrollView.contentOffset.x
+        let currentContentOffset = scrollView.contentOffset.x
+        let currentMaxContentOffset = scrollView.contentOffset.x + size.width
+        if CGFloat(selectedButton.tag+1) * size.width * 0.3 > currentMaxContentOffset {
+            targetContentOffset = (CGFloat(selectedButton.tag+1)*0.3 - 1) * size.width
+        }
+        if CGFloat(selectedButton.tag) * size.width * 0.3 < currentContentOffset {
+            targetContentOffset = CGFloat(selectedButton.tag) * size.width * 0.3
+        }
+        scrollView.contentOffset.x = targetContentOffset
     }
+    
+    
 }
+

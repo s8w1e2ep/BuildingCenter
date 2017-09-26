@@ -165,6 +165,7 @@
 		76705BB31F5585A000047414 /* InfoHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHintViewController.swift; sourceTree = "<group>"; };
 		76705BB51F5585BC00047414 /* QuestionHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionHintViewController.swift; sourceTree = "<group>"; };
 		769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackHintViewController.swift; sourceTree = "<group>"; };
+		76B79D0F1F7A525F00E3B879 /* Bluetooth */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bluetooth; sourceTree = "<group>"; };
 		76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInstructionViewController.swift; sourceTree = "<group>"; };
 		76C178341F6BCD770050CAB0 /* DeviceImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceImageViewController.swift; sourceTree = "<group>"; };
 		76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentDetailViewController.swift; sourceTree = "<group>"; };
@@ -365,6 +366,7 @@
 		762D8D441F1E7508004295A9 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				76B79D0F1F7A525F00E3B879 /* Bluetooth */,
 				A23FCA1A1F4ECE9400A91294 /* index.css */,
 				A23FCA1B1F4ECE9400A91294 /* index.html */,
 				A23FCA1C1F4ECE9400A91294 /* jquery-1.11.3.min.js */,
