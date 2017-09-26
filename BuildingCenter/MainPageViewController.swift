@@ -70,8 +70,11 @@ class MainPageViewController: UIViewController {
         
     }
     @IBAction func onMapClick(_ sender: UIButton) {
-        changeTab(to: mapButton)
-        changePage(to: mapNavigationController)
+        if !mapButton.isSelected {
+            changeTab(to: mapButton)
+            changePage(to: mapNavigationController)
+            
+        }
         // Back to SVG map
         mapNavigationController.popToRootViewController(animated: true)
     }

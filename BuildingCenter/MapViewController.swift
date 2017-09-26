@@ -146,6 +146,7 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         //        web1.scrollView.minimumZoomScale = 1.0
         //        web1.scrollView.maximumZoomScale = 5.0
         //        web1.scrollView.zoomScale = 3.0
+        SVGView.scrollView.setZoomScale(2.8, animated: true)
     }
     
     func setSVGBG(BGName: String){
