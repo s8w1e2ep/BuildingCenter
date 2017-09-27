@@ -12,7 +12,8 @@ class Qn3ViewController: UIViewController ,ZHDropDownMenuDelegate{
 
     
     var survey2 = NSMutableDictionary()
-    
+    var deviceTw :[String] = []
+    var deviceEn :[String] = []
     @IBOutlet var menu1: ZHDropDownMenu!
     @IBOutlet var menu2: ZHDropDownMenu!
     @IBOutlet var menu3: ZHDropDownMenu!
@@ -75,14 +76,12 @@ class Qn3ViewController: UIViewController ,ZHDropDownMenuDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(survey2)
+        
         // Do any additional setup after loading the view.
         navbar.barTintColor = UIColor.white
         
+        setMenucontent()
         setText(selectLanguage: BeginViewController.selectedLanguage)
-        
-    
-        
         menu1.menuHeight = 250;
         menu2.menuHeight = 250;
         menu3.menuHeight = 250;
@@ -156,18 +155,18 @@ class Qn3ViewController: UIViewController ,ZHDropDownMenuDelegate{
         radio35.setTitle("feedback_feature_energy".localized(language: selectLanguage), for: .normal)
         
         if(BeginViewController.isEnglish){
-            menu1.options = QuestionnaireViewController.deviceEn
-            menu2.options = QuestionnaireViewController.deviceEn
-            menu3.options = QuestionnaireViewController.deviceEn
-            menu4.options = QuestionnaireViewController.deviceEn
-            menu5.options = QuestionnaireViewController.deviceEn
+            menu1.options = deviceEn
+            menu2.options = deviceEn
+            menu3.options = deviceEn
+            menu4.options = deviceEn
+            menu5.options = deviceEn
         }
         else{
-            menu1.options = QuestionnaireViewController.deviceTw
-            menu2.options = QuestionnaireViewController.deviceTw
-            menu3.options = QuestionnaireViewController.deviceTw
-            menu4.options = QuestionnaireViewController.deviceTw
-            menu5.options = QuestionnaireViewController.deviceTw
+            menu1.options = deviceTw
+            menu2.options = deviceTw
+            menu3.options = deviceTw
+            menu4.options = deviceTw
+            menu5.options = deviceTw
         }
         
         menu1.placeholder = "spinner_please_select".localized(language: selectLanguage)
@@ -268,7 +267,20 @@ class Qn3ViewController: UIViewController ,ZHDropDownMenuDelegate{
     }
     
     
-    
+    func setMenucontent(){
+        var databasehelper: Databasehelper!
+        databasehelper = Databasehelper()
+        
+        for device in databasehelper.querydeviceTable(){
+            deviceTw.append(device.name!)
+            if ((device.name_en) != nil){
+                deviceEn.append(device.name_en!)
+            }else{
+                deviceEn.append("Null")
+            }
+        }
+        
+    }
     
     
     
