@@ -21,8 +21,13 @@ class ViewController: UIViewController {
         databasehelper = Databasehelper()
         //databasehelper.deleteTable()
         databasehelper.creatTable()
-        imgdownload = ImageDownload()
-        imgdownload.getpic(url: "http://192.168.65.28/web/media/project/project1/zone/photo_1-5638920671c92.jpg")
+        /*imgdownload = ImageDownload()
+        imgdownload.sessionSimpleDownload(urlpath:"http://60.251.33.54:98/web/media/project/project1/zone/a1m4_bg@2x.png")
+        imgdownload.sessionSimpleDownload(urlpath:"http://60.251.33.54:98/web/media/project/project1/zone/a1m3_bg@2x.png")
+        imgdownload.sessionSimpleDownload(urlpath:"http://60.251.33.54:98/web/media/project/project1/zone/a1m2_bg@2x.png")
+        imgdownload.sessionSimpleDownload(urlpath:"http://60.251.33.54:98/web/media/project/project1/zone/a1m1_bg@2x.png")*/
+        /*imgdownload.getpic(url: "http://60.251.33.54:98/web/media/project/project1/zone/a1m4_bg@2x.png")*/
+        //imgdownload.getpic(url: "http://192.168.65.28/web/media/project/project1/zone/photo_1-5638920671c92.jpg")
         //imgdownload.showpic(image: img, url: "")
         /*let zones = databasehelper.queryzoneTable(zoneID: "1")
         print(zones.name)
