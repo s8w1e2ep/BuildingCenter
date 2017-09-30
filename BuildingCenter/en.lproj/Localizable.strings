@@ -132,6 +132,7 @@
 "feedback_very_support" = "Very supportive";
 "feedback_very_unimportant" = "Very unimportant";
 "feedback_very_unsupport" = "Very unsupportive";
+"map_title" = "1F";
 "mapguide_next_visited" = "Next Location";
 "mapguide_now" = "Current Location";
 "mapguide_title" = "Map Guide";
