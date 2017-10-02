@@ -10,6 +10,8 @@ import UIKit
 
 class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var image : UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -70,7 +72,8 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
     ///   - info: info
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil) // 關掉
-        self.performSegue(withIdentifier: "hipsterToSelect", sender: info[UIImagePickerControllerOriginalImage] as? UIImage); // 從Dictionary取出原始圖檔傳入下一頁
+        image = info[UIImagePickerControllerOriginalImage] as?UIImage
+        self.performSegue(withIdentifier: "hipsterToSelect", sender: self) // 從Dictionary取出原始圖檔傳入下一頁
     }
     
     // 圖片picker控制器任務結束回呼
@@ -79,9 +82,9 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tag = sender as? UIImage
+        let tagimage = image
         let controller = segue.destination as! SelectViewController
-        controller.image = tag
+        controller.image = tagimage
     }
     
 }

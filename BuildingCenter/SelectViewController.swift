@@ -11,17 +11,12 @@ import UIKit
 class SelectViewController: UIViewController,UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
     var index = 0
-    var original_x: CGFloat!
-    var new_x: CGFloat!
     var image: UIImage!
+    var template: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        original_x = 0
-        index = 0
-        //self.imageView.image = image
         // Do any additional setup after loading the view.
     }
     
@@ -30,50 +25,13 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        print("scrollViewWillBeginDragging")
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        print("fist x = ", scrollView.contentOffset.x)
-        print("original_x = ", original_x)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("x = ", scrollView.contentOffset.x)
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        var left: CGFloat!
-        left = original_x - 225
-        var right: CGFloat!
-        right = original_x + 225
-        if (scrollView.contentOffset.x < left){
-            new_x = original_x - 300
-            index = index - 1
-        }
-        else if(scrollView.contentOffset.x > right){
-            new_x = original_x + 300
-            index = index + 1
-        }
-        else{
-            new_x = original_x
-        }
-        if(new_x < 0){
-            new_x = 0
-            index = 0
-        }
-        if(new_x >= stackView.frame.width - 330){
-            new_x = new_x - 54
-            index = index - 1
-        }
-        scrollView.contentOffset.x = new_x
-        original_x = scrollView.contentOffset.x
-        print("end x = ", scrollView.contentOffset.x)
-        print("new_x = ", new_x)
-        print("scrollViewDidEndDragging")
     }
 
     @IBAction func nextButtononClick(_ sender: Any) {
-        self.performSegue(withIdentifier: "selectToWriting", sender: #imageLiteral(resourceName: "template_1"))
+        template = #imageLiteral(resourceName: "template_1")
+        self.performSegue(withIdentifier: "selectToWriting", sender: self)
     }
     
     func combine(leftImage: UIImage, rightImage: UIImage) -> UIImage {
@@ -98,11 +56,16 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
     }
     
     
+    @IBAction func goBack(_ sender: Any) {
+        navigationController?.popViewController(animated:true)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tag = sender as? UIImage
+        let tagimage = image
+        let tagtemplate = template
         let controller = segue.destination as! WritingViewController
-        controller.image = tag
+        controller.image = tagimage
+        controller.template = tagtemplate
     }
     
     /*

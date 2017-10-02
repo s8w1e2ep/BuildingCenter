@@ -13,6 +13,7 @@ class WritingViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage!
+    var template: UIImage!
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
@@ -24,6 +25,9 @@ class WritingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        navigationController?.popViewController(animated:true)
+    }
 
     /*
     // MARK: - Navigation
