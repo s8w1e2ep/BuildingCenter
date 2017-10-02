@@ -8,8 +8,7 @@
 
 import UIKit
 import JavaScriptCore
-class MapViewController: UIViewController, UIWebViewDelegate {
-    
+class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultListener {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
@@ -24,6 +23,8 @@ class MapViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var enterImage: UIImageView!
     
     let notificationExitMap = Notification.Name("exitMapNoti")
+    
+    var bleScannerWrapper: BleScannerWrapper!
     
     var zoneViewController: AreaViewController!
     
@@ -45,9 +46,15 @@ class MapViewController: UIViewController, UIWebViewDelegate {
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setSVG()
         getZoneItems()
+        bleScannerWrapper = BleScannerWrapper.getInstance()
+        bleScannerWrapper.beaconScanResultListener = self
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        bleScannerWrapper.startBleScan()
+    }
     override func viewWillDisappear(_ animated: Bool) {
+        bleScannerWrapper.stopBleScan()
+        
         // Need to disselect map button in MainPageViewController
         NotificationCenter.default.post(name: notificationExitMap, object: nil, userInfo: nil)
     }
@@ -64,6 +71,19 @@ class MapViewController: UIViewController, UIWebViewDelegate {
             defaults.set(true, forKey: "isMapLaunchBefore")
         }
     }
+    
+    
+    func onBeaconScanResult(_ beaconMap: [AnyHashable : Any]!) {
+        processBeaconScanResults(beaconMap: beaconMap as NSDictionary)
+    }
+    func processBeaconScanResults(beaconMap: NSDictionary){
+        print("Beacon:")
+        for i in beaconMap.allKeys{
+            print(i)
+        }
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "map_to_zone" {
             zoneViewController = segue.destination as! AreaViewController

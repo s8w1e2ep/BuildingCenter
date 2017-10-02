@@ -33,6 +33,8 @@
 		70C57B661F27E76B00F83F77 /* HipsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C57B651F27E76B00F83F77 /* HipsterViewController.swift */; };
 		70C57B681F27F00500F83F77 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C57B671F27F00500F83F77 /* SelectViewController.swift */; };
 		761ACF8D1F78004A00B118D1 /* button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 761ACF8C1F78003E00B118D1 /* button.mp3 */; };
+		76274EEB1F82609B00E607DE /* BleScannerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274EE51F825E9F00E607DE /* BleScannerWrapper.m */; };
+		76274EEC1F8260BA00E607DE /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274EE71F825EA900E607DE /* BLE.m */; };
 		762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D411F1E74EF004295A9 /* AreaViewController.swift */; };
 		762D8D481F1E752E004295A9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D471F1E752E004295A9 /* MapViewController.swift */; };
 		762D8D4B1F1E7541004295A9 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D4A1F1E7541004295A9 /* QuestionViewController.swift */; };
@@ -147,6 +149,15 @@
 		70C57B651F27E76B00F83F77 /* HipsterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipsterViewController.swift; sourceTree = "<group>"; };
 		70C57B671F27F00500F83F77 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		761ACF8C1F78003E00B118D1 /* button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button.mp3; sourceTree = "<group>"; };
+		76274EE01F825E6200E607DE /* BuildingCenter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuildingCenter-Bridging-Header.h"; sourceTree = "<group>"; };
+		76274EE31F825E8300E607DE /* MacroDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
+		76274EE41F825E9600E607DE /* BleScannerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BleScannerWrapper.h; sourceTree = "<group>"; };
+		76274EE51F825E9F00E607DE /* BleScannerWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BleScannerWrapper.m; sourceTree = "<group>"; };
+		76274EE61F825EA900E607DE /* BLEDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
+		76274EE71F825EA900E607DE /* BLE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLE.m; sourceTree = "<group>"; };
+		76274EE81F825EAA00E607DE /* BLE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLE.h; sourceTree = "<group>"; };
+		76274EE91F825EAA00E607DE /* NSData+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		76274EEA1F825EAA00E607DE /* NSData+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		762D8D411F1E74EF004295A9 /* AreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaViewController.swift; sourceTree = "<group>"; };
 		762D8D471F1E752E004295A9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		762D8D4A1F1E7541004295A9 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -167,7 +178,6 @@
 		76705BB31F5585A000047414 /* InfoHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHintViewController.swift; sourceTree = "<group>"; };
 		76705BB51F5585BC00047414 /* QuestionHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionHintViewController.swift; sourceTree = "<group>"; };
 		769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackHintViewController.swift; sourceTree = "<group>"; };
-		76B79D0F1F7A525F00E3B879 /* Bluetooth */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Bluetooth; sourceTree = "<group>"; };
 		76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInstructionViewController.swift; sourceTree = "<group>"; };
 		76C178341F6BCD770050CAB0 /* DeviceImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceImageViewController.swift; sourceTree = "<group>"; };
 		76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentDetailViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +348,28 @@
 			path = BuildingCenterUITests;
 			sourceTree = "<group>";
 		};
+		76274EDE1F825E1700E607DE /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				76274EDF1F825E2100E607DE /* BLE */,
+				76274EE41F825E9600E607DE /* BleScannerWrapper.h */,
+				76274EE51F825E9F00E607DE /* BleScannerWrapper.m */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
+		76274EDF1F825E2100E607DE /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				76274EE81F825EAA00E607DE /* BLE.h */,
+				76274EE71F825EA900E607DE /* BLE.m */,
+				76274EE61F825EA900E607DE /* BLEDefines.h */,
+				76274EEA1F825EAA00E607DE /* NSData+Base64.h */,
+				76274EE91F825EAA00E607DE /* NSData+Base64.m */,
+			);
+			name = BLE;
+			sourceTree = "<group>";
+		};
 		762D8D401F1E74A0004295A9 /* Area */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,7 +401,7 @@
 		762D8D441F1E7508004295A9 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				76B79D0F1F7A525F00E3B879 /* Bluetooth */,
+				76274EDE1F825E1700E607DE /* Bluetooth */,
 				A23FCA1A1F4ECE9400A91294 /* index.css */,
 				A23FCA1B1F4ECE9400A91294 /* index.html */,
 				A23FCA1C1F4ECE9400A91294 /* jquery-1.11.3.min.js */,
@@ -381,6 +413,8 @@
 				769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */,
 				76EB97191F27871500DAEB03 /* MapNavigationViewController.swift */,
 				76EB971B1F2799E000DAEB03 /* map.svg */,
+				76274EE31F825E8300E607DE /* MacroDefinition.h */,
+				76274EE01F825E6200E607DE /* BuildingCenter-Bridging-Header.h */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -546,7 +580,8 @@
 				TargetAttributes = {
 					5FE971381F1C9F09005EDE58 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4Y3WSK9PWL;
+						DevelopmentTeam = P7Y2HNH4ZD;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					5FE9714C1F1C9F0A005EDE58 = {
@@ -763,6 +798,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76274EEC1F8260BA00E607DE /* BLE.m in Sources */,
+				76274EEB1F82609B00E607DE /* BleScannerWrapper.m in Sources */,
 				A226579A1F43CCCB00668EDF /* Q5ViewController.swift in Sources */,
 				5F8C48681F67C858006E7BEB /* ImageExtension.swift in Sources */,
 				5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */,
@@ -995,12 +1032,15 @@
 			baseConfigurationReference = 0BBB8D9874B006F616E35409 /* Pods-BuildingCenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4Y3WSK9PWL;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wen69.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wen76.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BuildingCenter/BuildingCenter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1010,12 +1050,14 @@
 			baseConfigurationReference = D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4Y3WSK9PWL;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = P7Y2HNH4ZD;
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wen69.BuildingCenter;
+				PRODUCT_BUNDLE_IDENTIFIER = wen76.BuildingCenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BuildingCenter/BuildingCenter-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
