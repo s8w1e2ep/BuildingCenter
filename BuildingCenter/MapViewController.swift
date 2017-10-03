@@ -77,13 +77,37 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
         processBeaconScanResults(beaconMap: beaconMap as NSDictionary)
     }
     func processBeaconScanResults(beaconMap: NSDictionary){
-        print("Beacon:")
+        var mac = ""
+        
+        
         for i in beaconMap.allKeys{
-            print(i)
+            mac = String(describing: i)
+        }
+        if mac == "" {
+            return
+        }
+        print("Beacon:")
+        print(String(describing: mac) + ":" + String(describing: beaconMap[mac]))
+        /*
+        // 跟上一個 Beacon 一樣
+        if mac == lastScanBeacon.mac {
+            return
+        }
+        var currentBeacon = queryBeaconByMac(mac)
+        if currentBeacon == NSNull{
+            return
+        }
+        */
+        
+    }
+    /*
+    func getHighestRssiDevice(beaconMap: NSDictionary){
+        for i in beaconMap.allKeys{
+            
+            print(String(describing: i) + ":" + String(describing: beaconMap[i]))
         }
     }
-    
-    
+    */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "map_to_zone" {
             zoneViewController = segue.destination as! AreaViewController
