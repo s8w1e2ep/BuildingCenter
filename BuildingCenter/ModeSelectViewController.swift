@@ -70,6 +70,30 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         
         thumbButton.image = UIImage(named: "thumbup_orange.png")
         thumbButton.tintColor = UIColor.orange
+        
+        //upload count
+        let zone = NSMutableDictionary()
+        zone["zone_id"] = self.zoneItem.zone_id
+        
+        if let JsonData = try? JSONSerialization.data(withJSONObject: zone, options: [])
+        {
+            print(JsonData)
+            let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
+            var stringUrl = DatabaseUtilizer.zoneaddURL + "?zone_counts="
+            stringUrl += JsontoUtf8!
+            print(stringUrl)
+            
+            /*if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+                let url = NSURL(string: encodedURL)
+                do{
+                    let html = try String(contentsOf: url! as URL)
+                    print(html)
+                }catch{
+                    print(error)
+                }*/
+                
+            }
+        
     }
     
     func setLayout() {
