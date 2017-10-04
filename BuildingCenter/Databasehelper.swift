@@ -673,6 +673,8 @@ class Databasehelper {
         let splash_blur_vertical = DBColExpress.splash_blur_vertical
         let zone_id = DBColExpress.zone_id
         let mode_did_read = DBColExpress.mode_did_read
+        
+        let imgdownload = ImageDownload()
        
         do {
             let db = try Connection(databaseFilePath)
@@ -696,6 +698,28 @@ class Databasehelper {
                 m.devices = querydeviceTable(modeID: rows[mode_id]!)
                 //print(rows[zone_id])
                 modes.append(m)
+                
+                //------------
+                let path = m.splash_bg_vertical
+                let index = path?.index((path?.startIndex)!, offsetBy: 3)
+                let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+                imgdownload.sessionSimpleDownload(urlpath: imageName)
+                
+                /*if(((m.splash_fg_vertical as? String) != nil)){
+                    let path_fg = m.splash_fg_vertical
+                    let index_fg = path_fg?.index((path_fg?.startIndex)!, offsetBy: 3)
+                    let imageName_fg = DatabaseUtilizer.filePathURLPrefix + (path_fg?.substring(from: index_fg!))!
+                    imgdownload.sessionSimpleDownload(urlpath: imageName_fg)
+                }
+                
+                if(((m.splash_blur_vertical as? String) != nil)){
+                    let path_blur = m.splash_blur_vertical
+                    let index_blur = path_blur?.index((path_blur?.startIndex)!, offsetBy: 3)
+                    let imageName_blur = DatabaseUtilizer.filePathURLPrefix + (path_blur?.substring(from: index_blur!))!
+                    imgdownload.sessionSimpleDownload(urlpath: imageName_blur)
+                }*/
+                //------------
+                
             }
         } catch _ {
             print("error")

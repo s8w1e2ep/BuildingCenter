@@ -105,9 +105,10 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             let path = zoneItem.modes![indexPath.item].splash_bg_vertical
             let index = path?.index((path?.startIndex)!, offsetBy: 3)
             let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
-            cell.backImage.downloadedFrom(link: imageName)
-            /*let imgdownload = ImageDownload()
-            imgdownload.showpic(image:cell.backImage,url:"a1m1_bg@2x.png")*/
+            //cell.backImage.downloadedFrom(link: imageName)
+            let imgdownload = ImageDownload()
+            //imgdownload.sessionSimpleDownload(urlpath: imageName)
+            imgdownload.showpic(image: cell.backImage, url: imageName)
             //set text
             if BeginViewController.isEnglish {
                 cell.textView.text = zoneItem.modes![indexPath.item].name_en
