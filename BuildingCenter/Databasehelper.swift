@@ -233,8 +233,8 @@ class Databasehelper {
                                                    DBColExpress.splash_bg_vertical <- (p["splash_bg_vertical"] as? String),
                                                    DBColExpress.splash_fg_vertical <- (p["splash_fg_vertical"] as? String),
                                                    DBColExpress.splash_blur_vertical <- (p["splash_blur_vertical"] as? String),
-                                                   DBColExpress.zone_id <- (p["zone_id"] as? String),
-                                                   DBColExpress.mode_did_read <- "0"
+                                                   DBColExpress.zone_id <- (p["zone_id"] as? String)/*,
+                                                   DBColExpress.mode_did_read <- "0"*/
                             ))
                         }
                         else{
@@ -970,4 +970,18 @@ class Databasehelper {
         }
     }
     
+    func update_mode_isread(modeID: String){
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("mode")
+            let filtering = table.filter(DBColExpress.mode_id == modeID)
+            let plucking = try db.pluck(filtering)
+            if (plucking != nil) {
+                try db.run(filtering.update(DBColExpress.mode_did_read <- "1"))
+            }
+        }
+        catch _ {
+            print("error")
+        }
+    }
 }
