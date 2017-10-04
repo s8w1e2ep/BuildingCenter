@@ -29,7 +29,7 @@ class DBColExpress{
     static let splash_bg_vertical = Expression<String?>(DatabaseUtilizer.MODE_SPLASH_BG)
     static let splash_fg_vertical = Expression<String?>(DatabaseUtilizer.MODE_SPLASH_FG)
     static let splash_blur_vertical = Expression<String?>(DatabaseUtilizer.MODE_SPLASH_BLUR)
-    
+    static let mode_did_read = Expression<String?>(DatabaseUtilizer.MODE_DID_READ)
     //device
     static let device_id = Expression<String?>(DatabaseUtilizer.DEVICE_ID)
     static let company_id = Expression<String?>(DatabaseUtilizer.COMPANY_ID)
@@ -40,5 +40,19 @@ class DBColExpress{
     static let fax = Expression<String?>(DatabaseUtilizer.COMPANY_FAX)
     static let web = Expression<String?>(DatabaseUtilizer.COMPANY_WEB)
     static let qrcode = Expression<String?>(DatabaseUtilizer.QRCODE)
-
+    
+    //beacon
+    static let beacon_id = Expression<String?>(DatabaseUtilizer.BEACON_ID)
+    static let beacon_zone = Expression<String?>(DatabaseUtilizer.BEACON_ZONE)
+    static let beacon_field_id = Expression<String?>(DatabaseUtilizer.BEACON_FIELD_ID)
+    static let beacon_field_name = Expression<String?>(DatabaseUtilizer.BEACON_FIELD_NAME)
+    static let beacon_mac_addr = Expression<String?>(DatabaseUtilizer.MAC_ADDR)
+    
+    //hint
+    static let hint_guider = Expression<String?>(DatabaseUtilizer.HINT_GUIDER)
+    static let hint_mode_select = Expression<String?>(DatabaseUtilizer.HINT_MODE_SELECT)
+    static let hint_mode_content = Expression<String?>(DatabaseUtilizer.HINT_MODE_CONTENT)
+    static let hint_map_info = Expression<String?>(DatabaseUtilizer.HINT_MAP_INFO)
+    static let hint_id = Expression<String?>(DatabaseUtilizer.HINT_ID)
+    
 }

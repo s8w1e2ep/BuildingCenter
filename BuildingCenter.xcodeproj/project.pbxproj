@@ -18,6 +18,8 @@
 		5F8C48661F63D5F7006E7BEB /* CompanyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48651F63D5F7006E7BEB /* CompanyItem.swift */; };
 		5F8C48681F67C858006E7BEB /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48671F67C858006E7BEB /* ImageExtension.swift */; };
 		5F8C48A41F7A91E3006E7BEB /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48A31F7A91E3006E7BEB /* ImageDownload.swift */; };
+		5F8C48A81F84E296006E7BEB /* BeaconItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48A71F84E296006E7BEB /* BeaconItem.swift */; };
+		5F8C48AA1F85025C006E7BEB /* HintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48A91F85025C006E7BEB /* HintItem.swift */; };
 		5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */; };
 		5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */; };
 		5FE971421F1C9F0A005EDE58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE971401F1C9F0A005EDE58 /* Main.storyboard */; };
@@ -127,6 +129,8 @@
 		5F8C48651F63D5F7006E7BEB /* CompanyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyItem.swift; sourceTree = "<group>"; };
 		5F8C48671F67C858006E7BEB /* ImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		5F8C48A31F7A91E3006E7BEB /* ImageDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownload.swift; sourceTree = "<group>"; };
+		5F8C48A71F84E296006E7BEB /* BeaconItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconItem.swift; sourceTree = "<group>"; };
+		5F8C48A91F85025C006E7BEB /* HintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintItem.swift; sourceTree = "<group>"; };
 		5FE971391F1C9F0A005EDE58 /* BuildingCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -490,6 +494,8 @@
 				76ED5B1A1F6136400085D4F5 /* ModeCollectionViewCell.swift */,
 				5F8C48631F619DC0006E7BEB /* DeviceItem.swift */,
 				5F8C48651F63D5F7006E7BEB /* CompanyItem.swift */,
+				5F8C48A71F84E296006E7BEB /* BeaconItem.swift */,
+				5F8C48A91F85025C006E7BEB /* HintItem.swift */,
 			);
 			name = CustomizedObject;
 			sourceTree = "<group>";
@@ -830,6 +836,7 @@
 				70C57B681F27F00500F83F77 /* SelectViewController.swift in Sources */,
 				5F8C48661F63D5F7006E7BEB /* CompanyItem.swift in Sources */,
 				A22657A51F43CD1D00668EDF /* Q10ViewController.swift in Sources */,
+				5F8C48AA1F85025C006E7BEB /* HintItem.swift in Sources */,
 				7652CF5B1F57F91D00F7F733 /* StringExtension.swift in Sources */,
 				76E395541F6AC8700003E6C6 /* ModeContentDetailViewController1.swift in Sources */,
 				5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */,
@@ -840,6 +847,7 @@
 				A23FCA2B1F4F115300A91294 /* Qn2ViewController.swift in Sources */,
 				A226579F1F43CCF500668EDF /* Q7ViewController.swift in Sources */,
 				5F8C485A1F544E9E006E7BEB /* ZoneItem.swift in Sources */,
+				5F8C48A81F84E296006E7BEB /* BeaconItem.swift in Sources */,
 				A22C411F1F4AB6FA00BCB043 /* RadioButton.swift in Sources */,
 				5FE971711F1CB5A6005EDE58 /* AboutThreeViewController.swift in Sources */,
 				5F8C48581F4DB6C0006E7BEB /* Databasehelper.swift in Sources */,

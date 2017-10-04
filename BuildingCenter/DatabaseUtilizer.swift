@@ -132,6 +132,13 @@ class DatabaseUtilizer {
     // TODO: not sure last update time & isDelete is required or not
     static let LASTUPDATE_DATE :String = "lastupdate_date";
     
+    //hint table 
+    static let HINT_GUIDER :String = "guider"
+    static let HINT_MODE_SELECT: String = "mode_select"
+    static let HINT_MODE_CONTENT: String = "mode_content"
+    static let HINT_MAP_INFO: String = "map_info"
+    static let HINT_ID: String = "hint_id"
+    
     // device
     static let DB_CREATE_TABLE_DEVICE :String = "CREATE TABLE IF NOT EXISTS " + DatabaseUtilizer.DEVICE_TABLE + " ("
         + DatabaseUtilizer.DEVICE_ID + " INT NOT NULL UNIQUE, "
