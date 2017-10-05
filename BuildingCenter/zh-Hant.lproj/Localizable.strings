@@ -208,6 +208,7 @@
 "feedback_price_100k" = "5-10萬";
 "feedback_price_200k" = "10-20萬";
 "feedback_price_over_200k" = "20萬以上";
+"map_title" = "1F住宅空間展示中心";
 "mapguide_title" = "地圖指引";
 "mapguide_now" = "現在位置";
 "mapguide_tour" = "參觀動線";

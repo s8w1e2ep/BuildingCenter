@@ -9,19 +9,33 @@
 import Foundation
 import UIKit
 
-class ImageDownload:NSObject,URLSessionDownloadDelegate{
+class ImageDownload{
+    
+    /*func downloadimg(){
+        let path = zoneItem.modes![indexPath.item].splash_bg_vertical
+        let index = path?.index((path?.startIndex)!, offsetBy: 3)
+        let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+        //cell.backImage.downloadedFrom(link: imageName)
+    }*/
     
     func showpic(image:UIImageView,url:String){
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
         let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        let splitarray = url.components(separatedBy: "/")
+        var pathname = "1.png"
+        for i in splitarray{
+            pathname = i
+        }
+        
         if let dirPath          = paths.first
         {
-            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(url)
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(pathname)
             image.image    = UIImage(contentsOfFile: imageURL.path)
         }
         
     }
+
     
     func sessionSimpleDownload(urlpath:String){
         //下载地址
@@ -36,51 +50,25 @@ class ImageDownload:NSObject,URLSessionDownloadDelegate{
         for i in splitarray{
             pathname = i
         }
+        print(pathname)
         let downloadTask = session.downloadTask(with: request,
                                                 completionHandler: { (location:URL?, response:URLResponse?, error:Error?)
                                                     -> Void in
                                                     //输出下载文件原来的存放目录
-                                                    print("location:\(location)")
+                                                    //print("location:\(location)")
                                                     //location位置转换
                                                     let locationPath = location!.path
                                                     //拷贝到用户目录
                                                     let documnets:String = NSHomeDirectory() + "/Documents/"+pathname
                                                     //创建文件管理器
                                                     let fileManager = FileManager.default
-                                                    try! fileManager.moveItem(atPath: locationPath, toPath: documnets)
-                                                    print("new location:\(documnets)")
+                                                    
+                                                    if(!FileManager.default.fileExists(atPath: documnets)){
+                                                        try! fileManager.moveItem(atPath: locationPath, toPath: documnets)}
+                                                    //print("new location:\(documnets)")
         })
-        
-        //使用resume方法启动任务
+
         downloadTask.resume()
     }
     
-    func getpic(url : String){
-        let url = URL(string:url)
-        let config = URLSessionConfiguration.background(withIdentifier: "abc")
-        let session = Foundation.URLSession(configuration: config, delegate: self, delegateQueue: nil)
-        let dnTask = session.downloadTask(with: url!)
-        dnTask.resume()
-    }
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        /*if let data = try?Data(contentsOf:location){
-         //print(location)
-         DispatchQueue.main.async(execute:{
-         self.img.image = UIImage(data:data)
-         })
-         }*/
-    }
-    
-    func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
-        if error == nil{
-            print("suss")
-        }else{
-            print("fail")
-        }
-    }
-    
-    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-        print("done")
-    }
 }

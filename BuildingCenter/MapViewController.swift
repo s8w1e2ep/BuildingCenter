@@ -17,6 +17,7 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     
     // To enter zone introduction
     @IBOutlet weak var notice: UIImageView!
+    @IBOutlet var barTitle: DropMenuButton!
     @IBOutlet weak var enter: UIButton!
     @IBOutlet weak var cancel: UIButton!
     @IBOutlet weak var zoneName: UILabel!
@@ -42,6 +43,7 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setBartitle()
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setSVG()
@@ -156,10 +158,21 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
             zoneName.text = zoneItem.name
         }
     }
+    func setBartitle(){
+        
+        if BeginViewController.isEnglish {
+         barTitle.initMenu(["1F", "2F"], actions: [({ () -> (Void) in self.setSVGMap(SVGName: "Map_1F") }), ({ () -> (Void) in self.setSVGMap(SVGName: "Map_2F") })])
+         }else {
+            barTitle.initMenu(["1F 住宅展示中心", "2F 住宅展示中心"], actions: [({ () -> (Void) in self.setSVGMap(SVGName: "Map_1F") }), ({ () -> (Void) in self.setSVGMap(SVGName: "Map_2F") })])
+         
+         }
+        
+    }
     func setText(selectLanguage: String) {
         // according to language set text
-        
         enter.setTitle("map_area_enter".localized(language: selectLanguage), for: .normal)
+        barTitle.setTitle("map_title".localized(language: selectLanguage), for: .normal)
+    
     }
     func getZoneItems() {
         databaseHelper = Databasehelper()
@@ -211,11 +224,6 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
             jsContext.objectForKeyedSubscript("setSVGLoad")!.call(withArguments: ["" + SVGPath!,11,12,"",""])
         }else{
             jsContext.objectForKeyedSubscript("setSVGLoad")!.call(withArguments: ["" + SVGPath!,0,1,"",""])
-        }
-        if BeginViewController.isEnglish {
-            navBarTitle.title = currentField + "F"
-        }else {
-            navBarTitle.title = currentField + "F 住宅空間展示中心"
         }
         
     }

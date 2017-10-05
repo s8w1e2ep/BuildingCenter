@@ -70,6 +70,31 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         
         thumbButton.image = UIImage(named: "thumbup_orange.png")
         thumbButton.tintColor = UIColor.orange
+        
+        //upload count
+        let zone = NSMutableDictionary()
+        zone["zone_id"] = self.zoneItem.zone_id
+        zone["like_count"] = 1
+        
+        if let JsonData = try? JSONSerialization.data(withJSONObject: zone, options: [])
+        {
+            print(JsonData)
+            let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
+            var stringUrl = DatabaseUtilizer.zoneaddURL + "?zone_counts="
+            stringUrl += JsontoUtf8!
+            print(stringUrl)
+            
+            /*if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+                let url = NSURL(string: encodedURL)
+                do{
+                    let html = try String(contentsOf: url! as URL)
+                    print(html)
+                }catch{
+                    print(error)
+                }*/
+                
+            }
+        
     }
     
     func setLayout() {
@@ -105,9 +130,10 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             let path = zoneItem.modes![indexPath.item].splash_bg_vertical
             let index = path?.index((path?.startIndex)!, offsetBy: 3)
             let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
-            cell.backImage.downloadedFrom(link: imageName)
-            /*let imgdownload = ImageDownload()
-            imgdownload.showpic(image:cell.backImage,url:"a1m1_bg@2x.png")*/
+            //cell.backImage.downloadedFrom(link: imageName)
+            let imgdownload = ImageDownload()
+            //imgdownload.sessionSimpleDownload(urlpath: imageName)
+            imgdownload.showpic(image: cell.backImage, url: imageName)
             //set text
             if BeginViewController.isEnglish {
                 cell.textView.text = zoneItem.modes![indexPath.item].name_en

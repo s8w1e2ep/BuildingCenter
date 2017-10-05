@@ -75,6 +75,8 @@ class Databasehelper {
         createmodeTable()
         createcompanyTable()
         createdeviceTable()
+        createbeaconTable()
+        createhintTable()
     }
     
     func deleteTable(){
@@ -198,6 +200,7 @@ class Databasehelper {
                 t.column(DBColExpress.splash_fg_vertical)
                 t.column(DBColExpress.splash_blur_vertical)
                 t.column(DBColExpress.zone_id)
+                t.column(DBColExpress.mode_did_read)
             })
             
             if let data = try? Data(contentsOf: url!){
@@ -230,7 +233,8 @@ class Databasehelper {
                                                    DBColExpress.splash_bg_vertical <- (p["splash_bg_vertical"] as? String),
                                                    DBColExpress.splash_fg_vertical <- (p["splash_fg_vertical"] as? String),
                                                    DBColExpress.splash_blur_vertical <- (p["splash_blur_vertical"] as? String),
-                                                   DBColExpress.zone_id <- (p["zone_id"] as? String)
+                                                   DBColExpress.zone_id <- (p["zone_id"] as? String)/*,
+                                                   DBColExpress.mode_did_read <- "0"*/
                             ))
                         }
                         else{
@@ -246,7 +250,8 @@ class Databasehelper {
                                                DBColExpress.splash_bg_vertical <- (p["splash_bg_vertical"] as? String),
                                                DBColExpress.splash_fg_vertical <- (p["splash_fg_vertical"] as? String),
                                                DBColExpress.splash_blur_vertical <- (p["splash_blur_vertical"] as? String),
-                                               DBColExpress.zone_id <- (p["zone_id"] as? String)
+                                               DBColExpress.zone_id <- (p["zone_id"] as? String),
+                                               DBColExpress.mode_did_read <- "0"
                         ))
                         }
                         
@@ -259,6 +264,8 @@ class Databasehelper {
         }
         
     }
+    
+    
     
     func createdeviceTable() {
         
@@ -396,6 +403,86 @@ class Databasehelper {
                 }
             }
         }
+        catch {
+            print(error)
+        }
+        
+    }
+    
+    func createbeaconTable() {
+        
+        let url = URL(string:DatabaseUtilizer.downloadURL + "?data=beacon")
+        do{
+            let db = try Connection(databaseFilePath)
+            let company = Table("beacon")
+            try db.run(company.create(ifNotExists: true) { t in
+                t.column(DBColExpress.beacon_id)
+                t.column(DBColExpress.beacon_mac_addr)
+                t.column(DBColExpress.beacon_zone)
+                t.column(DBColExpress.beacon_field_id)
+                t.column(DBColExpress.beacon_field_name)
+
+            })
+            
+            if let data = try? Data(contentsOf: url!){
+                if let jsonObj = try? JSONSerialization.jsonObject(with: data, options:.allowFragments){
+                    for p in jsonObj as! [[String: Any]]{
+                        var p = p
+                        
+                        let filtering = Table("beacon").filter(DBColExpress.beacon_id == p["beacon_id"] as? String)
+                        let plucking = try db.pluck(filtering)
+                        if (plucking != nil) {
+                            try db.run(filtering.update(DBColExpress.beacon_id <- p["beacon_id"] as? String ,
+                                                        DBColExpress.beacon_mac_addr <- (p["mac_addr"] as! String),
+                                                        DBColExpress.beacon_zone <- (p["zone"] as? String),
+                                                        DBColExpress.beacon_field_id <- (p["field_id"] as? String),
+                                                        DBColExpress.beacon_field_name <- (p["field_name"] as? String)
+                            ))
+                        }
+                        else{
+                            try db.run(company.insert(DBColExpress.beacon_id <- p["beacon_id"] as? String ,
+                                                      DBColExpress.beacon_mac_addr <- (p["mac_addr"] as? String),
+                                                      DBColExpress.beacon_zone <- (p["zone"] as? String),
+                                                      DBColExpress.beacon_field_id <- (p["field_id"] as? String),
+                                                      DBColExpress.beacon_field_name <- (p["field_name"] as? String)
+                            ))}
+                        
+                    }
+                }
+            }
+        }
+        catch {
+            print(error)
+        }
+        
+    }
+    
+    func createhintTable() {
+
+        do{
+            let db = try Connection(databaseFilePath)
+            let hint = Table("hint")
+            try db.run(hint.create(ifNotExists: true) { t in
+                t.column(DBColExpress.hint_id)
+                t.column(DBColExpress.hint_guider)
+                t.column(DBColExpress.hint_mode_select)
+                t.column(DBColExpress.hint_mode_content)
+                t.column(DBColExpress.hint_map_info)
+                
+            })
+           
+            let filtering = Table("hint").filter(DBColExpress.hint_id == "1" )
+            let plucking = try db.pluck(filtering)
+            if (plucking == nil) {
+                try db.run(hint.insert(or: .replace, DBColExpress.hint_id <- "1",
+                                       DBColExpress.hint_guider <- "0",
+                                       DBColExpress.hint_mode_select <- "0",
+                                       DBColExpress.hint_mode_content <- "0",
+                                       DBColExpress.hint_map_info <- "0")
+                )
+            }
+            
+            }
         catch {
             print(error)
         }
@@ -539,7 +626,7 @@ class Databasehelper {
         let splash_fg_vertical = DBColExpress.splash_fg_vertical
         let splash_blur_vertical = DBColExpress.splash_blur_vertical
         let zone_id = DBColExpress.zone_id
-        
+        let mode_did_read = DBColExpress.mode_did_read
         
         do {
             let db = try Connection(databaseFilePath)
@@ -559,6 +646,7 @@ class Databasehelper {
                 m.splash_fg_vertical = rows[splash_fg_vertical]
                 m.splash_blur_vertical = rows[splash_blur_vertical]
                 m.zone_id = rows[zone_id]
+                m.mode_did_read = rows[mode_did_read]
                 m.devices = querydeviceTable(modeID: rows[mode_id]!)
                 //print(rows[zone_id])
                 modes.append(m)
@@ -584,6 +672,9 @@ class Databasehelper {
         let splash_fg_vertical = DBColExpress.splash_fg_vertical
         let splash_blur_vertical = DBColExpress.splash_blur_vertical
         let zone_id = DBColExpress.zone_id
+        let mode_did_read = DBColExpress.mode_did_read
+        
+        let imgdownload = ImageDownload()
        
         do {
             let db = try Connection(databaseFilePath)
@@ -603,9 +694,32 @@ class Databasehelper {
                 m.splash_fg_vertical = rows[splash_fg_vertical]
                 m.splash_blur_vertical = rows[splash_blur_vertical]
                 m.zone_id = rows[zone_id]
+                m.mode_did_read = rows[mode_did_read]
                 m.devices = querydeviceTable(modeID: rows[mode_id]!)
                 //print(rows[zone_id])
                 modes.append(m)
+                
+                //------------
+                let path = m.splash_bg_vertical
+                let index = path?.index((path?.startIndex)!, offsetBy: 3)
+                let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+                imgdownload.sessionSimpleDownload(urlpath: imageName)
+                
+                /*if(((m.splash_fg_vertical as? String) != nil)){
+                    let path_fg = m.splash_fg_vertical
+                    let index_fg = path_fg?.index((path_fg?.startIndex)!, offsetBy: 3)
+                    let imageName_fg = DatabaseUtilizer.filePathURLPrefix + (path_fg?.substring(from: index_fg!))!
+                    imgdownload.sessionSimpleDownload(urlpath: imageName_fg)
+                }
+                
+                if(((m.splash_blur_vertical as? String) != nil)){
+                    let path_blur = m.splash_blur_vertical
+                    let index_blur = path_blur?.index((path_blur?.startIndex)!, offsetBy: 3)
+                    let imageName_blur = DatabaseUtilizer.filePathURLPrefix + (path_blur?.substring(from: index_blur!))!
+                    imgdownload.sessionSimpleDownload(urlpath: imageName_blur)
+                }*/
+                //------------
+                
             }
         } catch _ {
             print("error")
@@ -770,6 +884,128 @@ class Databasehelper {
         return companys
     }
 
+    func querybeaconTable(mac_ADDR: String) -> BeaconItem {
+        let beacons =  BeaconItem()
+        let beacon_id = DBColExpress.beacon_id
+        let mac_addr = DBColExpress.beacon_mac_addr
+        let zone = DBColExpress.beacon_zone
+        let field_id = DBColExpress.beacon_field_id
+        let field_name = DBColExpress.beacon_field_name
+        
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("beacon")
+            //let filtering = table.filter(DBColExpress.beacon_mac_addr.like(mac_addr))
+
+            let filtering = table.filter(DBColExpress.beacon_mac_addr == mac_ADDR)
+            for rows in try db.prepare(filtering) {
+                beacons.beacon_id = rows[beacon_id]
+                beacons.mac_addr = rows[mac_addr]
+                beacons.zone = rows[zone]
+                beacons.field_id = rows[field_id]
+                beacons.field_name = rows[field_name]
+  
+            }
+            
+        } catch _ {
+            print("error")
+        }
+        return beacons
+    }
+    func queryhintTable() -> HintItem {
+        
+        let hint_id = DBColExpress.hint_id
+        let guider = DBColExpress.hint_guider
+        let mode_select = DBColExpress.hint_mode_select
+        let mode_content = DBColExpress.hint_mode_content
+        let map_info = DBColExpress.hint_map_info
+
+        let m = HintItem()
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("hint")
+            for rows in try db.prepare(table) {
+                m.hint_id = rows[hint_id]
+                m.guider = rows[guider]
+                m.mode_select = rows[mode_select]
+                m.mode_content = rows[mode_content]
+                m.map_info = rows[map_info]
+                
+            }
+        } catch _ {
+            print("error")
+        }
+        return m
+    }
     
+    func read_guider(){
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("hint")
+            let filtering = table.filter(DBColExpress.hint_id == "1")
+            let plucking = try db.pluck(filtering)
+            if (plucking != nil) {
+                try db.run(filtering.update(DBColExpress.hint_guider <- "1"))
+            }        }
+        catch _ {
+            print("error")
+        }
+    }
     
+    func read_mode_select(){
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("hint")
+            let filtering = table.filter(DBColExpress.hint_id == "1")
+            let plucking = try db.pluck(filtering)
+            if (plucking != nil) {
+                try db.run(filtering.update(DBColExpress.hint_mode_select <- "1"))
+            }        }
+        catch _ {
+            print("error")
+        }
+    }
+    
+    func read_mode_content(){
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("hint")
+            let filtering = table.filter(DBColExpress.hint_id == "1")
+            let plucking = try db.pluck(filtering)
+            if (plucking != nil) {
+                try db.run(filtering.update(DBColExpress.hint_mode_content <- "1"))
+            }        }
+        catch _ {
+            print("error")
+        }
+    }
+    
+    func read_map_info(){
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("hint")
+            let filtering = table.filter(DBColExpress.hint_id == "1")
+            let plucking = try db.pluck(filtering)
+            if (plucking != nil) {
+                try db.run(filtering.update(DBColExpress.hint_map_info <- "1"))
+            }        }
+        catch _ {
+            print("error")
+        }
+    }
+    
+    func update_mode_isread(modeID: String){
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("mode")
+            let filtering = table.filter(DBColExpress.mode_id == modeID)
+            let plucking = try db.pluck(filtering)
+            if (plucking != nil) {
+                try db.run(filtering.update(DBColExpress.mode_did_read <- "1"))
+            }
+        }
+        catch _ {
+            print("error")
+        }
+    }
 }

@@ -29,9 +29,18 @@ class ViewController: UIViewController {
         /*imgdownload.getpic(url: "http://60.251.33.54:98/web/media/project/project1/zone/a1m4_bg@2x.png")*/
         //imgdownload.getpic(url: "http://192.168.65.28/web/media/project/project1/zone/photo_1-5638920671c92.jpg")
         //imgdownload.showpic(image: img, url: "")
-        /*let zones = databasehelper.queryzoneTable(zoneID: "1")
-        print(zones.name)
-        let modes = zones.modes
+        /*let beacons = databasehelper.querybeaconTable(mac_ADDR: "E0:E5:CF:2F:AF:C1")
+        print(beacons.beacon_id)
+        print(beacons.field_name)*/
+        /*databasehelper.read_guider()
+        databasehelper.read_mode_content()
+        let aa = databasehelper.queryhintTable()
+        print(aa.hint_id)
+        print(aa.guider)
+        print(aa.map_info)
+        print(aa.mode_content)*/
+        
+        /*let modes = zones.modes
         
         for i in modes!{
             print(i.name)
@@ -44,6 +53,10 @@ class ViewController: UIViewController {
             }
 
         }*/
+        //databasehelper.update_mode_isread(modeID: "5")
+        
+        
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
