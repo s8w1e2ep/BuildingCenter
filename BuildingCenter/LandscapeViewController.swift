@@ -55,6 +55,7 @@ class LandscapeViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     func setLayout() {
+        let imgdownload = ImageDownload()
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
         
@@ -67,9 +68,12 @@ class LandscapeViewController: UIViewController {
         let markPath = modeItem.splash_blur_vertical
         let markIndex = markPath?.index((markPath?.startIndex)!, offsetBy: 3)
         let markImageName = DatabaseUtilizer.filePathURLPrefix + (markPath?.substring(from: markIndex!))!
-        bgImage.downloadedFrom(link: bgImageName)
+        /*bgImage.downloadedFrom(link: bgImageName)
         highlightImage.downloadedFrom(link: hlImageName)
-        markImage.downloadedFrom(link: markImageName)
+        markImage.downloadedFrom(link: markImageName)*/
+        imgdownload.showpic(image: bgImage, url: bgImageName)
+        imgdownload.showpic(image: highlightImage, url: hlImageName)
+        imgdownload.showpic(image: markImage, url: markImageName)
     }
     func setText(selectLanguage: String) {
         // according to language set text
