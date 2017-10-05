@@ -74,6 +74,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         //upload count
         let zone = NSMutableDictionary()
         zone["zone_id"] = self.zoneItem.zone_id
+        zone["like_count"] = 1
         
         if let JsonData = try? JSONSerialization.data(withJSONObject: zone, options: [])
         {

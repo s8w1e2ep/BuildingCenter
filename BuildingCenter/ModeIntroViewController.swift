@@ -67,6 +67,8 @@ class ModeIntroViewController: UIViewController {
         //upload count
         let mode = NSMutableDictionary()
         mode["mode_id"] = self.selectedCell
+        mode["read_count"] = 1
+        mode["like_count"] = 1
         
         if let JsonData = try? JSONSerialization.data(withJSONObject: mode, options: [])
         {
