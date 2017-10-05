@@ -17,7 +17,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     
-    
+    let databaseHelper = Databasehelper()
     let defaults = UserDefaults.standard
     
     var modeIntroViewController: ModeIntroViewController!
@@ -36,7 +36,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         //self.navigationController?.isNavigationBarHidden = false
     }
     override func viewDidAppear(_ animated: Bool) {
-        
+        /*
         let isModeLaunchBefore = defaults.bool(forKey: "isModeLaunchBefore")
         
         if (!isModeLaunchBefore) {
@@ -46,6 +46,12 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
                 
             }
             defaults.set(true, forKey: "isModeLaunchBefore")
+        }*/
+        if (databaseHelper.queryhintTable().mode_select == "0") {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "ModeHint"){
+                present(vc, animated: true)
+            }
+            databaseHelper.read_mode_select()
         }
     }
     

@@ -36,7 +36,7 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     
     var selectedZone = 0
     
-    var databaseHelper: Databasehelper!
+    let databaseHelper = Databasehelper()
     var zoneItems: [ZoneItem]!
     var zoneItem: ZoneItem!
     
@@ -63,7 +63,7 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     
     override func viewDidAppear(_ animated: Bool) {
         // Check if launch before to show useful hint.
-        let defaults = UserDefaults.standard
+        /*let defaults = UserDefaults.standard
         let isMapLaunchBefore = defaults.bool(forKey: "isMapLaunchBefore")
         
         if (!isMapLaunchBefore) {
@@ -71,6 +71,12 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
                 present(vc, animated: true)
             }
             defaults.set(true, forKey: "isMapLaunchBefore")
+        }*/
+        if (databaseHelper.queryhintTable().map_info == "0") {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "InfoHint"){
+                present(vc, animated: true)
+            }
+            databaseHelper.read_map_info()
         }
     }
     
@@ -169,7 +175,6 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     
     }
     func getZoneItems() {
-        databaseHelper = Databasehelper()
         zoneItems = databaseHelper.queryzoneTable()
     }
     func getZoneItem() {
