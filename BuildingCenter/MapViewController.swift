@@ -79,7 +79,6 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     func processBeaconScanResults(beaconMap: NSDictionary){
         var mac = ""
         
-        
         for i in beaconMap.allKeys{
             mac = String(describing: i)
         }
@@ -88,17 +87,24 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
         }
         print("Beacon:")
         print(String(describing: mac) + ":" + String(describing: beaconMap[mac]))
-        /*
         // 跟上一個 Beacon 一樣
         if mac == lastScanBeacon.mac {
             return
         }
-        var currentBeacon = queryBeaconByMac(mac)
+        var beaconScanZone = databaseHelper.query(mac)
         if currentBeacon == NSNull{
             return
         }
-        */
         
+         //if (currentBeacon == nowRegion + 1){
+        print(String(mac))
+        print(nowRegion)
+        if(String(mac) == "98:7B:F3:5A:A7:80"){
+            print("change")
+            nowRegion += 1
+                 SVGView.stringByEvaluatingJavaScript(from: "onRegionChanged(\(nowRegion),\(nowRegion+1),'p\(nowRegion-1)-\(nowRegion)','p\(nowRegion)-\(nowRegion+1)')")
+            return
+         }
     }
     /*
     func getHighestRssiDevice(beaconMap: NSDictionary){
@@ -191,6 +197,7 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
         //        web1.scrollView.maximumZoomScale = 5.0
         //        web1.scrollView.zoomScale = 3.0
         SVGView.scrollView.setZoomScale(2.8, animated: true)
+        bleScannerWrapper.startBleScan()
     }
     
     func setSVGBG(BGName: String){
