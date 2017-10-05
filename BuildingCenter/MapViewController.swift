@@ -63,15 +63,6 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     
     override func viewDidAppear(_ animated: Bool) {
         // Check if launch before to show useful hint.
-        /*let defaults = UserDefaults.standard
-        let isMapLaunchBefore = defaults.bool(forKey: "isMapLaunchBefore")
-        
-        if (!isMapLaunchBefore) {
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "InfoHint"){
-                present(vc, animated: true)
-            }
-            defaults.set(true, forKey: "isMapLaunchBefore")
-        }*/
         if (databaseHelper.queryhintTable().map_info == "0") {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "InfoHint"){
                 present(vc, animated: true)

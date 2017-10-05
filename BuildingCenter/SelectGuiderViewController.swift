@@ -38,17 +38,6 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         
-        /*let defaults = UserDefaults.standard
-        let isGuiderLaunchBefore = defaults.bool(forKey: "isGuiderLaunchBefore")
-        
-        if (!isGuiderLaunchBefore) {
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "GuiderHint"){
-                //show(vc, sender: self)
-                present(vc, animated: true)
-            }
-            defaults.set(true, forKey: "isGuiderLaunchBefore")
-        }*/
-        
         if (databaseHelper.queryhintTable().guider == "0") {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "GuiderHint"){
                 present(vc, animated: true)

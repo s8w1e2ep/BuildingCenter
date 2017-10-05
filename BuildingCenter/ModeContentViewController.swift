@@ -43,17 +43,7 @@ class ModeContentViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        /*let defaults = UserDefaults.standard
-        let isModeContentLaunchBefore = defaults.bool(forKey: "isModeContentLaunchBefore")
         
-        if (!isModeContentLaunchBefore) {
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "ModeContentHint"){
-                //show(vc, sender: self)
-                present(vc, animated: true)
-                
-            }
-            defaults.set(true, forKey: "isModeContentLaunchBefore")
-        }*/
         if (databaseHelper.queryhintTable().mode_content == "0") {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "ModeContentHint"){
                 present(vc, animated: true)
