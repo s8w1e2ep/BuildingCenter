@@ -50,13 +50,14 @@ class ImageDownload{
         for i in splitarray{
             pathname = i
         }
-        print(pathname)
+        //print(pathname)
         let downloadTask = session.downloadTask(with: request,
                                                 completionHandler: { (location:URL?, response:URLResponse?, error:Error?)
                                                     -> Void in
                                                     //输出下载文件原来的存放目录
                                                     //print("location:\(location)")
                                                     //location位置转换
+                                                    if(location?.path != nil){
                                                     let locationPath = location!.path
                                                     //拷贝到用户目录
                                                     let documnets:String = NSHomeDirectory() + "/Documents/"+pathname
@@ -64,7 +65,7 @@ class ImageDownload{
                                                     let fileManager = FileManager.default
                                                     
                                                     if(!FileManager.default.fileExists(atPath: documnets)){
-                                                        try! fileManager.moveItem(atPath: locationPath, toPath: documnets)}
+                                                        try! fileManager.moveItem(atPath: locationPath, toPath: documnets)}}
                                                     //print("new location:\(documnets)")
         })
 
