@@ -33,7 +33,7 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     
     var jsContext: JSContext!
     var nowRegion: Int = 0
-    
+    var beaconScanZone: Int = 0
     var selectedZone = 0
     
     var databaseHelper: Databasehelper!
@@ -90,23 +90,36 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
         print("Beacon:")
         print(String(describing: mac) + ":" + String(describing: beaconMap[mac]))
         // 跟上一個 Beacon 一樣
-        if mac == lastScanBeacon.mac {
-            return
+        //if mac == lastScanBeacon.mac {
+        //    return
+        //}
+        
+        if (databaseHelper.querybeaconTable(mac_ADDR: mac).zone != ""){
+            beaconScanZone = Int(databaseHelper.querybeaconTable(mac_ADDR: mac).zone!)!
+            print("scan:" + String(beaconScanZone))
+            print("now" + String(nowRegion))
+            if (beaconScanZone == nowRegion + 1){
+                print("change")
+                nowRegion += 1
+                if(nowRegion==11){
+                    SVGView.stringByEvaluatingJavaScript(from: "onRegionChanged(\(nowRegion),'\(nowRegion+1)','p\(nowRegion-1)-\(nowRegion)','p\(nowRegion)-2f')")
+                }else if(nowRegion==12){
+                    currentField = "2"
+                    setSVGMap(SVGName: "Map_2F")
+                }else{
+                    SVGView.stringByEvaluatingJavaScript(from: "onRegionChanged(\(nowRegion),\(nowRegion+1),'p\(nowRegion-1)-\(nowRegion)','p\(nowRegion)-\(nowRegion+1)')")
+                }
+                selectedZone = nowRegion
+                getZoneItem()
+                setNoticeZoneName()
+                setNoticeIsHidden(isHidden: false)
+                return
+            }
         }
-        var beaconScanZone = databaseHelper.query(mac)
-        if currentBeacon == NSNull{
+        else{
             return
         }
         
-         //if (currentBeacon == nowRegion + 1){
-        print(String(mac))
-        print(nowRegion)
-        if(String(mac) == "98:7B:F3:5A:A7:80"){
-            print("change")
-            nowRegion += 1
-                 SVGView.stringByEvaluatingJavaScript(from: "onRegionChanged(\(nowRegion),\(nowRegion+1),'p\(nowRegion-1)-\(nowRegion)','p\(nowRegion)-\(nowRegion+1)')")
-            return
-         }
     }
     /*
     func getHighestRssiDevice(beaconMap: NSDictionary){
