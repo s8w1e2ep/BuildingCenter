@@ -23,12 +23,11 @@ class ImageDownload{
         let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
         let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
         let splitarray = url.components(separatedBy: "/")
-        var pathname = "1.png"
+        var pathname = "a1m4_bg@2x.png"
         for i in splitarray{
             pathname = i
         }
-        
-        if let dirPath          = paths.first
+        if let dirPath = paths.first
         {
             let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(pathname)
             image.image    = UIImage(contentsOfFile: imageURL.path)
@@ -43,7 +42,9 @@ class ImageDownload{
         //请求
         let request = URLRequest(url: url!)
         
-        let session = URLSession.shared
+        //let session = URLSession.shared
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig)
         //下载任务
         let splitarray = urlpath.components(separatedBy: "/")
         var pathname = "1.png"
@@ -51,6 +52,36 @@ class ImageDownload{
             pathname = i
         }
         //print(pathname)
+        let task = session.downloadTask(with: request) { (tempLocalUrl, response, error) in
+            if let tempLocalUrl = tempLocalUrl, error == nil {
+                // Success
+                if let statusCode = (response as? HTTPURLResponse)?.statusCode {
+                    //print("Successfully downloaded. Status code: \(statusCode)")
+                }
+                
+                do {
+                    //try FileManager.default.copyItem(at: tempLocalUrl, to: destinationFileUrl)
+                    if(tempLocalUrl.path != nil){
+                        let locationPath = tempLocalUrl.path
+                        //拷贝到用户目录
+                        let documnets:String = NSHomeDirectory() + "/Documents/"+pathname
+                        //创建文件管理器
+                        let fileManager = FileManager.default
+                        
+                        if(!FileManager.default.fileExists(atPath: documnets)){
+                            try! fileManager.moveItem(atPath: locationPath, toPath: documnets)}}
+                } catch (let writeError) {
+                    print("Error")
+                }
+                
+            } else {
+                print(error?.localizedDescription);
+            }
+        }
+        task.resume()
+        
+        
+        /*
         let downloadTask = session.downloadTask(with: request,
                                                 completionHandler: { (location:URL?, response:URLResponse?, error:Error?)
                                                     -> Void in
@@ -69,7 +100,7 @@ class ImageDownload{
                                                     //print("new location:\(documnets)")
         })
 
-        downloadTask.resume()
+        downloadTask.resume()*/
     }
     
 }
