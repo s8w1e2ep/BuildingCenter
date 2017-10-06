@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         }*/
         //databasehelper.update_mode_isread(modeID: "5")
         databasehelper.querymodeTable(zoneID: "1")
-        //databasehelper.querydeviceTable()
+        databasehelper.querydeviceTable()
         
         
         // Do any additional setup after loading the view, typically from a nib.

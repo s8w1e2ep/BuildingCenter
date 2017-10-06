@@ -41,10 +41,11 @@ class ImageDownload{
         let url = URL(string: urlpath)
         //请求
         let request = URLRequest(url: url!)
-        
-        //let session = URLSession.shared
+        //let config = URLSessionConfiguration.background(withIdentifier: "")
+        let session = URLSession.shared
         let sessionConfig = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfig)
+        //let session = URLSession(configuration: sessionConfig)
+        //let session = URLSession(configuration:config,delegate:seif,delegateQueue:nil)
         //下载任务
         let splitarray = urlpath.components(separatedBy: "/")
         var pathname = "1.png"
@@ -52,6 +53,9 @@ class ImageDownload{
             pathname = i
         }
         //print(pathname)
+        let documnets:String = NSHomeDirectory() + "/Documents/"+pathname
+        let fileManager = FileManager.default
+        if(!FileManager.default.fileExists(atPath: documnets)){
         let task = session.downloadTask(with: request) { (tempLocalUrl, response, error) in
             if let tempLocalUrl = tempLocalUrl, error == nil {
                 // Success
@@ -66,20 +70,20 @@ class ImageDownload{
                         //拷贝到用户目录
                         let documnets:String = NSHomeDirectory() + "/Documents/"+pathname
                         //创建文件管理器
-                        let fileManager = FileManager.default
+                        //let fileManager = FileManager.default
                         
                         if(!FileManager.default.fileExists(atPath: documnets)){
                             try! fileManager.moveItem(atPath: locationPath, toPath: documnets)}}
                 } catch (let writeError) {
                     print("Error")
                 }
-                
+            
             } else {
                 print(error?.localizedDescription);
             }
         }
         task.resume()
-        
+        }
         
         /*
         let downloadTask = session.downloadTask(with: request,
