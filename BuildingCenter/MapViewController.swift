@@ -76,26 +76,27 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     
     
     func onBeaconScanResult(_ beaconMap: [AnyHashable : Any]!) {
-        processBeaconScanResults(beaconMap: beaconMap as NSDictionary)
+        processBeaconScanResults(beaconMap: beaconMap as! Dictionary)
     }
-    func processBeaconScanResults(beaconMap: NSDictionary){
-        var mac = ""
-        
-        for i in beaconMap.allKeys{
-            mac = String(describing: i)
-        }
-        if mac == "" {
+    
+    func processBeaconScanResults(beaconMap: Dictionary<String,Int>){
+        //check is empty
+        if (beaconMap.count == 0 ) {
             return
         }
-        print("Beacon:")
-        print(String(describing: mac) + ":" + String(describing: beaconMap[mac]))
-        // 跟上一個 Beacon 一樣
-        //if mac == lastScanBeacon.mac {
-        //    return
-        //}
         
-        if (databaseHelper.querybeaconTable(mac_ADDR: mac).zone != ""){
-            beaconScanZone = Int(databaseHelper.querybeaconTable(mac_ADDR: mac).zone!)!
+        //sort beaconMap
+        //let sortedBeaconMap = beaconMap.sorted{ ( first:(key: String,value:Int), second:(key: String,value:Int)) -> Bool in
+        //    return first.value > second.value
+        //}
+        var max = beaconMap.max {a,b in a.value < b.value}
+        var mac = max?.key
+
+        //print("Beacon:")
+        //print(mac! + ":" + String(describing: max?.value))
+        
+        if (databaseHelper.querybeaconTable(mac_ADDR: mac!).zone != nil){
+            beaconScanZone = Int(databaseHelper.querybeaconTable(mac_ADDR: mac!).zone!)!
             print("scan:" + String(beaconScanZone))
             print("now" + String(nowRegion))
             if (beaconScanZone == nowRegion + 1){
@@ -117,6 +118,7 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
             }
         }
         else{
+            //print("Beacon not in db")
             return
         }
         
