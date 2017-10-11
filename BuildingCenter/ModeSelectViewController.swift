@@ -17,8 +17,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     
-    
-    let defaults = UserDefaults.standard
+    let databaseHelper = Databasehelper()
     
     var modeIntroViewController: ModeIntroViewController!
     
@@ -36,16 +35,11 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         //self.navigationController?.isNavigationBarHidden = false
     }
     override func viewDidAppear(_ animated: Bool) {
-        
-        let isModeLaunchBefore = defaults.bool(forKey: "isModeLaunchBefore")
-        
-        if (!isModeLaunchBefore) {
+        if (databaseHelper.queryhintTable().mode_select == "0") {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "ModeHint"){
-                //show(vc, sender: self)
                 present(vc, animated: true)
-                
             }
-            defaults.set(true, forKey: "isModeLaunchBefore")
+            databaseHelper.read_mode_select()
         }
     }
     
@@ -148,10 +142,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
             let aspectRatioTextViewConstraint = NSLayoutConstraint(item: cell.textView, attribute: .height, relatedBy: .equal, toItem: cell.textView, attribute: .width, multiplier: cell.textView.bounds.height/cell.textView.bounds.width, constant: 1)
             cell.textView.addConstraint(aspectRatioTextViewConstraint)
             
-            let key = String(indexPath.item) + "in" + zoneItem.zone_id!
-            let isReadBefore = defaults.bool(forKey: key)
-
-            if isReadBefore {
+            if zoneItem.modes![indexPath.item].mode_did_read == "1" {
                 cell.readImage.isHidden = false
                 cell.read.isHidden = false
             }
@@ -161,12 +152,11 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
                         didSelectItemAt indexPath: IndexPath) {
         selectedCell = indexPath.item
         
-        let key = String(indexPath.item) + "in" + zoneItem.zone_id!
-        let isReadBefore = defaults.bool(forKey: key)
         
-        if (!isReadBefore) {
-            defaults.set(true, forKey: key)
+        if  zoneItem.modes![indexPath.item].mode_did_read == "0"{
+            databaseHelper.update_mode_isread(modeID: zoneItem.modes![indexPath.item].mode_id!)
         }
+        
         let cell = collectionView.cellForItem(at: indexPath) as! ModeCollectionViewCell
         cell.readImage.isHidden = false
         cell.read.isHidden = false

@@ -40,10 +40,12 @@ class ModeContentDetailViewController2: ModeContentDetailViewController {
     }
 
     func setLayout(){
+        let imgdownload = ImageDownload()
         let path = modeItem.devices?[equipmentNumber].photo
         let index = path?.index((path?.startIndex)!, offsetBy: 3)
         let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
-        image.downloadedFrom(link: imageName)
+        //image.downloadedFrom(link: imageName)
+        imgdownload.showpic(image: image, url: imageName)
         image.contentMode = .scaleAspectFill
         
     }

@@ -17,6 +17,9 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var confirm: UIButton!
     
+    let databaseHelper = Databasehelper()
+    
+    
     var courses = [
         ["name":"設計師","pic":"tour_select_designer.png"],
         ["name":"機器人","pic":"tour_select_robot.png"],
@@ -34,16 +37,14 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
-        let isGuiderLaunchBefore = defaults.bool(forKey: "isGuiderLaunchBefore")
         
-        if (!isGuiderLaunchBefore) {
+        if (databaseHelper.queryhintTable().guider == "0") {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "GuiderHint"){
-                //show(vc, sender: self)
                 present(vc, animated: true)
             }
-            defaults.set(true, forKey: "isGuiderLaunchBefore")
+            databaseHelper.read_guider()
         }
+
     }
 
     override func didReceiveMemoryWarning() {

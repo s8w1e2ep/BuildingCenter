@@ -45,8 +45,8 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
         stackView.bounds.size.width = CGFloat(templateAry.count) * (size.width * 0.9) - size.width * 0.1
         stackView.spacing = size.width * 0.1
         contenView.bounds.size.width = stackView.bounds.size.width + stackView.spacing
-        scrollView.contentSize = CGSize(width: (-1) * contenView.bounds.width, height: contenView.bounds.height)
-        scrollView.contentOffset.x = (-contenView.bounds.width)
+        scrollView.contentSize = CGSize(width: (2) * contenView.bounds.width, height: contenView.bounds.height)
+        scrollView.contentOffset.x = contenView.bounds.width
     }
     
     override func didReceiveMemoryWarning() {

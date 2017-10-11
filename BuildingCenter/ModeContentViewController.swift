@@ -21,6 +21,8 @@ class ModeContentViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var containerView: UIView!
     
+    let databaseHelper = Databasehelper()
+    
     let notificationEnterModeContent = Notification.Name("enterModeContentNoti")
     let notificationExitModeContent = Notification.Name("exitModeContentNoti")
     
@@ -41,18 +43,13 @@ class ModeContentViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
-        let isModeContentLaunchBefore = defaults.bool(forKey: "isModeContentLaunchBefore")
         
-        if (!isModeContentLaunchBefore) {
+        if (databaseHelper.queryhintTable().mode_content == "0") {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "ModeContentHint"){
-                //show(vc, sender: self)
                 present(vc, animated: true)
-                
             }
-            defaults.set(true, forKey: "isModeContentLaunchBefore")
+            databaseHelper.read_mode_content()
         }
-
     }
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.post(name: notificationEnterModeContent, object: nil, userInfo: nil)
