@@ -20,6 +20,7 @@
 		5F8C48A41F7A91E3006E7BEB /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48A31F7A91E3006E7BEB /* ImageDownload.swift */; };
 		5F8C48A81F84E296006E7BEB /* BeaconItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48A71F84E296006E7BEB /* BeaconItem.swift */; };
 		5F8C48AA1F85025C006E7BEB /* HintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48A91F85025C006E7BEB /* HintItem.swift */; };
+		5F8C48AC1F8E517A006E7BEB /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48AB1F8E5179006E7BEB /* ResultViewController.swift */; };
 		5FE9713D1F1C9F0A005EDE58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */; };
 		5FE9713F1F1C9F0A005EDE58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */; };
 		5FE971421F1C9F0A005EDE58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE971401F1C9F0A005EDE58 /* Main.storyboard */; };
@@ -132,6 +133,7 @@
 		5F8C48A31F7A91E3006E7BEB /* ImageDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownload.swift; sourceTree = "<group>"; };
 		5F8C48A71F84E296006E7BEB /* BeaconItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconItem.swift; sourceTree = "<group>"; };
 		5F8C48A91F85025C006E7BEB /* HintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintItem.swift; sourceTree = "<group>"; };
+		5F8C48AB1F8E5179006E7BEB /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		5FE971391F1C9F0A005EDE58 /* BuildingCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE9713C1F1C9F0A005EDE58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FE9713E1F1C9F0A005EDE58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				70C57B651F27E76B00F83F77 /* HipsterViewController.swift */,
 				70C57B671F27F00500F83F77 /* SelectViewController.swift */,
 				709EB43D1F5D2C02007665E3 /* WritingViewController.swift */,
+				5F8C48AB1F8E5179006E7BEB /* ResultViewController.swift */,
 			);
 			name = Hipster;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				76705BAE1F555F0E00047414 /* GuiderHintViewController.swift in Sources */,
 				762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */,
 				76CE4F941F5E9665008219D4 /* PageViewController.swift in Sources */,
+				5F8C48AC1F8E517A006E7BEB /* ResultViewController.swift in Sources */,
 				5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */,
 				A20453E01F50FF1100162025 /* Qn5ViewController.swift in Sources */,
 				76CE4F921F5E8E0C008219D4 /* ModeContentDetailViewController2.swift in Sources */,
