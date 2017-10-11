@@ -33,7 +33,7 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     
     var jsContext: JSContext!
     var nowRegion: Int = 0
-    
+    var beaconScanZone: Int = 0
     var selectedZone = 0
     
     let databaseHelper = Databasehelper()
@@ -73,30 +73,51 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
     
     
     func onBeaconScanResult(_ beaconMap: [AnyHashable : Any]!) {
-        processBeaconScanResults(beaconMap: beaconMap as NSDictionary)
+        processBeaconScanResults(beaconMap: beaconMap as! Dictionary)
     }
-    func processBeaconScanResults(beaconMap: NSDictionary){
-        var mac = ""
+    
+    func processBeaconScanResults(beaconMap: Dictionary<String,Int>){
+        //check is empty
+        if (beaconMap.count == 0 ) {
+            return
+        }
         
+        //sort beaconMap
+        //let sortedBeaconMap = beaconMap.sorted{ ( first:(key: String,value:Int), second:(key: String,value:Int)) -> Bool in
+        //    return first.value > second.value
+        //}
+        var max = beaconMap.max {a,b in a.value < b.value}
+        var mac = max?.key
+
+        //print("Beacon:")
+        //print(mac! + ":" + String(describing: max?.value))
         
-        for i in beaconMap.allKeys{
-            mac = String(describing: i)
+        if (databaseHelper.querybeaconTable(mac_ADDR: mac!).zone != nil){
+            beaconScanZone = Int(databaseHelper.querybeaconTable(mac_ADDR: mac!).zone!)!
+            print("scan:" + String(beaconScanZone))
+            print("now" + String(nowRegion))
+            if (beaconScanZone == nowRegion + 1){
+                print("change")
+                nowRegion += 1
+                if(nowRegion==11){
+                    SVGView.stringByEvaluatingJavaScript(from: "onRegionChanged(\(nowRegion),'\(nowRegion+1)','p\(nowRegion-1)-\(nowRegion)','p\(nowRegion)-2f')")
+                }else if(nowRegion==12){
+                    currentField = "2"
+                    setSVGMap(SVGName: "Map_2F")
+                }else{
+                    SVGView.stringByEvaluatingJavaScript(from: "onRegionChanged(\(nowRegion),\(nowRegion+1),'p\(nowRegion-1)-\(nowRegion)','p\(nowRegion)-\(nowRegion+1)')")
+                }
+                selectedZone = nowRegion
+                getZoneItem()
+                setNoticeZoneName()
+                setNoticeIsHidden(isHidden: false)
+                return
+            }
         }
-        if mac == "" {
+        else{
+            //print("Beacon not in db")
             return
         }
-        print("Beacon:")
-        print(String(describing: mac) + ":" + String(describing: beaconMap[mac]))
-        /*
-        // 跟上一個 Beacon 一樣
-        if mac == lastScanBeacon.mac {
-            return
-        }
-        var currentBeacon = queryBeaconByMac(mac)
-        if currentBeacon == NSNull{
-            return
-        }
-        */
         
     }
     /*
@@ -200,6 +221,7 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
         //        web1.scrollView.maximumZoomScale = 5.0
         //        web1.scrollView.zoomScale = 3.0
         SVGView.scrollView.setZoomScale(2.8, animated: true)
+        bleScannerWrapper.startBleScan()
     }
     
     func setSVGBG(BGName: String){
