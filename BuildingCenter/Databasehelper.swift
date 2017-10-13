@@ -119,6 +119,7 @@ class Databasehelper {
                 t.column(DBColExpress.photo)
                 t.column(DBColExpress.photo_vertical)
                 t.column(DBColExpress.field_id)
+                t.column(DBColExpress.is_like)
             })
             
             if let data = try? Data(contentsOf: url!){
@@ -167,7 +168,8 @@ class Databasehelper {
                                             DBColExpress.hint <- (p["hint"] as? String),
                                             DBColExpress.photo <- (p["photo"] as? String),
                                             DBColExpress.photo_vertical <- (p["photo_vertical"] as? String),
-                                            DBColExpress.field_id <- (p["field_id"] as? String)
+                                            DBColExpress.field_id <- (p["field_id"] as? String),
+                                            DBColExpress.is_like <- "0"
                             ))
                         }
                         
@@ -201,6 +203,7 @@ class Databasehelper {
                 t.column(DBColExpress.splash_blur_vertical)
                 t.column(DBColExpress.zone_id)
                 t.column(DBColExpress.mode_did_read)
+                t.column(DBColExpress.is_like)
             })
             
             if let data = try? Data(contentsOf: url!){
@@ -233,7 +236,8 @@ class Databasehelper {
                                                    DBColExpress.splash_bg_vertical <- (p["splash_bg_vertical"] as? String),
                                                    DBColExpress.splash_fg_vertical <- (p["splash_fg_vertical"] as? String),
                                                    DBColExpress.splash_blur_vertical <- (p["splash_blur_vertical"] as? String),
-                                                   DBColExpress.zone_id <- (p["zone_id"] as? String)/*,
+                                                   DBColExpress.zone_id <- (p["zone_id"] as? String),
+                                                   DBColExpress.is_like <- "0"/*,
                                                    DBColExpress.mode_did_read <- "0"*/
                             ))
                         }
@@ -251,7 +255,8 @@ class Databasehelper {
                                                DBColExpress.splash_fg_vertical <- (p["splash_fg_vertical"] as? String),
                                                DBColExpress.splash_blur_vertical <- (p["splash_blur_vertical"] as? String),
                                                DBColExpress.zone_id <- (p["zone_id"] as? String),
-                                               DBColExpress.mode_did_read <- "0"
+                                               DBColExpress.mode_did_read <- "0",
+                                               DBColExpress.is_like <- "0"
                         ))
                         }
                         
@@ -283,6 +288,7 @@ class Databasehelper {
                 t.column(DBColExpress.photo_vertical)
                 t.column(DBColExpress.mode_id)
                 t.column(DBColExpress.company_id)
+                t.column(DBColExpress.is_like)
             })
             
             if let data = try? Data(contentsOf: url!){
@@ -325,7 +331,8 @@ class Databasehelper {
                                                DBColExpress.photo <- (p["photo"] as? String),
                                                DBColExpress.photo_vertical <- (p["photo_vertical"] as? String),
                                                DBColExpress.mode_id <- (p["mode_id"] as? String),
-                                               DBColExpress.company_id <- (p["company_id"] as? String)
+                                               DBColExpress.company_id <- (p["company_id"] as? String),
+                                               DBColExpress.is_like <- "0"
                         ))}
                         
                     }
@@ -507,6 +514,7 @@ class Databasehelper {
         let photo = DBColExpress.photo
         let photo_vertical = DBColExpress.photo_vertical
         let field_id = DBColExpress.field_id
+        //let is_like = DBColExpress.is_like
         //let modes = "modes"
         
         /*
@@ -580,6 +588,7 @@ class Databasehelper {
         let photo = DBColExpress.photo
         let photo_vertical = DBColExpress.photo_vertical
         let field_id = DBColExpress.field_id
+        let is_like = DBColExpress.is_like
         //let modes = "modes"
         
         do {
@@ -601,6 +610,7 @@ class Databasehelper {
                 z.photo = rows[photo]
                 z.photo_vertical = rows[photo_vertical]
                 z.field_id = rows[field_id]
+                z.is_like = rows[is_like]
                 z.modes = querymodeTable(zoneID:rows[zone_id]!)
                 zones = z
             }
@@ -673,7 +683,7 @@ class Databasehelper {
         let splash_blur_vertical = DBColExpress.splash_blur_vertical
         let zone_id = DBColExpress.zone_id
         let mode_did_read = DBColExpress.mode_did_read
-        
+        let is_like = DBColExpress.is_like
         let imgdownload = ImageDownload()
        
         do {
@@ -697,6 +707,7 @@ class Databasehelper {
                 m.mode_did_read = rows[mode_did_read]
                 m.devices = querydeviceTable(modeID: rows[mode_id]!)
                 //print(rows[zone_id])
+                m.is_like = rows[is_like]
                 modes.append(m)
                 
                 //------------
@@ -796,6 +807,7 @@ class Databasehelper {
         let photo_vertical = DBColExpress.photo_vertical
         let mode_id = DBColExpress.mode_id
         let company_id = DBColExpress.company_id
+        let is_like = DBColExpress.is_like
         let imgdownload = ImageDownload()
         do {
             let db = try Connection(databaseFilePath)
@@ -813,6 +825,7 @@ class Databasehelper {
                 m.photo_vertical = rows[photo_vertical]
                 m.mode_id = rows[mode_id]
                 m.company_id = rows[company_id]
+                m.is_like = rows[is_like]
                 //m.companys = querycompanyTable(companyID: rows[company_id]! as String)
                 m.companys = querycompanyTable(companyID: rows[company_id]!)
                 devices.append(m)
@@ -1013,6 +1026,84 @@ class Databasehelper {
                 try db.run(filtering.update(DBColExpress.hint_map_info <- "1"))
             }        }
         catch _ {
+            print("error")
+        }
+    }
+    
+    func zone_like(){
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("zone")
+            let filtering = table.filter(DBColExpress.is_like == "1")
+            let plucking = try db.pluck(filtering)
+            if (plucking != nil) {
+                try db.run(filtering.update(DBColExpress.is_like <- "1"))
+            }        }
+        catch _ {
+            print("error")
+        }
+    }
+    
+    func updatezonelike(zoneID: String)  {
+        let is_like = DBColExpress.is_like
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("zone")
+            //var z = ZoneItem()
+            let filtering = table.filter(DBColExpress.zone_id.like(zoneID))
+            for rows in try db.prepare(filtering) {
+                if(rows[is_like] == "0"){
+                    let filtering = Table("zone").filter(DBColExpress.zone_id == zoneID)
+                    //print(filtering)
+                    let plucking = try db.pluck(filtering)
+                    if (plucking != nil) {
+                        try db.run(filtering.update(DBColExpress.is_like <- "1"))
+                    }
+                }
+            }
+        } catch _ {
+            print("error")
+        }
+    }
+    
+    func updatemodelike(modeID: String)  {
+        let is_like = DBColExpress.is_like
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("mode")
+            //var z = ZoneItem()
+            let filtering = table.filter(DBColExpress.zone_id.like(modeID))
+            for rows in try db.prepare(filtering) {
+                if(rows[is_like] == "0"){
+                    let filtering = Table("mode").filter(DBColExpress.zone_id == modeID)
+                    //print(filtering)
+                    let plucking = try db.pluck(filtering)
+                    if (plucking != nil) {
+                        try db.run(filtering.update(DBColExpress.is_like <- "1"))
+                    }
+                }
+            }
+        } catch _ {
+            print("error")
+        }
+    }
+    
+    func updatedevicelike(deviceID: String)  {
+        let is_like = DBColExpress.is_like
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("device")
+            let filtering = table.filter(DBColExpress.zone_id.like(deviceID))
+            for rows in try db.prepare(filtering) {
+                if(rows[is_like] == "0"){
+                    let filtering = Table("device").filter(DBColExpress.zone_id == deviceID)
+                    let plucking = try db.pluck(filtering)
+                    if (plucking != nil) {
+                        try db.run(filtering.update(DBColExpress.is_like <- "1"))
+                    }
+                }
+            }
+        } catch _ {
             print("error")
         }
     }

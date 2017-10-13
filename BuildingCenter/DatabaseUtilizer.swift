@@ -139,6 +139,8 @@ class DatabaseUtilizer {
     static let HINT_MAP_INFO: String = "map_info"
     static let HINT_ID: String = "hint_id"
     
+    static let IS_LIKE: String = "is_like"
+    
     // device
     static let DB_CREATE_TABLE_DEVICE :String = "CREATE TABLE IF NOT EXISTS " + DatabaseUtilizer.DEVICE_TABLE + " ("
         + DatabaseUtilizer.DEVICE_ID + " INT NOT NULL UNIQUE, "

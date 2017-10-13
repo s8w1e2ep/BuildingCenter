@@ -55,4 +55,6 @@ class DBColExpress{
     static let hint_map_info = Expression<String?>(DatabaseUtilizer.HINT_MAP_INFO)
     static let hint_id = Expression<String?>(DatabaseUtilizer.HINT_ID)
     
+    static let is_like = Expression<String?>(DatabaseUtilizer.IS_LIKE)
+    
 }

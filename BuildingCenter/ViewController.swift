@@ -54,9 +54,13 @@ class ViewController: UIViewController {
 
         }*/
         //databasehelper.update_mode_isread(modeID: "5")
-        databasehelper.querymodeTable(zoneID: "1")
-        databasehelper.querydeviceTable()
-        
+        //databasehelper.querymodeTable(zoneID: "1")
+        //databasehelper.querydeviceTable()
+        let zone = databasehelper.queryzoneTable(zoneID: "2")
+        print(zone.is_like)
+        databasehelper.updatezonelike(zoneID: "2")
+        let zone1 = databasehelper.queryzoneTable(zoneID: "2")
+        print(zone1.is_like)
         
         // Do any additional setup after loading the view, typically from a nib.
     }

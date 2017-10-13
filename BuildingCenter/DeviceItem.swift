@@ -22,6 +22,7 @@ class DeviceItem{
     var mode_id: String?
     var company_id: String?
     var companys: CompanyItem?
+    var is_like: String?
 
     
 }
