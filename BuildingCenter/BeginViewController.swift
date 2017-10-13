@@ -11,7 +11,7 @@ import AVFoundation
 
 class BeginViewController: UIViewController {
     
-    var myPlayer :AVAudioPlayer?
+    var buttonsound: AVAudioPlayer = AVAudioPlayer()
     
     static let defaults = UserDefaults.standard
     static var selectedLanguage: String = "zh-Hant";
@@ -21,8 +21,6 @@ class BeginViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        //setAudio()
         
     }
     
@@ -49,21 +47,22 @@ class BeginViewController: UIViewController {
         BeginViewController.isEnglish = true
         performSegue(withIdentifier: "BeginToAboutOne", sender: self)
     }
-    func setAudio(){
-        let soundPath = Bundle.main.path(
-            forResource: "button", ofType: "mp3")
-        do {
-            myPlayer = try AVAudioPlayer(contentsOf: NSURL.fileURL(withPath: soundPath!))
-            //self.myPlayer =  try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(filename, ofType: Globals.SOUND_TYPE)!))
-            myPlayer?.prepareToPlay()
-            myPlayer?.numberOfLoops = 0
-        }
-        catch{
-            print("Create audioplayer failed")
-        }
-       
+    
+    @IBAction func playsound(_ sender: Any) {
         
+        let path = Bundle.main.path(forResource: "button.mp3", ofType:nil)!
+
+        let url = URL(fileURLWithPath: path)
+        do{
+            let sound = try AVAudioPlayer(contentsOf: url)
+            buttonsound = sound
+            sound.play()
+        }
+        catch {
+            print(error)
+        }
     }
+    
     /*
     // MARK: - Navigation
 

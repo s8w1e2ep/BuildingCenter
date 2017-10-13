@@ -21,12 +21,7 @@ class ViewController: UIViewController {
         databasehelper = Databasehelper()
         //databasehelper.deleteTable()
         databasehelper.creatTable()
-        /*imgdownload = ImageDownload()
-        imgdownload.sessionSimpleDownload(urlpath:"http://60.251.33.54:98/web/media/project/project1/zone/a1m4_bg@2x.png")
-        imgdownload.sessionSimpleDownload(urlpath:"http://60.251.33.54:98/web/media/project/project1/zone/a1m3_bg@2x.png")
-        imgdownload.sessionSimpleDownload(urlpath:"http://60.251.33.54:98/web/media/project/project1/zone/a1m2_bg@2x.png")
-        imgdownload.sessionSimpleDownload(urlpath:"http://60.251.33.54:98/web/media/project/project1/zone/a1m1_bg@2x.png")*/
-        /*imgdownload.getpic(url: "http://60.251.33.54:98/web/media/project/project1/zone/a1m4_bg@2x.png")*/
+        
         //imgdownload.getpic(url: "http://192.168.65.28/web/media/project/project1/zone/photo_1-5638920671c92.jpg")
         //imgdownload.showpic(image: img, url: "")
         /*let beacons = databasehelper.querybeaconTable(mac_ADDR: "E0:E5:CF:2F:AF:C1")
@@ -54,9 +49,22 @@ class ViewController: UIViewController {
 
         }*/
         //databasehelper.update_mode_isread(modeID: "5")
-        databasehelper.querymodeTable(zoneID: "1")
-        databasehelper.querydeviceTable()
+        //databasehelper.querymodeTable(zoneID: "1")
+        //databasehelper.querymodeTable(zoneID: "2")
+        //databasehelper.querymodeTable()
+        databasehelper.querymodeTable()
+        /*var when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            let databasehelper1 = Databasehelper()
+            databasehelper1.querymodeTable()
+        }
+        */
         
+        /*let zone = databasehelper.queryzoneTable(zoneID: "2")
+        print(zone.is_like)
+        databasehelper.updatezonelike(zoneID: "2")
+        let zone1 = databasehelper.queryzoneTable(zoneID: "2")
+        print(zone1.is_like)*/
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -71,7 +79,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-        
-
+    
 }
 

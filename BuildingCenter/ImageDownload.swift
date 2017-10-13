@@ -44,6 +44,8 @@ class ImageDownload{
         //let config = URLSessionConfiguration.background(withIdentifier: "")
         let session = URLSession.shared
         let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 120.0
+        //print(sessionConfig.timeoutIntervalForResource)
         //let session = URLSession(configuration: sessionConfig)
         //let session = URLSession(configuration:config,delegate:seif,delegateQueue:nil)
         //下载任务
@@ -61,6 +63,7 @@ class ImageDownload{
                 // Success
                 if let statusCode = (response as? HTTPURLResponse)?.statusCode {
                     //print("Successfully downloaded. Status code: \(statusCode)")
+                    print(pathname)
                 }
                 
                 do {
@@ -83,6 +86,9 @@ class ImageDownload{
             }
         }
         task.resume()
+        }
+        else{
+            print("already exist"+pathname)
         }
         
         /*

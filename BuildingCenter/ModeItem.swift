@@ -27,5 +27,5 @@ class ModeItem{
     var zone_id: String?
     var mode_did_read: String?
     var devices: [DeviceItem]?
-    
+    var is_like: String?
 }
