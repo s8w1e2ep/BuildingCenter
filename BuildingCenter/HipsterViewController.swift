@@ -10,11 +10,15 @@ import UIKit
 
 class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
+    @IBOutlet weak var diary_camera: UIButton!
+    @IBOutlet weak var diary_photo: UIButton!
     var image : UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setText(selectLanguage: BeginViewController.selectedLanguage)
         
     }
     
@@ -26,6 +30,11 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setText(selectLanguage: String){
+        diary_photo.setTitle("\n\n"+"diary_photo".localized(language: selectLanguage), for: .normal)
+        diary_camera.setTitle("\n\n"+"diary_camera".localized(language: selectLanguage), for: .normal)
     }
     
     /// 開啟相機或相簿

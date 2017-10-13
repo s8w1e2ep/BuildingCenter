@@ -10,6 +10,8 @@ import UIKit
 
 class SelectViewController: UIViewController,UIScrollViewDelegate {
 
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     var image: UIImage!
     var template: UIImage!
@@ -22,7 +24,13 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setText(selectLanguage: BeginViewController.selectedLanguage)
         setLayout()
+    }
+    
+    func setText(selectLanguage: String){
+        navItem.title = "choose_template".localized(language:selectLanguage)
+        nextBtn.setTitle("nextstep".localized(language:selectLanguage),for: .normal)
     }
     
     func setLayout(){
@@ -35,10 +43,10 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
         for (seq,template) in templateAry.enumerated() {
             let imageView = UIImageView(image: UIImage(named: template["pic"]!))
             if (seq == 0){
-                imageView.frame = CGRect(x: size.width * 0.05, y: 0, width: size.width * 0.8, height: size.height)
+                imageView.frame = CGRect(x: size.width * 0.05, y: 0, width: size.width * 0.8, height: size.height * 0.95)
             }
             else{
-                imageView.frame = CGRect(x: CGFloat(seq) * size.width * 0.85 + size.width * 0.05, y: 0, width: size.width * 0.8, height: size.height)
+                imageView.frame = CGRect(x: CGFloat(seq) * size.width * 0.85 + size.width * 0.05, y: 0, width: size.width * 0.8, height: size.height * 0.95)
             }
             scrollView.addSubview(imageView)
         }

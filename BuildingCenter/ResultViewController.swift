@@ -15,11 +15,14 @@ class ResultViewController: UIViewController {
     var image: UIImage!
     var template: UIImage!
     var index: Int!
+    var text: String!
     var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let navBackgroundImage:UIImage! = UIImage(named: "tour_select_background.png")
-        //self.navBar.setBackgroundImage(navBackgroundImage, for: .default)
+        
+        print("text = \(text)")
+        
+        
         imageView.image = combine(leftImage: template, rightImage: image)
         // Do any additional setup after loading the view.
     }
