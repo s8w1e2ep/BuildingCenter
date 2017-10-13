@@ -156,6 +156,7 @@
 		70C57B651F27E76B00F83F77 /* HipsterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipsterViewController.swift; sourceTree = "<group>"; };
 		70C57B671F27F00500F83F77 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		761ACF8C1F78003E00B118D1 /* button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button.mp3; sourceTree = "<group>"; };
+		7621B0991F91092700C543DD /* BuildingCenter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuildingCenter.entitlements; sourceTree = "<group>"; };
 		76274EE01F825E6200E607DE /* BuildingCenter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuildingCenter-Bridging-Header.h"; sourceTree = "<group>"; };
 		76274EE31F825E8300E607DE /* MacroDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
 		76274EE41F825E9600E607DE /* BleScannerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BleScannerWrapper.h; sourceTree = "<group>"; };
@@ -316,6 +317,7 @@
 		5FE9713B1F1C9F0A005EDE58 /* BuildingCenter */ = {
 			isa = PBXGroup;
 			children = (
+				7621B0991F91092700C543DD /* BuildingCenter.entitlements */,
 				5F8C48561F4DB67A006E7BEB /* Database */,
 				767B6E5C1F5670CC00894B66 /* Localized */,
 				767B6E5B1F56701900894B66 /* CustomizedObject */,
@@ -595,6 +597,14 @@
 						DevelopmentTeam = P7Y2HNH4ZD;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 					5FE9714C1F1C9F0A005EDE58 = {
 						CreatedOnToolsVersion = 8.3.3;
