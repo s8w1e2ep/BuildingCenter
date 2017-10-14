@@ -1150,13 +1150,14 @@
                                         <barButtonItem key="leftBarButtonItem" image="icon_info" id="bGp-SJ-NEr">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
+                                                <action selector="buttonsound:" destination="w5y-cL-xo6" id="zuw-XZ-qa9"/>
                                                 <segue destination="Nce-8U-8ZZ" kind="presentation" id="JZt-8V-kEV"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="icon_questionnaire" id="8AV-sg-g4K">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <action selector="goQuestionnaire:" destination="w5y-cL-xo6" id="qAD-vR-QdB"/>
+                                                <action selector="buttonsound:" destination="w5y-cL-xo6" id="U8k-Wb-GgZ"/>
                                                 <segue destination="2CP-yP-3YF" kind="presentation" id="osR-2K-3Z8"/>
                                             </connections>
                                         </barButtonItem>
@@ -2513,6 +2514,7 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_nextstep_active_1"/>
                                 <connections>
+                                    <action selector="buttonsound:" destination="Spq-Sh-c9A" eventType="touchUpInside" id="Ir6-5I-JEy"/>
                                     <segue destination="of8-G8-XJ5" kind="show" identifier="zone_to_mode_select" id="xD5-Ta-ZVs"/>
                                 </connections>
                             </button>
@@ -2794,6 +2796,7 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_nextstep_active_1"/>
                                 <connections>
+                                    <action selector="buttonsound:" destination="KPE-ag-WVY" eventType="touchUpInside" id="W3g-uc-8uT"/>
                                     <segue destination="H93-C3-x5J" kind="show" identifier="mode_intro_to_landscape" id="yg2-lY-Nhq"/>
                                 </connections>
                             </button>
@@ -2915,6 +2918,7 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_nextstep_active_1"/>
                                 <connections>
+                                    <action selector="buttonsound:" destination="H93-C3-x5J" eventType="touchUpInside" id="EzM-Ug-Ks0"/>
                                     <segue destination="iYc-1s-yfQ" kind="show" identifier="landscape_to_mode_content" id="bcl-V5-tJi"/>
                                 </connections>
                             </button>
