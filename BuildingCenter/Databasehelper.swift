@@ -712,7 +712,7 @@ class Databasehelper {
             let db = try Connection(databaseFilePath)
             let table = Table("mode")
             let filtering = table.filter(DBColExpress.zone_id.like(zoneID))
-            for rows in try db.prepare(filtering.order(mode_id.desc)) {
+            for rows in try db.prepare(filtering.order(zone_id.desc)) {
                 let m = ModeItem()
                 m.mode_id = rows[mode_id]
                 m.name = rows[name]
@@ -795,7 +795,7 @@ class Databasehelper {
                 //zones.append(zone)
                 devices.append(m)
                 //print(m.photo)
-                if(m.photo != ""){
+                /*if(m.photo != ""){
                     let path_fg = m.photo
                     let index_fg = path_fg?.index((path_fg?.startIndex)!, offsetBy: 3)
                     let imageName_fg = DatabaseUtilizer.filePathURLPrefix + (path_fg?.substring(from: index_fg!))!
@@ -807,7 +807,7 @@ class Databasehelper {
                     let index = path?.index((path?.startIndex)!, offsetBy: 3)
                     let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
                     imgdownload.sessionSimpleDownload(urlpath: imageName)
-                }
+                }*/
                 
             }
         } catch _ {

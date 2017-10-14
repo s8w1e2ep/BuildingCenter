@@ -16,10 +16,8 @@ class BeginViewController: UIViewController {
     static let defaults = UserDefaults.standard
     static var selectedLanguage: String = "zh-Hant";
     static var isEnglish: Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         
     }

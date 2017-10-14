@@ -27,6 +27,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        databaseHelper.querymodeTable()
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }

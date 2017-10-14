@@ -14,10 +14,10 @@ class AboutThreeViewController: UIViewController {
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var nextPage: UIButton!
-    
+    let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        databasehelper.querymodeTable(zoneID: "6")
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }

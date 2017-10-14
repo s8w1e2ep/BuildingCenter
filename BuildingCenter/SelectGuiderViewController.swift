@@ -27,10 +27,10 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
     ]
     let pageCutRate:CGFloat = 0.1
     var currentIndex = 1
-    
+    let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        databasehelper.querymodeTable(zoneID: "7")
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setLayout()
         

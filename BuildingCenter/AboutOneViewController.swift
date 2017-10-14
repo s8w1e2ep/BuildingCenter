@@ -15,10 +15,10 @@ class AboutOneViewController: UIViewController {
     
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var nextPage: UIButton!
-    
+    let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        databasehelper.querymodeTable(zoneID: "4")
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
         

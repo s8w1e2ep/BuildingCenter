@@ -11,16 +11,15 @@ import UIKit
 class LaunchViewController: UIViewController {
     
     @IBOutlet weak var logo: UIImageView!
-
+    let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        databasehelper.querymodeTable(zoneID: "1")
         // fade in animation
         UIView.animate(withDuration: 3.0, animations: {
             self.logo.alpha = 1.0
