@@ -10,6 +10,8 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var storeView: UIView!
+    @IBOutlet weak var storeLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var sendEmailBtn: UIButton!
     @IBOutlet weak var saveBtn: UIButton!
@@ -36,7 +38,7 @@ class ResultViewController: UIViewController {
         saveBtn.setTitle("save_to_phone".localized(language:selectLanguage), for: .normal)
         sendEmailBtn.setTitle("send_mail".localized(language:selectLanguage),for: .normal)
         backBtn.setTitle("back_to_main".localized(language:selectLanguage), for: .normal)
-        
+        storeLabel.text = "store_sucess".localized(language:selectLanguage)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,6 +57,16 @@ class ResultViewController: UIViewController {
         menuView.isHidden = !menuView.isHidden
     }
     
+    @IBAction func OnsaveBtnAction(_ sender: Any) {
+        let image = self.imageView.image!
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        storeView.isHidden = !storeView.isHidden
+    }
+    
+    @IBAction func storegoBack(_ sender: Any) {
+        navigationController?.popViewController(animated:true)
+    }
+    
     func reSizeImage(Image: UIImage,reSize:CGSize)->UIImage {
         //UIGraphicsBeginImageContext(reSize);
         UIGraphicsBeginImageContextWithOptions(reSize,false,UIScreen.main.scale);
@@ -66,7 +78,7 @@ class ResultViewController: UIViewController {
     
     func combine(leftImage: UIImage, rightImage: UIImage) -> UIImage {
         
-        var textImage = text as NSString
+        let textImage = text as NSString
         var width = self.view.bounds.width
         var height = self.view.bounds.height
         var x = CGFloat(0)
@@ -92,9 +104,17 @@ class ResultViewController: UIViewController {
         UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, UIScreen.main.scale)
         Template.draw(at: CGPoint(x: 0, y: 0))
         Image.draw(at: CGPoint(x: x, y: y))
-        let textAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20.0), NSBackgroundColorAttributeName: UIColor.clear] as [String : Any]
+        let textAttributes = [NSForegroundColorAttributeName: UIColor.darkGray, NSFontAttributeName: UIFont.systemFont(ofSize: 20.0), NSBackgroundColorAttributeName: UIColor.clear] as [String : Any]
         //let size = textImage.size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20.0)])
-        textImage.draw(at: CGPoint(x: 65, y: 450), withAttributes: textAttributes)
+        if textImage.length > 18{
+            var temptext = textImage.substring(to: 18)
+            temptext.draw(at: CGPoint(x: 65, y: 450), withAttributes: textAttributes)
+            temptext = textImage.substring(from: 18)
+            temptext.draw(at: CGPoint(x: 65, y: 480), withAttributes: textAttributes)
+        }
+        else{
+            textImage.draw(at: CGPoint(x: 65, y: 450), withAttributes: textAttributes)
+        }
         let imageLong = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return imageLong!

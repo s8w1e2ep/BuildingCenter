@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WritingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class WritingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
 
     var image: UIImage!
     var template: UIImage!
@@ -18,6 +18,12 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     var textIndex: Int!
     var zoneTw = [String!] ()
     var zoneEn = [String!] ()
+    
+    
+    var currentTextField: UITextField?
+    var isKeyboardShown = false
+    
+    @IBOutlet weak var chooseAreaView: UIView!
     
     @IBOutlet weak var selectItem: UILabel!
     @IBOutlet weak var menu: UITableView!
@@ -37,6 +43,7 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setTapAction()
         text.append(Radio1.title(for: .normal)!)
         text.append(Radio2.title(for: .normal)!)
         text.append(Radio3.title(for: .normal)!)
@@ -44,7 +51,6 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         zoneEn.append("Your Selection")
         setMenucontent()
         setText(selectLanguage: BeginViewController.selectedLanguage)
-        
         self.menu.reloadData()
     }
     
@@ -60,6 +66,13 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    func setTapAction(){
+        chooseAreaView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(WritingViewController.OnchooseAreaViewAction))
+        
+        chooseAreaView.addGestureRecognizer(tap)
+    }
+    
     func setText(selectLanguage: String){
         viewControl.setTitle("write_text".localized(language:selectLanguage), forSegmentAt: 0)
         viewControl.setTitle("build_text".localized(language:selectLanguage), forSegmentAt: 1)
@@ -68,6 +81,59 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         content.placeholder = "template_content".localized(language:selectLanguage)
         chooseAreaLabel.text = "choose_area".localized(language:selectLanguage)
         selectItem.text = "spinner_please_select".localized(language:selectLanguage)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let countOfWords = string.characters.count + textField.text!.characters.count - range.length
+        if countOfWords > 30{
+            return false
+        }
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        currentTextField = textField
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        content.resignFirstResponder()
+    }
+    
+    func keyboardWillShow(note: NSNotification) {
+        if isKeyboardShown {
+            return
+        }
+        if (currentTextField != content) {
+            return
+        }
+        let keyboardAnimationDetail = note.userInfo as! [String: AnyObject]
+        let duration = TimeInterval(keyboardAnimationDetail[UIKeyboardAnimationDurationUserInfoKey]! as! NSNumber)
+        let keyboardFrameValue = keyboardAnimationDetail[UIKeyboardFrameBeginUserInfoKey]! as! NSValue
+        let keyboardFrame = keyboardFrameValue.cgRectValue
+        
+        UIView.animate(withDuration: duration, animations: { () -> Void in
+            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: -keyboardFrame.size.height)
+        })
+        isKeyboardShown = true
+    }
+    
+    func keyboardWillHide(note: NSNotification) {
+        let keyboardAnimationDetail = note.userInfo as! [String: AnyObject]
+        let duration = TimeInterval(keyboardAnimationDetail[UIKeyboardAnimationDurationUserInfoKey]! as! NSNumber)
+        UIView.animate(withDuration: duration, animations: { () -> Void in
+            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: -self.view.frame.origin.y)
+        })
+        isKeyboardShown = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -100,10 +166,15 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         menuView.isHidden = !menu.isHidden
     }
     
+    @IBAction func OnmenuViewAction(_ sender: Any) {
+        menuView.isHidden = !menuView.isHidden
+    }
+    
+    func OnchooseAreaViewAction(){
+        menuView.isHidden = !menuView.isHidden
+    }
+    
     @IBAction func OnChecklistBtnAction(_ sender: Any) {
-        print("3.zoneTW.count = \(zoneTw.count)")
-        print("3.zoneEn.count = \(zoneEn.count)")
-
         menuView.isHidden = !menuView.isHidden
     }
     
@@ -144,50 +215,21 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         textIndex = Int(isRadioButton.index)! - 1
         
     }
-//
-    func dropDownMenu(_ menu: ZHDropDownMenu!, didChoose index: Int) {
-        
-         print("menu.index = \(menu.index)")
-        
-        /*
-         if(menu.index == "1"){
-            
-            self.survey2["first_choise"] = menu.index
-        }
-        
-        if(menu.index == "2"){
-            self.survey2["second_choise"] = menu.index
-        }
-        
-        if(menu.index == "3"){
-            self.survey2["third_choise"] = menu.index
-        }
-        
-        if(menu.index == "4"){
-            self.survey2["fourth_choise"] = menu.index
-        }
-        
-        if(menu.index == "5"){
-            self.survey2["fifth_choise"] = menu.index
-        }
-        */
-        
-    }
-
-//
-    func dropDownMenu(_ menu: ZHDropDownMenu!, didInput text: String!) {
-        print("\(menu) input text \(text)")
-    }
     
     @IBAction func goBack(_ sender: Any) {
         navigationController?.popViewController(animated:true)
     }
     
     @IBAction func nextButtononClick(_ sender: Any) {
-        //if
-        
-        if textIndex != nil{
-            self.performSegue(withIdentifier: "WritingToResult", sender: self)
+        if viewControl.selectedSegmentIndex == 1{
+            if textIndex != nil{
+                self.performSegue(withIdentifier: "WritingToResult", sender: self)
+            }
+        }
+        else{
+            if content.text != nil{
+                self.performSegue(withIdentifier: "WritingToResult", sender: self)
+            }
         }
     }
     
