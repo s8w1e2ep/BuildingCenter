@@ -127,7 +127,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onClickEnglish:" destination="vLW-h4-bF9" eventType="touchUpInside" id="LGj-Bx-7dB"/>
-                                    <action selector="playsound:" destination="vLW-h4-bF9" eventType="touchUpInside" id="Wf9-Q3-g3x"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="living_logo" translatesAutoresizingMaskIntoConstraints="NO" id="xXz-ay-jMm">
@@ -142,7 +141,6 @@
                                 <state key="normal" backgroundImage="home_btn_chinese"/>
                                 <connections>
                                     <action selector="onClickChinese:" destination="vLW-h4-bF9" eventType="touchUpInside" id="ujq-OG-IcA"/>
-                                    <action selector="playsound:" destination="vLW-h4-bF9" eventType="touchUpInside" id="SQd-2U-Hpe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -939,6 +937,7 @@
                             <rect key="frame" x="71" y="282" width="219" height="40"/>
                             <state key="normal" title="略過" backgroundImage="btn_graysquare_normal"/>
                             <connections>
+                                <action selector="buttonsound:" destination="DkL-DR-66f" eventType="touchUpInside" id="7gO-eW-njf"/>
                                 <segue destination="ulF-dK-yeo" kind="show" id="51g-2q-v7G"/>
                             </connections>
                         </button>
