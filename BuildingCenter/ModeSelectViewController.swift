@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -27,6 +28,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        databaseHelper.querymodeTable()
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }
@@ -55,7 +57,13 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
+    
     @IBAction func goBack(_ sender: UIBarButtonItem) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated: true)
     }
     
@@ -150,6 +158,11 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         selectedCell = indexPath.item
         
         

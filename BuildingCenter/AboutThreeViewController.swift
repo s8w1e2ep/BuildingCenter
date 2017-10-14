@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class AboutThreeViewController: UIViewController {
 
@@ -14,10 +15,10 @@ class AboutThreeViewController: UIViewController {
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var nextPage: UIButton!
-    
+    let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        databasehelper.querymodeTable(zoneID: "6")
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }
@@ -28,10 +29,20 @@ class AboutThreeViewController: UIViewController {
     }
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func nextBtn(_ sender: Any) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         self.performSegue(withIdentifier: "toNext", sender: self);
     }
 

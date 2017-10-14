@@ -38,13 +38,15 @@ class ImageDownload{
     
     func sessionSimpleDownload(urlpath:String){
         //下载地址
-        let url = URL(string: urlpath)
+        /*let url = URL(string: urlpath)
         //请求
         let request = URLRequest(url: url!)
         //let config = URLSessionConfiguration.background(withIdentifier: "")
-        let session = URLSession.shared
+        //let session = URLSession.shared
+        let config = URLSessionConfiguration.background(withIdentifier: "com.example.DownloadTaskExample.background")
+        let session = URLSession(configuration: config, delegate: self as! URLSessionDelegate, delegateQueue: OperationQueue())
         let sessionConfig = URLSessionConfiguration.default
-        sessionConfig.timeoutIntervalForRequest = 120.0
+        sessionConfig.timeoutIntervalForRequest = 120.0*/
         //print(sessionConfig.timeoutIntervalForResource)
         //let session = URLSession(configuration: sessionConfig)
         //let session = URLSession(configuration:config,delegate:seif,delegateQueue:nil)
@@ -55,9 +57,31 @@ class ImageDownload{
             pathname = i
         }
         //print(pathname)
+        
+        let group = DispatchGroup()
+         group.enter()
+         DispatchQueue.global().async {
+         
+         
+        
+        
         let documnets:String = NSHomeDirectory() + "/Documents/"+pathname
         let fileManager = FileManager.default
         if(!FileManager.default.fileExists(atPath: documnets)){
+        /*let url = URL(string: urlpath)
+            let request = URLRequest(url: url!)
+            //let config = URLSessionConfiguration.background(withIdentifier: "")
+
+            let session = URLSession.shared
+            let sessionConfig = URLSessionConfiguration.background(withIdentifier: pathname)
+            sessionConfig.timeoutIntervalForRequest = 120.0*/
+            //下载地址
+            let url = URL(string: urlpath)
+            //请求
+            let request = URLRequest(url: url!)
+            let config = URLSessionConfiguration.default
+            let session = URLSession(configuration: config)
+            
         let task = session.downloadTask(with: request) { (tempLocalUrl, response, error) in
             if let tempLocalUrl = tempLocalUrl, error == nil {
                 // Success
@@ -76,7 +100,7 @@ class ImageDownload{
                         //let fileManager = FileManager.default
                         
                         if(!FileManager.default.fileExists(atPath: documnets)){
-                            try! fileManager.moveItem(atPath: locationPath, toPath: documnets)}}
+                            try fileManager.moveItem(atPath: locationPath, toPath: documnets)}}
                 } catch (let writeError) {
                     print("Error")
                 }
@@ -90,6 +114,17 @@ class ImageDownload{
         else{
             print("already exist"+pathname)
         }
+        
+            
+        group.leave()
+            
+        }
+        
+        // wait ...
+        group.wait()
+        
+        // ... and return as soon as "a" has a value
+        
         
         /*
         let downloadTask = session.downloadTask(with: request,

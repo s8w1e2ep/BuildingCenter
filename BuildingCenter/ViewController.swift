@@ -49,10 +49,11 @@ class ViewController: UIViewController {
 
         }*/
         //databasehelper.update_mode_isread(modeID: "5")
-        //databasehelper.querymodeTable(zoneID: "1")
-        //databasehelper.querymodeTable(zoneID: "2")
+        databasehelper.querymodeTable(zoneID: "1")
+        databasehelper.querymodeTable(zoneID: "2")
+        databasehelper.querymodeTable(zoneID: "3")
+        
         //databasehelper.querymodeTable()
-        databasehelper.querymodeTable()
         /*var when = DispatchTime.now() + 2 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             let databasehelper1 = Databasehelper()
@@ -66,6 +67,27 @@ class ViewController: UIViewController {
         let zone1 = databasehelper.queryzoneTable(zoneID: "2")
         print(zone1.is_like)*/
         
+       /*let group = DispatchGroup()
+        group.enter()
+        DispatchQueue.global().async {
+            let databasehelper1 = Databasehelper()
+            databasehelper1.querymodeTable()
+            group.leave()
+            
+        }
+        
+        // wait ...
+        group.wait()
+        
+        // ... and return as soon as "a" has a value
+        
+        // does not wait. But the code in notify() is run
+        // after enter() and leave() calls are balanced
+        
+        group.notify(queue: .main) {
+            print("done")
+        }*/
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -78,6 +100,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
 
@@ -27,10 +28,10 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
     ]
     let pageCutRate:CGFloat = 0.1
     var currentIndex = 1
-    
+    let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        databasehelper.querymodeTable(zoneID: "7")
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setLayout()
         
@@ -53,10 +54,20 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func nextBtn(_ sender: Any) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         self.performSegue(withIdentifier: "toNext", sender: self);
     }
 

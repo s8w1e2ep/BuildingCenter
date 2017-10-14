@@ -127,7 +127,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onClickEnglish:" destination="vLW-h4-bF9" eventType="touchUpInside" id="LGj-Bx-7dB"/>
-                                    <action selector="playsound:" destination="vLW-h4-bF9" eventType="touchUpInside" id="Wf9-Q3-g3x"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="living_logo" translatesAutoresizingMaskIntoConstraints="NO" id="xXz-ay-jMm">
@@ -142,7 +141,6 @@
                                 <state key="normal" backgroundImage="home_btn_chinese"/>
                                 <connections>
                                     <action selector="onClickChinese:" destination="vLW-h4-bF9" eventType="touchUpInside" id="ujq-OG-IcA"/>
-                                    <action selector="playsound:" destination="vLW-h4-bF9" eventType="touchUpInside" id="SQd-2U-Hpe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -939,6 +937,7 @@
                             <rect key="frame" x="71" y="282" width="219" height="40"/>
                             <state key="normal" title="略過" backgroundImage="btn_graysquare_normal"/>
                             <connections>
+                                <action selector="buttonsound:" destination="DkL-DR-66f" eventType="touchUpInside" id="7gO-eW-njf"/>
                                 <segue destination="ulF-dK-yeo" kind="show" id="51g-2q-v7G"/>
                             </connections>
                         </button>
@@ -1151,13 +1150,14 @@
                                         <barButtonItem key="leftBarButtonItem" image="icon_info" id="bGp-SJ-NEr">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
+                                                <action selector="buttonsound:" destination="w5y-cL-xo6" id="zuw-XZ-qa9"/>
                                                 <segue destination="Nce-8U-8ZZ" kind="presentation" id="JZt-8V-kEV"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="icon_questionnaire" id="8AV-sg-g4K">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <action selector="goQuestionnaire:" destination="w5y-cL-xo6" id="qAD-vR-QdB"/>
+                                                <action selector="buttonsound:" destination="w5y-cL-xo6" id="U8k-Wb-GgZ"/>
                                                 <segue destination="2CP-yP-3YF" kind="presentation" id="osR-2K-3Z8"/>
                                             </connections>
                                         </barButtonItem>
@@ -2696,6 +2696,7 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_nextstep_active_1"/>
                                 <connections>
+                                    <action selector="buttonsound:" destination="Spq-Sh-c9A" eventType="touchUpInside" id="Ir6-5I-JEy"/>
                                     <segue destination="of8-G8-XJ5" kind="show" identifier="zone_to_mode_select" id="xD5-Ta-ZVs"/>
                                 </connections>
                             </button>
@@ -2977,6 +2978,7 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_nextstep_active_1"/>
                                 <connections>
+                                    <action selector="buttonsound:" destination="KPE-ag-WVY" eventType="touchUpInside" id="W3g-uc-8uT"/>
                                     <segue destination="H93-C3-x5J" kind="show" identifier="mode_intro_to_landscape" id="yg2-lY-Nhq"/>
                                 </connections>
                             </button>
@@ -3099,6 +3101,7 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_nextstep_active_1"/>
                                 <connections>
+                                    <action selector="buttonsound:" destination="H93-C3-x5J" eventType="touchUpInside" id="EzM-Ug-Ks0"/>
                                     <segue destination="iYc-1s-yfQ" kind="show" identifier="landscape_to_mode_content" id="bcl-V5-tJi"/>
                                 </connections>
                             </button>

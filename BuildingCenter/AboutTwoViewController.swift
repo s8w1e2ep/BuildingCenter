@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class AboutTwoViewController: UIViewController {
 
@@ -15,10 +16,10 @@ class AboutTwoViewController: UIViewController {
     
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var nextPage: UIButton!
-    
+    let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        databasehelper.querymodeTable(zoneID: "5")
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }
@@ -30,10 +31,20 @@ class AboutTwoViewController: UIViewController {
     
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func nextBtn(_ sender: Any) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         self.performSegue(withIdentifier: "toNext", sender: self);
     }
 

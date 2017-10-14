@@ -8,6 +8,8 @@
 
 import UIKit
 import JavaScriptCore
+import AudioToolbox
+
 class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultListener {
     
     @IBOutlet weak var navBar: UINavigationBar!
@@ -134,16 +136,30 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
             zoneViewController.zoneItem = zoneItem
         }
     }
-    
-    @IBAction func goQuestionnaire(_ sender: Any) {
-        self.performSegue(withIdentifier: "mainToQuestionnaire", sender: self);
+    @IBAction func buttonsound(_ sender: Any) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
     }
     
+    
     @IBAction func onEnterClick(_ sender: UIButton) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         self.performSegue(withIdentifier: "map_to_zone", sender: self);
     }
     
     @IBAction func onCancelClick(_ sender: UIButton) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         setNoticeIsHidden(isHidden: true)
     }
     
