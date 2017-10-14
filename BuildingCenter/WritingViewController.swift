@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WritingViewController: UIViewController,ZHDropDownMenuDelegate{
+class WritingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     var image: UIImage!
     var template: UIImage!
@@ -19,13 +19,16 @@ class WritingViewController: UIViewController,ZHDropDownMenuDelegate{
     var zoneTw = [String!] ()
     var zoneEn = [String!] ()
     
+    @IBOutlet weak var selectItem: UILabel!
+    @IBOutlet weak var menu: UITableView!
+    @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var content: UITextField!
-    @IBOutlet weak var menu: ZHDropDownMenu!
     @IBOutlet weak var writeTextView: UIView!
     @IBOutlet weak var buildTextView: UIView!
     @IBOutlet weak var viewControl: UISegmentedControl!
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var chooseAreaLabel: UILabel!
     
     @IBOutlet weak var Radio1: RadioButton!
     @IBOutlet weak var Radio2: RadioButton!
@@ -34,7 +37,6 @@ class WritingViewController: UIViewController,ZHDropDownMenuDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menu.delegate = self
         text.append(Radio1.title(for: .normal)!)
         text.append(Radio2.title(for: .normal)!)
         text.append(Radio3.title(for: .normal)!)
@@ -42,8 +44,17 @@ class WritingViewController: UIViewController,ZHDropDownMenuDelegate{
         zoneEn.append("Your Selection")
         setMenucontent()
         setText(selectLanguage: BeginViewController.selectedLanguage)
+        
+        self.menu.reloadData()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        //self.menu.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,16 +66,45 @@ class WritingViewController: UIViewController,ZHDropDownMenuDelegate{
         navItem.title = "text_master".localized(language:selectLanguage)
         nextBtn.setTitle("nextstep".localized(language:selectLanguage),for: .normal)
         content.placeholder = "template_content".localized(language:selectLanguage)
-
+        chooseAreaLabel.text = "choose_area".localized(language:selectLanguage)
+        selectItem.text = "spinner_please_select".localized(language:selectLanguage)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if(BeginViewController.isEnglish){
-            menu.options = zoneEn
-            menu.placeholder = zoneEn[0]
+            return zoneEn.count
         }
         else{
-            menu.options = zoneTw
-            menu.placeholder = zoneTw[0]
+            return zoneTw.count
         }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AreaCell", for: indexPath) as! WritingAreaViewCell
+        if(BeginViewController.isEnglish){
+            cell.areaName.text = zoneEn[indexPath.row]
+        }
+        else{
+            cell.areaName.text = zoneTw[indexPath.row]
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        if(BeginViewController.isEnglish){
+            selectItem.text = zoneEn[indexPath.row]
+        }
+        else{
+            selectItem.text = zoneTw[indexPath.row]
+        }
+        menuView.isHidden = !menu.isHidden
+    }
+    
+    @IBAction func OnChecklistBtnAction(_ sender: Any) {
+        print("3.zoneTW.count = \(zoneTw.count)")
+        print("3.zoneEn.count = \(zoneEn.count)")
 
+        menuView.isHidden = !menuView.isHidden
     }
     
     @IBAction func changeView(_ sender: UISegmentedControl) {
@@ -96,6 +136,7 @@ class WritingViewController: UIViewController,ZHDropDownMenuDelegate{
             }
         }
         
+        
     }
     
     @IBAction func logSelectedButton(_ isRadioButton:RadioButton){
@@ -103,7 +144,7 @@ class WritingViewController: UIViewController,ZHDropDownMenuDelegate{
         textIndex = Int(isRadioButton.index)! - 1
         
     }
-    
+//
     func dropDownMenu(_ menu: ZHDropDownMenu!, didChoose index: Int) {
         
          print("menu.index = \(menu.index)")
@@ -133,7 +174,7 @@ class WritingViewController: UIViewController,ZHDropDownMenuDelegate{
         
     }
 
-    
+//
     func dropDownMenu(_ menu: ZHDropDownMenu!, didInput text: String!) {
         print("\(menu) input text \(text)")
     }

@@ -11,8 +11,10 @@ import UIKit
 class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
-    @IBOutlet weak var diary_camera: UIButton!
-    @IBOutlet weak var diary_photo: UIButton!
+    @IBOutlet weak var titleImage: UIImageView!
+    @IBOutlet weak var cameraBtn: UIButton!
+    @IBOutlet weak var photoBtn: UIButton!
+    
     var image : UIImage!
     
     override func viewDidLoad() {
@@ -33,8 +35,15 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
     }
     
     func setText(selectLanguage: String){
-        diary_photo.setTitle("\n\n"+"diary_photo".localized(language: selectLanguage), for: .normal)
-        diary_camera.setTitle("\n\n"+"diary_camera".localized(language: selectLanguage), for: .normal)
+        photoBtn.setTitle("\n\n"+"diary_photo".localized(language: selectLanguage), for: .normal)
+        cameraBtn.setTitle("\n\n"+"diary_camera".localized(language: selectLanguage), for: .normal)
+        
+        if(BeginViewController.isEnglish){
+            titleImage.image = #imageLiteral(resourceName: "title_english")
+        }
+        else{
+            titleImage.image = #imageLiteral(resourceName: "title_chinese")
+        }
     }
     
     /// 開啟相機或相簿

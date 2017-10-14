@@ -10,6 +10,10 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var sendEmailBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage!
@@ -24,16 +28,31 @@ class ResultViewController: UIViewController {
         
         
         imageView.image = combine(leftImage: template, rightImage: image)
+        setText(selectLanguage: BeginViewController.selectedLanguage)
         // Do any additional setup after loading the view.
     }
 
+    func setText(selectLanguage: String){
+        saveBtn.setTitle("save_to_phone".localized(language:selectLanguage), for: .normal)
+        sendEmailBtn.setTitle("send_mail".localized(language:selectLanguage),for: .normal)
+        backBtn.setTitle("back_to_main".localized(language:selectLanguage), for: .normal)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func OnMenuBtnAction(_ sender: Any) {
+        menuView.isHidden = !menuView.isHidden
+    }
+    
     @IBAction func goBack(_ sender: Any) {
         navigationController?.popViewController(animated:true)
+    }
+    
+    @IBAction func OnbackBtnAction(_ sender: Any) {
+        menuView.isHidden = !menuView.isHidden
     }
     
     func reSizeImage(Image: UIImage,reSize:CGSize)->UIImage {
@@ -47,6 +66,7 @@ class ResultViewController: UIViewController {
     
     func combine(leftImage: UIImage, rightImage: UIImage) -> UIImage {
         
+        var textImage = text as NSString
         var width = self.view.bounds.width
         var height = self.view.bounds.height
         var x = CGFloat(0)
@@ -72,6 +92,9 @@ class ResultViewController: UIViewController {
         UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, UIScreen.main.scale)
         Template.draw(at: CGPoint(x: 0, y: 0))
         Image.draw(at: CGPoint(x: x, y: y))
+        let textAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20.0), NSBackgroundColorAttributeName: UIColor.clear] as [String : Any]
+        //let size = textImage.size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20.0)])
+        textImage.draw(at: CGPoint(x: 65, y: 450), withAttributes: textAttributes)
         let imageLong = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return imageLong!

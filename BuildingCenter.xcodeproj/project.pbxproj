@@ -10,6 +10,7 @@
 		4914869C7FEEB3FBF83F3E39 /* Pods_BuildingCenterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BC750BE44098288C7937F8 /* Pods_BuildingCenterTests.framework */; };
 		5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F58DFC31F1E560C004159D3 /* SelectGuiderViewController.swift */; };
 		5F700B331F349B7E00D8C138 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F700B321F349B7E00D8C138 /* LaunchViewController.swift */; };
+		5F7DA15A1F91BD750051FE21 /* WritingAreaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7DA1591F91BD750051FE21 /* WritingAreaViewCell.swift */; };
 		5F8C48581F4DB6C0006E7BEB /* Databasehelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48571F4DB6C0006E7BEB /* Databasehelper.swift */; };
 		5F8C485A1F544E9E006E7BEB /* ZoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C48591F544E9E006E7BEB /* ZoneItem.swift */; };
 		5F8C48601F5E94F9006E7BEB /* DBColExpress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C485F1F5E94F9006E7BEB /* DBColExpress.swift */; };
@@ -123,6 +124,7 @@
 		43BC750BE44098288C7937F8 /* Pods_BuildingCenterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildingCenterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F58DFC31F1E560C004159D3 /* SelectGuiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGuiderViewController.swift; sourceTree = "<group>"; };
 		5F700B321F349B7E00D8C138 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		5F7DA1591F91BD750051FE21 /* WritingAreaViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingAreaViewCell.swift; sourceTree = "<group>"; };
 		5F8C48571F4DB6C0006E7BEB /* Databasehelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Databasehelper.swift; sourceTree = "<group>"; };
 		5F8C48591F544E9E006E7BEB /* ZoneItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneItem.swift; sourceTree = "<group>"; };
 		5F8C485F1F5E94F9006E7BEB /* DBColExpress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBColExpress.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 				5F8C48651F63D5F7006E7BEB /* CompanyItem.swift */,
 				5F8C48A71F84E296006E7BEB /* BeaconItem.swift */,
 				5F8C48A91F85025C006E7BEB /* HintItem.swift */,
+				5F7DA1591F91BD750051FE21 /* WritingAreaViewCell.swift */,
 			);
 			name = CustomizedObject;
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 				76705BAE1F555F0E00047414 /* GuiderHintViewController.swift in Sources */,
 				762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */,
 				76CE4F941F5E9665008219D4 /* PageViewController.swift in Sources */,
+				5F7DA15A1F91BD750051FE21 /* WritingAreaViewCell.swift in Sources */,
 				5F8C48AC1F8E517A006E7BEB /* ResultViewController.swift in Sources */,
 				5FE9716F1F1CB56B005EDE58 /* AboutTwoViewController.swift in Sources */,
 				A20453E01F50FF1100162025 /* Qn5ViewController.swift in Sources */,
