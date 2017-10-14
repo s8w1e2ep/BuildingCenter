@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ModeContentViewController: UIViewController, UIScrollViewDelegate {
     
@@ -69,7 +70,13 @@ class ModeContentViewController: UIViewController, UIScrollViewDelegate {
             pageViewController.modeItem = modeItem
         }
     }
+    
     @IBAction func goBack(_ sender: UIBarButtonItem) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated: true)
     }
     

@@ -35,7 +35,6 @@
 		709EB43E1F5D2C05007665E3 /* WritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB43D1F5D2C02007665E3 /* WritingViewController.swift */; };
 		70C57B661F27E76B00F83F77 /* HipsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C57B651F27E76B00F83F77 /* HipsterViewController.swift */; };
 		70C57B681F27F00500F83F77 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C57B671F27F00500F83F77 /* SelectViewController.swift */; };
-		761ACF8D1F78004A00B118D1 /* button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 761ACF8C1F78003E00B118D1 /* button.mp3 */; };
 		76274EEB1F82609B00E607DE /* BleScannerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274EE51F825E9F00E607DE /* BleScannerWrapper.m */; };
 		76274EEC1F8260BA00E607DE /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274EE71F825EA900E607DE /* BLE.m */; };
 		762D8D421F1E74EF004295A9 /* AreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D8D411F1E74EF004295A9 /* AreaViewController.swift */; };
@@ -95,6 +94,7 @@
 		A23FCA2B1F4F115300A91294 /* Qn2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23FCA2A1F4F115300A91294 /* Qn2ViewController.swift */; };
 		A23FCA2D1F4F116600A91294 /* Qn3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23FCA2C1F4F116600A91294 /* Qn3ViewController.swift */; };
 		A277C5871F7F470B00B5DD6B /* DropMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277C5861F7F470B00B5DD6B /* DropMenuButton.swift */; };
+		A2B636701F91EA01001BA701 /* button.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A2B6366F1F91EA01001BA701 /* button.m4a */; };
 		EBDCDB62C04C9755E5E4DA09 /* Pods_BuildingCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6872238074D4F91B1AC87B03 /* Pods_BuildingCenter.framework */; };
 /* End PBXBuildFile section */
 
@@ -155,8 +155,6 @@
 		709EB43D1F5D2C02007665E3 /* WritingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingViewController.swift; sourceTree = "<group>"; };
 		70C57B651F27E76B00F83F77 /* HipsterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipsterViewController.swift; sourceTree = "<group>"; };
 		70C57B671F27F00500F83F77 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
-		761ACF8C1F78003E00B118D1 /* button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button.mp3; sourceTree = "<group>"; };
-		7621B0991F91092700C543DD /* BuildingCenter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuildingCenter.entitlements; sourceTree = "<group>"; };
 		76274EE01F825E6200E607DE /* BuildingCenter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuildingCenter-Bridging-Header.h"; sourceTree = "<group>"; };
 		76274EE31F825E8300E607DE /* MacroDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
 		76274EE41F825E9600E607DE /* BleScannerWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BleScannerWrapper.h; sourceTree = "<group>"; };
@@ -225,6 +223,7 @@
 		A23FCA2A1F4F115300A91294 /* Qn2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn2ViewController.swift; sourceTree = "<group>"; };
 		A23FCA2C1F4F116600A91294 /* Qn3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qn3ViewController.swift; sourceTree = "<group>"; };
 		A277C5861F7F470B00B5DD6B /* DropMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropMenuButton.swift; sourceTree = "<group>"; };
+		A2B6366F1F91EA01001BA701 /* button.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.m4a; sourceTree = "<group>"; };
 		D3020C857404765C33CFC69D /* Pods-BuildingCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenter/Pods-BuildingCenter.release.xcconfig"; sourceTree = "<group>"; };
 		F39B9B310BEF420CF9DB6750 /* Pods-BuildingCenterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenterUITests/Pods-BuildingCenterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB54794DF16F31D3F1D950B7 /* Pods-BuildingCenterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingCenterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildingCenterTests/Pods-BuildingCenterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -317,7 +316,6 @@
 		5FE9713B1F1C9F0A005EDE58 /* BuildingCenter */ = {
 			isa = PBXGroup;
 			children = (
-				7621B0991F91092700C543DD /* BuildingCenter.entitlements */,
 				5F8C48561F4DB67A006E7BEB /* Database */,
 				767B6E5C1F5670CC00894B66 /* Localized */,
 				767B6E5B1F56701900894B66 /* CustomizedObject */,
@@ -335,7 +333,7 @@
 				5FE971451F1C9F0A005EDE58 /* LaunchScreen.storyboard */,
 				5FE971481F1C9F0A005EDE58 /* Info.plist */,
 				5F700B321F349B7E00D8C138 /* LaunchViewController.swift */,
-				761ACF8C1F78003E00B118D1 /* button.mp3 */,
+				A2B6366F1F91EA01001BA701 /* button.m4a */,
 			);
 			path = BuildingCenter;
 			sourceTree = "<group>";
@@ -645,9 +643,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				761ACF8D1F78004A00B118D1 /* button.mp3 in Resources */,
 				A23FCA211F4ECE9400A91294 /* jquery-1.11.3.min.js in Resources */,
 				7652CF561F57F8CC00F7F733 /* Localizable.strings in Resources */,
+				A2B636701F91EA01001BA701 /* button.m4a in Resources */,
 				A23FCA201F4ECE9400A91294 /* index.html in Resources */,
 				A23FCA221F4ECE9400A91294 /* Map_1F.svg in Resources */,
 				A23FCA291F4F052A00A91294 /* default_down.png in Resources */,

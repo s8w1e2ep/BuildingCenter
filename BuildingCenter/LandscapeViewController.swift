@@ -8,6 +8,7 @@
 
 
 import UIKit
+import AudioToolbox
 
 class LandscapeViewController: UIViewController {
     
@@ -51,7 +52,19 @@ class LandscapeViewController: UIViewController {
             modeContentViewController.modeItem = modeItem
         }
     }
+    @IBAction func buttonsound(_ sender: Any) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
+    }
     @IBAction func goBack(_ sender: UIBarButtonItem) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated: true)
     }
     func setLayout() {

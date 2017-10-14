@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class AreaViewController: UIViewController {
     
@@ -37,7 +38,13 @@ class AreaViewController: UIViewController {
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setContent()
     }
-    
+    @IBAction func buttonsound(_ sender: Any) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
         NotificationCenter.default.post(name: notificationEnterText, object: nil, userInfo: ["TTS":textView.text])

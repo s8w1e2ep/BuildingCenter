@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import AudioToolbox
+
 
 class MainPageViewController: UIViewController {
 
@@ -70,6 +72,11 @@ class MainPageViewController: UIViewController {
         
     }
     @IBAction func onMapClick(_ sender: UIButton) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         if !mapButton.isSelected {
             changeTab(to: mapButton)
             changePage(to: mapNavigationController)
@@ -80,6 +87,11 @@ class MainPageViewController: UIViewController {
     }
     
     @IBAction func onInfoClick(_ sender: UIButton) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         if infoButton.isSelected {
             
             infoButton.isSelected = false
@@ -92,11 +104,20 @@ class MainPageViewController: UIViewController {
     }
     
     @IBAction func onHipsterClick(_ sender: UIButton) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         changeTab(to: hipsterButton)
         changePage(to: hipsterViewController)
     }
     @IBAction func onSpeechClick(_ sender: UIButton) {
-        
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         if speechButton.isSelected {
             synth.stopSpeaking(at: AVSpeechBoundary.immediate)
             speechButton.isSelected = false
@@ -113,6 +134,11 @@ class MainPageViewController: UIViewController {
         }
     }
     @IBAction func onTextClick(_ sender: UIButton) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         if textButton.isSelected {
             slider.isHidden = true
             textButton.isSelected = false

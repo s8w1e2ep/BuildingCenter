@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import AVFoundation
+import AudioToolbox
 
 class BeginViewController: UIViewController {
     
-    var buttonsound: AVAudioPlayer = AVAudioPlayer()
     
     static let defaults = UserDefaults.standard
     static var selectedLanguage: String = "zh-Hant";
@@ -32,34 +31,29 @@ class BeginViewController: UIViewController {
     }
 
     @IBAction func onClickChinese(_ sender: UIButton) {
-        //myPlayer?.play()
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         // Set Language zh-Hant(Chinese).
         BeginViewController.selectedLanguage = "zh-Hant"
         BeginViewController.isEnglish = false
         performSegue(withIdentifier: "BeginToAboutOne", sender: self)
     }
     @IBAction func onClickEnglish(_ sender: UIButton) {
-        //myPlayer?.play()
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         // Set Set Language en(English).
         BeginViewController.selectedLanguage = "en"
         BeginViewController.isEnglish = true
         performSegue(withIdentifier: "BeginToAboutOne", sender: self)
     }
     
-    @IBAction func playsound(_ sender: Any) {
-        
-        let path = Bundle.main.path(forResource: "button.mp3", ofType:nil)!
-
-        let url = URL(fileURLWithPath: path)
-        do{
-            let sound = try AVAudioPlayer(contentsOf: url)
-            buttonsound = sound
-            sound.play()
-        }
-        catch {
-            print(error)
-        }
-    }
+    
     
     /*
     // MARK: - Navigation
