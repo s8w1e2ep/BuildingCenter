@@ -5,10 +5,11 @@
 //  Created by uscc on 2017/10/11.
 //  Copyright © 2017年 uscc. All rights reserved.
 //
-
+import Foundation
 import UIKit
+import MessageUI
 
-class ResultViewController: UIViewController {
+class ResultViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var QRcodeImageView: UIImageView!
     @IBOutlet weak var storeView: UIView!
@@ -19,18 +20,107 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    
+    var hipster = NSMutableDictionary()
+    var combineImage: UIImage!
+    var QRcodeImage: UIImage!
     var image: UIImage!
     var template: UIImage!
     var index: Int!
     var text: String!
     var label: UILabel!
+    let currentdate = Date()
+    let dateformatter = DateFormatter()
+    var imageFileName: String!
+    var QRcodeFileName: String!
+    var imageData: Data!
+    var combineImageData: Data!
+    var QRcodeImageData: Data!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        dateformatter.dateFormat = "YYYY-MM-dd_HH:mm:ss"
+        imageFileName = dateformatter.string(from: currentdate) + ".jpeg"
         creatQRcode()
-        imageView.image = combine(leftImage: template, rightImage: image)
+        combineImage = combine(leftImage: template, rightImage: image)
+        imageView.image = combineImage
+        //updateHipster()
         setText(selectLanguage: BeginViewController.selectedLanguage)
+    }
+    /*
+    func updateHipster(){
+        imageData = UIImagePNGRepresentation(image)
+        combineImageData = UIImagePNGRepresentation(combineImage)
+        //let json: [String: Any] = ["content": text/*text.cString(using: .utf8)!*/, "picture_name": "", "combine_name": imageFileName, "hipster_template_id": 1, "hipster_text_id": 1, "zone_id": 1, "picture_data": imageData.base64EncodedString(), "combine_data": combineImageData.base64EncodedString()]
+     
+        self.hipster["content"] = text
+        self.hipster["picture_name"] = ""
+        self.hipster["combine_name"] = imageFileName
+        self.hipster["hipster_template_id"] = 1
+        self.hipster["hipster_text_id"] = 1
+        self.hipster["zone_id"] = 1
+        //self.hipster["picture_data"] = imageData.base64EncodedString()
+        //self.hipster["combine_data"] = combineImageData.base64EncodedString()
+        //print(json)
+
+        if let JsonData = try? JSONSerialization.data(withJSONObject: /*json*/self.hipster, options: [])
+        {
+            
+            print(JsonData)
+            let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
+            var stringUrl = DatabaseUtilizer.hipsterContentURL + "?hipster_content="
+            stringUrl += JsontoUtf8!
+            print(stringUrl)
+            
+            
+            if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+                let url = NSURL(string: encodedURL)
+                do{
+                    let html = try String(contentsOf: url! as URL)
+                    print(html)
+                }catch{
+                    print(error)
+                }
+                
+            }
+            
+            
+        }
+    }
+    */
+    @IBAction func sendEmailButtonTapped(_ sender: Any) {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
+        
+        QRcodeImageData = UIImagePNGRepresentation(QRcodeImage)
+        
+        //mailComposerVC.setToRecipients([""])
+        //mailComposerVC.setSubject("")
+        //mailComposerVC.setMessageBody("", isHTML: false)
+        mailComposerVC.addAttachmentData(combineImageData!, mimeType: "", fileName: imageFileName)
+        mailComposerVC.addAttachmentData(QRcodeImageData!, mimeType: "", fileName: imageFileName)
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    // MARK: MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 
     func creatQRcode(){
@@ -40,8 +130,9 @@ class ResultViewController: UIViewController {
             let filter = CIFilter(name: "CIQRCodeGenerator")
             filter?.setValue(data, forKey: "inputMessage")
             
-            let img = UIImage(ciImage: (filter?.outputImage)!)
-            QRcodeImageView.image = img
+            QRcodeImage = UIImage(ciImage: (filter?.outputImage)!)
+            QRcodeFileName = "1531515346.jpg"
+            QRcodeImageView.image = QRcodeImage
         }
     }
     
