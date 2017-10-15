@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         
         
         //databasehelper.deleteTable()
-        //databasehelper.creatTable()
+        databasehelper.creatTable()
         
         //imgdownload.getpic(url: "http://192.168.65.28/web/media/project/project1/zone/photo_1-5638920671c92.jpg")
         //imgdownload.showpic(image: img, url: "")
@@ -132,9 +132,7 @@ class ViewController: UIViewController {
         let documnets:String = NSHomeDirectory() + "/Documents/"
         let fileManager = FileManager.default
         let dirContents = try? fileManager.contentsOfDirectory(atPath: documnets)
-        let count = dirContents?.count
-        let semaphore = DispatchSemaphore(value:0)
-        //databasehelper.querymodeTable(zoneID: "1")
+        databasehelper.querymodeTable(zoneID: "1")
         databasehelper.querymodeTable(zoneID: "2")
         databasehelper.querymodeTable(zoneID: "3")
         databasehelper.querymodeTable(zoneID: "4")
