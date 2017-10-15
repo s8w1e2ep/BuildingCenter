@@ -45,6 +45,9 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         combineImage = combine(leftImage: template, rightImage: image)
         imageView.image = combineImage
         //updateHipster()
+        imageData = UIImagePNGRepresentation(image)
+        combineImageData = UIImagePNGRepresentation(combineImage)
+        
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }
     /*
@@ -108,7 +111,7 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         //mailComposerVC.setSubject("")
         //mailComposerVC.setMessageBody("", isHTML: false)
         mailComposerVC.addAttachmentData(combineImageData!, mimeType: "", fileName: imageFileName)
-        mailComposerVC.addAttachmentData(QRcodeImageData!, mimeType: "", fileName: imageFileName)
+        //mailComposerVC.addAttachmentData(QRcodeImageData!, mimeType: "", fileName: QRcodeFileName)
         return mailComposerVC
     }
     
