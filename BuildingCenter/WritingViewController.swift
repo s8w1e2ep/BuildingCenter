@@ -18,13 +18,17 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     var textIndex: Int!
     var zoneTw = [String!] ()
     var zoneEn = [String!] ()
-    
+    var zoneIndex: Int!
+    var textSelectZone: String!
+    var textSelectContent: String!
     
     var currentTextField: UITextField?
     var isKeyboardShown = false
     
     @IBOutlet weak var chooseAreaView: UIView!
     
+    @IBOutlet weak var promptView: UIView!
+    @IBOutlet weak var prompt: UILabel!
     @IBOutlet weak var selectItem: UILabel!
     @IBOutlet weak var menu: UITableView!
     @IBOutlet weak var menuView: UIView!
@@ -47,6 +51,7 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         text.append(Radio1.title(for: .normal)!)
         text.append(Radio2.title(for: .normal)!)
         text.append(Radio3.title(for: .normal)!)
+        zoneIndex = 0
         zoneTw.append("請選擇")
         zoneEn.append("Your Selection")
         setMenucontent()
@@ -56,7 +61,6 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         
         //self.menu.reloadData()
     }
@@ -81,6 +85,8 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         content.placeholder = "template_content".localized(language:selectLanguage)
         chooseAreaLabel.text = "choose_area".localized(language:selectLanguage)
         selectItem.text = "spinner_please_select".localized(language:selectLanguage)
+        textSelectZone = "please_select_zone".localized(language:selectLanguage)
+        textSelectContent = "please_write_content".localized(language:selectLanguage)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -163,6 +169,7 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         else{
             selectItem.text = zoneTw[indexPath.row]
         }
+        zoneIndex = indexPath.row
         menuView.isHidden = !menu.isHidden
     }
     
@@ -221,16 +228,38 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func nextButtononClick(_ sender: Any) {
-        if viewControl.selectedSegmentIndex == 1{
-            if textIndex != nil{
-                self.performSegue(withIdentifier: "WritingToResult", sender: self)
+        if zoneIndex != 0{
+            if viewControl.selectedSegmentIndex == 1{
+                if textIndex != nil{
+                    self.performSegue(withIdentifier: "WritingToResult", sender: self)
+                }
+                else{
+                    prompt.text = textSelectContent
+                    showPrompt()
+                    hiddenPrompt()
+                }
+            }
+            else{
+                if content.text != nil{
+                    self.performSegue(withIdentifier: "WritingToResult", sender: self)
+                }
             }
         }
         else{
-            if content.text != nil{
-                self.performSegue(withIdentifier: "WritingToResult", sender: self)
-            }
+            prompt.text = textSelectZone
+            showPrompt()
+            hiddenPrompt()
         }
+    }
+
+    func showPrompt(){
+        UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseOut, .repeat, .autoreverse], animations: { self.promptView.alpha = 1 }, completion: {_ in self.promptView.isHidden = false })
+        DispatchQueue.main.asyncAfter(deadline: (.now()+1.5), execute: { self.promptView.layer.removeAllAnimations()})
+    }
+    
+    func hiddenPrompt(){
+        UIView.animate(withDuration: 1, delay: 3, options: [.curveEaseOut, .repeat, .autoreverse], animations: { self.promptView.alpha = 0 }, completion: {_ in self.promptView.isHidden = true })
+        DispatchQueue.main.asyncAfter(deadline: (.now()+1.5), execute: { self.promptView.layer.removeAllAnimations()})
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

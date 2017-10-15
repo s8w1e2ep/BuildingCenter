@@ -2417,6 +2417,31 @@
                                     <constraint firstItem="9va-Ze-dvd" firstAttribute="top" secondItem="5lq-yb-x99" secondAttribute="bottom" id="ybl-gr-999"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7s9-b1-qNf">
+                                <rect key="frame" x="94.5" y="539.5" width="187.5" height="45"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map_area_bg_notice" translatesAutoresizingMaskIntoConstraints="NO" id="SNx-vy-Rfi">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="45"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2f-aJ-iCk">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="K2f-aJ-iCk" secondAttribute="bottom" id="2Vj-Oi-NMT"/>
+                                    <constraint firstItem="SNx-vy-Rfi" firstAttribute="leading" secondItem="7s9-b1-qNf" secondAttribute="leading" id="6vr-2v-zrW"/>
+                                    <constraint firstAttribute="trailing" secondItem="SNx-vy-Rfi" secondAttribute="trailing" id="7cS-T7-Y6a"/>
+                                    <constraint firstItem="K2f-aJ-iCk" firstAttribute="leading" secondItem="7s9-b1-qNf" secondAttribute="leading" id="8pH-BJ-8Sz"/>
+                                    <constraint firstAttribute="bottom" secondItem="SNx-vy-Rfi" secondAttribute="bottom" id="PY1-R1-HTj"/>
+                                    <constraint firstAttribute="height" constant="45" id="TNt-RT-Keo"/>
+                                    <constraint firstItem="SNx-vy-Rfi" firstAttribute="top" secondItem="7s9-b1-qNf" secondAttribute="top" id="URh-lZ-zE3"/>
+                                    <constraint firstAttribute="trailing" secondItem="K2f-aJ-iCk" secondAttribute="trailing" id="lH0-xW-aie"/>
+                                    <constraint firstItem="K2f-aJ-iCk" firstAttribute="top" secondItem="7s9-b1-qNf" secondAttribute="top" id="sGA-7U-uQx"/>
+                                </constraints>
+                            </view>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6B-Xp-nHw">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
@@ -2438,10 +2463,10 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AreaCell" id="zVn-UY-nkK" customClass="WritingAreaViewCell" customModule="BuildingCenter" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="301" height="44"/>
+                                                        <rect key="frame" x="0.0" y="28" width="300" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zVn-UY-nkK" id="dIf-6k-Ycx">
-                                                            <rect key="frame" x="0.0" y="0.0" width="301" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfU-R2-u6f">
@@ -2494,9 +2519,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d6B-Xp-nHw" firstAttribute="top" secondItem="Vo3-aY-ZiQ" secondAttribute="bottom" id="DcR-bT-lfK"/>
+                            <constraint firstItem="7s9-b1-qNf" firstAttribute="bottom" secondItem="PCU-oJ-4PK" secondAttribute="bottom" constant="-1" id="EPH-vn-CRE"/>
                             <constraint firstItem="d6B-Xp-nHw" firstAttribute="leading" secondItem="lhX-u8-tIK" secondAttribute="leading" id="G7r-db-vug"/>
+                            <constraint firstItem="7s9-b1-qNf" firstAttribute="centerX" secondItem="lhX-u8-tIK" secondAttribute="centerX" id="N9Y-9X-BMk"/>
                             <constraint firstAttribute="trailing" secondItem="7hW-9s-FfJ" secondAttribute="trailing" id="NZ0-pp-Xkf"/>
                             <constraint firstItem="7hW-9s-FfJ" firstAttribute="top" secondItem="Vo3-aY-ZiQ" secondAttribute="bottom" id="V2y-WD-Vbl"/>
+                            <constraint firstItem="7s9-b1-qNf" firstAttribute="width" secondItem="lhX-u8-tIK" secondAttribute="width" multiplier="0.5" id="ap3-ht-Xyz"/>
                             <constraint firstAttribute="bottom" secondItem="d6B-Xp-nHw" secondAttribute="bottom" id="iKw-fF-sue"/>
                             <constraint firstAttribute="bottom" secondItem="7hW-9s-FfJ" secondAttribute="bottom" id="of1-vN-2Be"/>
                             <constraint firstItem="7hW-9s-FfJ" firstAttribute="leading" secondItem="lhX-u8-tIK" secondAttribute="leading" id="pPz-0B-DhX"/>
@@ -2515,6 +2543,8 @@
                         <outlet property="menuView" destination="d6B-Xp-nHw" id="PCx-Tp-soX"/>
                         <outlet property="navItem" destination="r8s-5p-WcK" id="lG7-gH-Ram"/>
                         <outlet property="nextBtn" destination="3Sp-hs-fod" id="Nqp-x9-m13"/>
+                        <outlet property="prompt" destination="K2f-aJ-iCk" id="nmi-Su-TS6"/>
+                        <outlet property="promptView" destination="7s9-b1-qNf" id="UG3-kX-K7M"/>
                         <outlet property="selectItem" destination="q2n-lh-Jcv" id="Job-Nv-upM"/>
                         <outlet property="viewControl" destination="4qz-QU-BO2" id="hb3-CP-vyZ"/>
                         <outlet property="writeTextView" destination="Ti6-Wq-Crv" id="4Sd-T7-bWH"/>
@@ -2693,6 +2723,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="QRcodeImageView" destination="smD-py-mlk" id="ZYg-kT-Uwk"/>
                         <outlet property="backBtn" destination="LFr-j5-MQi" id="j0f-v4-q6r"/>
                         <outlet property="imageView" destination="mGW-Fl-Z7a" id="IpU-KX-2Ib"/>
                         <outlet property="menuView" destination="w7j-ad-ejD" id="8qP-EY-mfo"/>

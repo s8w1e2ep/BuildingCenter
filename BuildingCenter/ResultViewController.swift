@@ -10,6 +10,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var QRcodeImageView: UIImageView!
     @IBOutlet weak var storeView: UIView!
     @IBOutlet weak var storeLabel: UILabel!
     @IBOutlet weak var backBtn: UIButton!
@@ -26,14 +27,24 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("text = \(text)")
-        
-        
+        creatQRcode()
         imageView.image = combine(leftImage: template, rightImage: image)
         setText(selectLanguage: BeginViewController.selectedLanguage)
-        // Do any additional setup after loading the view.
+        
     }
 
+    func creatQRcode(){
+        let str = "http://60.251.33.54:98/web/controller/userController.php?action=logout" as String!
+        if let urlString = str{
+            let data = urlString.data(using: .ascii, allowLossyConversion: false)
+            let filter = CIFilter(name: "CIQRCodeGenerator")
+            filter?.setValue(data, forKey: "inputMessage")
+            
+            let img = UIImage(ciImage: (filter?.outputImage)!)
+            QRcodeImageView.image = img
+        }
+    }
+    
     func setText(selectLanguage: String){
         saveBtn.setTitle("save_to_phone".localized(language:selectLanguage), for: .normal)
         sendEmailBtn.setTitle("send_mail".localized(language:selectLanguage),for: .normal)
