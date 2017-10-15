@@ -18,7 +18,7 @@ class AboutThreeViewController: UIViewController {
     let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-        databasehelper.querymodeTable(zoneID: "6")
+        //databasehelper.querymodeTable(zoneID: "6")
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }

@@ -19,7 +19,11 @@ class LaunchViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //let q1 = DispatchQueue(label:"q1")
+        databasehelper.creatTable()
         databasehelper.querymodeTable(zoneID: "1")
+        //databasehelper.querymodeTable(zoneID: "2")
+        //databasehelper.querymodeTable(zoneID: "3")
         // fade in animation
         UIView.animate(withDuration: 3.0, animations: {
             self.logo.alpha = 1.0

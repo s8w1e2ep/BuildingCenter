@@ -19,7 +19,7 @@ class AboutTwoViewController: UIViewController {
     let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-        databasehelper.querymodeTable(zoneID: "5")
+        //databasehelper.querymodeTable(zoneID: "5")
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }

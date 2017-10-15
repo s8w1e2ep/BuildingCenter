@@ -31,7 +31,7 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
     let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-        databasehelper.querymodeTable(zoneID: "7")
+        //databasehelper.querymodeTable(zoneID: "7")
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setLayout()
         

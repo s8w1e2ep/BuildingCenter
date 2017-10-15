@@ -87,7 +87,7 @@ class ImageDownload{
                 // Success
                 if let statusCode = (response as? HTTPURLResponse)?.statusCode {
                     //print("Successfully downloaded. Status code: \(statusCode)")
-                    print(pathname)
+                    //print(pathname)
                 }
                 
                 do {
@@ -111,9 +111,9 @@ class ImageDownload{
         }
         task.resume()
         }
-        else{
+        /*else{
             print("already exist"+pathname)
-        }
+        }*/
         
             
         group.leave()
