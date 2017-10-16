@@ -57,4 +57,9 @@ class DBColExpress{
     
     static let is_like = Expression<String?>(DatabaseUtilizer.IS_LIKE)
     
+    //hipster
+    static let hipster_text_id = Expression<String?>(DatabaseUtilizer.HIPSTER_TEXT_ID)
+    static let content = Expression<String?>(DatabaseUtilizer.CONTENT)
+    static let content_en = Expression<String?>(DatabaseUtilizer.CONTENT_EN)
+    
 }

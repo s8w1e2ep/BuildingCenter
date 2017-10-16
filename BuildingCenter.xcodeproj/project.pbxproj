@@ -55,6 +55,7 @@
 		76705BB41F5585A000047414 /* InfoHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BB31F5585A000047414 /* InfoHintViewController.swift */; };
 		76705BB61F5585BC00047414 /* QuestionHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BB51F5585BC00047414 /* QuestionHintViewController.swift */; };
 		769FF6A81F20ECEE00153C87 /* FeedbackHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */; };
+		76B26B5A1F947EE600FFA2D4 /* HipsterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B26B591F947EE600FFA2D4 /* HipsterItem.swift */; };
 		76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */; };
 		76C178351F6BCD770050CAB0 /* DeviceImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C178341F6BCD770050CAB0 /* DeviceImageViewController.swift */; };
 		76CE4F8E1F5E5796008219D4 /* ModeContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */; };
@@ -186,6 +187,7 @@
 		76705BB31F5585A000047414 /* InfoHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHintViewController.swift; sourceTree = "<group>"; };
 		76705BB51F5585BC00047414 /* QuestionHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionHintViewController.swift; sourceTree = "<group>"; };
 		769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackHintViewController.swift; sourceTree = "<group>"; };
+		76B26B591F947EE600FFA2D4 /* HipsterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipsterItem.swift; sourceTree = "<group>"; };
 		76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInstructionViewController.swift; sourceTree = "<group>"; };
 		76C178341F6BCD770050CAB0 /* DeviceImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceImageViewController.swift; sourceTree = "<group>"; };
 		76CE4F8D1F5E5796008219D4 /* ModeContentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentDetailViewController.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				5F8C48A71F84E296006E7BEB /* BeaconItem.swift */,
 				5F8C48A91F85025C006E7BEB /* HintItem.swift */,
 				5F7DA1591F91BD750051FE21 /* WritingAreaViewCell.swift */,
+				76B26B591F947EE600FFA2D4 /* HipsterItem.swift */,
 			);
 			name = CustomizedObject;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				5F8C48661F63D5F7006E7BEB /* CompanyItem.swift in Sources */,
 				A22657A51F43CD1D00668EDF /* Q10ViewController.swift in Sources */,
 				5F8C48AA1F85025C006E7BEB /* HintItem.swift in Sources */,
+				76B26B5A1F947EE600FFA2D4 /* HipsterItem.swift in Sources */,
 				7652CF5B1F57F91D00F7F733 /* StringExtension.swift in Sources */,
 				76E395541F6AC8700003E6C6 /* ModeContentDetailViewController1.swift in Sources */,
 				5FE9716D1F1CB4F5005EDE58 /* AboutOneViewController.swift in Sources */,

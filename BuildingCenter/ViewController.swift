@@ -16,11 +16,12 @@ class ViewController: UIViewController {
     var imgdownload: ImageDownload!
     
     var canPerformSegue = true
-    
+    var timeout = 0.0
     var myTimer:Timer?
     
     @IBOutlet weak var progressView: UIProgressView!
     
+    @IBOutlet weak var loadingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let databasehelper = Databasehelper()
@@ -93,11 +94,21 @@ class ViewController: UIViewController {
         */
         
         /*let zone = databasehelper.queryzoneTable(zoneID: "2")
+        print("a")
+        
         print(zone.is_like)
         databasehelper.updatezonelike(zoneID: "2")
         let zone1 = databasehelper.queryzoneTable(zoneID: "2")
-        print(zone1.is_like)*/
-        
+        print("b")
+        print(zone1.is_like)
+        */
+        /*
+        let hi = databasehelper.queryhipsterTable()
+        for i in hi{
+            print(i.content)
+            print(i.content_en)
+        }
+        */
        /*let group = DispatchGroup()
         group.enter()
         DispatchQueue.global().async {
@@ -132,12 +143,15 @@ class ViewController: UIViewController {
         let documnets:String = NSHomeDirectory() + "/Documents/"
         let fileManager = FileManager.default
         let dirContents = try? fileManager.contentsOfDirectory(atPath: documnets)
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseOut, .repeat, .autoreverse], animations: { self.loadingLabel.alpha = 0.2 }, completion: nil)
+        
+        
         databasehelper.queryzoneTable()
         databasehelper.querymodeTable(zoneID: "1")
         databasehelper.querymodeTable(zoneID: "2")
         databasehelper.querymodeTable(zoneID: "3")
-        databasehelper.querymodeTable(zoneID: "4")
-        databasehelper.querymodeTable(zoneID: "5")
+        //databasehelper.querymodeTable(zoneID: "4")
+        //databasehelper.querymodeTable(zoneID: "5")
         databasehelper.querymodeTable(zoneID: "12")
         databasehelper.querymodeTable(zoneID: "13")
         var out = 0
@@ -157,22 +171,35 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     func showProgressView() {
+        timeout += 0.4
         let documnets:String = NSHomeDirectory() + "/Documents/"
         let fileManager = FileManager.default
         //let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let dirContents = try? fileManager.contentsOfDirectory(atPath: documnets)
 
-        self.progressView.setProgress(Float((dirContents?.count)!)/130.0, animated: true)
-        //print(Float((dirContents?.count)!)/110.0)
+        self.progressView.setProgress(Float((dirContents?.count)!)/290.0, animated: true)
+        print(Float((dirContents?.count)!))
         
 
-        if ((dirContents?.count)! >= 130 && canPerformSegue) {
+        if ((dirContents?.count)! >= 290 && canPerformSegue) {
             print("yes")
             self.performSegue(withIdentifier: "downloadToBegin", sender: nil)
             canPerformSegue = false
             myTimer?.invalidate()
+        }
+        if(timeout >= 60) {
+            let databasehelper = Databasehelper()
+            databasehelper.queryzoneTable()
+            databasehelper.querymodeTable(zoneID: "1")
+            databasehelper.querymodeTable(zoneID: "2")
+            databasehelper.querymodeTable(zoneID: "3")
+            //databasehelper.querymodeTable(zoneID: "4")
+            //databasehelper.querymodeTable(zoneID: "5")
+            databasehelper.querymodeTable(zoneID: "12")
+            databasehelper.querymodeTable(zoneID: "13")
+            timeout = 0
         }
     }
     

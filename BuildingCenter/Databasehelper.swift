@@ -77,6 +77,7 @@ class Databasehelper {
         createdeviceTable()
         createbeaconTable()
         createhintTable()
+        
     }
     
     func deleteTable(){
@@ -495,6 +496,48 @@ class Databasehelper {
         }
         
     }
+    
+    func createhipsterTable() {
+        
+        let url = URL(string:DatabaseUtilizer.downloadURL + "?data=hipster_text")
+        do{
+            let db = try Connection(databaseFilePath)
+            let company = Table("hipster")
+            try db.run(company.create(ifNotExists: true) { t in
+                t.column(DBColExpress.hipster_text_id)
+                t.column(DBColExpress.content)
+                t.column(DBColExpress.content_en)
+                
+            })
+            
+            if let data = try? Data(contentsOf: url!){
+                if let jsonObj = try? JSONSerialization.jsonObject(with: data, options:.allowFragments){
+                    for p in jsonObj as! [[String: Any]]{
+                        var p = p
+                        
+                        let filtering = Table("hipster").filter(DBColExpress.hipster_text_id == p["hipster_text_id"] as? String)
+                        let plucking = try db.pluck(filtering)
+                        if (plucking != nil) {
+                            try db.run(filtering.update(DBColExpress.hipster_text_id <- p["hipster_text_id"] as? String ,
+                                                        DBColExpress.content <- (p["content"] as! String),
+                                                        DBColExpress.content_en <- (p["content_en"] as? String)
+                            ))
+                        }
+                        else{
+                            try db.run(company.insert(DBColExpress.hipster_text_id <- p["hipster_text_id"] as? String ,
+                                                      DBColExpress.content <- (p["content"] as? String),
+                                                      DBColExpress.content_en <- (p["content_en"] as? String)
+                            ))}
+                        
+                    }
+                }
+            }
+        }
+        catch {
+            print(error)
+        }
+        
+    }
 
     func queryzoneTable() -> Array<ZoneItem> {
         //let databaseFileName = "buildingcenterdb.sqlite"
@@ -514,7 +557,7 @@ class Databasehelper {
         let photo = DBColExpress.photo
         let photo_vertical = DBColExpress.photo_vertical
         let field_id = DBColExpress.field_id
-        //let is_like = DBColExpress.is_like
+        let is_like = DBColExpress.is_like
         //let modes = "modes"
         let imgdownload = ImageDownload()
         /*
@@ -559,6 +602,7 @@ class Databasehelper {
                 z.photo = rows[photo]
                 z.photo_vertical = rows[photo_vertical]
                 z.field_id = rows[field_id]
+                z.is_like = rows[is_like]
                 z.modes = querymodeTable(zoneID:rows[zone_id]!)
                 
                 //print(rows[zone_id])
@@ -566,7 +610,7 @@ class Databasehelper {
                 //zones.append(zone)
                 zones.append(z)
                 
-                print(z.photo_vertical)
+                //print(z.photo_vertical)
                 let path = z.photo_vertical
                 let index = path?.index((path?.startIndex)!, offsetBy: 3)
                 let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
@@ -1151,4 +1195,30 @@ class Databasehelper {
             print("error")
         }
     }
+    
+    func queryhipsterTable() -> Array<HipsterItem> {
+        var hipsters: [HipsterItem] = []
+        
+        let hipster_text_id = DBColExpress.hipster_text_id
+        let content = DBColExpress.content
+        let content_en = DBColExpress.content_en
+        
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("hipster")
+            for rows in try db.prepare(table) {
+                let m = HipsterItem()
+                m.hipster_text_id = rows[hipster_text_id]
+                m.content = rows[content]
+                m.content_en = rows[content_en]
+                
+                
+                hipsters.append(m)
+            }
+        } catch _ {
+            print("error")
+        }
+        return hipsters
+    }
+    
 }

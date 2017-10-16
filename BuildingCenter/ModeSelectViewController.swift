@@ -72,6 +72,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         
         thumbButton.image = UIImage(named: "thumbup_orange.png")
         thumbButton.tintColor = UIColor.orange
+        //print(zoneItem.is_like)
         
         //upload count
         let zone = NSMutableDictionary()

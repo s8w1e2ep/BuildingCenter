@@ -88,6 +88,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6uM-x1-tvg"/>
                     <connections>
+                        <outlet property="loadingLabel" destination="iuL-Ks-pG0" id="Heu-ba-og6"/>
                         <outlet property="progressView" destination="xx5-1V-sfJ" id="4m0-8U-D7l"/>
                         <segue destination="vLW-h4-bF9" kind="show" identifier="downloadToBegin" id="aeQ-B4-xB1"/>
                     </connections>
