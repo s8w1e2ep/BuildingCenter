@@ -1151,15 +1151,13 @@
                                         <barButtonItem key="leftBarButtonItem" image="icon_info" id="bGp-SJ-NEr">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <action selector="buttonsound:" destination="w5y-cL-xo6" id="zuw-XZ-qa9"/>
-                                                <segue destination="Nce-8U-8ZZ" kind="presentation" id="JZt-8V-kEV"/>
+                                                <action selector="onClickToInstruction:" destination="w5y-cL-xo6" id="td2-yH-TSl"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="icon_questionnaire" id="8AV-sg-g4K">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <action selector="buttonsound:" destination="w5y-cL-xo6" id="U8k-Wb-GgZ"/>
-                                                <segue destination="2CP-yP-3YF" kind="presentation" id="osR-2K-3Z8"/>
+                                                <action selector="onClickToQuestionnaire:" destination="w5y-cL-xo6" id="UAZ-6o-dR9"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1243,6 +1241,8 @@
                         <outlet property="notice" destination="Dqg-sF-Dbh" id="9Z1-QA-1YR"/>
                         <outlet property="zoneName" destination="riR-BP-h6n" id="wEz-4H-G4S"/>
                         <segue destination="Spq-Sh-c9A" kind="show" identifier="map_to_zone" id="Xg7-IV-eZv"/>
+                        <segue destination="Nce-8U-8ZZ" kind="presentation" identifier="toMapinstruction" id="5qZ-7y-Zwv"/>
+                        <segue destination="2CP-yP-3YF" kind="presentation" identifier="toQuestionnaire" id="mWL-ce-Z7h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOt-wI-hfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -10537,8 +10537,8 @@
         <image name="tour_select_coachmarks" width="359" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jlp-vl-4ir"/>
-        <segue reference="Cnl-Gv-YWL"/>
+        <segue reference="OEI-TE-HQW"/>
+        <segue reference="51g-2q-v7G"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.2788480818271637" green="0.60938900709152222" blue="0.87314695119857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

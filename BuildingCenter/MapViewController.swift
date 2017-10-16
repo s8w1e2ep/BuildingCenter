@@ -136,13 +136,26 @@ class MapViewController: UIViewController, UIWebViewDelegate, BeaconScanResultLi
             zoneViewController.zoneItem = zoneItem
         }
     }
-    @IBAction func buttonsound(_ sender: Any) {
+    
+    
+    @IBAction func onClickToInstruction(_ sender: Any) {
         if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
             var soundId: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
             AudioServicesPlaySystemSound(soundId)
         }
+        self.performSegue(withIdentifier: "toMapinstruction", sender: self);
     }
+    
+    @IBAction func onClickToQuestionnaire(_ sender: Any) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
+        self.performSegue(withIdentifier: "toQuestionnaire", sender: self);
+    }
+    
     
     
     @IBAction func onEnterClick(_ sender: UIButton) {
