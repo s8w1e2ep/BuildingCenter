@@ -92,8 +92,8 @@ class ViewController: UIViewController {
             databasehelper1.querymodeTable()
         }
         */
-        
-        /*let zone = databasehelper.queryzoneTable(zoneID: "2")
+        /*
+        let zone = databasehelper.queryzoneTable(zoneID: "2")
         print("a")
         
         print(zone.is_like)
@@ -102,6 +102,23 @@ class ViewController: UIViewController {
         print("b")
         print(zone1.is_like)
         */
+        
+        /*let m1 = databasehelper.querymodeTable(zoneID: "1")
+        let d1 = databasehelper.querydeviceTable(modeID: "1")
+        for i in m1{
+            print(i.mode_id)
+            print(i.is_like)
+        }
+        databasehelper.updatedevicelike(deviceID: "1")
+        let m2 = databasehelper.querymodeTable(zoneID: "1")
+        let d2 = databasehelper.querydeviceTable(modeID: "1")
+        for i in m2{
+            print(i.mode_id)
+            print(i.is_like)
+        }*/
+        
+        
+        
         /*
         let hi = databasehelper.queryhipsterTable()
         for i in hi{

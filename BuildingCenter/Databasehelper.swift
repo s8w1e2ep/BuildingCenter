@@ -237,8 +237,8 @@ class Databasehelper {
                                                    DBColExpress.splash_bg_vertical <- (p["splash_bg_vertical"] as? String),
                                                    DBColExpress.splash_fg_vertical <- (p["splash_fg_vertical"] as? String),
                                                    DBColExpress.splash_blur_vertical <- (p["splash_blur_vertical"] as? String),
-                                                   DBColExpress.zone_id <- (p["zone_id"] as? String),
-                                                   DBColExpress.is_like <- "0"/*,
+                                                   DBColExpress.zone_id <- (p["zone_id"] as? String)/*,
+                                                   DBColExpress.is_like <- "0",
                                                    DBColExpress.mode_did_read <- "0"*/
                             ))
                         }
@@ -687,6 +687,7 @@ class Databasehelper {
         let splash_blur_vertical = DBColExpress.splash_blur_vertical
         let zone_id = DBColExpress.zone_id
         let mode_did_read = DBColExpress.mode_did_read
+        let is_like = DBColExpress.is_like
         let imgdownload = ImageDownload()
         do {
             let db = try Connection(databaseFilePath)
@@ -708,6 +709,7 @@ class Databasehelper {
                 m.zone_id = rows[zone_id]
                 m.mode_did_read = rows[mode_did_read]
                 m.devices = querydeviceTable(modeID: rows[mode_id]!)
+                m.is_like = rows[is_like]
                 //print(rows[zone_id])
                 modes.append(m)
                 
@@ -1145,10 +1147,10 @@ class Databasehelper {
             let db = try Connection(databaseFilePath)
             let table = Table("mode")
             //var z = ZoneItem()
-            let filtering = table.filter(DBColExpress.zone_id.like(modeID))
+            let filtering = table.filter(DBColExpress.mode_id.like(modeID))
             for rows in try db.prepare(filtering) {
                 if(rows[is_like] == "0"){
-                    let filtering = Table("mode").filter(DBColExpress.zone_id == modeID)
+                    let filtering = Table("mode").filter(DBColExpress.mode_id == modeID)
                     //print(filtering)
                     let plucking = try db.pluck(filtering)
                     if (plucking != nil) {
@@ -1166,10 +1168,10 @@ class Databasehelper {
         do {
             let db = try Connection(databaseFilePath)
             let table = Table("device")
-            let filtering = table.filter(DBColExpress.zone_id.like(deviceID))
+            let filtering = table.filter(DBColExpress.device_id.like(deviceID))
             for rows in try db.prepare(filtering) {
                 if(rows[is_like] == "0"){
-                    let filtering = Table("device").filter(DBColExpress.zone_id == deviceID)
+                    let filtering = Table("device").filter(DBColExpress.device_id == deviceID)
                     let plucking = try db.pluck(filtering)
                     if (plucking != nil) {
                         try db.run(filtering.update(DBColExpress.is_like <- "1"))

@@ -89,11 +89,12 @@ class ModeIntroViewController: UIViewController {
             thumbButton.tintColor = UIColor.orange
         
             zoneItem.modes![selectedCell].is_like = "1"
-            databaseHelper.updatemodelike(modeID: String(selectedCell))
+
+            databaseHelper.updatemodelike(modeID: zoneItem.modes![selectedCell].mode_id!)
             
             //upload count
             let mode = NSMutableDictionary()
-            mode["mode_id"] = self.selectedCell
+            mode["mode_id"] = zoneItem.modes![selectedCell].mode_id
             mode["read_count"] = 1
             mode["like_count"] = 1
         
