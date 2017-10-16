@@ -69,6 +69,11 @@ class QuestionViewController: UIViewController {
     
     
     @IBAction func dismissSurveyPop(_ sender: Any) {
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         surveyPopView.removeFromSuperview()
     }
 
