@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>APP將取用	相機</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>APP將存取相簿裡的相片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>APP將存取相簿裡的相片</string>
 	<key>UIFileSharingEnabled</key>

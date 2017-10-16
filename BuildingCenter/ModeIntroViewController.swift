@@ -18,6 +18,7 @@ class ModeIntroViewController: UIViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var nextPage: UIButton!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     let notificationEnterText = Notification.Name("enterTextNoti")
     let notificationExitText = Notification.Name("exitTextNoti")
@@ -105,6 +106,15 @@ class ModeIntroViewController: UIViewController {
     func setLayout() {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        
+        // set image
+        let path = zoneItem.modes![selectedCell].splash_bg_vertical
+        let index = path?.index((path?.startIndex)!, offsetBy: 3)
+        let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+        //cell.backImage.downloadedFrom(link: imageName)
+        let imgdownload = ImageDownload()
+        //imgdownload.sessionSimpleDownload(urlpath: imageName)
+        imgdownload.showpic(image: backgroundImage, url: imageName)
     }
     func setNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(sliderChangedNoti(noti:)), name: notificationSliderChanged, object: nil)

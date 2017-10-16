@@ -132,6 +132,7 @@ class ViewController: UIViewController {
         let documnets:String = NSHomeDirectory() + "/Documents/"
         let fileManager = FileManager.default
         let dirContents = try? fileManager.contentsOfDirectory(atPath: documnets)
+        databasehelper.queryzoneTable()
         databasehelper.querymodeTable(zoneID: "1")
         databasehelper.querymodeTable(zoneID: "2")
         databasehelper.querymodeTable(zoneID: "3")
@@ -163,11 +164,11 @@ class ViewController: UIViewController {
         //let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let dirContents = try? fileManager.contentsOfDirectory(atPath: documnets)
 
-        self.progressView.setProgress(Float((dirContents?.count)!)/110.0, animated: true)
+        self.progressView.setProgress(Float((dirContents?.count)!)/130.0, animated: true)
         //print(Float((dirContents?.count)!)/110.0)
         
 
-        if ((dirContents?.count)! >= 110 && canPerformSegue) {
+        if ((dirContents?.count)! >= 130 && canPerformSegue) {
             print("yes")
             self.performSegue(withIdentifier: "downloadToBegin", sender: nil)
             canPerformSegue = false

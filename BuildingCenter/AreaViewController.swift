@@ -16,6 +16,7 @@ class AreaViewController: UIViewController {
     @IBOutlet weak var zoneName: UITextView!
     @IBOutlet var textView: UITextView!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     @IBOutlet weak var nextPage: UIButton!
     
@@ -33,8 +34,8 @@ class AreaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         setNotification()
+        setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
         setContent()
     }
@@ -66,6 +67,16 @@ class AreaViewController: UIViewController {
     
     func setNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(sliderChangedNoti(noti:)), name: notificationSliderChanged, object: nil)
+    }
+    func setLayout() {
+        // set image
+        let path = zoneItem.photo_vertical
+        let index = path?.index((path?.startIndex)!, offsetBy: 3)
+        let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+        //cell.backImage.downloadedFrom(link: imageName)
+        let imgdownload = ImageDownload()
+        //imgdownload.sessionSimpleDownload(urlpath: imageName)
+        imgdownload.showpic(image: backgroundImage, url: imageName)
     }
     func setText(selectLanguage: String) {
         // according to language set text

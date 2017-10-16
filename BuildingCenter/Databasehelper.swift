@@ -516,7 +516,7 @@ class Databasehelper {
         let field_id = DBColExpress.field_id
         //let is_like = DBColExpress.is_like
         //let modes = "modes"
-        
+        let imgdownload = ImageDownload()
         /*
          let name = Expression<String>("name")
          let name_en = Expression<String>("name_en")
@@ -534,7 +534,6 @@ class Databasehelper {
             //var z = ZoneItem()
             for rows in try db.prepare(table) {
                 let z = ZoneItem()
-                
                 
                 /*var zone: [String] = []
                  zone.append(rows[zone_id])
@@ -566,6 +565,13 @@ class Databasehelper {
                 //let data = ZoneItem(zone_id: rows[zone_id], name: rows[name], introduction: rows[introduction])
                 //zones.append(zone)
                 zones.append(z)
+                
+                print(z.photo_vertical)
+                let path = z.photo_vertical
+                let index = path?.index((path?.startIndex)!, offsetBy: 3)
+                let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+                imgdownload.sessionSimpleDownload(urlpath: imageName)
+                
             }
         } catch _ {
             print("error")
@@ -708,6 +714,7 @@ class Databasehelper {
         let is_like = DBColExpress.is_like
         let imgdownload = ImageDownload()
        
+        
         do {
             let db = try Connection(databaseFilePath)
             let table = Table("mode")
