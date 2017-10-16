@@ -21,6 +21,8 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     var zoneIndex: Int!
     var textSelectZone: String!
     var textSelectContent: String!
+    var databasehelper = Databasehelper()
+    
     
     var currentTextField: UITextField?
     var isKeyboardShown = false
@@ -40,22 +42,16 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var chooseAreaLabel: UILabel!
     
-    @IBOutlet weak var Radio1: RadioButton!
-    @IBOutlet weak var Radio2: RadioButton!
-    @IBOutlet weak var Radio3: RadioButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setTapAction()
-        text.append(Radio1.title(for: .normal)!)
-        text.append(Radio2.title(for: .normal)!)
-        text.append(Radio3.title(for: .normal)!)
         zoneIndex = 0
         zoneTw.append("請選擇")
         zoneEn.append("Your Selection")
         setMenucontent()
         setText(selectLanguage: BeginViewController.selectedLanguage)
+        setLayout()
         self.menu.reloadData()
     }
     
@@ -78,6 +74,18 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func setText(selectLanguage: String){
+        
+        let hi = databasehelper.queryhipsterTable()
+        if(BeginViewController.isEnglish){
+            for i in hi{
+                text.append(i.content_en!)
+            }
+        }
+        else{
+            for i in hi{
+                text.append(i.content!)
+            }
+        }
         viewControl.setTitle("write_text".localized(language:selectLanguage), forSegmentAt: 0)
         viewControl.setTitle("build_text".localized(language:selectLanguage), forSegmentAt: 1)
         navItem.title = "text_master".localized(language:selectLanguage)
@@ -87,6 +95,62 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         selectItem.text = "spinner_please_select".localized(language:selectLanguage)
         textSelectZone = "please_select_zone".localized(language:selectLanguage)
         textSelectContent = "please_write_content".localized(language:selectLanguage)
+    }
+    
+    func setLayout(){
+        var count = 0
+        let x = 5
+        var y = 40
+        let width = 370
+        let height = 22
+        var temptext = text
+        print("temptext's count = \(temptext.count)")
+        let textfirst = temptext.remove(at: 0)
+        var otherButtons = [RadioButton]()
+        let Radio1 = RadioButton(frame: CGRect(x: x, y: y, width: width, height: height))
+        Radio1.setTitle(textfirst, for: .normal)
+        Radio1.titleLabel!.font = UIFont.systemFont(ofSize: 16.0)
+        Radio1.index = "\(count)"
+        Radio1.iconSize = 15
+        Radio1.indicatorSize = 6
+        Radio1.iconColor = UIColor.darkGray
+        Radio1.iconStrokeWidth = 1.5
+        Radio1.indicatorColor = UIColor.blue
+        Radio1.marginWidth = 5
+        Radio1.iconOnRight = false
+        Radio1.iconSquare = false
+        Radio1.setMultipleSelectionEnabled = false
+        Radio1.setTitleColor(UIColor.black, for: .normal)
+        Radio1.addTarget(self, action: #selector(logSelectedButton), for: .touchUpInside)
+        buildTextView.addSubview(Radio1)
+        y = y + 30
+        count = count + 1
+        //otherButtons.append(Radio1)
+        
+        for i in temptext{
+            let RadioBtn = RadioButton(frame: CGRect(x: x, y: y, width: width, height: height))
+            RadioBtn.setTitle(i, for: .normal)
+            RadioBtn.titleLabel!.font = UIFont.systemFont(ofSize: 16.0)
+            RadioBtn.setTitle(i, for: .normal)
+            RadioBtn.index = "\(count)"
+            RadioBtn.iconSize = 15
+            RadioBtn.indicatorSize = 6
+            RadioBtn.iconColor = UIColor.darkGray
+            RadioBtn.iconStrokeWidth = 1.5
+            RadioBtn.indicatorColor = UIColor.blue
+            RadioBtn.marginWidth = 5
+            RadioBtn.iconOnRight = false
+            RadioBtn.iconSquare = false
+            RadioBtn.setMultipleSelectionEnabled = false
+            RadioBtn.setTitleColor(UIColor.black, for: .normal)
+            RadioBtn.addTarget(self, action: #selector(logSelectedButton), for: .touchUpInside)
+            
+            otherButtons.append(RadioBtn)
+            buildTextView.addSubview(RadioBtn)
+            y = y + 30
+            count = count + 1
+        }
+        Radio1.otherButtons = otherButtons 
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -217,9 +281,9 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    @IBAction func logSelectedButton(_ isRadioButton:RadioButton){
+    func logSelectedButton(_ isRadioButton:RadioButton){
         
-        textIndex = Int(isRadioButton.index)! - 1
+        textIndex = Int(isRadioButton.index)!
         
     }
     

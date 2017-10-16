@@ -44,16 +44,12 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         creatQRcode()
         combineImage = combine(leftImage: template, rightImage: image)
         imageView.image = combineImage
-        //updateHipster()
-        imageData = UIImagePNGRepresentation(image)
         combineImageData = UIImagePNGRepresentation(combineImage)
-        
+        //updateHipster()
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }
     /*
     func updateHipster(){
-        imageData = UIImagePNGRepresentation(image)
-        combineImageData = UIImagePNGRepresentation(combineImage)
         //let json: [String: Any] = ["content": text/*text.cString(using: .utf8)!*/, "picture_name": "", "combine_name": imageFileName, "hipster_template_id": 1, "hipster_text_id": 1, "zone_id": 1, "picture_data": imageData.base64EncodedString(), "combine_data": combineImageData.base64EncodedString()]
      
         self.hipster["content"] = text
@@ -62,18 +58,18 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         self.hipster["hipster_template_id"] = 1
         self.hipster["hipster_text_id"] = 1
         self.hipster["zone_id"] = 1
-        //self.hipster["picture_data"] = imageData.base64EncodedString()
-        //self.hipster["combine_data"] = combineImageData.base64EncodedString()
+        self.hipster["picture_data"] = UIImageJPEGRepresentation(image!, 0.1)!.base64EncodedString( options: Data.Base64EncodingOptions.init(rawValue: 0))
+        self.hipster["combine_data"] = UIImageJPEGRepresentation(combineImage!, 0.1)!.base64EncodedString( options: Data.Base64EncodingOptions.init(rawValue: 0))
         //print(json)
 
         if let JsonData = try? JSONSerialization.data(withJSONObject: /*json*/self.hipster, options: [])
         {
             
-            print(JsonData)
+            //print(JsonData)
             let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
             var stringUrl = DatabaseUtilizer.hipsterContentURL + "?hipster_content="
             stringUrl += JsontoUtf8!
-            print(stringUrl)
+            //print(stringUrl)
             
             
             if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
@@ -107,10 +103,12 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         
         QRcodeImageData = UIImagePNGRepresentation(QRcodeImage)
         
-        //mailComposerVC.setToRecipients([""])
-        //mailComposerVC.setSubject("")
-        //mailComposerVC.setMessageBody("", isHTML: false)
+        // setToRecipients, setSubject, setMessageBody.
+        // ...
+        
+        // add attachment.
         mailComposerVC.addAttachmentData(combineImageData!, mimeType: "", fileName: imageFileName)
+        // error
         //mailComposerVC.addAttachmentData(QRcodeImageData!, mimeType: "", fileName: QRcodeFileName)
         return mailComposerVC
     }
@@ -134,6 +132,7 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
             filter?.setValue(data, forKey: "inputMessage")
             
             QRcodeImage = UIImage(ciImage: (filter?.outputImage)!)
+            // jpg make sendemail error. use jpeg.
             QRcodeFileName = "1531515346.jpg"
             QRcodeImageView.image = QRcodeImage
         }
@@ -210,11 +209,10 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         Template.draw(at: CGPoint(x: 0, y: 0))
         Image.draw(at: CGPoint(x: x, y: y))
         let textAttributes = [NSForegroundColorAttributeName: UIColor.darkGray, NSFontAttributeName: UIFont.systemFont(ofSize: 20.0), NSBackgroundColorAttributeName: UIColor.clear] as [String : Any]
-        //let size = textImage.size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20.0)])
-        if textImage.length > 18{
-            var temptext = textImage.substring(to: 18)
+        if textImage.length > 13{
+            var temptext = textImage.substring(to: 13)
             temptext.draw(at: CGPoint(x: 65, y: 450), withAttributes: textAttributes)
-            temptext = textImage.substring(from: 18)
+            temptext = textImage.substring(from: 13)
             temptext.draw(at: CGPoint(x: 65, y: 480), withAttributes: textAttributes)
         }
         else{

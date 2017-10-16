@@ -77,7 +77,7 @@ class Databasehelper {
         createdeviceTable()
         createbeaconTable()
         createhintTable()
-        
+        createhipsterTable()
     }
     
     func deleteTable(){
