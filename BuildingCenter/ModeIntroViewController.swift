@@ -26,13 +26,14 @@ class ModeIntroViewController: UIViewController {
     let notificationSliderChanged = Notification.Name("sliderChangedNoti")
     
     var landscapeViewController: LandscapeViewController!
-    
+    let databaseHelper = Databasehelper()
     var zoneItem: ZoneItem!
     var selectedCell: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        initThumb()
         setLayout()
         setNotification()
         setText(selectLanguage: BeginViewController.selectedLanguage)
@@ -57,6 +58,7 @@ class ModeIntroViewController: UIViewController {
             landscapeViewController.modeItem = zoneItem.modes?[selectedCell]
         }
     }
+
     @IBAction func buttonsound(_ sender: Any) {
         if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
             var soundId: SystemSoundID = 0
@@ -73,33 +75,44 @@ class ModeIntroViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func onThumbClick(_ sender: UIBarButtonItem) {
-        thumbButton.image = UIImage(named: "thumbup_orange.png")
-        thumbButton.tintColor = UIColor.orange
-        
-        //upload count
-        let mode = NSMutableDictionary()
-        mode["mode_id"] = self.selectedCell
-        mode["read_count"] = 1
-        mode["like_count"] = 1
-        
-        if let JsonData = try? JSONSerialization.data(withJSONObject: mode, options: [])
+    func initThumb(){
+        if( zoneItem.modes![selectedCell].is_like == "1")
         {
-            print(JsonData)
-            let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
-            var stringUrl = DatabaseUtilizer.modeaddURL + "?mode_counts="
-            stringUrl += JsontoUtf8!
-            print(stringUrl)
+            thumbButton.image = UIImage(named: "thumbup_orange.png")
+            thumbButton.tintColor = UIColor.orange
+        }
+    }
+    
+    @IBAction func onThumbClick(_ sender: UIBarButtonItem) {
+        if( zoneItem.modes![selectedCell].is_like == "0"){
+            thumbButton.image = UIImage(named: "thumbup_orange.png")
+            thumbButton.tintColor = UIColor.orange
+        
+            zoneItem.modes![selectedCell].is_like = "1"
+            databaseHelper.updatemodelike(modeID: String(selectedCell))
             
-            /*if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
-             let url = NSURL(string: encodedURL)
-             do{
-             let html = try String(contentsOf: url! as URL)
-             print(html)
-             }catch{
-             print(error)
-             }*/
+            //upload count
+            let mode = NSMutableDictionary()
+            mode["mode_id"] = self.selectedCell
+            mode["read_count"] = 1
+            mode["like_count"] = 1
+        
+            if let JsonData = try? JSONSerialization.data(withJSONObject: mode, options: [])
+            {
+                let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
+                var stringUrl = DatabaseUtilizer.modeaddURL + "?mode_counts="
+                stringUrl += JsontoUtf8!
+                print(stringUrl)
             
+                /*if let encodedURL =               stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+                 let url = NSURL(string: encodedURL)
+                 do{
+                 let html = try String(contentsOf: url! as URL)
+                 print(html)
+                 }catch{
+                 print(error)
+                 }*/
+            }
         }
     }
     
