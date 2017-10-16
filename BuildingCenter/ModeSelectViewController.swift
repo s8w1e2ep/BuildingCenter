@@ -29,6 +29,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         databaseHelper.querymodeTable()
+        initThumb()
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
     }
@@ -67,13 +68,22 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         navigationController?.popViewController(animated: true)
     }
     
+    func initThumb(){
+        if(zoneItem.is_like == "1")
+        {
+            thumbButton.image = UIImage(named: "thumbup_orange.png")
+            thumbButton.tintColor = UIColor.orange
+        }
+    }
 
     @IBAction func onThumbClick(_ sender: UIBarButtonItem) {
         
+        if(zoneItem.is_like == "0")
+        {
         thumbButton.image = UIImage(named: "thumbup_orange.png")
         thumbButton.tintColor = UIColor.orange
-        //print(zoneItem.is_like)
-        
+        databaseHelper.updatezonelike(zoneID: self.zoneItem.zone_id!)
+        zoneItem.is_like = "1"
         //upload count
         let zone = NSMutableDictionary()
         zone["zone_id"] = self.zoneItem.zone_id
@@ -81,7 +91,6 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         
         if let JsonData = try? JSONSerialization.data(withJSONObject: zone, options: [])
         {
-            print(JsonData)
             let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
             var stringUrl = DatabaseUtilizer.zoneaddURL + "?zone_counts="
             stringUrl += JsontoUtf8!
@@ -97,6 +106,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
                 }*/
                 
             }
+        }
         
     }
     
