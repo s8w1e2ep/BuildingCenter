@@ -78,6 +78,7 @@ class Databasehelper {
         createbeaconTable()
         createhintTable()
         createhipsterTable()
+        createtemplateTable()
     }
     
     func deleteTable(){
@@ -406,6 +407,48 @@ class Databasehelper {
                                                  DBColExpress.web <- (p["web"] as? String),
                                                  DBColExpress.qrcode <- (p["qrcode"] as? String)
                         ))}
+                        
+                    }
+                }
+            }
+        }
+        catch {
+            print(error)
+        }
+        
+    }
+    
+    func createtemplateTable() {
+        
+        let url = URL(string:DatabaseUtilizer.downloadURL + "?data=hipster_template")
+        do{
+            let db = try Connection(databaseFilePath)
+            let company = Table("template")
+            try db.run(company.create(ifNotExists: true) { t in
+                t.column(DBColExpress.template_id)
+                t.column(DBColExpress.template)
+            })
+            
+            if let data = try? Data(contentsOf: url!){
+                if let jsonObj = try? JSONSerialization.jsonObject(with: data, options:.allowFragments){
+                    for p in jsonObj as! [[String: Any]]{
+                        var p = p
+                        /*if((p["introduction_en"] as? String)?.isEmpty)!{
+                         p["introduction_en"] = ""
+                         }*/
+                        
+                        let filtering = Table("template").filter(DBColExpress.template_id == p["hipster_template_id"] as? String)
+                        let plucking = try db.pluck(filtering)
+                        if (plucking != nil) {
+                            try db.run(filtering.update(DBColExpress.template_id <- p["hipster_template_id"] as? String ,
+                                                        DBColExpress.template <- (p["template"] as? String)
+                                                        
+                            ))
+                        }
+                        else{
+                            try db.run(company.insert(DBColExpress.template_id <- p["hipster_template_id"] as? String ,
+                                                      DBColExpress.template <- (p["template"] as? String)
+                            ))}
                         
                     }
                 }
@@ -1049,6 +1092,7 @@ class Databasehelper {
         return m
     }
     
+    
     func read_guider(){
         do {
             let db = try Connection(databaseFilePath)
@@ -1215,6 +1259,31 @@ class Databasehelper {
                 m.content_en = rows[content_en]
                 
                 
+                hipsters.append(m)
+            }
+        } catch _ {
+            print("error")
+        }
+        return hipsters
+    }
+    
+    func querytemplateTable() -> Array<TemplateItem> {
+        var hipsters: [TemplateItem] = []
+        let imgdownload = ImageDownload()
+        let hipster_template_id = DBColExpress.template_id
+        let template = DBColExpress.template
+        
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("template")
+            for rows in try db.prepare(table) {
+                let m = TemplateItem()
+                m.hipster_template_id = rows[hipster_template_id]
+                m.template = rows[template]
+                let path = m.template
+                let index = path?.index((path?.startIndex)!, offsetBy: 3)
+                let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+                imgdownload.sessionSimpleDownload(urlpath: imageName)
                 hipsters.append(m)
             }
         } catch _ {

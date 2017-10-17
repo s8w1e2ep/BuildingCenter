@@ -54,6 +54,7 @@
 		76705BB21F556DF000047414 /* ModeContentHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BB11F556DF000047414 /* ModeContentHintViewController.swift */; };
 		76705BB41F5585A000047414 /* InfoHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BB31F5585A000047414 /* InfoHintViewController.swift */; };
 		76705BB61F5585BC00047414 /* QuestionHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76705BB51F5585BC00047414 /* QuestionHintViewController.swift */; };
+		767330531F9611A200A34A6A /* TemplateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767330521F9611A200A34A6A /* TemplateItem.swift */; };
 		769FF6A81F20ECEE00153C87 /* FeedbackHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */; };
 		76B26B5A1F947EE600FFA2D4 /* HipsterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B26B591F947EE600FFA2D4 /* HipsterItem.swift */; };
 		76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */; };
@@ -186,6 +187,7 @@
 		76705BB11F556DF000047414 /* ModeContentHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeContentHintViewController.swift; sourceTree = "<group>"; };
 		76705BB31F5585A000047414 /* InfoHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoHintViewController.swift; sourceTree = "<group>"; };
 		76705BB51F5585BC00047414 /* QuestionHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionHintViewController.swift; sourceTree = "<group>"; };
+		767330521F9611A200A34A6A /* TemplateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateItem.swift; sourceTree = "<group>"; };
 		769FF6A71F20ECEE00153C87 /* FeedbackHintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackHintViewController.swift; sourceTree = "<group>"; };
 		76B26B591F947EE600FFA2D4 /* HipsterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HipsterItem.swift; sourceTree = "<group>"; };
 		76BC98701F1F961D005A3BEC /* MapInstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInstructionViewController.swift; sourceTree = "<group>"; };
@@ -508,6 +510,7 @@
 				5F8C48A91F85025C006E7BEB /* HintItem.swift */,
 				5F7DA1591F91BD750051FE21 /* WritingAreaViewCell.swift */,
 				76B26B591F947EE600FFA2D4 /* HipsterItem.swift */,
+				767330521F9611A200A34A6A /* TemplateItem.swift */,
 			);
 			name = CustomizedObject;
 			sourceTree = "<group>";
@@ -882,6 +885,7 @@
 				5F58DFC41F1E560C004159D3 /* SelectGuiderViewController.swift in Sources */,
 				76705BB21F556DF000047414 /* ModeContentHintViewController.swift in Sources */,
 				5F8C48641F619DC0006E7BEB /* DeviceItem.swift in Sources */,
+				767330531F9611A200A34A6A /* TemplateItem.swift in Sources */,
 				A20453E61F50FF3400162025 /* Qn8ViewController.swift in Sources */,
 				A23FCA271F4EF82700A91294 /* ZHDropDownMenu.swift in Sources */,
 				76BC98711F1F961D005A3BEC /* MapInstructionViewController.swift in Sources */,

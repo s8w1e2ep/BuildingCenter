@@ -85,6 +85,7 @@ class LandscapeViewController: UIViewController {
         highlightImage.downloadedFrom(link: hlImageName)
         markImage.downloadedFrom(link: markImageName)*/
         imgdownload.showpic(image: bgImage, url: bgImageName)
+        //imgdownload.showpic(image: bgImage, url: "http://60.251.33.54:98/web/media/template/template_2@3x5826cadc1f9151.71960939")
         imgdownload.showpic(image: highlightImage, url: hlImageName)
         imgdownload.showpic(image: markImage, url: markImageName)
     }

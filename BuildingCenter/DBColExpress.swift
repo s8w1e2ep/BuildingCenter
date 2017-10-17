@@ -61,5 +61,7 @@ class DBColExpress{
     static let hipster_text_id = Expression<String?>(DatabaseUtilizer.HIPSTER_TEXT_ID)
     static let content = Expression<String?>(DatabaseUtilizer.CONTENT)
     static let content_en = Expression<String?>(DatabaseUtilizer.CONTENT_EN)
+    static let template = Expression<String?>(DatabaseUtilizer.TEMPLATE)
+    static let template_id = Expression<String?>(DatabaseUtilizer.HIPSTER_TEMPLATE_ID)
     
 }

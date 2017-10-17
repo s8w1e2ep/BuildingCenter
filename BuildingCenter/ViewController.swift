@@ -119,13 +119,13 @@ class ViewController: UIViewController {
         
         
         
-        /*
-        let hi = databasehelper.queryhipsterTable()
+        
+        let hi = databasehelper.querytemplateTable()
         for i in hi{
-            print(i.content)
-            print(i.content_en)
+            //print(i.hipster_template_id)
+            print(i.template)
         }
-        */
+        
        /*let group = DispatchGroup()
         group.enter()
         DispatchQueue.global().async {
@@ -175,7 +175,7 @@ class ViewController: UIViewController {
         
         
         myTimer = Timer.scheduledTimer(
-            timeInterval: 0.4,
+            timeInterval: 1.0,
             target: self,
             selector:
             #selector(ViewController.showProgressView),
@@ -190,7 +190,7 @@ class ViewController: UIViewController {
     }
 
     func showProgressView() {
-        timeout += 0.4
+        timeout += 1.0
         let documnets:String = NSHomeDirectory() + "/Documents/"
         let fileManager = FileManager.default
         //let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
