@@ -105,14 +105,15 @@ class ModeIntroViewController: UIViewController {
                 stringUrl += JsontoUtf8!
                 print(stringUrl)
             
-                /*if let encodedURL =               stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
-                 let url = NSURL(string: encodedURL)
-                 do{
-                 let html = try String(contentsOf: url! as URL)
-                 print(html)
-                 }catch{
-                 print(error)
-                 }*/
+                if let encodedURL =               stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+                     let url = NSURL(string: encodedURL)
+                     do{
+                     let html = try String(contentsOf: url! as URL)
+                     print(html)
+                     }catch{
+                     print(error)
+                     }
+                }
             }
         }
     }

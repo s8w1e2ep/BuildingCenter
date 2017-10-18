@@ -78,33 +78,32 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
 
     @IBAction func onThumbClick(_ sender: UIBarButtonItem) {
         
-        if(zoneItem.is_like == "0")
-        {
-        thumbButton.image = UIImage(named: "thumbup_orange.png")
-        thumbButton.tintColor = UIColor.orange
-        databaseHelper.updatezonelike(zoneID: self.zoneItem.zone_id!)
-        zoneItem.is_like = "1"
-        //upload count
-        let zone = NSMutableDictionary()
-        zone["zone_id"] = self.zoneItem.zone_id
-        zone["like_count"] = 1
-        
-        if let JsonData = try? JSONSerialization.data(withJSONObject: zone, options: [])
-        {
-            let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
-            var stringUrl = DatabaseUtilizer.zoneaddURL + "?zone_counts="
-            stringUrl += JsontoUtf8!
-            print(stringUrl)
+        if(zoneItem.is_like == "0") {
+            thumbButton.image = UIImage(named: "thumbup_orange.png")
+            thumbButton.tintColor = UIColor.orange
+            databaseHelper.updatezonelike(zoneID: self.zoneItem.zone_id!)
+            zoneItem.is_like = "1"
+            //upload count
+            let zone = NSMutableDictionary()
+            zone["zone_id"] = self.zoneItem.zone_id
+            zone["like_count"] = 1
             
-            /*if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
-                let url = NSURL(string: encodedURL)
-                do{
-                    let html = try String(contentsOf: url! as URL)
-                    print(html)
-                }catch{
-                    print(error)
-                }*/
+            if let JsonData = try? JSONSerialization.data(withJSONObject: zone, options: [])
+            {
+                let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
+                var stringUrl = DatabaseUtilizer.zoneaddURL + "?zone_counts="
+                stringUrl += JsontoUtf8!
+                print(stringUrl)
                 
+                if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+                        let url = NSURL(string: encodedURL)
+                        do{
+                            let html = try String(contentsOf: url! as URL)
+                            print(html)
+                        }catch{
+                            print(error)
+                        }
+                }
             }
         }
         
