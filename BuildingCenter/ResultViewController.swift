@@ -111,7 +111,7 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         // add attachment.
         mailComposerVC.addAttachmentData(combineImageData!, mimeType: "", fileName: imageFileName)
         // error
-        mailComposerVC.addAttachmentData(QRcodeImageData!, mimeType: "", fileName: QRcodeFileName)
+        //mailComposerVC.addAttachmentData(QRcodeImageData!, mimeType: "", fileName: QRcodeFileName)
         return mailComposerVC
     }
     
