@@ -26,7 +26,9 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
     var QRcodeImage: UIImage!
     var image: UIImage!
     var template: UIImage!
-    var index: Int!
+    var hipster_template_id: Int!
+    var hipster_text_id: Int!
+    var zone_id: Int!
     var text: String!
     var label: UILabel!
     let currentdate = Date()
@@ -50,7 +52,7 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
     }
     /*
     func updateHipster(){
-        //let json: [String: Any] = ["content": text/*text.cString(using: .utf8)!*/, "picture_name": "", "combine_name": imageFileName, "hipster_template_id": 1, "hipster_text_id": 1, "zone_id": 1, "picture_data": imageData.base64EncodedString(), "combine_data": combineImageData.base64EncodedString()]
+        //let json: [String: Any] = ["content": text/*text.cString(using: .utf8)!*/, "picture_name": "", "combine_name": imageFileName, "hipster_template_id": hipster_template_id, "hipster_text_id": hipster_text_id, "zone_id": zone_id, "picture_data": imageData.base64EncodedString(), "combine_data": combineImageData.base64EncodedString()]
      
         self.hipster["content"] = text
         self.hipster["picture_name"] = ""
@@ -109,7 +111,7 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         // add attachment.
         mailComposerVC.addAttachmentData(combineImageData!, mimeType: "", fileName: imageFileName)
         // error
-        //mailComposerVC.addAttachmentData(QRcodeImageData!, mimeType: "", fileName: QRcodeFileName)
+        mailComposerVC.addAttachmentData(QRcodeImageData!, mimeType: "", fileName: QRcodeFileName)
         return mailComposerVC
     }
     
@@ -133,7 +135,7 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
             
             QRcodeImage = UIImage(ciImage: (filter?.outputImage)!)
             // jpg make sendemail error. use jpeg.
-            QRcodeFileName = "1531515346.jpg"
+            QRcodeFileName = "1531515346.jpeg"
             QRcodeImageView.image = QRcodeImage
         }
     }
@@ -190,7 +192,7 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         var reSize = CGSize(width: width, height: height)
         let Template = reSizeImage(Image: leftImage,reSize: reSize)
         
-        if(index % 2 == 0){
+        if(hipster_template_id % 2 == 0){
             x = CGFloat(width) * CGFloat(110) / CGFloat(375)
             y = CGFloat(height) * CGFloat(95) / CGFloat(647)
             width = CGFloat(width) * CGFloat(212) / CGFloat(375)

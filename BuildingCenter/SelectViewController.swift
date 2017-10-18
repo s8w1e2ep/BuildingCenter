@@ -15,12 +15,11 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     var image: UIImage!
     var template: UIImage!
-    var templateAry = [
-        ["pic":"template_1.png"],
-        ["pic":"template_2.png"]
-    ]
+    var templateAry = [String?]()
     
     var templateIndex = 0
+    var databasehelper = Databasehelper()
+    var hipsterItem: HipsterItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,19 +33,32 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
     }
     
     func setLayout(){
+        
+        let imgdownload = ImageDownload()
+        let hi = databasehelper.querytemplateTable()
+        for i in hi{
+            let bgPath = i.template
+            let bgIndex = bgPath?.index((bgPath?.startIndex)!, offsetBy: 3)
+            let element = DatabaseUtilizer.filePathURLPrefix + (bgPath?.substring(from: bgIndex!))!
+            templateAry.append(element)
+        }
+        
         scrollView.contentSize = CGSize(
             width: CGFloat(self.view.bounds.width) * 0.85 * CGFloat(self.templateAry.count),
             height: scrollView.bounds.size.height
         )
         let size = scrollView.bounds.size
-        
-        for (seq,template) in templateAry.enumerated() {
-            let imageView = UIImageView(image: UIImage(named: template["pic"]!))
+        var seq = 0
+        for template in templateAry {
+            let imageView = UIImageView()
+            imgdownload.showpic(image: imageView, url: template!)
             if (seq == 0){
                 imageView.frame = CGRect(x: size.width * 0.05, y: 0, width: size.width * 0.8, height: size.height * 0.95)
+                seq = 1
             }
             else{
                 imageView.frame = CGRect(x: CGFloat(seq) * size.width * 0.85 + size.width * 0.05, y: 0, width: size.width * 0.8, height: size.height * 0.95)
+                seq = seq + 1
             }
             scrollView.addSubview(imageView)
         }
@@ -60,19 +72,29 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
         
         let maxIndex = CGFloat(templateAry.count)
         let tarX = scrollView.contentOffset.x + velocity.x * 80
-        var tarIndex = round(tarX / (scrollView.bounds.width * (1 - maxIndex * 0.1)))
+        var tarIndex = round(tarX / (scrollView.bounds.width * 0.85))
         if tarIndex < 0 {
             tarIndex = 0
         }
-        if tarIndex > maxIndex {
-            tarIndex = maxIndex
+        if tarIndex >= maxIndex {
+            tarIndex = maxIndex-1
         }
-        targetContentOffset.pointee.x = tarIndex * scrollView.bounds.width * (1 - maxIndex * 0.1)
+        
+        var x = tarIndex * scrollView.bounds.width * 0.85 + 0.05
+        
+        if x == 0.05{
+            x = 0
+        }
+        
+        targetContentOffset.pointee.x = x
         templateIndex = Int(tarIndex)
     }
 
     @IBAction func nextButtononClick(_ sender: Any) {
-        template = UIImage(named: templateAry[templateIndex]["pic"]!)
+        let imgdownload = ImageDownload()
+        let imageView = UIImageView()
+        imgdownload.showpic(image: imageView, url: templateAry[templateIndex]!)
+        template = imageView.image!
         self.performSegue(withIdentifier: "selectToWriting", sender: self)
     }
     

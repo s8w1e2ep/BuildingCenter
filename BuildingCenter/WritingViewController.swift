@@ -329,7 +329,9 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tagimage = image
         let tagtemplate = template
-        let tagindex = index
+        let taghipster_template_id = index
+        let taghipster_text_id = textIndex
+        let tagzoneIndex = zoneIndex
         var tagtext: String!
         if viewControl.selectedSegmentIndex == 1{
             tagtext = text[textIndex]
@@ -341,7 +343,9 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let controller = segue.destination as! ResultViewController
         controller.image = tagimage
         controller.template = tagtemplate
-        controller.index = tagindex
+        controller.hipster_template_id = taghipster_template_id
+        controller.hipster_text_id = taghipster_text_id
+        controller.zone_id = tagzoneIndex
         controller.text = tagtext
     }
 
