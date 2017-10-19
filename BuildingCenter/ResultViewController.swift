@@ -52,27 +52,22 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
     }
     /*
     func updateHipster(){
-        //let json: [String: Any] = ["content": text/*text.cString(using: .utf8)!*/, "picture_name": "", "combine_name": imageFileName, "hipster_template_id": hipster_template_id, "hipster_text_id": hipster_text_id, "zone_id": zone_id, "picture_data": imageData.base64EncodedString(), "combine_data": combineImageData.base64EncodedString()]
      
         self.hipster["content"] = text
         self.hipster["picture_name"] = ""
         self.hipster["combine_name"] = imageFileName
-        self.hipster["hipster_template_id"] = 1
-        self.hipster["hipster_text_id"] = 1
-        self.hipster["zone_id"] = 1
+        self.hipster["hipster_template_id"] = hipster_template_id
+        self.hipster["hipster_text_id"] = hipster_text_id
+        self.hipster["zone_id"] = zone_id
         self.hipster["picture_data"] = UIImageJPEGRepresentation(image!, 0.1)!.base64EncodedString( options: Data.Base64EncodingOptions.init(rawValue: 0))
         self.hipster["combine_data"] = UIImageJPEGRepresentation(combineImage!, 0.1)!.base64EncodedString( options: Data.Base64EncodingOptions.init(rawValue: 0))
-        //print(json)
 
-        if let JsonData = try? JSONSerialization.data(withJSONObject: /*json*/self.hipster, options: [])
+        if let JsonData = try? JSONSerialization.data(withJSONObject: self.hipster, options: [])
         {
-            
-            //print(JsonData)
+     
             let JsontoUtf8 = String(data:JsonData,encoding:.utf8)
             var stringUrl = DatabaseUtilizer.hipsterContentURL + "?hipster_content="
             stringUrl += JsontoUtf8!
-            //print(stringUrl)
-            
             
             if let encodedURL = stringUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
                 let url = NSURL(string: encodedURL)
@@ -82,10 +77,7 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
                 }catch{
                     print(error)
                 }
-                
             }
-            
-            
         }
     }
     */
@@ -192,7 +184,19 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
         var reSize = CGSize(width: width, height: height)
         let Template = reSizeImage(Image: leftImage,reSize: reSize)
         
-        if(hipster_template_id % 2 == 0){
+        if hipster_template_id == 0 {
+            x = CGFloat(width) * CGFloat(87) / CGFloat(375)
+            y = CGFloat(height) * CGFloat(85) / CGFloat(647)
+            width = CGFloat(width) * CGFloat(200) / CGFloat(375)
+            height = CGFloat(height) * CGFloat(272) / CGFloat(647)
+        }
+        else if hipster_template_id == 1 {
+            x = CGFloat(width) * CGFloat(47) / CGFloat(375)
+            y = CGFloat(height) * CGFloat(97) / CGFloat(647)
+            width = CGFloat(width) * CGFloat(280) / CGFloat(375)
+            height = CGFloat(height) * CGFloat(190) / CGFloat(647)
+        }
+        else if hipster_template_id == 2 {
             x = CGFloat(width) * CGFloat(110) / CGFloat(375)
             y = CGFloat(height) * CGFloat(95) / CGFloat(647)
             width = CGFloat(width) * CGFloat(212) / CGFloat(375)
