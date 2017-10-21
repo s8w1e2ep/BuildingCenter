@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class SelectViewController: UIViewController,UIScrollViewDelegate {
 
@@ -91,6 +92,13 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
     }
 
     @IBAction func nextButtononClick(_ sender: Any) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
+        
         let imgdownload = ImageDownload()
         let imageView = UIImageView()
         imgdownload.showpic(image: imageView, url: templateAry[templateIndex]!)
@@ -99,6 +107,13 @@ class SelectViewController: UIViewController,UIScrollViewDelegate {
     }
     
     @IBAction func goBack(_ sender: Any) {
+       
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated:true)
     }
     

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import MessageUI
+import AudioToolbox
 
 class ResultViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
@@ -82,6 +83,12 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
     }
     */
     @IBAction func sendEmailButtonTapped(_ sender: Any) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: nil)
@@ -144,24 +151,54 @@ class ResultViewController: UIViewController, MFMailComposeViewControllerDelegat
     }
     
     @IBAction func OnMenuBtnAction(_ sender: Any) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         menuView.isHidden = !menuView.isHidden
     }
     
     @IBAction func goBack(_ sender: Any) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated:true)
     }
     
     @IBAction func OnbackBtnAction(_ sender: Any) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         menuView.isHidden = !menuView.isHidden
     }
     
     @IBAction func OnsaveBtnAction(_ sender: Any) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         let image = self.imageView.image!
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         storeView.isHidden = !storeView.isHidden
     }
     
     @IBAction func storegoBack(_ sender: Any) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated:true)
     }
     

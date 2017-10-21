@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -75,11 +76,23 @@ class HipsterViewController: UIViewController,UIImagePickerControllerDelegate, U
     
     // 相機
     @IBAction func onCameraBtnAction(_ sender: UIButton) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         self.callGetPhoneWithKind(1)
     }
     
     // 相簿
     @IBAction func onPhotoBtnAction(_ sender: UIButton) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         self.callGetPhoneWithKind(2)
     }
 

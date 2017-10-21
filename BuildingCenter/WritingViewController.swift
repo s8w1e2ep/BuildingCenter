@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class WritingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
 
@@ -288,10 +289,22 @@ class WritingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func goBack(_ sender: Any) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         navigationController?.popViewController(animated:true)
     }
     
     @IBAction func nextButtononClick(_ sender: Any) {
+        //音效
+        if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
+            var soundId: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
+            AudioServicesPlaySystemSound(soundId)
+        }
         if zoneIndex != 0{
             if viewControl.selectedSegmentIndex == 1{
                 if textIndex != nil{
