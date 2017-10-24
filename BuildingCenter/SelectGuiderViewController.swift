@@ -130,7 +130,7 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
             tarIndex = 0
         }
         if tarIndex > maxIndex {
-            tarIndex = maxIndex
+            tarIndex = maxIndex - 1
         }
         targetContentOffset.pointee.x = tarIndex * scrollView.bounds.width * (1-3*pageCutRate)
         currentIndex = Int(tarIndex)

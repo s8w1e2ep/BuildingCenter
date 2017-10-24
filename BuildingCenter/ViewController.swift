@@ -163,14 +163,18 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 1.0, delay: 0, options: [.curveEaseOut, .repeat, .autoreverse], animations: { self.loadingLabel.alpha = 0.2 }, completion: nil)
         
         
-        databasehelper.queryzoneTable()
+        databasehelper.queryzoneDownload()
         databasehelper.querymodeTable(zoneID: "1")
         databasehelper.querymodeTable(zoneID: "2")
         databasehelper.querymodeTable(zoneID: "3")
-        //databasehelper.querymodeTable(zoneID: "4")
-        //databasehelper.querymodeTable(zoneID: "5")
-        databasehelper.querymodeTable(zoneID: "12")
-        databasehelper.querymodeTable(zoneID: "13")
+        databasehelper.querymodeTable(zoneID: "4")
+        databasehelper.querymodeTable(zoneID: "5")
+        databasehelper.querymodeTable(zoneID: "6")
+        databasehelper.querymodeTable(zoneID: "7")
+        //databasehelper.querymodeTable(zoneID: "8")
+        //databasehelper.querymodeTable(zoneID: "9")
+        //databasehelper.querymodeTable(zoneID: "10")
+        //databasehelper.querymodeTable(zoneID: "11")
         var out = 0
         
         
@@ -196,11 +200,11 @@ class ViewController: UIViewController {
         //let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let dirContents = try? fileManager.contentsOfDirectory(atPath: documnets)
 
-        self.progressView.setProgress(Float((dirContents?.count)!)/290.0, animated: true)
+        self.progressView.setProgress(Float((dirContents?.count)!)/120.0, animated: true)
         print(Float((dirContents?.count)!))
         
 
-        if ((dirContents?.count)! >= 290 && canPerformSegue) {
+        if ((dirContents?.count)! >= 120 && canPerformSegue) {
             print("yes")
             self.performSegue(withIdentifier: "downloadToBegin", sender: nil)
             canPerformSegue = false
@@ -208,14 +212,18 @@ class ViewController: UIViewController {
         }
         if(timeout >= 60) {
             let databasehelper = Databasehelper()
-            databasehelper.queryzoneTable()
+            databasehelper.queryzoneDownload()
             databasehelper.querymodeTable(zoneID: "1")
             databasehelper.querymodeTable(zoneID: "2")
             databasehelper.querymodeTable(zoneID: "3")
-            //databasehelper.querymodeTable(zoneID: "4")
-            //databasehelper.querymodeTable(zoneID: "5")
-            databasehelper.querymodeTable(zoneID: "12")
-            databasehelper.querymodeTable(zoneID: "13")
+            databasehelper.querymodeTable(zoneID: "4")
+            databasehelper.querymodeTable(zoneID: "5")
+            databasehelper.querymodeTable(zoneID: "6")
+            databasehelper.querymodeTable(zoneID: "7")
+            //databasehelper.querymodeTable(zoneID: "8")
+            //databasehelper.querymodeTable(zoneID: "9")
+            //databasehelper.querymodeTable(zoneID: "10")
+            //databasehelper.querymodeTable(zoneID: "11")
             timeout = 0
         }
     }

@@ -58,12 +58,6 @@ class ImageDownload{
         }
         //print(pathname)
         
-        let group = DispatchGroup()
-         group.enter()
-         DispatchQueue.global().async {
-         
-         
-        
         
         let documnets:String = NSHomeDirectory() + "/Documents/"+pathname
         let fileManager = FileManager.default
@@ -116,13 +110,7 @@ class ImageDownload{
         }*/
         
             
-        group.leave()
-            
-        }
-        
-        // wait ...
-        group.wait()
-        
+
         // ... and return as soon as "a" has a value
         
         

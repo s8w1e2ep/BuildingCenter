@@ -17,11 +17,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>20171019224700</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>APP將使用藍牙</string>
 	<key>NSCameraUsageDescription</key>
 	<string>APP將取用	相機</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

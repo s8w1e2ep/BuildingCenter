@@ -665,6 +665,37 @@ class Databasehelper {
         }
         return zones
     }
+    
+    func queryzoneDownload() -> Array<ZoneItem> {
+        
+        var zones: [ZoneItem] = []
+        let zone_id = DBColExpress.zone_id
+        let name = DBColExpress.name
+        let photo = DBColExpress.photo
+        let photo_vertical = DBColExpress.photo_vertical
+        let imgdownload = ImageDownload()
+        do {
+            let db = try Connection(databaseFilePath)
+            let table = Table("zone")
+            for rows in try db.prepare(table) {
+                let z = ZoneItem()
+                z.zone_id = rows[zone_id]
+                z.name = rows[name]
+                
+                z.photo = rows[photo]
+                z.photo_vertical = rows[photo_vertical]               
+                zones.append(z)
+                let path = z.photo_vertical
+                let index = path?.index((path?.startIndex)!, offsetBy: 3)
+                let imageName = DatabaseUtilizer.filePathURLPrefix + (path?.substring(from: index!))!
+                imgdownload.sessionSimpleDownload(urlpath: imageName)
+                
+            }
+        } catch _ {
+            print("error")
+        }
+        return zones
+    }
 
 
     

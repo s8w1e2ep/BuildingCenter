@@ -19,7 +19,8 @@ class AboutOneViewController: UIViewController {
     let databasehelper = Databasehelper()
     override func viewDidLoad() {
         super.viewDidLoad()
-        databasehelper.querymodeTable(zoneID: "1")
+        queryModeTable()
+        
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
         
@@ -47,7 +48,20 @@ class AboutOneViewController: UIViewController {
         }
         self.performSegue(withIdentifier: "toNext", sender: self);
     }
-    
+    func queryModeTable() {
+        databasehelper.querymodeTable(zoneID: "8")
+        databasehelper.querymodeTable(zoneID: "9")
+        databasehelper.querymodeTable(zoneID: "10")
+        databasehelper.querymodeTable(zoneID: "11")
+        databasehelper.querymodeTable(zoneID: "12")
+        databasehelper.querymodeTable(zoneID: "13")
+        databasehelper.querymodeTable(zoneID: "14")
+        databasehelper.querymodeTable(zoneID: "15")
+        databasehelper.querymodeTable(zoneID: "16")
+        databasehelper.querymodeTable(zoneID: "17")
+        databasehelper.querymodeTable(zoneID: "18")
+        databasehelper.querymodeTable(zoneID: "19")
+    }
     
     func setLayout() {
         // set navigation bar background image
