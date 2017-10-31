@@ -21,7 +21,7 @@ class LandscapeViewController: UIViewController {
     @IBOutlet weak var markImage: UIImageView!
     
     var modeContentViewController: ModeContentViewController!
-    
+    var emptyViewController: EmptyViewController!
     var modeItem: ModeItem!
     
     override func viewDidLoad() {
@@ -51,12 +51,21 @@ class LandscapeViewController: UIViewController {
             modeContentViewController = segue.destination as! ModeContentViewController
             modeContentViewController.modeItem = modeItem
         }
+        if segue.identifier == "landscape_to_empty" {
+            emptyViewController = segue.destination as! EmptyViewController
+            emptyViewController.modeItem = modeItem
+        }
     }
     @IBAction func buttonsound(_ sender: Any) {
         if let soundUrl = Bundle.main.url(forResource: "button", withExtension: "m4a") {
             var soundId: SystemSoundID = 0
             AudioServicesCreateSystemSoundID(soundUrl as CFURL, &soundId)
             AudioServicesPlaySystemSound(soundId)
+        }
+        if modeItem.devices?.count == 0 {
+            performSegue(withIdentifier: "landscape_to_empty", sender: self)
+        }else {
+            performSegue(withIdentifier: "landscape_to_mode_content", sender: self)
         }
     }
     @IBAction func goBack(_ sender: UIBarButtonItem) {
@@ -70,7 +79,7 @@ class LandscapeViewController: UIViewController {
     func setLayout() {
         let imgdownload = ImageDownload()
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
-        self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+    self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
         
         let bgPath = modeItem.splash_bg_vertical
         let bgIndex = bgPath?.index((bgPath?.startIndex)!, offsetBy: 3)
