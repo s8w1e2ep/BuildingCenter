@@ -11,7 +11,7 @@ import UIKit
 class FeedbackHintViewController: UIViewController{
     
     @IBOutlet weak var feedbackTitle: UILabel!
-    @IBOutlet weak var feedbackText: UITextView!
+    @IBOutlet weak var feedbackText: UILabel!
     
     @IBOutlet weak var feedbackYes: UIButton!
     @IBOutlet weak var cancel: UIButton!
