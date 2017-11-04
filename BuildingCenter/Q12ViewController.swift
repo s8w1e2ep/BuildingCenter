@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Q12ViewController: UIViewController {
+class Q12ViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet var navbar: UINavigationBar!
     @IBOutlet var navItem: UINavigationItem!
@@ -28,6 +28,11 @@ class Q12ViewController: UIViewController {
         super.viewDidLoad()
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
+        fieldName.returnKeyType = .done
+        fieldEmail.returnKeyType = .done
+        fieldEmail.keyboardType = .emailAddress
+        fieldEmail.delegate = self
+        fieldName.delegate = self
 
     }
 
@@ -53,6 +58,16 @@ class Q12ViewController: UIViewController {
         confirm.setTitle("confirm".localized(language: selectLanguage), for: .normal)
         skip.setTitle("skip".localized(language: selectLanguage), for: .normal)
         
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        fieldName.resignFirstResponder()
+        fieldEmail.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fieldName.resignFirstResponder()
+        fieldEmail.resignFirstResponder()
+        return true
     }
     
     @IBAction func goBack(_ sender: Any) {
