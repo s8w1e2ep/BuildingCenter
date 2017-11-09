@@ -18,6 +18,8 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     
+    @IBOutlet weak var layout: UICollectionViewFlowLayout!
+    
     let databaseHelper = Databasehelper()
     
     var modeIntroViewController: ModeIntroViewController!
@@ -112,6 +114,10 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
     func setLayout() {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
+        
+        let fullsize = view.bounds.size
+        layout.itemSize = CGSize(width: CGFloat(fullsize.width)*182.0/414.0, height: CGFloat(fullsize.width)*195.0/414.0)
+        
     }
     func setText(selectLanguage: String) {
         // according to language set text

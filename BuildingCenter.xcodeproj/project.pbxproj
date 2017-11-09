@@ -1077,7 +1077,7 @@
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.tabc.living3;
+				PRODUCT_BUNDLE_IDENTIFIER = org.tabc.living35;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BuildingCenter/BuildingCenter-Bridging-Header.h";
@@ -1096,7 +1096,7 @@
 				INFOPLIST_FILE = BuildingCenter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.tabc.living3;
+				PRODUCT_BUNDLE_IDENTIFIER = org.tabc.living35;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BuildingCenter/BuildingCenter-Bridging-Header.h";
