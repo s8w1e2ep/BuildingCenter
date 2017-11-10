@@ -1588,12 +1588,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         </variation>
                                     </label>
-                                    <label verifyAmbiguity="ignoreSizes" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜完成1樓導覧 願意提供給我們寶貴的意見嗎？" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgk-ND-qr6">
-                                        <rect key="frame" x="57.666666666666686" y="237.66666666666663" width="257" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1605,20 +1599,31 @@
                                     <constraint firstItem="h4W-WT-ggq" firstAttribute="top" secondItem="D9Z-Qa-hr5" secondAttribute="top" constant="29" id="ZlW-j2-Cvu"/>
                                     <constraint firstItem="1yQ-Iv-WV3" firstAttribute="centerX" secondItem="D9Z-Qa-hr5" secondAttribute="centerX" id="bgN-b3-1wI"/>
                                     <constraint firstItem="1yQ-Iv-WV3" firstAttribute="width" secondItem="D9Z-Qa-hr5" secondAttribute="height" multiplier="56:99" id="eew-FI-G0b"/>
-                                    <constraint firstItem="1yQ-Iv-WV3" firstAttribute="firstBaseline" secondItem="Tgk-ND-qr6" secondAttribute="baseline" constant="100" id="kkk-5c-RFm"/>
                                     <constraint firstItem="1Oz-x7-g1X" firstAttribute="top" secondItem="1yQ-Iv-WV3" secondAttribute="bottom" constant="10" id="nLQ-oP-LdI"/>
                                     <constraint firstItem="yO5-vf-08U" firstAttribute="top" secondItem="D9Z-Qa-hr5" secondAttribute="top" constant="10" id="rIZ-KG-kuJ"/>
-                                    <constraint firstItem="Tgk-ND-qr6" firstAttribute="centerX" secondItem="D9Z-Qa-hr5" secondAttribute="centerX" id="rsU-1n-eOm"/>
                                     <constraint firstItem="yO5-vf-08U" firstAttribute="centerX" secondItem="D9Z-Qa-hr5" secondAttribute="centerX" id="wb2-DM-mDu"/>
                                     <constraint firstItem="1Oz-x7-g1X" firstAttribute="width" secondItem="D9Z-Qa-hr5" secondAttribute="height" multiplier="56:99" id="yJb-Q3-UIp"/>
                                 </constraints>
                             </view>
+                            <label verifyAmbiguity="ignoreSizes" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜完成1樓導覧 願意提供給我們寶貴的意見嗎？" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgk-ND-qr6">
+                                <rect key="frame" x="78.666666666666686" y="263" width="257" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Tgk-ND-qr6" secondAttribute="height" multiplier="257:100" id="IsG-6s-YQ5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.69900470889999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="D9Z-Qa-hr5" firstAttribute="width" secondItem="VSh-q4-WDw" secondAttribute="height" multiplier="372:661" id="16v-nz-onh"/>
                             <constraint firstItem="D9Z-Qa-hr5" firstAttribute="centerX" secondItem="VSh-q4-WDw" secondAttribute="centerX" id="7uT-vu-s4k"/>
+                            <constraint firstItem="Tgk-ND-qr6" firstAttribute="leading" secondItem="VSh-q4-WDw" secondAttribute="leadingMargin" constant="58.670000000000002" id="Jaa-dl-ubC"/>
                             <constraint firstItem="h4W-WT-ggq" firstAttribute="centerX" secondItem="VSh-q4-WDw" secondAttribute="centerX" id="OVH-IQ-J8Q"/>
+                            <constraint firstItem="1yQ-Iv-WV3" firstAttribute="firstBaseline" secondItem="Tgk-ND-qr6" secondAttribute="baseline" constant="100" id="Qgt-Di-sZo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tgk-ND-qr6" secondAttribute="trailing" constant="58.329999999999998" id="lQy-Ct-ffR"/>
+                            <constraint firstItem="Tgk-ND-qr6" firstAttribute="centerX" secondItem="VSh-q4-WDw" secondAttribute="centerX" id="rvx-AC-Zm3"/>
                             <constraint firstItem="D9Z-Qa-hr5" firstAttribute="centerY" secondItem="VSh-q4-WDw" secondAttribute="centerY" id="ttB-Xs-fn4"/>
                         </constraints>
                     </view>
