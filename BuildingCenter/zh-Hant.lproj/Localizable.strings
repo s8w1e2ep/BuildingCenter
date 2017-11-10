@@ -49,7 +49,7 @@
 "survey07_residence" = "您目前居住地";
 "survey08_house" = "居住房屋類型";
 "survey09_family_organization" = "家庭組織型態";
-"survey10_family" = "家中具有右列成員";
+"survey10_family" = "家中具有下列成員";
 "survey11_notice" = "您是由何種管道得知本展示中心導覽服務";
 "survey12_personal" = "請輸入您的資料";
 "title_activity_main" = "MainActivity";

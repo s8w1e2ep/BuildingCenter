@@ -78,22 +78,29 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
         
+        let fullsize = self.view.bounds
+        
         scrollView.contentSize = CGSize(
-            width: CGFloat(self.view.bounds.width) * (1-pageCutRate*2) * CGFloat(self.courses.count),
-            height: scrollView.bounds.size.height
+            width: CGFloat(fullsize.width) * (1-pageCutRate*2) * CGFloat(self.courses.count),
+            //height: scrollView.bounds.size.height
+            height: fullsize.height * 0.7
         )
-        let size = scrollView.bounds.size
+        //let size = scrollView.bounds.size
         
         for (seq,course) in courses.enumerated() {
             let page = UIView()
-            page.frame = CGRect(x: CGFloat(seq) * size.width * (1-pageCutRate*2), y: 0,
-                                width: size.width * (1-pageCutRate*2), height: size.height)
+            //page.frame = CGRect(x: CGFloat(seq) * size.width * (1-pageCutRate*2), y: 0,
+            //                    width: size.width * (1-pageCutRate*2), height: size.height)
+            page.frame = CGRect(x: CGFloat(seq) * fullsize.width * (1-pageCutRate*2), y: 0,
+                                width: fullsize.width * (1-pageCutRate*2), height: fullsize.height*0.7)
             page.backgroundColor = UIColor.clear
             
             let imageView = UIImageView(image: UIImage(named: course["pic"]!))
-            imageView.frame = CGRect(x: size.width * (-0.5*pageCutRate), y: 0, width: size.width * (1-pageCutRate*1), height: size.height)
+            //imageView.frame = CGRect(x: size.width * (-0.5*pageCutRate), y: 0, width: size.width * (1-pageCutRate*1), height: size.height)
+            imageView.frame = CGRect(x: fullsize.width * (-0.5*pageCutRate), y: 0, width: fullsize.width * (1-pageCutRate*1), height: fullsize.height*0.7)
             
-            let label = UILabel(frame: CGRect(x: 0, y: size.height*0.83, width: size.width * (1-pageCutRate*2), height: 20))
+            //let label = UILabel(frame: CGRect(x: 0, y: size.height*0.83, width: size.width * (1-pageCutRate*2), height: 20))
+            let label = UILabel(frame: CGRect(x: 0, y: fullsize.height*0.7*0.83, width: fullsize.width * (1-pageCutRate*2), height: 20))
             label.text = course["name"]
             label.textAlignment = .center
             label.textColor = UIColor.white
@@ -104,7 +111,8 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
             page.addSubview(label)
             scrollView.addSubview(page)
         }
-        scrollView.contentOffset.x = CGFloat(currentIndex) * scrollView.bounds.width * (1-3*pageCutRate)
+        //scrollView.contentOffset.x = CGFloat(currentIndex) * scrollView.bounds.width * (1-3*pageCutRate)
+        scrollView.contentOffset.x = CGFloat(currentIndex) * fullsize.width * (1-3*pageCutRate)
 
         
     }
@@ -134,6 +142,7 @@ class SelectGuiderViewController: UIViewController, UIScrollViewDelegate {
         }
         targetContentOffset.pointee.x = tarIndex * scrollView.bounds.width * (1-3*pageCutRate)
         currentIndex = Int(tarIndex)
+        print(currentIndex)
     }
     /*
     // MARK: - Navigation
