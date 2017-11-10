@@ -116,7 +116,7 @@ class ModeSelectViewController: UIViewController, UICollectionViewDelegate, UICo
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
         
         let fullsize = view.bounds.size
-        layout.itemSize = CGSize(width: CGFloat(fullsize.width)*182.0/414.0, height: CGFloat(fullsize.width)*195.0/414.0)
+        layout.itemSize = CGSize(width: CGFloat(fullsize.width)*195.0/414.0, height: CGFloat(fullsize.width)*200.0/414.0)
         
     }
     func setText(selectLanguage: String) {

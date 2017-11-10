@@ -128,7 +128,12 @@ class MainPageViewController: UIViewController {
             myUtterance.pitchMultiplier = 1.2
             myUtterance.postUtteranceDelay = 0.1
             myUtterance.volume = 1
-            myUtterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
+            if BeginViewController.isEnglish {
+                myUtterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            }else {
+                myUtterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
+            }
+            
             
             synth.speak(myUtterance)
         }
@@ -255,6 +260,9 @@ class MainPageViewController: UIViewController {
         textButton.isSelected = false
         speechButton.isEnabled = false
         speechButton.isSelected = false
+        
+        synth.stopSpeaking(at: AVSpeechBoundary.immediate)
+        slider.isHidden = true
     }
 
     func pageChangedNoti(noti:Notification) {
