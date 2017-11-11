@@ -189,6 +189,9 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-NB-UfG">
                                 <rect key="frame" x="31" y="80" width="352" height="541"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" red="0.33373651649746194" green="0.33373651649746194" blue="0.33373651649746194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -336,7 +339,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="content" destination="2nr-XZ-nKQ" id="2Nb-rv-a3q"/>
+                        <outlet property="content" destination="2nr-XZ-nKQ" id="c5s-PU-tuF"/>
                         <outlet property="navBar" destination="fnd-YG-I3X" id="a7m-Kg-TwL"/>
                         <outlet property="navItem" destination="Col-9b-tam" id="BQh-9r-rx3"/>
                         <outlet property="nextPage" destination="SJE-3V-7Q6" id="59C-io-8jz"/>
@@ -383,6 +386,9 @@
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="自動導覽設定" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUt-wb-lvw">
                                 <rect key="frame" x="31" y="80" width="352" height="541"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" red="0.33300891518592834" green="0.33328679203987122" blue="0.33305191993713379" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

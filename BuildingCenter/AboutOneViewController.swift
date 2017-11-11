@@ -24,6 +24,10 @@ class AboutOneViewController: UIViewController {
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
         
+        
+    }
+    override func viewDidLayoutSubviews() {
+        self.content.setContentOffset(CGPoint.zero, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,8 +72,6 @@ class AboutOneViewController: UIViewController {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
         
-        // set textView
-        content.contentOffset = CGPoint.zero
     }
     func setText(selectLanguage: String) {
         // according to language set text
@@ -77,6 +79,7 @@ class AboutOneViewController: UIViewController {
         content.text = "origin_content".localized(language: selectLanguage)
     
         nextPage.setTitle("next_page".localized(language: selectLanguage), for: .normal)
+        
     }
     
     /*

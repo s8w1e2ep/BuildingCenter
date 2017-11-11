@@ -21,6 +21,11 @@ class AboutThreeViewController: UIViewController {
         //databasehelper.querymodeTable(zoneID: "6")
         setLayout()
         setText(selectLanguage: BeginViewController.selectedLanguage)
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.content.setContentOffset(CGPoint.zero, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,8 +56,6 @@ class AboutThreeViewController: UIViewController {
         let navBackgroundImage:UIImage! = UIImage(named: "header_blank.png")
         self.navBar.setBackgroundImage(navBackgroundImage.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .stretch), for: .default)
         
-        // set textView
-        content.contentOffset = CGPoint.zero
     }
     func setText(selectLanguage: String) {
         // according to language set text
